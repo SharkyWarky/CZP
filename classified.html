@@ -11,6 +11,7 @@
         <link rel="stylesheet" href="css\map.css" />
         <link rel="icon" type="image/png" href="images/icon.png" />
     </head>
+
     <body>
         <header class="top-bar">
             <div class="logo">Comprehensive Zombies Project</div>
@@ -22,12 +23,13 @@
                 <a href="index.html#home">Home</a>
 
                 <div class="dropdown">
-                    <button class="dropbtn">Games</button>
+                    <button class="dropbtn active">Games</button>
                     <div class="dropdown-content">
+                        <!----- MAKE CURRENT GAME ACTIVE ----->
                         <a href="index.html#bo1">Black Ops</a>
                         <a href="index.html#bo2">Black Ops II</a>
                         <a href="index.html#bo3">Black Ops III</a>
-                        <a href="index.html#bo4">Black Ops 4</a>
+                        <a href="index.html#bo4" class="active">Black Ops 4</a>
                         <a href="index.html#bocw">Black Ops Cold War</a>
                         <a href="index.html#bo6">Black Ops 6</a>
                         <a href="index.html#bo7">Black Ops 7</a>
@@ -48,81 +50,867 @@
         <div class="map-page">
             <div class="page-header">
                 <div class="tab-menu">
+                    <!----- ADD CLASS "disabled" TO UNUSED TABS ----->
                     <button class="tab-button active" data-tab="overview">Overview</button>
                     <button class="tab-button" data-tab="main-ee">Main EE</button>
+                    <button class="tab-button" data-tab="side-ee">Side EEs</button>
                     <button class="tab-button" data-tab="music-ee">Music EE</button>
                     <button class="tab-button" data-tab="wonder-weapon">Wonder Weapon</button>
-                    <button class="tab-button" data-tab="side-ee">Side EEs</button>
                     <button class="tab-button" data-tab="buildables">Buildables</button>
-                    <button class="tab-button" data-tab="perks">Perks</button>
                     <button class="tab-button" data-tab="weapons">Weapons</button>
+                    <button class="tab-button" data-tab="gauntlet">Gauntlets</button>
+                    <button class="tab-button" data-tab="perks">Perks</button>
+                    <button class="tab-button" data-tab="extras">Extras</button>
+                    <button class="tab-button" data-tab="credits">Credits</button>
                 </div>
             </div>
 
             <!--------------------------------- OVERVIEW --------------------------------->
             <div id="overview" class="tab-content active">
                 <div class="info-box">
-                    <h2>Lorem ipsum</h2>
-                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum..</p>
-                    <h3>Lorem ipsum</h3>
-                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
-                    <ul>
-                        <li>Lorem ipsum</li>
-                        <li>Lorem ipsum</li>
-                        <li>Lorem ipsum</li>
-                        <li>Lorem ipsum</li>
-                    </ul>
+                    <p>
+                        <span>Classified is a Zombies map that is included with the Black Ops Pass for Call of Duty: Black Ops 4. The fourth map featured in the game and the twenty-eighth map overall, it is a reimagining of the map "Five", which was previously featured in Call of Duty: Black Ops.</span>
+                        <br />
+                        <span>The map features the "Ultimis" crew - the original versions of"Tank" Dempsey, Nikolai Belinksi, Takeo Masaki and Edward Richtofen - as the four playable characters, replacing John F. Kennedy, Robert McNamara, Richard Nixon, and Fidel Castro. The map's story follows them as they investigate The Pentagon after being teleported there from Shangri-La via overloading a teleporter with the 31-79 JGb215</span>
+                        <br />
+                        <span>With the release of Operation Grand Heist, Classified can now be purchased as a standalone map without having to acquire the Black Ops Pass for $7.99 USD</span>
+                    </p>
+                    <h2>Overview</h2>
+                    <p>Being a reimagining of "Five", Classified's layout is mostly identical. However, like Blood of the Dead, the remake of Mob of the Dead, there are a few new rooms added to the map, including the Central Filing and Main Offices on the first floor, and the Server Room in the War Room. The Perk-a-Colas are replaced by the new perk system introduced in Black Ops 4. In addition to this, the steps taken to reach the Pack-a-Punch Machine have also changed. There are also several new Mystery Box locations as well, with the initial Mystery Box location being either in the Main Offices or on the upper level of the War Room.</p>
+                    <h2>Story</h2>
+                    <p>
+                        <span>In Classified's Intro Cutscene, the Ultimis crew is shown attempting to teleport from Shangri-La to Groom Lake in order to continue Richtofen's Grand Scheme. Just as they are about to leave, Tank fires the 31-79 JGb215, accidentally overloading the teleporter and sending them hurtling through space and time to the Pentagon in 1963. Ultimis, finding the Pentagon mostly abandoned, begin to loot the facility of its weapons and supplies, including the Winter's Howl. Samantha Maxis, still in control of the Zombies and trapped in the M.P.D on the moon, witnesses these events</span>
+                        <span>Simultaneously, Anton Gersh and Yuri Zavoyski activate a Gersh Device for the first time trapping Gersch inside the Casimir Mechanism and allowing Samantha to corrupt Yuri and send him to the Pentagon. Upon arrival, Yuri initiates a Zombie outbreak but is prevented from participating himself by Samantha. The Zombies attack Ultimis</span>
+                        <span>Ultimis endeavors to leave the Pentagon and arrive at Groom Lake, building the Teleporter Signal Amplifier in order to do so. Upon arriving, however, they discover a mostly abandoned Groom Lake with no known connection to the Moon. Samantha also speaks directly to Richtofen, discouraging him from continuing his quest and insuring him she will do everything in her power to make him fail</span>
+                        <span>Through unknown means, Ultimis is able to re-link the Groom Lake teleporter with Griffin Station, and the events of Moon play out as they originally did. Some time after, Ultimis returns to Earth and travels to some point in time before it was destroyed. They are captured and imprisoned by the remains by American forces, but are rescued by "Primis". "Primis" Nikolai recruits them to fight in the Great War, and the two groups depart through a portal</span>
+                    </p>
+                    <h2>Gameplay</h2>
+                    <p>
+                        <span>As could be expected, the map plays much like "Five". The map is split into three floors, the Office Floor, War Room, and Laboratories. Initially, the player can only travel between levels using Elevators, which cost 500 points to use. After turning on the power, teleporters activate on all floors, allowing the map to be more quickly and easily traversed. The location the player will teleport to is random, but the player can at least control what level they go to by paying attention to the symbol floating in the teleporter. An Office Chair brings the player to the Offices, A Control Panel brings the player to the War Room, and A Flask brings the player to one of the teleporters in the labs</span>
+                        <span>Once the power is on, 4 "DEFCON" switches can be flipped in the War Room to lower the Pentagons security and allow the player to teleport to new areas. Initially, activating DEFCON 5 will bring the player to the "Panic Room". The Panic room includes a piece of the Teleporter Signal Amplifier, and is initially free of Zombies for 30 seconds, providing players with a slight break. Once the Teleporter Signal Amplifier is built and in place, the War Room's central teleporter will bring players to Groom Lake, where they can use the Pack-a-Punch Machine</span>
+                        <span>The map also introduces two new buildables; the Riot Shield and the Teleporter Signal Amplifier, the latter being used to access the Pack-a-Punch Machine. With this modified teleporter, players are able to use the Pack-a-Punch Machine found in Groom Lake, the same place featured in the map Moon. The Electro-Shock Defenses return as well, although the locations for the parts needed to repair them are in different locations, with one spawning in the Server Room and the other spawning in the Porcine Research lab. The Winter's Howl also returns, and is obtainable from the Mystery Box and through completing the Project Skadi quest</span>
+                        <span>Unlike the original version, the Pentagon Thief is absent; he is instead replaced by Hellhounds. Like the original map, the Crawler Zombies return, and can now spawn on other levels of the map instead of just the Laboratories. The Bonfire Sale power-up also returns, and can be acquired by opening up areas of Groom Lake, which is achieved by surviving in said area every few rounds without leaving or going down</span>
+                        <span>Unlike other maps in Black Ops 4, Classified does not have a main quest. Instead, the ending cutscene plays automatically once players complete round 150</span>
+                    </p>
                 </div>
             </div>
 
             <!-- MAIN EASTER EGG -->
             <div id="main-ee" class="tab-content">
                 <div class="info-box">
-                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
-                </div>
-            </div>
+                    <h2>Recommended Setup</h2>
+                    <ul>
+                        <li></li>
+                    </ul>
 
-            <!-- MUSIC EE -->
-            <div id="music-ee" class="tab-content">
-                <div class="info-box">
-                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
-                </div>
-            </div>
+                    <h2>Main EE</h2>
+                    <p>Rewards: The Cutscene</p>
+                    <ol>
+                        <li>Reach Round 150. gl.</li>
+                    </ol>
 
-            <!-- WONDER WEAPON -->
-            <div id="wonder-weapon" class="tab-content">
-                <div class="info-box">
-                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+                    <div class="video-container">
+                        <iframe src="https://www.youtube.com/embed/pNk_Z_bpL54" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen> </iframe>
+                    </div>
                 </div>
             </div>
 
             <!-- SIDE EASTER EGGS -->
             <div id="side-ee" class="tab-content">
                 <div class="info-box">
-                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+                    <h2 id="power">Power</h2>
+                    <p>Go Down both elevators to the Labs and flip the switch in the middle room</p>
+                    <h2 id="pap">PaP</h2>
+                    <ol>
+                        <li><b>Circle Part Thing</b></li>
+                        <ul>
+                            <li>Main office under desk in lower roof area (lonely desk)</li>
+                            <li>On the right side of the knocked over desk in the middle of the room</li>
+                            <li>Leaning against the desk on the left side of the brew machine</li>
+                            <div class="image-container">
+                                <img src="images/classified-pap1under.png" alt="PaP 1 Under Desk" />
+                                <img src="images/classified-pap1over.png" alt="PaP 1 on flipped desk" />
+                                <img src="images/classified-pap1beside.png" alt="PaP 1 beside brew machine" />
+                            </div>
+                        </ul>
+                        <li><b>Cabling</b></li>
+                        <ul>
+                            <li>On the head of the corpse in the machine in the Morgue</li>
+                            <li>Sitting on the chair in the Morgue Office</li>
+                            <li>At the end of the metal table in the morgue</li>
+                            <div class="image-container">
+                                <img src="images/classified-pap2corpse.png" alt="PaP 2 Corpse" />
+                                <img src="images/classified-pap2chair.png" alt="PaP 2 on Chair" />
+                                <img src="images/classified-pap2table.png" alt="PaP 2 end of metal table" />
+                            </div>
+                        </ul>
+                        <li>
+                            <b>Bigger Circle Thing</b>
+                        </li>
+                        <ol id="panicroom">
+                            <li>Activate all of the Defcons switches in any order</li>
+                            <ul>
+                                <li>Left side wall of War Room Upper Level</li>
+                                <li>War Room Upper Level on far side</li>
+                                <li>War Room Lower Level across from the stairs</li>
+                                <li>On the wall in the server room</li>
+                            </ul>
+                            <li>Teleport to the Panic room through the teleporter in the center of the war room (glowing blue head) (After PaP is open, the Panic room can be accessed after reaching defcon 5 and going through the teleporter in the back of the server room)</li>
+                            <li>Grab the part where the wall has opened (far end)</li>
+                        </ol>
+                        <li>Build at a Workbench (Knife the table to change what you want to craft)</li>
+                        <ul>
+                            <li>Weapon Testing area in the first room on the left after exiting the elevator</li>
+                            <li>Corner of central filing room at spawn</li>
+                        </ul>
+                        <li>
+                            <span>Go back to the central teleporter and interact with it to place it</span>
+                            <span>Behind you a new teleporter will be open to take you to PaP (must reach defcon 5 again to re-open)</span>
+                        </li>
+                    </ol>
+
+                    <h2 id="coldwarremedy">Cold War Remedy (Free Winter's Howl)</h2>
+                    <p>
+                        <span>Often considered the main EE of Classfiied since the <a href="#main-ee">cutscene</a> doesn't require any EE-esque steps</span>
+                        <span>Rewards: Free Winter's Howl, Max Ammo Power-Up, Bonfire Sale Power-Up</span>
+                    </p>
+                    <ol>
+                        <li>Grab a gold key from the keybox by the cola perk machine in the war room</li>
+                        <div class="image-container">
+                            <img src="images/classified-key.png" alt="Cold War Remedy - Keybox" />
+                            <img src="images/classified-key1.png" alt="Cold War Remedy - Golden Key" />
+                        </div>
+                        <li>
+                            <span>Head to the middle desk in the Main Offices area and interact with the keyhole to unlock the drawer</span>
+                            <span>Record the number and image/map within (Der Riese)</span>
+                        </li>
+                        <div class="image-container">
+                            <img src="images/classified-keyhole.png" alt="Cold War Remedy - Keyhole" />
+                        </div>
+                        <li>
+                            <span>Go into the labs area and leave the power room from the left door to reach a window with a chrome thing through it.</span>
+                            <span>Throw a grenade/acid grenade into or behind it. record number on picture to the left of the window (Shangri-La)</span>
+                        </li>
+                        <div class="image-container">
+                            <img src="images/classified-window.png" alt="Cold War Remedy - Chrome Window" />
+                            <img src="images/classified-chrome.png" alt="Cold War Remedy - Chrome Thing" />
+                        </div>
+                        <li>Access the Panic room by activating the defcons in this specific order</li>
+                        <ol>
+                            <li>Upper level by giant screen</li>
+                            <li>Server Room</li>
+                            <li>To left of entrance elevator on upper level</li>
+                            <li>below the previous on lower level</li>
+                        </ol>
+                        <li>Interact with the static tv on the left to move it back into the wall. record the number on the photo (Kino der Toten)</li>
+                        <li>Unlock <a href="#side-ee/pap">PaP</a> and PaP a weapon</li>
+                        <li>Shoot the plaques in the deserted hallway in the order 1-3-2-4</li>
+                        <div class="image-container">
+                            <img src="images/classified-plaques.png" alt="Cold War Remedy - Plaques" />
+                        </div>
+                        <li>Record the number on the image that is in the now opened first plaque (Shi No Numa)</li>
+                        <li>Enter the codes into the machine by shooting the numbers in the center of the war room then interacting with the button in the following order</li>
+                        <ol>
+                            <li>Shi No Numa</li>
+                            <li>Der Riese</li>
+                            <li>Shangri-La</li>
+                            <li>Kino Der Toten</li>
+                        </ol>
+                        <li>
+                            <span>When screen says "Project Skadi Retrieved" head back to PaP and <a href="#side-ee/gloomlakesurvival">survive 3 full rounds</a></span>
+                            <span>Once Completed the area to the left of PaP will open</span>
+                            <span>Grab the winter's Howl from the icy briefcase in the back of the new area</span>
+                            <span></span>
+                        </li>
+                    </ol>
+
+                    <h2 id="gloomlakesurvival">Groom Lake Survival</h2>
+                    <p>
+                        <span>Rewards: Max Ammo and Bonfire Sale</span>
+                        <span>Same as the final step for <a href="#side-ee/coldwarremedy">Cold War Remedy</a> (can be completed before cold war remedy and winter's howl will still spawn later)</span>
+                    </p>
+                    <ul>
+                        <li>Survive 3 full rounds in Groom Lake (PaP Area) and the debris on the left side of PaP will open revealing the Power-Ups</li>
+                        <li>The Bonfire Sale will only spawn if the amount of hits taken is not more then the current round amount (ie. round 5 means no more then 5 hits)</li>
+                    </ul>
+                </div>
+            </div>
+
+            <!-- MUSIC EE -->
+            <div id="music-ee" class="tab-content">
+                <div class="info-box">
+                    <h2>Shockwave</h2>
+                    <p>
+                        <span>Plays Shockwave by Kevin Sherwood</span>
+                        <span>Interact with 3 whiskey bottles around the map.</span>
+                    </p>
+                    <ul>
+                        <li>Central Filing, in the center of the room, placed on top of a set of filing cabinets</li>
+                        <li>War Room on the bottom floor, under one of the control panels</li>
+                        <li>Labs within the Porcine Research Lab, within a cabinet in the left most corner of the room</li>
+                        <div class="image-container">
+                            <img src="images/classified-bottle1.webp" alt="Bottle 1" />
+                            <img src="images/classified-bottle2.webp" alt="Bottle 2" />
+                            <img src="images/classified-bottle3.webp" alt="Bottle 3" />
+                        </div>
+                    </ul>
+
+                    <h2>This Jazz is Classified</h2>
+                    <p>Interact with 5 terminals in the War Room Lower Level in the following Order</p>
+                    <ol>
+                        <li>under the yellow US sign</li>
+                        <div class="image-container">
+                            <img src="images/classified-terminal1.png" alt="Terminal 1" />
+                        </div>
+                        <li>across from the far back window</li>
+                        <div class="image-container">
+                            <img src="images/classified-terminal2.png" alt="Terminal 2" />
+                        </div>
+                        <li>farthest left terminal in the Server Room</li>
+                        <div class="image-container">
+                            <img src="images/classified-terminal3.png" alt="Terminal 3" />
+                        </div>
+                        <li>In the main room under the defcon sign at end of stairs</li>
+                        <div class="image-container">
+                            <img src="images/classified-terminal4.png" alt="Terminal 4" />
+                        </div>
+                        <li>In the server room on the terminal in the middle</li>
+                        <div class="image-container">
+                            <img src="images/classified-terminal5.png" alt="Terminal 5" />
+                        </div>
+                    </ol>
+                </div>
+            </div>
+
+            <!-- WONDER WEAPON -->
+            <div id="wonder-weapon" class="tab-content">
+                <div class="info-box">
+                    <h3><a href="#side-ee/coldwarremedy">Winter's Howl</a></h3>
                 </div>
             </div>
 
             <!-- BUILDABLES -->
             <div id="buildables" class="tab-content">
                 <div class="info-box">
-                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+                    <h2>Shield</h2>
+                    <ul>
+                        <li>Part 1 - Central Filing</li>
+                        <ul>
+                            <li>right side of the metal detector laying against the wall</li>
+                            <li>Leaning against the filing cabinets</li>
+                            <li>Between the 2 windows on the far side</li>
+                            <div class="image-container">
+                                <img src="images/classified-shield1.png" alt="Shield Part 1 - Metal Detector" />
+                                <img src="images/classified-shieldcabinet.png" alt="Shield Part 1 - Filing Cabinets" />
+                                <img src="images/classified-shield1window.png" alt="Shield Part 1 - Metal Detector" />
+                            </div>
+                        </ul>
+                        <li>Part 2 - War Room: Lower Level</li>
+                        <ul>
+                            <li>under the left side stairs</li>
+                            <li>Against the wall in the central teleporter area</li>
+                            <li>Leaning on the side of the computer near the window at the back right</li>
+                            <div class="image-container">
+                                <img src="images/classified-shield2stairs.png" alt="Shield Part 2 - under stairs" />
+                                <img src="images/classified-shield2wall.png" alt="Shield Part 2 - Teleporter wall" />
+                                <img src="images/classified-shield2computer.png" alt="Shield Part 2 - Computer" />
+                            </div>
+                        </ul>
+                        <li>Part 3 - South & North Laboratories</li>
+                        <ul>
+                            <li>Resting on the boxes to the left of power switch</li>
+                            <li>Next to the crate near teleporter 3</li>
+                            <li>Teleporter 2 against barrels</li>
+                            <div class="image-container">
+                                <img src="images/classified-shield3boxes.png" alt="Shield Part 3 - Ontop of Boxes" />
+                                <img src="images/classified-shield3crate.png" alt="Shield Part 3 - teleporter 3" />
+                                <img src="images/classified-shield3barrels.png" alt="Shield Part 3 - Teleporter 2" />
+                            </div>
+                        </ul>
+                        <li>Build at a Workbench (Knife the table to change what you want to craft)</li>
+                        <ul>
+                            <li>Weapon Testing area in the first room on the left after exiting the elevator</li>
+                            <li>Corner of central filing room at spawn</li>
+                        </ul>
+                    </ul>
+
+                    <h2 id="electrotrap">Electro-Shock Defenses</h2>
+                    <p>Each part can be used to construct either the Deserted Hallway or Side Passage Electro-Shock Trap</p>
+                    <ul>
+                        <li>Part 1 - Server Room</li>
+                        <ul>
+                            <li>Under the main console in the center</li>
+                            <li>Between a small console and server wall near door</li>
+                            <li>On a small Cart under a tipped over server box</li>
+                            <div class="image-container">
+                                <img src="images/classified-box1.webp" alt="Box Part - Main Console" />
+                                <img src="images/classified-box2.webp" alt="Box Part - Near Door" />
+                                <img src="images/classified-box3.webp" alt="Box Part - Trolley" />
+                            </div>
+                        </ul>
+                        <li>Part 2 - Porcine Research</li>
+                        <ul>
+                            <li>on the bottom shelf of hte cupboard in the corner</li>
+                            <li>on the bottom of the table near the sink and wallbuy</li>
+                            <li>Inside the cage in the corner</li>
+                            <div class="image-container">
+                                <img src="images/classified-box4.webp" alt="Box Part - bottom shelf cupboard" />
+                                <img src="images/classified-box5.webp" alt="Box Part - under table near wallbuy" />
+                                <img src="images/classified-box6.webp" alt="Box Part - in corner" />
+                            </div>
+                        </ul>
+                    </ul>
                 </div>
             </div>
 
             <!-- PERKS -->
             <div id="perks" class="tab-content">
                 <div class="info-box">
-                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+                    <h3>Perk Brew</h3>
+                    <p>Mail Offices</p>
+                    <h3>Perk Cola</h3>
+                    <p>War Room Lower Level</p>
+                    <h3>Perk Soda</h3>
+                    <p>South Laboratories</p>
+                    <h3>Perk Tonic</h3>
+                    <p>Porcine Research</p>
+                </div>
+            </div>
+
+            <!-- GAUNTLET -->
+            <div id="gauntlet" class="tab-content">
+                <div class="info-box">
+                    <h2>Death-Con Five</h2>
+                    <table>
+                        <tr>
+                            <th>Round</th>
+                            <th>Name</th>
+                            <th>Description</th>
+                        </tr>
+                        <tr>
+                            <td>1</td>
+                            <td>Share the Health</td>
+                            <td>Kill enemies to regenerate depleting health.</td>
+                        </tr>
+                        <tr>
+                            <td>2</td>
+                            <td>Slippery</td>
+                            <td>Players can only attack while sliding.</td>
+                        </tr>
+                        <tr>
+                            <td>3</td>
+                            <td>Flag Protocol</td>
+                            <td>Players can only attack when standing next to a flagpole.</td>
+                        </tr>
+                        <tr>
+                            <td>4</td>
+                            <td>Bursting With Excitement</td>
+                            <td>Players can only use the <a href="#weapons/RK_7_Garrison">RK 7 Garrison</a> pistol.</td>
+                        </tr>
+                        <tr>
+                            <td>5</td>
+                            <td>Tower Defense</td>
+                            <td>Walking, running, or sprinting causes damage.</td>
+                        </tr>
+                        <tr>
+                            <td>6</td>
+                            <td>Power Trip</td>
+                            <td>Activate the power before the end of this Hellhound round.</td>
+                        </tr>
+                        <tr>
+                            <td>7</td>
+                            <td>Eat and Run</td>
+                            <td>All enemies are sprinting.</td>
+                        </tr>
+                        <tr>
+                            <td>8</td>
+                            <td>Special Forces</td>
+                            <td>Kill 10 enemies with a <a href="#weapons/special_weapons">Special Weapon</a> this round.</td>
+                        </tr>
+                        <tr>
+                            <td>9</td>
+                            <td>Brittle</td>
+                            <td>Complete the round with a limited number of hits across all players.</td>
+                        </tr>
+                        <tr>
+                            <td>10</td>
+                            <td>You've Been Served</td>
+                            <td>Defend the Server Room.</td>
+                        </tr>
+                        <tr>
+                            <td>11</td>
+                            <td>High Gas Prices</td>
+                            <td>Nova 6 Crawler gas causes point drain.</td>
+                        </tr>
+                        <tr>
+                            <td>12</td>
+                            <td>Down the Rabbit Hole</td>
+                            <td>Use 10 unique teleporters during this round.</td>
+                        </tr>
+                        <tr>
+                            <td>13</td>
+                            <td>Bear a Grudge</td>
+                            <td>Hunt down and open the Mystery Box 6 times this round.</td>
+                        </tr>
+                        <tr>
+                            <td>14</td>
+                            <td>No Gen</td>
+                            <td>No health regeneration.</td>
+                        </tr>
+                        <tr>
+                            <td>15</td>
+                            <td>Whole Hog</td>
+                            <td>Defend the Porcine Research Lab.</td>
+                        </tr>
+                        <tr>
+                            <td>16</td>
+                            <td>Bursting With Fear</td>
+                            <td>Players can only use the <a href="#weapons/RK_7_Garrison">RK 7 Garrison</a> pistol.</td>
+                        </tr>
+                        <tr>
+                            <td>17</td>
+                            <td>Walled In</td>
+                            <td>Make 5 unique wall buys.</td>
+                        </tr>
+                        <tr>
+                            <td>18</td>
+                            <td>Shock and Awe</td>
+                            <td>Get 55 trap kills and survive for 5:55.</td>
+                        </tr>
+                        <tr>
+                            <td>19</td>
+                            <td>Teleporter Tango</td>
+                            <td>Teleport before your timer runs out or you start taking damage.</td>
+                        </tr>
+                        <tr>
+                            <td>20</td>
+                            <td>Time to Panic</td>
+                            <td>Defend the Panic Room during this Nova 6 Crawler round.</td>
+                        </tr>
+                        <tr>
+                            <td>21</td>
+                            <td>Anywhere but WTF?</td>
+                            <td>Players randomly teleport, complete the round under the time limit.</td>
+                        </tr>
+                        <tr>
+                            <td>22</td>
+                            <td>Make It Rain</td>
+                            <td>Take damage while you have over 5000 points.</td>
+                        </tr>
+                        <tr>
+                            <td>23</td>
+                            <td>CQZ</td>
+                            <td>Zombies can only be damaged in close quarters.</td>
+                        </tr>
+                        <tr>
+                            <td>24</td>
+                            <td>Double Trouble</td>
+                            <td>Enemies do double damage.</td>
+                        </tr>
+                        <tr>
+                            <td>25</td>
+                            <td>Conference Call</td>
+                            <td>Defend the Conference Room and Hallways.</td>
+                        </tr>
+                        <tr>
+                            <td>26</td>
+                            <td>On the Clock</td>
+                            <td>Complete the round before the timer expires.</td>
+                        </tr>
+                        <tr>
+                            <td>27</td>
+                            <td>Bursting Your Bubble</td>
+                            <td>Players can only use the <a href="#weapons/RK_7_Garrison">RK 7 Garrison</a> pistol.</td>
+                        </tr>
+                        <tr>
+                            <td>28</td>
+                            <td>Out of Order</td>
+                            <td>Teleporters and elevators are disabled.</td>
+                        </tr>
+                        <tr>
+                            <td>29</td>
+                            <td>Nothing Special</td>
+                            <td><a href="#weapons/special_weapons">Special Weapons</a> are disabled.</td>
+                        </tr>
+                        <tr>
+                            <td>30</td>
+                            <td>Doom Lake</td>
+                            <td>Defend Groom Lake.</td>
+                        </tr>
+                    </table>
+
+                    <div class="video-container">
+                        <iframe src="https://www.youtube.com/embed/AHy1jWfEXy4" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen> </iframe>
+                    </div>
                 </div>
             </div>
 
             <!-- WEAPONS -->
             <div id="weapons" class="tab-content">
                 <div class="info-box">
-                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+                    <h3>Starting Weapons</h3>
+                    <ul>
+                        <li>Knife</li>
+                        <li>Welling - Player Choice</li>
+                        <li>Strife - Player Choice</li>
+                        <li>RK 7 Garrison - Player Choice</li>
+                        <li>Saug 9mm - Player Choice</li>
+                        <li>Essex Model 07 - Player Choice</li>
+                        <li>MOG 12 - Player Choice</li>
+                        <li>Frag - Player Choice</li>
+                        <li>Acid Bomb - Player Choice</li>
+                        <li>Claymore - Player Choice</li>
+                        <li>Wraith Fire - Player Choice</li>
+                        <li>Sentry - Player Choice</li>
+                    </ul>
+
+                    <h3 id="special_weapons">Specialists</h3>
+                    <ul>
+                        <li>Hellfire</li>
+                        <li>Overkill</li>
+                        <li>Path of Sorrows</li>
+                        <li>Ragnarok DG-5</li>
+                    </ul>
+
+                    <h3>Wall Weapons</h3>
+                    <ul>
+                        <li><b>Strife</b> - Side Passage (500p)</li>
+                        <li><b>Essex Model 07</b> - Conference Room (500p)</li>
+                        <li id="RK_7_Garrison"><b>RK 7 Garrison</b> - Central Filing (700p)</li>
+                        <li><b>Saug 9mm</b> - Main Offices (750p)</li>
+                        <li><b>Escargot</b> - Main Offices (1000p)</li>
+                        <li><b>MOG 12</b> - Deserted Hallway (1000p)</li>
+                        <li><b>Spitfire</b> - War Room Upper Level (1150p)</li>
+                        <li><b>MX9</b> - War Room Upper Level (1300p)</li>
+                        <li><b>M1897 Trebuchet</b> - War Room Lower Level (1400p)</li>
+                        <li><b>Maddox RFB</b> - North Laboratories (1400p)</li>
+                        <li><b>KN-57</b> - Porcine Research (1450p)</li>
+                        <li><b>ICR-7</b> - War Room Lower Level (1550p)</li>
+                        <li><b>Vapr-XKG</b> - Server Room (1550p)</li>
+                        <li><b>Auger DMR</b> - North Laboratories (1550p)</li>
+                        <li id="bowieknife"><b>Bowie Knife</b> - Weapon Testing (3000p)</li>
+                        <li><b>Titan</b> - Morgue (3750p)</li>
+                        <li><b>Koshka</b> - Weapon Testing (4500p)</li>
+                    </ul>
+
+                    <h3>Mystery Box</h3>
+                    <h4>Locations</h4>
+                    <ul>
+                        <li>Side Passage</li>
+                        <li>Main Offices</li>
+                        <li>War Room Upper Level</li>
+                        <li>War Room Lower Level</li>
+                        <li>Server Room</li>
+                        <li>Morgue</li>
+                        <li>Procine Research</li>
+                        <li>Weapon Testing</li>
+                    </ul>
+                    <h4>Weapons</h4>
+                    <ul>
+                        <li>Maddox RFB</li>
+                        <li>Hitchcock M9</li>
+                        <li>Rampart 17</li>
+                        <li>Vapr-XKG</li>
+                        <li>Grav</li>
+                        <li>SWAT RFT</li>
+                        <li>Peacekeeper</li>
+                        <li>AN-94</li>
+                        <li>DoubleCross</li>
+                        <li>Escargot</li>
+                        <li>Spitfire</li>
+                        <li>Cordite</li>
+                        <li>MP-40</li>
+                        <li>Daemon 3XB</li>
+                        <li>Switchblade X9</li>
+                        <li>VMP</li>
+                        <li>MicroMG 9mm</li>
+                        <li>SwordFish</li>
+                        <li>Essex Model 07</li>
+                        <li>ABR 223</li>
+                        <li>S9 Stingray</li>
+                        <li>M16</li>
+                        <li>Hades</li>
+                        <li>VKM 750</li>
+                        <li>Zweihander</li>
+                        <li>Tigershark</li>
+                        <li>SDM</li>
+                        <li>Paladin HB50</li>
+                        <li>Outlaw</li>
+                        <li>Vendetta</li>
+                        <li>Locus</li>
+                        <li>Havelina AA50</li>
+                        <li>Mozu</li>
+                        <li>Rk 7 Garrison</li>
+                        <li>KAP 45</li>
+                        <li>SG12</li>
+                        <li>MOG 12</li>
+                        <li>Rampage</li>
+                        <li>Argus</li>
+                        <li>Hellion Salvo</li>
+                        <li>Ballistic Knife</li>
+                        <li>Reaver C86</li>
+                        <li>Ray Gun</li>
+                        <li>Ray Gun Mark II</li>
+                        <li><a href="#side-ee/coldwarremedy">Winter's Howl</a></li>
+                        <li>Monkey Bomb</li>
+                    </ul>
                 </div>
             </div>
+
+            <!-- EXTRAS -->
+            <div id="extras" class="tab-content">
+                <div class="info-box">
+                    <h2>Jumpscare EE</h2>
+                    <p>Jumpscares the player by showing Primis Richtofen and playing the most annoying screeching noise</p>
+                    <ul>
+                        <li>Aim at the light on a building in the left hand side of Groom Lake with a sniper rifle</li>
+                        <div class="image-container">
+                            <img src="images/classified-jumpscare.png" alt="Jumpscare Location" />
+                            <img src="images/classified-jumpscarerich.png" alt="Jumpscare Image" />
+                        </div>
+                    </ul>
+
+                    <h2 id="knockknock">Knock Knock EE</h2>
+                    <ol>
+                        <li>Interact with the door in the Main Offices after the dialogue ends several times until Samantha gets mad and spawns ~30 nova crawlers</li>
+                        <div class="image-container">
+                            <img src="images/classified-knockknock.png" alt="Knock Knock Door" />
+                        </div>
+                    </ol>
+
+                    <h2>Hidden Portrait EE</h2>
+                    <p>Purely Lore (no gameplay changes or buffs)</p>
+                    <ol>
+                        <li>Turn on <a href="#side-ee/power">Power</a> and purchase the <a href="#weapons/bowieknife">Bowie knife</a></li>
+                        <li>Return to the office level and melee 5 portraits to make them straight</li>
+                        <div class="image-container">
+                            <img src="images/classified-portrait1.png" alt="Portrait 1" />
+                            <img src="images/classified-portrait2.png" alt="Portrait 2" />
+                            <img src="images/classified-portrait3.png" alt="Portrait 3" />
+                            <img src="images/classified-portrait4.png" alt="Portrait 4" />
+                            <img src="images/classified-portrait5.png" alt="Portrait 5" />
+                        </div>
+                        <li>Activate Defcon 5, in the panic room interact with the blank portrait</li>
+                    </ol>
+
+                    <h2>Samantha Nursery Rhyme</h2>
+                    <p>Standing in a specific corner in the Morgue for roughly a minute will make Samantha recite a Nursery Rhyme</p>
+                    <div class="image-container">
+                        <img src="images/classified-corner.png" alt="Samantha Nursery Rhyme Corner" />
+                    </div>
+
+                    <h2>Samanthas Wisps</h2>
+                    <p>Each character can find a yellow wisp which can be shot to get a samantha dialogue the character</p>
+                    <ul>
+                        <li>Richtofen - Porcine Research (through window beside the courtain)</li>
+                        <div class="image-container">
+                            <img src="images/classified-wisprichtofen.png" alt="Richtofen - Porcine Research" />
+                        </div>
+                        <li>Dempsey - Weapon Testing (through window beside the courtain)</li>
+                        <div class="image-container">
+                            <img src="images/classified-wispdempsey.png" alt="Dempsey - Weapon Testing" />
+                        </div>
+                        <li>Takeo - South Laboratories (through window near teleporter 3)</li>
+                        <div class="image-container">
+                            <img src="images/classified-wisptakeo.png" alt="Takeo - South Laboratories" />
+                        </div>
+                        <li>Nikolai - Morgue (in the barrel holder in the office)</li>
+                        <div class="image-container">
+                            <img src="images/classified-wispnikolai.png" alt="Nikolai - Morgue" />
+                        </div>
+                    </ul>
+
+                    <h2>Red Phones</h2>
+                    <p>Activate 3 Red Phones around the map by shooting them with a Kill-O-Watt gun (depending on which phone was shot last determines the audio log played. can be done once per game)</p>
+                    <ul>
+                        <li>Side Passage on the table at the end of the hall (by FDR Plaque) (Stuhlinger)</li>
+                        <li>In the <a href="#side-ee/panicroom">panic room</a> on the table to your immediate left (Samantha)</li>
+                        <li>infront of the <a href="#side-ee/power">power switch</a> on the table with blue-print (Maxis)</li>
+                        <div class="image-container">
+                            <img src="images/classified-phone1.webp" alt="Stuhlinger" />
+                            <img src="images/classified-phone2.webp" alt="Samantha" />
+                            <img src="images/classified-phone3.webp" alt="Maxis" />
+                        </div>
+                    </ul>
+
+                    <h2>Film Reels</h2>
+                    <p>Five Film Reels can be found around the map and played on the Morgue projector individually</p>
+                    <ul>
+                        <li>Central filing on the desk</li>
+                        <div class="image-container">
+                            <img src="images/classified-reel1.png" alt="Film Reel 1 - Central Filing" />
+                        </div>
+                        <li>War Room Lower Level on the computer to the right of the teleporter</li>
+                        <div class="image-container">
+                            <img src="images/classified-reel2.png" alt="Film Reel 2 - War Room: Lower Level" />
+                        </div>
+                        <li>Server Room on the shelf to the left of the defcon sign</li>
+                        <div class="image-container">
+                            <img src="images/classified-reel3.png" alt="Film Reel 3 - Server Room" />
+                        </div>
+                        <li>Porcine Research on the edge of the sink</li>
+                        <div class="image-container">
+                            <img src="images/classified-reel4.png" alt="Film Reel 4 - Porcine Research" />
+                        </div>
+                        <li>Morgue on the table next to the sink</li>
+                        <div class="image-container">
+                            <img src="images/classified-reel5.png" alt="Film Reel 5 - Morgue" />
+                        </div>
+                    </ul>
+
+                    <h2>Punch Cards Audio</h2>
+                    <p>
+                        <span>There are 7 punch cards around the map that can be picked up.</span>
+                        <span>To play the tapes, you need the battery in weapon testing on the shelf</span>
+                        <span>You can insert the battery into a server in the Server Room and shocking it with Kill-O-Watt to activate it. Punch cards can now be inserted to play.</span>
+                    </p>
+                    <div class="image-container">
+                        <img src="images/classified-battery.webp" alt="Battery Location" />
+                        <img src="images/classified-server.webp" alt="Server Location" />
+                    </div>
+                    <ul>
+                        <li>Central Filing</li>
+                        <div class="image-container">
+                            <img src="images/classified-card1.webp" alt="Punch Card 1 - Central Filing" />
+                        </div>
+                        <li>Server Room</li>
+                        <div class="image-container">
+                            <img src="images/classified-card2.webp" alt="Punch Card 2 - Server Room" />
+                        </div>
+                        <li><a href="#side-ee/panicroom">Panic Room</a></li>
+                        <div class="image-container">
+                            <img src="images/classified-card3.webp" alt="Punch Card 3 - Panic Room" />
+                        </div>
+                        <li>Weapon Testing</li>
+                        <div class="image-container">
+                            <img src="images/classified-card4.webp" alt="Punch Card 4 - Weapon Testing" />
+                        </div>
+                        <li>War Room: Upper Level</li>
+                        <div class="image-container">
+                            <img src="images/classified-card5.webp" alt="Punch Card 5 - War Room: Upper Level" />
+                        </div>
+                        <li>Main Office</li>
+                        <div class="image-container">
+                            <img src="images/classified-card6.webp" alt="Punch Card 6 - Main Offices" />
+                        </div>
+                        <li><a href="#side-ee/pap">Groom Lake (PaP)</a></li>
+                        <div class="image-container">
+                            <img src="images/classified-card7.webp" alt="Punch Card 7 - Groom Lake (PaP)" />
+                        </div>
+                    </ul>
+
+                    <h2>Audio Reel</h2>
+                    <p>There are 5 radios around the map which can be interacted with to play dialogue</p>
+                    <ul>
+                        <li>Central Filing</li>
+                        <div class="image-container">
+                            <img src="images/classified-radio1.png" alt="Audio Reel 1 - Central Filing" />
+                        </div>
+                        <li>Main Offices</li>
+                        <div class="image-container">
+                            <img src="images/classified-radio2.png" alt="Audio Reel 2 - Main Offices" />
+                        </div>
+                        <li>War Room: Upper Level</li>
+                        <div class="image-container">
+                            <img src="images/classified-radio3.png" alt="Audio Reel 3 - War Room: Upper Level" />
+                        </div>
+                        <li>Server Room</li>
+                        <div class="image-container">
+                            <img src="images/classified-radio4.png" alt="Audio Reel 4 - Server Room" />
+                        </div>
+                        <li><a href="#side-ee/pap">Groom Lake (PaP)</a></li>
+                        <div class="image-container">
+                            <img src="images/classified-radio5.png" alt="Audio Reel 5 - Groom Lake (PaP)" />
+                        </div>
+                    </ul>
+
+                    <h2>Achievments</h2>
+                    <table>
+                        <tr>
+                            <th>Name</th>
+                            <th>Description</th>
+                            <th>Goal</th>
+                        </tr>
+                        <tr>
+                            <td><a href="#side-ee/coldwarremedy">Cold War Remedy</a></td>
+                            <td>In Classified, retrieve and equip the Project Skadi prototype</td>
+                            <td>Complete the <a href="#side-ee/coldwarremedy">Free Winter's Howl EE</a></td>
+                        </tr>
+                        <tr>
+                            <td>Breaking the Ice</td>
+                            <td>In Classified, shatter 115 zombies in a single game</td>
+                            <td>Easiest with the upgraded Winter's Howl (Freeze with Winter's Howl then shoot with gun)</td>
+                        </tr>
+                        <tr>
+                            <td>Shock Value</td>
+                            <td>In Classified, kill 115 zombies with electric traps in a single game</td>
+                            <td>Build the <a href="#buildables/electrotrap">Shock Trap</a> and alternating which trap you kill with</td>
+                        </tr>
+                        <tr>
+                            <td id="powerstruggle">Power Struggle</td>
+                            <td>In Classified, reach round 20 without turning on the power</td>
+                            <td>
+                                <span>Complete at the same time as <a href="#extras/thehighestoffice">The Highest Office</a></span>
+                                <span>Restart game until mystery box spawns in the mail office (can be completed on casual and with bots (not recommended))</span>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>Preemptive Strike</td>
+                            <td>In Classified, kill 50 Nova 6 Crawlers without letting them explode in a single game</td>
+                            <td>Get ~30 via the <a href="#extras/knockknock">Knock Knock EE</a> and kill the rest over time</td>
+                        </tr>
+                        <tr>
+                            <td id="thehighestoffice">The Highest Office</td>
+                            <td>In Classified, reach round 20 without using an elevator</td>
+                            <td>
+                                <span>Complete at the same time as <a href="#extras/powerstruggle">Power Struggle</a></span>
+                                <span>Restart game until mystery box spawns in the mail office (can be completed on casual and with bots (not recommended))</span>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>Crawl for Help</td>
+                            <td>In Classified, while in last stand use a teleporter and then get revived in a single game</td>
+                            <td>Can be done solo with a revive token</td>
+                        </tr>
+                        <tr>
+                            <td>Step on the Gas</td>
+                            <td>In Classified, kill 50 zombies while affected by Nova 6 Crawler gas in a single game</td>
+                            <td>shoot a nova crawler to make it explode and get zombies to walk through it before killing them</td>
+                        </tr>
+                        <tr>
+                            <td>Pent-up-agon</td>
+                            <td>In Classified, complete 5 consecutive rounds without leaving the war room elevator in a single game</td>
+                            <td>Get as many points as possible (<a href="#extras/knockknock">knock knock EE</a>) to get set-up. End a round while in the elevator then don't leave until the achievment pops</td>
+                        </tr>
+                        <tr>
+                            <td>Going Everywhere Fast</td>
+                            <td>In Classified, use a teleporter 7 times in less than a minute in a single game</td>
+                            <td>Open most of the map then run through every possible teleporter until the trophy pops</td>
+                        </tr>
+                    </table>
+                </div>
+            </div>
+
+            <!-- CREDITS -->
+            <div id="credits" class="tab-content">
+                <div class="info-box">
+                    <h2>CREDITS</h2>
+                    <p><a href="https://callofduty.fandom.com/wiki/Gauntlet_(Black_Ops_4)">Gauntlet</a> - Call of Duty Wiki (Fandom)</p>
+                    <p><a href="https://callofduty.fandom.com/wiki/Classified">Classified</a> - Call of Duty Wiki (Fandom)</p>
+                    <p><a href="https://www.youtube.com/watch?v=1eqkCaETMzo">CLASSIFIED Easter Eggs: 'This Jazz is Classified' (Intro Music) Guide (4K)</a> - JokerAlex 21 (Youtube)</p>
+                    <p><a href="https://www.reddit.com/r/CODZombies/wiki/classified/">Classified | Complete Map Breakdown</a> - u/The_BeeBat (r/CODZombies)</p>
+                    <p><a href="https://www.youtube.com/watch?v=31E8kCaeohU">ALL SIDE EASTER EGGS - CLASSIFIED - BLACK OPS 4 ZOMBIES</a> - ZombieSlayaMr (Youtube)</p>
+                    <p><a href="https://www.youtube.com/watch?v=58g_vg0r5r8">CLASSIFIED - RIOT SHIELD GUIDE IN 60 SECONDS (Black Ops 4 Zombies Tutorial)</a> - Fast Guides Glitch (Youtube)</p>
+                    <p><a href="https://www.youtube.com/watch?v=LnNDzHcv4Yw">CLASSIFIED - FREE WINTER'S HOWL GUIDE IN 3 MINUTES (Black Ops 4 Zombies Tutorial)</a> - Fast Guides Glitch (Youtube)</p>
+                    <p><a href="https://www.youtube.com/watch?v=yyiqYAC8kSc">CLASSIFIED - PACK A PUNCH GUIDE IN 90 SECONDS (Black Ops 4 Zombies Tutorial)</a> - Fast Guides Glitch (Youtube)</p>
+                    <p><a href="https://www.youtube.com/watch?v=zQqr-G00QiM">CLASSIFIED - COMPLETE TROPHY GUIDE (Black Ops 4 Zombies Tutorial)</a> - Fast Guides Glitch (Youtube)</p>
+                </div>
+            </div>
+        </div>
+
+        <div class="image-viewer">
+            <div class="image-title"></div>
+            <img src="" alt="Expanded image" />
         </div>
 
         <script src="scripts/map.js"></script>
