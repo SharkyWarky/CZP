@@ -1,0 +1,374 @@
+/* ------------------ RESET ------------------ */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* ------------------ BODY ------------------ */
+
+body {
+    font-family: Arial, sans-serif;
+    background-color: lightgrey;
+    color: white;
+}
+
+/* ------------------ MAP PAGE LAYOUT ------------------ */
+
+.map-page {
+    display: flex;
+    gap: 25px;
+    padding: 100px 40px 40px;
+    width: 100%;
+}
+
+/* ------------------ LEFT TAB SIDEBAR ------------------ */
+
+.tab-menu {
+    width: 220px;
+    min-width: 220px;
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    position: sticky;
+    top: 100px;
+    height: fit-content;
+}
+
+/* Tab buttons */
+
+.tab-button {
+    width: 100%;
+    padding: 12px 15px;
+    font-size: 15px;
+    text-align: left;
+    border: none;
+    border-radius: 6px;
+    background-color: #333;
+    color: white;
+    cursor: pointer;
+    transition: 0.3s ease;
+}
+
+/* Hover */
+
+.tab-button:hover {
+    background-color: #555;
+}
+
+/* Active tab */
+
+.tab-button.active {
+    background-color: #007bff;
+}
+
+/* Active + Hover */
+.tab-button.active:hover {
+    background-color: #005fcc; /* darker blue */
+}
+
+/* ------------------ CONTENT AREA ------------------ */
+
+.map-content {
+    flex: 1;
+    min-width: 0;
+    width: 100%;
+    min-height: calc(100vh - 100px);
+    display: flex;
+    flex-direction: column;
+}
+
+/* Page title */
+
+.page-title {
+    color: #222;
+    font-size: 32px;
+    margin-bottom: 25px;
+    border-bottom: 3px solid #333;
+    padding-bottom: 15px;
+}
+
+/* ------------------ TAB CONTENT ------------------ */
+
+.tab-content {
+    display: none;
+}
+
+.tab-content.active {
+    display: flex;
+    flex: 1;
+    flex-direction: column;
+    animation: fadeIn 0.2s ease;
+}
+
+/* Smooth transition */
+
+.tab-content.active {
+    animation: fadeIn 0.2s ease;
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateX(10px);
+    }
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+/* ------------------ INFORMATION BOXES ------------------ */
+
+.info-box {
+    background-color: #222;
+    border-radius: 10px;
+    padding-left: 45px;
+    padding-right: 45px;
+    padding-bottom: 30px;
+    padding-top: 5px;
+    margin-bottom: 25px;
+    width: 100%;
+    min-height: calc(100vh - 200px);
+    overflow-wrap: break-word;
+}
+
+.info-box h2 {
+    margin-top: 25px;
+    font-size: 26px;
+    margin-bottom: 2px;
+}
+
+.info-box h3 {
+    font-size: 20px;
+    margin-top: 25px;
+    margin-bottom: 2px;
+}
+
+.info-box p {
+    line-height: 1.6;
+}
+
+.info-box ul,
+.info-box ol {
+    margin-left: 30px;
+    margin-top: 5px;
+    margin-bottom: 15px;
+}
+
+.info-box li {
+    margin-bottom: 8px;
+}
+
+.info-box span:not(.anchor-glow) {
+    display: block;
+    line-height: 1.4;
+}
+
+/* ------------------ STEP CARDS ------------------ */
+
+.step {
+    background-color: #333;
+    padding: 15px;
+    border-radius: 8px;
+    margin-bottom: 15px;
+}
+
+.step-number {
+    color: #007bff;
+    font-weight: bold;
+}
+
+/* ------------------ LINKS ------------------ */
+
+.info-box a {
+    color: #4da3ff;
+    text-decoration: none;
+}
+
+.info-box a:hover {
+    text-decoration: underline;
+}
+
+/* ------------------ MOBILE ------------------ */
+
+@media (max-width: 900px) {
+    .map-page {
+        display: flex;
+        gap: 25px;
+        padding: 100px 40px 40px;
+        width: 100%;
+        min-height: calc(100vh - 100px);
+    }
+
+    .tab-menu {
+        width: 100%;
+        min-width: 0;
+        position: static;
+        flex-direction: row;
+        flex-wrap: wrap;
+    }
+
+    .tab-button {
+        width: auto;
+        flex: 1;
+        text-align: center;
+    }
+}
+
+@media (max-width: 600px) {
+    .page-title {
+        font-size: 24px;
+    }
+
+    .tab-button {
+        font-size: 13px;
+        padding: 10px;
+    }
+
+    .info-box {
+        padding: 15px;
+    }
+}
+/* ------------------ INFO TABLES ------------------ */
+.info-box table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 10px;
+    margin-bottom: 10px;
+}
+
+.info-box th {
+    background-color: #333;
+    color: white;
+    padding: 12px;
+    text-align: left;
+}
+
+.info-box td {
+    padding: 12px;
+    border-bottom: 1px solid #555;
+}
+
+/* ------------------ IMAGE GALLERY ------------------ */
+
+.image-container {
+    display: flex;
+    flex-wrap: wrap;
+    margin-top: 10px;
+    margin-bottom: 12px;
+    gap: 15px;
+    justify-content: flex-start;
+    align-items: flex-start;
+}
+
+.image-container > img {
+    width: 30%;
+    height: auto;
+    object-fit: cover;
+    border-radius: 10px;
+    cursor: pointer;
+    transition: 0.3s ease;
+}
+
+.image-container img:hover {
+    transform: scale(1.03);
+}
+
+/* ------------------ IMAGE LIGHTBOX ------------------ */
+
+.image-viewer {
+    display: none;
+    position: fixed;
+    z-index: 2000;
+    inset: 0;
+    width: 100vw;
+    height: 100vh;
+    background: rgba(0, 0, 0, 0.9);
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+    cursor: zoom-out;
+}
+
+.image-viewer.active {
+    display: flex;
+}
+
+.image-viewer img {
+    width: 80vw;
+    height: 80vh;
+    object-fit: contain;
+    border-radius: 10px;
+}
+
+/* ------------------ IMAGE TITLE ------------------ */
+
+.image-title {
+    position: absolute;
+    top: 30px;
+    left: 50%;
+    transform: translateX(-50%);
+    color: white;
+    font-size: 28px;
+    font-weight: bold;
+    text-align: center;
+    background: rgba(0, 0, 0, 0.6);
+    padding: 10px 20px;
+    border-radius: 8px;
+    max-width: 90vw;
+    overflow-wrap: break-word;
+}
+
+/* ------------------ YOUTUBE VIDEOS ------------------ */
+
+.video-container {
+    width: 36%;
+    aspect-ratio: 16 / 9;
+    margin-top: 20px;
+    margin-bottom: 20px;
+}
+
+.video-container iframe {
+    width: 100%;
+    height: 100%;
+    border-radius: 10px;
+    border: none;
+}
+
+/* ------------------ JUMPING ANCHORS ------------------ */
+
+/* Works for h2, h3, p, div, etc. */
+[id] {
+    scroll-margin-top: 100px;
+}
+
+/* The text wrapper */
+.anchor-glow {
+    display: inline-block;
+    border-radius: 8px;
+}
+
+/* Highlight after jumping */
+.anchor-highlight {
+    animation: anchorHighlight 2s ease;
+}
+
+@keyframes anchorHighlight {
+    0% {
+        background-color: transparent;
+        box-shadow: 0 0 0 0 rgba(0, 123, 255, 0);
+    }
+
+    20%,
+    80% {
+        background-color: rgba(0, 123, 255, 0.6);
+        box-shadow: 0 0 0 6px rgba(0, 123, 255, 0.6);
+    }
+
+    100% {
+        background-color: transparent;
+        box-shadow: 0 0 0 0 rgba(0, 123, 255, 0);
+    }
+}
