@@ -13,6 +13,7 @@ This is just a side project which compiles information about zombies maps form a
 
 ### Black Ops 4
 - IX
+- Classified
 
 ### Infinite Warfare
 - Zombies in Spaceland
