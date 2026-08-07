@@ -38,7 +38,6 @@ function updatePage() {
         // Change browser title
         document.title = `CZP - ${activeLink.textContent}`;
     }
-    updateVersions();
 }
 
 // When clicking a link, update URL hash
