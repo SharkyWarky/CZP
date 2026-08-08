@@ -14,6 +14,7 @@ This is just a side project which compiles information about zombies maps form a
 ### Black Ops 4
 - IX
 - Classified
+- Blood of the Dead
 
 ### Infinite Warfare
 - Zombies in Spaceland
