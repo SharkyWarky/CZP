@@ -11,6 +11,7 @@
         <link rel="stylesheet" href="css\map.css" />
         <link rel="icon" type="image/png" href="images/icon.png" />
     </head>
+
     <body>
         <header class="top-bar">
             <div class="logo">Comprehensive Zombies Project</div>
@@ -22,12 +23,13 @@
                 <a href="index.html#home">Home</a>
 
                 <div class="dropdown">
-                    <button class="dropbtn">Games</button>
+                    <button class="dropbtn active">Games</button>
                     <div class="dropdown-content">
+                        <!----- MAKE CURRENT GAME ACTIVE ----->
                         <a href="index.html#bo1">Black Ops</a>
                         <a href="index.html#bo2">Black Ops II</a>
                         <a href="index.html#bo3">Black Ops III</a>
-                        <a href="index.html#bo4">Black Ops 4</a>
+                        <a href="index.html#bo4" class="active">Black Ops 4</a>
                         <a href="index.html#bocw">Black Ops Cold War</a>
                         <a href="index.html#bo6">Black Ops 6</a>
                         <a href="index.html#bo7">Black Ops 7</a>
@@ -48,81 +50,816 @@
         <div class="map-page">
             <div class="page-header">
                 <div class="tab-menu">
+                    <!----- ADD CLASS "disabled" TO UNUSED TABS ----->
                     <button class="tab-button active" data-tab="overview">Overview</button>
                     <button class="tab-button" data-tab="main-ee">Main EE</button>
+                    <button class="tab-button" data-tab="side-ee">Side EEs</button>
                     <button class="tab-button" data-tab="music-ee">Music EE</button>
                     <button class="tab-button" data-tab="wonder-weapon">Wonder Weapon</button>
-                    <button class="tab-button" data-tab="side-ee">Side EEs</button>
                     <button class="tab-button" data-tab="buildables">Buildables</button>
-                    <button class="tab-button" data-tab="perks">Perks</button>
                     <button class="tab-button" data-tab="weapons">Weapons</button>
+                    <button class="tab-button" data-tab="gauntlet">Gauntlet</button>
+                    <button class="tab-button" data-tab="perks">Perks</button>
+                    <button class="tab-button" data-tab="extras">Extras</button>
+                    <button class="tab-button" data-tab="credits">Credits</button>
                 </div>
             </div>
 
             <!--------------------------------- OVERVIEW --------------------------------->
             <div id="overview" class="tab-content active">
                 <div class="info-box">
-                    <h2>Lorem ipsum</h2>
-                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum..</p>
-                    <h3>Lorem ipsum</h3>
-                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
-                    <ul>
-                        <li>Lorem ipsum</li>
-                        <li>Lorem ipsum</li>
-                        <li>Lorem ipsum</li>
-                        <li>Lorem ipsum</li>
-                    </ul>
+                    <h2>Overview</h2>
+                    <p>
+                        <span>Blood of the Dead, as a follow-up to Mob of the Dead, retains most of the original maps locations and gameplay features while including multiple additions and twists of its own</span>
+                        <br />
+                        <span>Blood of the Dead includes most of the original areas from Mob of the Dead, with the only substantial cut being the Golden Gate Bridge. Certain areas have also been modified, such as only half of the roof being accessible, a new entrance to the Mob of the Dead starting room being added, and a few of the locations for aircraft parts on Mob of the Dead are either inaccessible or heavily changed. More notably, Blood of the Dead includes a number of brand new areas such as Richtofen's lab, New Industries, the Power House, the Warden's House, and the dangerous Catwalk and Recreation Yard respectively. As a result of these changes, most gameplay elements like the Pack-a-Punch Machine, Perk Machines, Cerberus, and buildable parts have had their locations altered</span>
+                        <br />
+                        <span>Blood of the Dead features the Primis crew - "Tank" Dempsey, Nikolai Belinksi, Takeo Masaki, and Edward Richtofen - as the four playable characters, replacing Albert "Weasel" Arlington, Finn O'Leary, Salvatore "Sal" DeLuca, and Billy Handsome. Brutus also makes a return, this time as the main antagonist of the map, as the Warden. Hellhounds are also present on the map, originally only being available in the Grief version of Mob of the Dead, Cell Block</span>
+                        <br />
+                        <span>Gameplay wise a number of items and equipment from Mob of the Dead return and have been expanded on. The Blundergat and it's Acidgat upgrade are both present, as well as the brand new Magmagat. The Hell's Retriever, as well as it's Hell's Redeemer upgrade, returns following a short quest. The Golden Spork can be obtained, with two new upgrades available, the Golden Scalpel and the Golden Spork Knife. The Acid Trap and Saw Trap both return, though the Tower Trap is collapsed and unusable. The most notable change is that Afterlife is no longer a gameplay mechanic, though elements of it have been wrapped into the new Spectral Shield. Specifically, the Spectral Shield allows players to still power the Voltmeters around the map, to access various utilities and progress quests</span>
+                        <br />
+                        <span>Blood of the Deads plot finds the Primis crew trapped in the Alcatraz Pocket Dimension, following Albert Arlington breaking the cycle of the multiverse. As a result, they must find a way to escape in the new main quest, Most Escape Alive</span>
+                    </p>
                 </div>
             </div>
 
             <!-- MAIN EASTER EGG -->
             <div id="main-ee" class="tab-content">
                 <div class="info-box">
-                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
-                </div>
-            </div>
+                    <h2>Prerequisites</h2>
+                    <ul>
+                        <li><a href="#buildables/shield">Shield</a></li>
+                        <li><a href="#side-ee/power">Power On</a></li>
+                        <li><a href="#side-ee/pap">PaP</a></li>
+                        <li><a href="#wonder-weapon/hellsretriever">Hell's Retriever</a> (for step 6)</li>
+                        <li><a href="#wonder-weapon/spoon">Silver Spoon</a> (for step 1)</li>
+                        <li><a href="#side-ee/freemonkey">Monkey Bombs</a> (for step 3 and recommended after step 6 and for boss fight)</li>
+                    </ul>
 
-            <!-- MUSIC EE -->
-            <div id="music-ee" class="tab-content">
-                <div class="info-box">
-                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
-                </div>
-            </div>
+                    <h2>Recommended Setup</h2>
+                    <ul>
+                        <li><b>Elixirs</b></li>
+                        <ul>
+                            <li>Undead Man Walking</li>
+                            <li>Temporal Gift</li>
+                        </ul>
+                        <li><b>During the Game</b></li>
+                        <ul>
+                            <li><a href="#side-ee/shieldupgrade">Shield Upgrade</a></li>
+                            <li>PaP <a href="#wonder-weapon/magmagat">Magmagat</a></li>
+                            <li><a href="#wonder-weapon/goldspork">Golden Spork</a></li>
+                        </ul>
+                    </ul>
 
-            <!-- WONDER WEAPON -->
-            <div id="wonder-weapon" class="tab-content">
-                <div class="info-box">
-                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+                    <h2>Main EE</h2>
+                    <p>Rewards:</p>
+                    <ol>
+                        <li>Knife the wall at the top of the stairs in the Warden's House with the silver spoon to scratch it.</li>
+                        <li>Go into the Citadel Tunnels and input the number 666 by shocking the number swith a shield blast and interacting with them (this will force a Warden Spawn)</li>
+                        <li>Lead the Warden to the scratched wall using a monkey bomb (when he slams on the monkey, the wall should break)</li>
+                        <li>Upon entering the room, pick up the red orb on the corner of the table to your immediate left and interact with the switch next to the electric chair</li>
+                        <li>Return to spawn and interact with the map on the wall to place the orb. Now interact with the kronorium on the floor behind you</li>
+                        <li>
+                            <span>Find the bird somewhere around the map by listening for the squack when activating afterlife vision. When you find the bird, shoot it with a shield blast.</span>
+                            <span><b>Must repeat 4 times on 4 seperate rounds (1 bird per round)</b></span>
+                            <span>To get the final bird, (you won't be able to see it) you'll need to look for a blue glint and hear the warden crying which indicates you're looking directly at it</span>
+                            <span>Input the number 872 into the number pad and pick up the zombie blood power up.</span>
+                            <span>Looking through your shield at the spot you found ebfore should now show the bird, throw you're hell's retriever at it to grab it. Pick up the kronorium that is infront of the location.</span>
+                        </li>
+                        <li>Head back to the Warden's Ritual Chamber and give the skeleton in the chair the kronorium by interacting with him.</li>
+                        <li><b>Challenges</b></li>
+                        <ol>
+                            <li>Enter Afterlife vision and look at the open book to see 3 numbers. input these into the number pad in the Citadel Tunnels.</li>
+                            <li>Look at where the lighthouse shines its beam and head there. looking though afterlife vision at the location will reveal a red portal. shield blast it to open it and begin the challenge.</li>
+                            <li>Return to the kronorium after completing the challenge and get a new code. repeat 5 times.</li>
+                            <table>
+                                <tr>
+                                    <th>Challenge Location</th>
+                                    <th>Challenge Steps</th>
+                                </tr>
+                                <tr>
+                                    <td>Docks (Morse Code)</td>
+                                    <td>
+                                        <ol>
+                                            <li>
+                                                <span>Look around the map (in the water) for 3 bouys which will each give you a number (view code through afterlife).</span>
+                                                <span>add all 3 numbers together and type that number as morse code into Salys Port morse code thing. (3 seconds for dash, &lt;1 second for dot)</span>
+                                            </li>
+                                            <ul>
+                                                <li>off the left edge of the platform at the top gondola</li>
+                                                <li>Just outside of the end of the Catwalk</li>
+                                                <li>From a window in the spawn building</li>
+                                            </ul>
+                                            <li>
+                                                <span>Head to the infirmary and kill a zombie close to the exit to Cell Blocks then look for a ghost using afterlife, shield blast him and interact to start the escort</span>
+                                                <span>Fill the ghost with zombie sould to keep him mocing as you escort him down to the red portal at Docks. (use the gondola)</span>
+                                            </li>
+                                            <li>Pick up the red orb on the ground</li>
+                                        </ol>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>Michigan Avenue (lighthouse beam will not be pointing anywwhere)</td>
+                                    <td>
+                                        <ol>
+                                            <li>Get a kill in the cafeteria to spawn a ghost. Use afterlife and shield blast him to start the escort. protect him from zombie attacks as he heads to the portal (you are able to damage the ghost)</li>
+                                            <li>grab the orb infront of the portal</li>
+                                        </ol>
+                                    </td>
+                                </tr>
+
+                                <tr>
+                                    <td>Showers (Banjo)</td>
+                                    <td>
+                                        <ol>
+                                            <li>A ghost will appear next to the portal holding a banjo, grab it to start the step.</li>
+                                            <li>Find the blue ring and get kills while standing inside it (will take damage when outside the ring or if you have the banjo for too long)</li>
+                                            <li>The ring will sometimes move locations, jsut move with it. WHen complete, you will hear a banjo noise. yo ucan then return the banjo and collect the red ball.</li>
+                                        </ol>
+                                    </td>
+                                </tr>
+
+                                <tr>
+                                    <td>Power House (Simon Says)</td>
+                                    <td>
+                                        <ol>
+                                            <li>Head down to Building 64 and interact with the sparking generator to begin simon says.</li>
+                                            <li>You will see lights flash on and off infront of panels. You must wait for the pattern to finish before repeating it. (from 1 panel to 5)</li>
+                                            <div class="image-container">
+                                                <img src="images/blood-of-the-dead-simonsays.png" alt="Simon Says PAnel Locations" />
+                                            </div>
+                                            <li>When finished, 3 panels lights will remain lit. write down what their symbols are. Grab the punchcard on the shelf between 2 doorways.</li>
+                                            <li>Go to the second floor of spawn and place the punchcard into hte machine in the corner. several screens will start displaying the symbols, interact with the 3 from the generators and write down the new symbol they turned into.</li>
+                                            <li>Go back to the Power House and figure out which levers your symbols are attached to. Spirit blast the ghost when he is on his way to each of your symbols.</li>
+                                            <li>grab the red orb infront of the last lever.</li>
+                                        </ol>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>New Industries (ensure you have a full shield blast before starting)</td>
+                                    <td>
+                                        <ol>
+                                            <li>Head to D-Block and get a zombie kill. Enter afterlife to see the ghost. shoot him with a shield blast to activate him</li>
+                                            <li>Drain him with your shield key (no more lightning effect after 7 seconds) then repeat the process of shield blasting and draining 5 times total.</li>
+                                            <li>When the ghost has chenged posture and speed, head into the New Industries building and interact with the trap once the ghost gets close. If done correctly he will drop the red orb you need.</li>
+                                        </ol>
+                                    </td>
+                                </tr>
+                            </table>
+                            <li>Once all challenges has been complete, head back to spawn and interact with the map once more to place the rest of the red orbs. (Now get ready for the boss fight (including a shield blast))</li>
+                            <li>Once ready, head back into the Warden's Ritual Chamber and interact with the kronorium. (Cutscene)</li>
+                            <li>Leave teh cell and grab a shield (if you dont have one already) and grab the sack on the floor at the doorway to get your weapons back. Follow the bird and kill the Wardens and Dogs around the Prison.</li>
+                            <li>When you reach the point where the Warden gets abducted, he will drop the final red orb which you must pick up and place on the map.</li>
+                            <li>Go up the now open staircase and interact with the broekn lights to enter the boss fight.</li>
+                        </ol>
+                    </ol>
+
+                    <h2>Boss Fight</h2>
+                    <ul>
+                        <li>Waves of zombies, dogs, and wardens will spawn</li>
+                        <li>Max ammo and carpenter will spawn once everything has been killed</li>
+                        <li>Once this is done, head to wher ethe warden is and shoot the 3 glowing orbs around him until they dissapear Then shield blast the glowing white thing above the center 2 times.</li>
+                        <li>After repeating this several times, richtofen will eventually need to ender the Dark MEchaninsm in the center of the arena</li>
+                        <li>After RIchtofen has returned and kileld everything, the Warden will finally attack the players. You must kill him.</li>
+                    </ul>
                 </div>
             </div>
 
             <!-- SIDE EASTER EGGS -->
             <div id="side-ee" class="tab-content">
                 <div class="info-box">
-                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+                    <h2 id="power">Power</h2>
+                    <p>
+                        <span>There are 2 power switches on the map, each powering a specific section of the island.</span>
+                        <span>The switches are located in the Power House and Building 64 (will spawn a Warden which drops the Warden's Key)</span>
+                    </p>
+
+                    <h2 id="pap">PaP</h2>
+                    <p>Shock the box ontop of the roof with a shield blast</p>
+
+                    <h2 id="freemonkey">Free Monkey Bombs</h2>
+                    <p>Can only be picked up once throughotu the game. then monkeys must be found in the <a href="#weapons/mysterybox">Mystery Box</a></p>
+                    <ol>
+                        <li>Use your Specialist Weapon until it has reached Level 2</li>
+                        <li>Navigate to the statue Monkey Bomb located outside the map in C-D Street. Kill Zombies next to the statue using your Specialist Weapon to fill the monkey's hat with souls</li>
+                        <li>Once enough souls have been collected the monkey's hat will glow red. Shoot the monkey which will cause it to levitate and disappear</li>
+                        <li>Finally, navigate to Richtofen's Laboratory and obtain the Monkey Bombs via the walnut teleporter pad located on a table</li>
+                    </ol>
+
+                    <h2 id="shieldupgrade">Shield Upgrade</h2>
+                    <p>The Shield can now withstand an extra 200 damage and holds an extra 2 Spirit Blasts (PER PERSON UPGRADE)</p>
+                    <ol>
+                        <li>Obtain the <a href="#buildables/shield">Spectral Shield</a> and <a href="#wonder-weapon/hellsretriever">Hell's Retriever</a></li>
+                        <li>Locate and use a <a href="#weapons/mysterybox">Mystery Box</a> until a Lock appears</li>
+                        <li>Quickly equip the Spectral Shield and absorb energy from the lock using the Shield's Key attack until the keyhole is blue</li>
+                        <li>Throw the Hell's Retriever at the lock to collect it. (Multiple players can throw the Retriever at it all at once to upgrade the shield)</li>
+                    </ol>
+                </div>
+            </div>
+
+            <!-- MUSIC EE -->
+            <div id="music-ee" class="tab-content">
+                <div class="info-box">
+                    <h2>Where Are We Going</h2>
+                    <ol>
+                        <li>Obtain the <a href="#buildables/shield">Spectral Shield</a> and at least 1 Spirit Blast</li>
+                        <li>Navigate to the Citadel Tunnels, Spirit Blast the number pad to activate it</li>
+                        <li>By holding interact, input 115 into the number pad</li>
+                    </ol>
+                    <h2>Mob of the Dead Shower Lockdown Theme</h2>
+                    <ol>
+                        <li>Shoot the power switch to the Washing Machine in Showers area 3 times (after it turns off again)</li>
+                    </ol>
+                </div>
+            </div>
+
+            <!-- WONDER WEAPON -->
+            <div id="wonder-weapon" class="tab-content">
+                <div class="info-box">
+                    <h2 id="blundergat">Blundergat</h2>
+                    <p>Can be obtained either from the box or by doing the following Free Blundergat EE</p>
+                    <ol>
+                        <li>Obtain the <a href="#wonder-weapon/hellsretriever">Hell's Retriever</a></li>
+                        <li>Collect 5 Invisible Skulls (visible in afterlife) around the map by throwing the Hell's Retriever</li>
+                        <ul>
+                            <li>Eagle Plaza on the pole to the left</li>
+                            <li>C-D Street Cell inside the toilet</li>
+                            <li>West Grounds in the middle area of the stairs</li>
+                            <li>Docks on one of the far dock poles</li>
+                            <li>Roof on box behind PaP Location</li>
+                        </ul>
+                        <li>Navigate to the Warden's Office and pick up the Blundergat sitting on the table</li>
+                    </ol>
+
+                    <h2 id="acidgat">Acidgat</h2>
+                    <ol>
+                        <li>Obtain the <a href="#wonder-weapon/blundergat">Blundergat</a> and <a href="#side-ee/power">Warden's Key</a></li>
+                        <li>Obtain the case piece located in the Transverse Tunnel near wallbuy on floor</li>
+                        <li>Unlock the door and obtain the motor piece located in the Sally Port on teh tbale</li>
+                        <li>Unlock the cage and obtain the acid bottle piece located in the Infirmary cupboard</li>
+                        <li>Navigate to a <a href="#buildables/tables">building table</a> and craft the Acidgat Kit. Activate the kit to place the Blundergat within, after a few seconds the Acidgat can be obtained from the kit</li>
+                    </ol>
+
+                    <h2 id="magmagat">Magmagat</h2>
+                    <p>Once complete, anyone in the game can place their Blundergat into the machine and upgrade it</p>
+                    <ul>
+                        <li>Obtain the <a href="#wonder-weapon/blundergat">Blundergat</a></li>
+                        <li>Navigate to the Warden's House, place the Blundergat in the fireplace</li>
+                        <li>While remaining inside of the Warden's House, kill Zombies which will then drop Essence, collect the Essence by walking over it. Once all 3 skulls above the fireplace are on fire, activate the skulls to deposit the collected Essence. Once complete the fire within the fireplace will turn blue</li>
+                        <li>Obtain the Tempered Blundergat from the fireplace. Without firing the Tempered Blundergat, quickly navigate to the flaming blue barrel in Eagle Plaza, stand near the barrel for a few seconds to transfer its fire to your Tempered Blundergat. Continue to do this for the rest of the Barrels.</li>
+                        <ul>
+                            <li>Michigan Avenue</li>
+                            <li>Cell Block Entrance</li>
+                            <li>Recreation Yard</li>
+                            <li>West Grounds</li>
+                        </ul>
+                        <li>Quickly navigate to New Industries and place the Tempered Blundergat into the press. Spirits will spawn and begin to forge the Magmagat. The Magmagat is now obtainable via the press</li>
+                    </ul>
+
+                    <h2 id="hellsretriever">Hell's Retriever</h2>
+                    <ol>
+                        <li>Kill zombies around the all of the hellhounds on the walls around the map until they go away</li>
+                        <ul>
+                            <li>New Industries</li>
+                            <li>Cell Block 2nd Floor</li>
+                            <li>Eagle Plaza</li>
+                        </ul>
+                        <li>Take the fast travel from the Warden's House to the Showers (or vice versa). During this travel the Hell's Retriever is located on a rock, obtain it by holding the activate button once the player is nearing it</li>
+                    </ol>
+
+                    <h2 id="hellsredeemer">Hell's Redeemer</h2>
+                    <ol>
+                        <li>Obtain the <a href="#windoer-weapon/hellsretriever">Hell's Retriever</a> and <a href="#buildables/shield">Spectral Shield</a></li>
+                        <li>Navigate to the Recreation Yard and stand near to the flaming barrel. Kill Zombies using the Hell's Retriever, if the player is in the correct area of the Recreation Yard the Hell's Retriever will glow blue when being thrown. Once you have killed enough zombies with the blue tomahawk a howl can be heard and the Hell's Retriever will no longer glow blue</li>
+                        <li>Locate a blue hellhound mark around the map using the Spectral Shield vision. Throw the Hell's Retriever at the hellhound mark, if done correctly the mark will disappear and the Hell's Retriever will be taken out of the player's inventory. <a href="https://imgur.com/a/ULt84ux">Locations</a></li>
+                        <li>Progress until a Hellhound only round. Locate a ghost dog walking anywhere around the map as indicated by its paw prints, the dog is entirely visible when using the Spectral Shield's vision. Once the player is close to the ghost dog, Spirit Blast the dog using the Spectral Shield</li>
+                        <li>Take the fast travel from the Warden's House to the Showers (or vice versa). During this travel the Hell's Redeemer is located on a rock, obtain it by holding the activate button once the player is nearing it</li>
+                    </ol>
+
+                    <h2 id="spoon">Silver Spoon</h2>
+                    <ol>
+                        <li>Obtain the <a href="#buildables/shield">Spectral Shield</a></li>
+                        <li>Navigate to the Warden‘s Office. Using the Spectral Shield's vision, locate and note the 3 numbers on the pillars</li>
+                        <li>Navigate to the number pad in the Citadel Tunnels, activate the pad by Spirit Blasting with the Spectral Shield. Enter the previously-obtained numbers. If done correctly, the elevator will drop</li>
+                        <li>Navigate to the voltmeter at the Docks, Spirit Blast it to activate the crane. Once the crane has positioned itself over the Docks, throw a Hell's Retriever at the skeleton within the net, cutting off its arm</li>
+                        <li>The Spoon will fall and be available to equip on the crate below the crane</li>
+                    </ol>
+
+                    <h2 id="goldspork">Golden Spork</h2>
+                    <ol>
+                        <li>Navigate to the bathtub located in the Infirmary. Next, place the Spoon in the tub by interacting with it</li>
+                        <li>Navigate to the Roof, begin to kill Zombies using the Acidgat or Magmagat. Blood will begin to drip in the tub from the previous step</li>
+                        <li>Once the tub has filled all the way, activate it to drain it</li>
+                        <li>Locate the water tower near the Catwalk, if all has been done correctly the water tower will be leaking blood. Shoot all of the yellow supports off the Water Tower in order to make the Tower fall down. Once the Water Tower collapses, throw the <a href="#windoer-weapon/hellsretriever">Hell's Retriever</a> at a <a href="https://imgur.com/ZL8M5tF">branch</a> in front of the tower to collect and equip the Golden Spork</li>
+                    </ol>
+
+                    <h2 id="goldscalpel">Golden Scalpel</h2>
+                    <ol>
+                        <li>Navigate near the tub of blood in New Industries and get ~100 melee kills nearby until the tub changes to a dark red colour. Once the colour changes, interact with the tub to place the golden spoon in the tub</li>
+                        <li>Next you will need to throw the Hell's Redeemer at 3 coloured rocks</li>
+                        <ul>
+                            <li>Green - D-Block / MOTD original spawn - outside the barricade</li>
+                            <li>Blue - Docks / Shield Blast the Electric Box - inside the net</li>
+                            <li>Red - Eagle Plaza / Next to the Warden's House - on the corner of this roof</li>
+                        </ul>
+                        <li>Once all 3 have been collected place them at their corresponding traps and get 100 kills using the traps</li>
+                        <ul>
+                            <li>Green - Acid Trap - Cafeteria</li>
+                            <li>Blue - Fan Trap - Warden's Office</li>
+                            <li>Red - Spin Trap - New Industries</li>
+                        </ul>
+                        <li>Once you've got 100 kills at each location the stones will become shiny gems and you can interact with them to pick them up</li>
+                        <li>Use the Cafeteria Fast Travel towards New Industries and as soon as you arrive, turn around and throw your Hell's Redeemer here. If done correctly, a golden nugget should be left on the floor behind you. Pick it up and take it to the forge to create the Golden Scalpel</li>
+                    </ol>
+
+                    <h2 id="goldsporkknife">Golden Spork-Knife</h2>
+                    <ol>
+                        <li>Head to the New Industries and interact with the blood tub for the skeleton hand to take the Golden Scalpel</li>
+                        <li>Take a Brutus (you can use code 666 to get one earlier, can only be used once per game) onto the Catwalk and melee kill him infront of the sign with a knife in it (can use dying wish + etherial razer to make him die faster). Step is done correctly when the prison number under the knfe on the sign has fallen.</li>
+                        <li>Return to the tub and interact with it to recieve the Golden Spork-Knife</li>
+                    </ol>
                 </div>
             </div>
 
             <!-- BUILDABLES -->
             <div id="buildables" class="tab-content">
                 <div class="info-box">
-                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+                    <h3 id="tables">Table Locations</h3>
+                    <ul>
+                        <li>Cell Block 3rd Floor</li>
+                        <li>Docks</li>
+                        <li>New Industries</li>
+                    </ul>
+
+                    <h2 id="shield">Shield</h2>
+                    <ul>
+                        <li><b>Essence</b> (on a power-box that's glowing blue)</li>
+                        <ul>
+                            <li>Michigan Avenue under sign</li>
+                            <li>Library next to D-Block door</li>
+                            <li>Times Square in dead end near wallbuy</li>
+                        </ul>
+                        <li><b>Door</b></li>
+                        <ul>
+                            <li>China Alley near stairs barrier</li>
+                            <li>Citadel Tunnels near pile of sulls to the left after stairs</li>
+                            <li>Citadel Tunnels behind wall on the way down (big spiral)</li>
+                        </ul>
+                        <li><b>Key</b> - Dropped by the first warden killed.</li>
+                    </ul>
                 </div>
             </div>
 
             <!-- PERKS -->
             <div id="perks" class="tab-content">
                 <div class="info-box">
-                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+                    <h3>Perk Brew</h3>
+                    <p>Power House</p>
+                    <h3>Perk Cola</h3>
+                    <p>Docks Bridge</p>
+                    <h3>Perk Soda</h3>
+                    <p>Infirmary</p>
+                    <h3>Perk Tonic</h3>
+                    <p>Warden's Office</p>
+                </div>
+            </div>
+
+            <!-- GAUNTLET -->
+            <div id="gauntlet" class="tab-content">
+                <div class="info-box">
+                    <h2>Hellcatraz</h2>
+                    <table>
+                        <tr>
+                            <th>Round</th>
+                            <th>Name</th>
+                            <th>Description</th>
+                        </tr>
+                        <tr>
+                            <td>1</td>
+                            <td>Sacred Ground</td>
+                            <td>Do not allow any Zombies to enter Richtofen's lab.</td>
+                        </tr>
+                        <tr>
+                            <td>2</td>
+                            <td>Jump Shot</td>
+                            <td>Player can only attack while jumping.</td>
+                        </tr>
+                        <tr>
+                            <td>3</td>
+                            <td>WTF</td>
+                            <td>Movement controls are reversed.</td>
+                        </tr>
+                        <tr>
+                            <td>4</td>
+                            <td>Load of Nonsense</td>
+                            <td>Weapons must be reloaded after every shot if ammo is available.</td>
+                        </tr>
+                        <tr>
+                            <td>5</td>
+                            <td>Fish In A Barrel</td>
+                            <td>Use the Swordfish only.</td>
+                        </tr>
+                        <tr>
+                            <td>6</td>
+                            <td>Dead Eye</td>
+                            <td>All weapons replaced - SDM ADS only.</td>
+                        </tr>
+                        <tr>
+                            <td>7</td>
+                            <td>Shut Your Trap</td>
+                            <td>Kill Zombies with Traps only.</td>
+                        </tr>
+                        <tr>
+                            <td>8</td>
+                            <td>A.iming D.oes S.ting</td>
+                            <td>ADS causes damage.</td>
+                        </tr>
+                        <tr>
+                            <td>9</td>
+                            <td>Helluva Appetite</td>
+                            <td>At least one player must possess Hell's Retriever at the end of the round.</td>
+                        </tr>
+                        <tr>
+                            <td>10</td>
+                            <td>Rooftop Party</td>
+                            <td>Defend the roof.</td>
+                        </tr>
+                        <tr>
+                            <td>11</td>
+                            <td>Zombies Noir</td>
+                            <td>It's black and white.</td>
+                        </tr>
+                        <tr>
+                            <td>12</td>
+                            <td>Brain Soup</td>
+                            <td>Get at least 20 Spoon kills by round end. Unrelated weapons are locked out.</td>
+                        </tr>
+                        <tr>
+                            <td>13</td>
+                            <td>Snooze You Lose</td>
+                            <td>Sprint to avoid point drain. Slower movement drains points faster.</td>
+                        </tr>
+                        <tr>
+                            <td>14</td>
+                            <td>Total RePack</td>
+                            <td>Possess a fully packed weapon at the end of the round.</td>
+                        </tr>
+                        <tr>
+                            <td>15</td>
+                            <td>Power Through</td>
+                            <td>Defend the Power House</td>
+                        </tr>
+                        <tr>
+                            <td>16</td>
+                            <td>Shoot Mo'Zombies</td>
+                            <td>Use the Mozu only.</td>
+                        </tr>
+                        <tr>
+                            <td>17</td>
+                            <td>Oh My Gat!</td>
+                            <td>Forge the Magmagat during the round.</td>
+                        </tr>
+                        <tr>
+                            <td>18</td>
+                            <td>Sacrificial Packed</td>
+                            <td>Sacrifice 2 weapons to the Pack-A-Punch Machine.</td>
+                        </tr>
+                        <tr>
+                            <td>19</td>
+                            <td>Japanese Horror</td>
+                            <td>Survive the Terror.</td>
+                        </tr>
+                        <tr>
+                            <td>20</td>
+                            <td>Shower Showdown</td>
+                            <td>Defend the Showers.</td>
+                        </tr>
+                        <tr>
+                            <td>21</td>
+                            <td>Prone To Regeneration</td>
+                            <td>Health regeneration only works while prone.</td>
+                        </tr>
+                        <tr>
+                            <td>22</td>
+                            <td>Pointless</td>
+                            <td>Points are reset to zero.</td>
+                        </tr>
+                        <tr>
+                            <td>23</td>
+                            <td>Unattached</td>
+                            <td>Only kills via weapons without attachments are allowed.</td>
+                        </tr>
+                        <tr>
+                            <td>24</td>
+                            <td>Lockdown</td>
+                            <td>All doors are sealed for the round.</td>
+                        </tr>
+                        <tr>
+                            <td>25</td>
+                            <td>Stand Firm</td>
+                            <td>Defend the Infirmary.</td>
+                        </tr>
+                        <tr>
+                            <td>26</td>
+                            <td>Mobster</td>
+                            <td>Use the MI927 only.</td>
+                        </tr>
+                        <tr>
+                            <td>27</td>
+                            <td>I'm Out!</td>
+                            <td>All ammo is reset to zero.</td>
+                        </tr>
+                        <tr>
+                            <td>28</td>
+                            <td>Keep It Hot</td>
+                            <td>Travel through Hell Holes before timer expires.</td>
+                        </tr>
+                        <tr>
+                            <td>29</td>
+                            <td>Who Let The Hounds Out?</td>
+                            <td>Survive a Hellhound onslaught.</td>
+                        </tr>
+                        <tr>
+                            <td>30</td>
+                            <td>The Warden's Last Stand</td>
+                            <td>Defend the Warden's House.</td>
+                        </tr>
+                    </table>
+
+                    <div class="video-container">
+                        <iframe src="https://www.youtube.com/embed/C1aCOeXl1Ks" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen> </iframe>
+                    </div>
                 </div>
             </div>
 
             <!-- WEAPONS -->
             <div id="weapons" class="tab-content">
                 <div class="info-box">
-                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+                    <h3>Starting Weapons</h3>
+                    <ul>
+                        <li>Knife</li>
+                        <li>Welling - Player Choice</li>
+                        <li>Strife - Player Choice</li>
+                        <li>RK 7 Garrison - Player Choice</li>
+                        <li>Saug 9mm - Player Choice</li>
+                        <li>Essex Model 07 - Player Choice</li>
+                        <li>MOG 12 - Player Choice</li>
+                        <li>Frag - Player Choice</li>
+                        <li>Acid Bomb - Player Choice</li>
+                        <li>Claymore - Player Choice</li>
+                        <li>Wraith Fire - Player Choice</li>
+                        <li>Sentry - Player Choice</li>
+                    </ul>
+
+                    <h3>Specialists</h3>
+                    <ul>
+                        <li id="hellfire">Hellfire - Player Choice</li>
+                        <li>Overkill - Player Choice</li>
+                        <li id="pathofsorrows">Path of Sorrows - Player Choice</li>
+                        <li id="ragnarok">Ragnarock DG-5 - Player Choice</li>
+                    </ul>
+
+                    <h3>Wall Weapons</h3>
+                    <ul>
+                        <li><b>Essex Model 07</b> - Richtofen's Laboratory (500p)</li>
+                        <li><b>RK 7 Garrison</b> - Model Industries (700p)</li>
+                        <li><b>Saug 9mm</b> - D-Block (750p)</li>
+                        <li><b>MOG 12</b> - West Grounds/Library (1000p)</li>
+                        <li><b>Spitfire</b> - Citadel Tunnels (1150p)</li>
+                        <li><b>Swordfish</b> - Recreation Yard (1200p)</li>
+                        <li><b>Mozu</b> - Cell Block 2nd Floor (1300p)</li>
+                        <li><b>MX9</b> - Power House (1300p)</li>
+                        <li><b>GKS</b> - New Industries (1300p)</li>
+                        <li><b>M1897 Trebuchet</b> - Citadel (1400p)</li>
+                        <li><b>Maddox RFB</b> - Shoers (1450p)</li>
+                        <li><b>KN-57</b> - Infirmary (1450p)</li>
+                        <li><b>M1927</b> - Docks (1500p)</li>
+                        <li><b>ICR-7</b> - Building 64/Cafeteria (1550p)</li>
+                        <li><b>Vapr-XKG</b> - Transverse Tunnel/Sally Port (1550p)</li>
+                        <li><b>Auger DMR</b> - Times Square (1550p)</li>
+                        <li><b>Titan</b> - Warden's House (3750p)</li>
+                    </ul>
+
+                    <h3 id="mysterybox">Mystery Box</h3>
+                    <h4>Locations</h4>
+                    <ul>
+                        <li>New Industries</li>
+                        <li>Power House</li>
+                        <li>Recreational Yard</li>
+                        <li>Administration</li>
+                        <li>Warden's House</li>
+                        <li>Docks</li>
+                        <li>Cafeteria</li>
+                    </ul>
+                    <h4>Weapons</h4>
+                    <ul>
+                        <li>Maddox RFB</li>
+                        <li>Hitchcock M9</li>
+                        <li>Rampart 17</li>
+                        <li>Vapr-XKG</li>
+                        <li>Grav</li>
+                        <li>SWAT RFT</li>
+                        <li>Peacekeeper</li>
+                        <li>AN-94</li>
+                        <li>DoubleCross</li>
+                        <li>Escargot</li>
+                        <li>Spitfire</li>
+                        <li>Cordite</li>
+                        <li>MP-40</li>
+                        <li>M1927</li>
+                        <li>Daemon 3XB</li>
+                        <li>Switchblade X9</li>
+                        <li>VMP</li>
+                        <li>MicroMG 9mm</li>
+                        <li>SwordFish</li>
+                        <li>Essex Model 07</li>
+                        <li>ABR 223</li>
+                        <li>S6 Stingray</li>
+                        <li>M16</li>
+                        <li>Hades</li>
+                        <li>VKM 750</li>
+                        <li>Zweihander</li>
+                        <li>Tigershark</li>
+                        <li>SDM</li>
+                        <li>Paladin HB50</li>
+                        <li>Outlaw</li>
+                        <li>Vendetta</li>
+                        <li>Locus</li>
+                        <li>Havelina AA50</li>
+                        <li>Mozu</li>
+                        <li>Rk 7 Garrison</li>
+                        <li>KAP 45</li>
+                        <li>SG12</li>
+                        <li>MOG 12</li>
+                        <li>Rampage</li>
+                        <li>Argus</li>
+                        <li>Hellion Salvo</li>
+                        <li>Ballistic Knife</li>
+                        <li>Reaver C86</li>
+                        <li>Ray Gun</li>
+                        <li>Ray Gun Mark II</li>
+                        <li><a href="#wonder-weapon/blundergat">Blundergat</a></li>
+                        <li>Monkey Bomb</li>
+                    </ul>
                 </div>
             </div>
+
+            <!-- EXTRAS -->
+            <div id="extras" class="tab-content">
+                <div class="info-box">
+                    <h2>Free Power-Ups</h2>
+                    <p>There are voltmeters around the map that are next to prison cells containing a random power-up. When you Spirit Blast the voltmeter the prison cell will open and you can obtain the power-up</p>
+                    <ul>
+                        <li>Times Square</li>
+                        <li>Michigan Avenue</li>
+                    </ul>
+
+                    <h2>Ultimis Richtofen Sketch</h2>
+                    <ol>
+                        <li>Obtain the <a href="#wonder-weapon/goldenspork">Golden Spork</a></li>
+                        <li>Navigate to Michigan Avenue, melee the "DEAL WITH IT" sign to the left of the entrance to the Warden's Office</li>
+                        <li>If done correctly, a sketch of Richtofen can be found hung beneath the sign</li>
+                    </ol>
+
+                    <h2>Free Full Key Charge</h2>
+                    <p>You are able to get a free full key charge once per round by going to one of the following power-boxes and interacting with them while holding out your shield. The box must be sparking.</p>
+                    <ul>
+                        <li><a href="https://i.imgur.com/npT37RO.jpg" target="_blank">Citadel Tunnels</a></li>
+                        <li><a href="https://i.imgur.com/6ezWiHq.jpg" target="_blank">Showers</a></li>
+                        <li><a href="https://i.imgur.com/regvX91.jpg" target="_blank">Library</a></li>
+                        <li><a href="https://i.imgur.com/FqMDuyN.jpg" target="_blank">Michigan Avenue</a></li>
+                        <li><a href="https://i.imgur.com/U5Q8AWb.jpg" target="_blank">Docks Bridge</a></li>
+                        <li><a href="https://i.imgur.com/UvpA49f.jpg" target="_blank">New Industries</a></li>
+                        <li><a href="https://i.imgur.com/LvP6O8Z.jpg" target="_blank">Times Square</a></li>
+                        <li><a href="https://i.imgur.com/1ZMQA6x.jpg" target="_blank">Power House</a></li>
+                        <li><a href="https://i.imgur.com/khdszMx.jpg" target="_blank">Infirmary</a></li>
+                        <li><a href="https://i.imgur.com/F1GCoJb.jpg" target="_blank">Cell Block 3rd Floor</a></li>
+                    </ul>
+
+                    <h2>Samuel Stuhlinger Quotes</h2>
+                    <p>
+                        <span>As Richtofen, interact with Samuel Stuhlingers Cryopod at the start of the game (furthest to the left).</span>
+                        <span>Throughout the entire <a href="#main-ee">Main EE</a>, you will now hear Stuhlinger Quotes (only Richtofen will hear)</span>
+                    </p>
+
+                    <h2>Shadowman Jumpscare</h2>
+                    <p>Aim down the scope of a sniper rifle at <a href="https://i.imgur.com/Q8hlExK.jpg" target="_blank">this window</a> from the Recreation Yard.</p>
+
+                    <h2>Weasel Drawings</h2>
+                    <p>There are several of weasels Drawings which can be accessed through having/using spcieifc equipement</p>
+                    <ul>
+                        <li>Electric Burst perk and <a href="#wonder-weapon/spoon">Spoon</a> - Power House in box which needs to be knifed open (left of entrance)</li>
+                        <li><a href="#wonder-weapon/goldenspork">Golden Spork</a> - Michigan Avenue if you knife the "deal with it" poster</li>
+                        <li>lvl 2 <a href="#weapons/pathofsorrows">Path of Sorrows</a> - Library if yo udash into the corner of the room to the right of the MOG 12 wallbuy</li>
+                        <li>lvl 3 <a href="#weapons/hellfire">Hellfire</a> - Administration blasting the top drawer of the desk in the corner</li>
+                        <li><a href="#weapons/ragnarok">Ragnarok DG-5</a> - Building 64 pulling them out infront of panel on left center of room</li>
+                    </ul>
+
+                    <h2>Warden Logs</h2>
+                    <p>5 Warden Logs can be found around the map</p>
+                    <ul>
+                        <li>New Industries in the back corner by the red thing to the right of the wallbuy</li>
+                        <li>Power House stright as you enter on the left pipe near the floor</li>
+                        <li>Cafateria on the left laying sideways on a table</li>
+                        <li>Infirmary in the corener of the room with the skeleton on the table</li>
+                        <li>Showers ontop of a box on the wall to the left of the Washing Machine</li>
+                    </ul>
+
+                    <h2>Maxis Logs</h2>
+                    <p>5 Maxis Radios can be found around the map</p>
+                    <ul>
+                        <li>Michigan avenue to the left of the power box at the dead end on the bottom shelf</li>
+                        <li>In the library on the bookshelf in the middle</li>
+                        <li>In the Warden's House behind the chair</li>
+                        <li>Citadel Tunnels at the bottom of the stairs on the left</li>
+                        <li>At the Docks to the left of the box location infront of the boxes</li>
+                    </ul>
+
+                    <h2>Achievments</h2>
+                    <table>
+                        <tr>
+                            <th>Name</th>
+                            <th>Description</th>
+                            <th>Goal</th>
+                        </tr>
+
+                        <tr>
+                            <td>West Side for Life</td>
+                            <td>In Blood of the Dead, reach Round 20 without leaving the West Side of the island.</td>
+                            <td>Start a game on Casual difficulty and get round 20 without opening the Catwalk. You should also spin the box and obtain good weaponry to make it easy to survive. If you can't get good weapons then reset.</td>
+                        </tr>
+                        <tr>
+                            <td>Gat Trick</td>
+                            <td>In Blood of the Dead, kill the Warden with the Blundergat, Acidgat and Magmagat</td>
+                            <td>Get a Blundergat from the box or through the <a href="#wonder-weapon/blundergat">quest</a>. Kill the Warden with it once and then upgrade it into either the Acidgat or Magmagat. Once you have killed the Warden once with one upgrade switch it into the other upgrade and kill the Warden with that one</td>
+                        </tr>
+                        <tr>
+                            <td>Historical Reenactment</td>
+                            <td>In Blood of the Dead, equip Hell’s Retriever, Spoon, Blundergat and Tommy Gun</td>
+                            <td>Hold the Blundergat, Retriever, Spoon, and M1927 without any of them being upgraded</td>
+                        </tr>
+                        <tr>
+                            <td>Hot Stuff Coming Through</td>
+                            <td>In Blood of the Dead, forge a Magmagat</td>
+                            <td>Upgrade the Blundergat into the Magmagat through the <a href="#wonder-weapon/magmagat">quest</a></td>
+                        </tr>
+                        <tr>
+                            <td>A Match Made in Hell</td>
+                            <td>In Blood of the Dead, complete a Gondola ride with the Warden</td>
+                            <td>Go onto the Gondola with the Warden chasing you, once the Warden has stepped into the Gondola purchase it so that the Warden rides it down with you. You can go down while you ride with the Warden or use the Ragnarok DG-5's to stun him so you don't go down</td>
+                        </tr>
+                        <tr>
+                            <td>Most Escape Alive</td>
+                            <td>In Blood of the Dead, escape</td>
+                            <td>Complete the <a href="#main-ee">Main Quest</a></td>
+                        </tr>
+                        <tr>
+                            <td>Paranormal Patch Up</td>
+                            <td>In Blood of the Dead, revive another Player with a shield</td>
+                            <td>Get a Spirit Blast charge with the shield and when another player in your game goes down you must Spirit Blast them to instantly revive them</td>
+                        </tr>
+                        <tr>
+                            <td>Senseless Axe of Violence</td>
+                            <td>In Blood of the Dead, kill 5 zombies with the Hell's Redeemer before it starts its return</td>
+                            <td>Obtain the <a href="#wonder-weapon/hellsredeemer">Hell's Redeemer</a> and group up a horde of zombies. When the zombies are grouped closely together, hold out the Redeemer, fully charge it up, and throw it directly at the horde. If you get lucky you should have killed 5 zombies before it comes flying back to you</td>
+                        </tr>
+                        <tr>
+                            <td>Throw a Dog a Bone</td>
+                            <td>In Blood of the Dead, feed a wolf head from Gondola, Citadel, and Model Industries in a single game</td>
+                            <td>Obtain Monkey Bombs, have a teammate hold zombies next to a hellhound near a location you must run to. Throw a Monkey Bomb near your friend and run to one of the 3 areas. If done correctly the Bomb should kill the zombies and feed the hound while you're in the required area. Repeat this for the other 2 areas you need to be in</td>
+                        </tr>
+                    </table>
+
+                    <h2>Dark Ops Challenges</h2>
+                    <table>
+                        <tr>
+                            <th>Name</th>
+                            <th>Quest</th>
+                        </tr>
+                        <tr>
+                            <td>Perkless in Prison</td>
+                            <td>Complete the Main Quest on Blood of the Dead using zero perks</td>
+                        </tr>
+                    </table>
+                </div>
+            </div>
+
+            <!-- CREDITS -->
+            <div id="credits" class="tab-content">
+                <div class="info-box">
+                    <h2>CREDITS</h2>
+                    <p><a href="https://www.youtube.com/watch?v=LLjyt8zy1CM" target="_blank">BLOOD OF THE DEAD - SOLO EASTER EGG GUIDE IN 13 MINUTES (Black Ops 4 Zombies Tutorial)</a> - Fast Guides Glitch (Youtube)</p>
+                    <p><a href="https://callofduty.fandom.com/wiki/Gauntlet_(Black_Ops_4)#Hellcatraz" target="_blank">Gauntlet</a> - Call of Duty Wiki (Fandom)</p>
+                    <p><a href="https://callofduty.fandom.com/wiki/Blood_of_the_Dead?__cf_chl_rt_tk=.0W0DR2xSQqjDijvd0vS.sUJTLHzpwn.o1T01JJOBfo-1786165911-1.0.1.1-55K5eJhJ7PKlDfDBWFNdFSZzUirb9LlTyYTXIKh4rvg#Layout" target="_blank">Blood of the Dead</a> - Call of Duty Wiki (Fandom)</p>
+                    <p><a href="https://www.reddit.com/r/CODZombies/wiki/blood-of-the-dead/?screen_view_count=1&ext-referrer=DIRECT" target="_blank">Blood of the Dead | Complete Map Breakdown</a> - u/The_Beebat (r/CODZombies)</p>
+                    <p><a href="https://www.youtube.com/watch?v=dXCTIfao15M" target="_blank">ALL SIDE EASTER EGGS - BLOOD OF THE DEAD - BLACK OPS 4 ZOMBIES</a> - ZombieSlayaMr (Youtube)</p>
+                </div>
+            </div>
+        </div>
+
+        <div class="image-viewer">
+            <div class="image-title"></div>
+            <img src="" alt="Expanded image" />
         </div>
 
         <script src="scripts/map.js"></script>
