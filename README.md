@@ -15,6 +15,7 @@ This is just a side project which compiles information about zombies maps form a
 - IX
 - Classified
 - Blood of the Dead
+- Dead of the Night
 
 ### Infinite Warfare
 - Zombies in Spaceland
