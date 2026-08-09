@@ -53,10 +53,11 @@
                     <button class="tab-button" data-tab="main-ee">Main EE</button>
                     <button class="tab-button" data-tab="side-ee">Side EEs</button>
                     <button class="tab-button" data-tab="music-ee">Music EE</button>
-                    <button class="tab-button" data-tab="wonder-weapon">Wonder Weapon</button>
+                    <button class="tab-button" data-tab="wonder-weapon">Wonder Weapons</button>
                     <button class="tab-button" data-tab="buildables">Buildables</button>
                     <button class="tab-button" data-tab="weapons">Weapons</button>
-                    <button class="tab-button" data-tab="gauntlet">Gauntlets</button>
+                    <button class="tab-button" data-tab="gauntlet">Gauntlet</button>
+                    <button class="tab-button" data-tab="perks">Perks</button>
                     <button class="tab-button" data-tab="extras">Extras</button>
                     <button class="tab-button" data-tab="credits">Credits</button>
                 </div>
@@ -65,21 +66,17 @@
             <!--------------------------------- OVERVIEW --------------------------------->
             <div id="overview" class="tab-content active">
                 <div class="info-box">
+                    <h2>IX</h2>
                     <p>IX (pronounced Nine) is the second Zombies map featured in Call of Duty: Black Ops 4, and the twenty-sixth map overall. Chronologically, it is the third map in the Chaos story. This map introduces two new special enemies: the Destroyers and the Marauders. There are also Zombified Tigers that appear randomly throughout the map. The map also introduces a new wonder weapon, the Death of Orion, as well as a new variant of the shield, the Brazen Bull.</p>
                     <h2>Overview</h2>
                     <p>IX is set in a gladiatorial arena in Egypt during the time of the Roman Empire. The map is relatively small, with players spawning in a tunnel that leads into the main arena. From there, the player can either buy the door to the Danu temple or Ra temple, with the Odin and Zeus temple gates being accessible from the inside. Each of the temples hold their respective Perk Altars and connect to a circular underground chamber, which leads into the main temple that contains the Pack-a-Punch Altar.</p>
                     <h2>Features</h2>
                     <p>IX shares similar mechanics to previous maps in the Zombies franchise. As each round progresses, difficulty gradually increases. A new element unique to this map is that in certain key areas the floors are fitted with a device that produces streams of fire. The pattern in which they go off is randomized by each round, but rotates through a few specific patterns.</p>
                     <h3>Crowd Affinity</h3>
-                    <p>
-                        <span>With the setting of a gladiatorial arena, you are measured by the crowd from how well you perform in the game. This is measured by the skeletal hand right above your character icon and points. The hand will gradually move to a thumbs up the better you do and gradually move to a thumbs down the worse you do.</span>
-                        <br />
-                        <span id="posaff">To increase your affinity, you simply kill zombies. The speed in which you kill zombies matters too. The longer you take to advance between rounds might make your affinity go up slower. Killing Gladiators or Brawlers increases the affinity the most.</span>
-                        <br />
-                        <span id="negaff">To lose affinity, you simply take damage. By taking damage from any zombie enemy, you have a chance of lowering the affinity. Taking damage from traps has a much higher chance to lower your affinity. Going down guarantees you lose affinity. Another way to lose affinity is by attacking the crowd by throwing a Frag Grenade, Acid Bomb, or Wraith Fires at them.</span>
-                        <br />
-                        <span>When your affinity is close to being completely good or bad, the crowd will start to give you rewards. If your affinity is good or almost good, then every round the crowd will throw a random power-up to the Arena. If your affinity isbad or almost bad, then the crowd will throw a chunk of poop to the Arena. Picking up the poop makes you lose 250 points and might cause a small amount of damage to you. If you’re in the arena while your affinity is this low, the crowd might even hurl things at you, causing a decent amount of damage.</span>
-                    </p>
+                    <p>With the setting of a gladiatorial arena, you are measured by the crowd from how well you perform in the game. This is measured by the skeletal hand right above your character icon and points. The hand will gradually move to a thumbs up the better you do and gradually move to a thumbs down the worse you do.</p>
+                    <p id="posaff">To increase your affinity, you simply kill zombies. The speed in which you kill zombies matters too. The longer you take to advance between rounds might make your affinity go up slower. Killing Gladiators or Brawlers increases the affinity the most.</p>
+                    <p id="negaff">To lose affinity, you simply take damage. By taking damage from any zombie enemy, you have a chance of lowering the affinity. Taking damage from traps has a much higher chance to lower your affinity. Going down guarantees you lose affinity. Another way to lose affinity is by attacking the crowd by throwing a Frag Grenade, Acid Bomb, or Wraith Fires at them.</p>
+                    <p>When your affinity is close to being completely good or bad, the crowd will start to give you rewards. If your affinity is good or almost good, then every round the crowd will throw a random power-up to the Arena. If your affinity isbad or almost bad, then the crowd will throw a chunk of poop to the Arena. Picking up the poop makes you lose 250 points and might cause a small amount of damage to you. If you’re in the arena while your affinity is this low, the crowd might even hurl things at you, causing a decent amount of damage.</p>
 
                     <h3>Trials</h3>
                     <p>
@@ -404,6 +401,11 @@
             <!-- BUILDABLES -->
             <div id="buildables" class="tab-content">
                 <div class="info-box">
+                    <h3 id="tables">Table Locations</h3>
+                    <ul>
+                        <li>The Pit ground level against the stone pillar/wall area</li>
+                    </ul>
+
                     <h2 id="shield">Shield</h2>
                     <p><a href="#side-ee/shieldupgrade">Upgrade EE Available</a></p>
                     <ul>
@@ -421,6 +423,20 @@
                             <li>By the foot of a statue on top floor</li>
                         </ul>
                     </ul>
+                </div>
+            </div>
+
+            <!-- PERKS -->
+            <div id="perks" class="tab-content">
+                <div class="info-box">
+                    <h3>Danu</h3>
+                    <p>Danu Altar Room</p>
+                    <h3>Ra</h3>
+                    <p>Ra Altar Room</p>
+                    <h3>Zeus</h3>
+                    <p>Zeus Altar Room</p>
+                    <h3>Odin</h3>
+                    <p>Odin Altar Room</p>
                 </div>
             </div>
 
@@ -642,6 +658,20 @@
                     </ul>
 
                     <h3>Mystery Box</h3>
+                    <h4>Locations</h4>
+                    <ul>
+                        <li>Ra Tower: Burial Chamber</li>
+                        <li>Ra Altar Room</li>
+                        <li>The Cursed Room</li>
+                        <li>Fallen Hero</li>
+                        <li>Danu Tower: Arboretum</li>
+                        <li>Danu Altar Room</li>
+                        <li>Odin Tower: Cauldron</li>
+                        <li>Odin Tower Altar Room</li>
+                        <li>Zeus Tower: Bath House</li>
+                        <li>Zeus Tower Altar Room</li>
+                    </ul>
+                    <h4>Box Weapons</h4>
                     <ul>
                         <li>Maddox RFB</li>
                         <li>Hitchcock M9</li>

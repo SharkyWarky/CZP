@@ -121,6 +121,18 @@ body {
 
 /* ------------------ INFORMATION BOXES ------------------ */
 
+.info-box h2 + h3 {
+    margin-top: 7px;
+}
+
+.info-box p + p {
+    margin-top: 10px; /* Applies a gap to any paragraph that immediately follows another paragraph */
+}
+
+.info-box b {
+    color: aqua;
+}
+
 .info-box {
     background-color: #222;
     border-radius: 10px;
@@ -138,6 +150,7 @@ body {
     margin-top: 25px;
     font-size: 26px;
     margin-bottom: 2px;
+    color: #77c9ec;
 }
 
 .info-box h3 {
