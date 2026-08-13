@@ -268,21 +268,43 @@ body {
 
 .image-container {
     display: flex;
-    flex-wrap: wrap;
+    flex-wrap: nowrap;
     margin-top: 10px;
     margin-bottom: 12px;
     gap: 15px;
     justify-content: flex-start;
     align-items: flex-start;
+    width: 100%;
 }
 
 .image-container > img {
     width: 30%;
     height: auto;
-    object-fit: cover;
+    min-width: 0;
+    object-fit: contain;
     border-radius: 10px;
     cursor: pointer;
     transition: 0.3s ease;
+}
+
+/* 4 images */
+.image-container:has(> img:nth-child(4)) > img {
+    width: calc((100% - 45px) / 4);
+}
+
+/* 5 images */
+.image-container:has(> img:nth-child(5)) > img {
+    width: calc((100% - 60px) / 5);
+}
+
+/* 6 images */
+.image-container:has(> img:nth-child(6)) > img {
+    width: calc((100% - 75px) / 6);
+}
+
+/* 7 images */
+.image-container:has(> img:nth-child(7)) > img {
+    width: calc((100% - 90px) / 7);
 }
 
 .image-container img:hover {
