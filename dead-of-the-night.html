@@ -939,26 +939,26 @@
 
                     <h3>Wall Weapons</h3>
                     <ul>
-                        <li><b>Strife</b> - LOCATION (500p)</li>
-                        <li><b>Essex Model 07</b> - LOCATION (500p)</li>
-                        <li><b>RK 7 Garrison</b> - LOCATION (700p)</li>
-                        <li id="saug"><b>Saug 9mm</b> - East Balcony (750p)</li>
-                        <li><b>Escargot</b> - LOCATION (1000p)</li>
-                        <li id="mog"><b>MOG 12</b> - LOCATION (1000p)</li>
-                        <li><b>Spitfire</b> - LOCATION (1150p)</li>
-                        <li><b>Swordfish</b> - LOCATION (1200p)</li>
+                        <li><b>Strife</b> - Forecastle (500p)</li>
+                        <li><b>Essex Model 07</b> - Forecastle (500p)</li>
+                        <li><b>RK 7 Garrison</b> - Bridge (700p)</li>
+                        <li id="saug"><b>Saug 9mm</b> - State Rooms (750p)</li>
+                        <li><b>Escargot</b> - Bridge (1000p)</li>
+                        <li id="mog"><b>MOG 12</b> - State Rooms (1000p)</li>
+                        <li><b>Spitfire</b> - Upper Grand Staircase (1150p)</li>
+                        <li><b>Swordfish</b> - Lower Grand Staircase (1200p)</li>
                         <li id="mozu"><b>Mozu</b> - Main Hall (1300p)</li>
-                        <li><b>MX9</b> - LOCATION (1300p)</li>
-                        <li><b>GKS</b> - LOCATION (1300p)</li>
-                        <li id="m1897"><b>M1897 Terbuchet</b> - LOCATION (1400p)</li>
-                        <li><b>Maddox RFB</b> - LOCATION (1400p)</li>
-                        <li><b>KN-57</b> - LOCATION (1450p)</li>
-                        <li><b>ICR-7</b> - LOCATION (1550p)</li>
-                        <li id="vapr"><b>Vapr-XKG</b> - LOCATION (1550p)</li>
-                        <li id="auger"><b>Auger DMR</b> - LOCATION (1550p)</li>
-                        <li><b>Bowie Knife</b> - LOCATION (3000p)</li>
-                        <li><b>Titan</b> - LOCATION (3750p)</li>
-                        <li><b>Koshka</b> - LOCATION (4500p)</li>
+                        <li><b>MX9</b> - Gallery (1300p)</li>
+                        <li><b>GKS</b> - Aft Decks/Promenade Starboard Deck (1300p)</li>
+                        <li id="m1897"><b>M1897 Terbuchet</b> - 1st Class Lounge (1400p)</li>
+                        <li><b>Maddox RFB</b> - 3rd Class Berths (1400p)</li>
+                        <li><b>KN-57</b> - Poop Deck (1450p)</li>
+                        <li><b>ICR-7</b> - Provisions (1550p)</li>
+                        <li id="vapr"><b>Vapr-XKG</b> - Mail Rooms/Sun Deck (1550p)</li>
+                        <li id="auger"><b>Auger DMR</b> - Boat Deck (1550p)</li>
+                        <li><b>Bowie Knife</b> - 1st Class Lounge/Gallery (3000p)</li>
+                        <li><b>Titan</b> - Cargo Hold (3750p)</li>
+                        <li><b>Koshka</b> - Engine Room (4500p)</li>
                     </ul>
 
                     <h3 id="mysterybox">Mystery Box</h3>
@@ -1041,6 +1041,90 @@
 
                     <h2>Painting Jumpscare</h2>
                     <p>Stare down your sights at the painting of the girl in the West Gallery for a few seconds.</p>
+
+                    <h2>Traps</h2>
+                    <table>
+                        <tr>
+                            <th>Type</th>
+                            <th>Ability</th>
+                            <th>Location</th>
+                            <th>Cost</th>
+                        </tr>
+
+                        <tr>
+                            <td>Electric Trap</td>
+                            <td>Electrocutes zombies, instantly killing them</td>
+                            <td>Greenhouse</td>
+                            <td>1500 Points</td>
+                        </tr>
+                        <tr>
+                            <td><a href="#buildables/firetrap">Fire Trap</a></td>
+                            <td>Sets Zombies on fire</td>
+                            <td>Library/Greenhouse/Mausoleum/Entrance Hall</td>
+                            <td>1500 Points</td>
+                        </tr>
+                    </table>
+
+                    <h2>Fast Travel</h2>
+                    <table>
+                        <tr>
+                            <th>Portal Location</th>
+                            <th>Ending Location</th>
+                            <th>Cost</th>
+                        </tr>
+
+                        <tr>
+                            <td>Greenhouse Laboratory</td>
+                            <td>Main Hall</td>
+                            <td>500 Points</td>
+                        </tr>
+                        <tr>
+                            <td>Mausoleum</td>
+                            <td>Main Hall</td>
+                            <td>500 Points</td>
+                        </tr>
+                        <tr>
+                            <td>Forest</td>
+                            <td>Main Hall</td>
+                            <td>500 Points</td>
+                        </tr>
+                    </table>
+
+                    <h2>Special Enemies</h2>
+                    <table>
+                        <tr>
+                            <th>Enemy Name</th>
+                            <th>Special Abilities</th>
+                        </tr>
+                        <tr>
+                            <td>Nosferatu</td>
+                            <td>Fast running, will prevent you from regening health for roughly 5 seconds after being hit.</td>
+                        </tr>
+                        <tr>
+                            <td>Crimson Nosferatu</td>
+                            <td>Similar to the standard vampires, but with an additional pounce attack that prevents the player from moving while the vampire bites you. It also has more health than a standard vampire.</td>
+                        </tr>
+                        <tr>
+                            <td>Werewolf</td>
+                            <td>Will rush at the player and melee them. They take increased damage when shot with silver bullets.</td>
+                        </tr>
+                        <tr>
+                            <td>Fire Catalyst</td>
+                            <td>Walks slowly towards players. If a player gets too close to it it will explode.</td>
+                        </tr>
+                        <tr>
+                            <td>Poison Catalyst</td>
+                            <td>Does damage to players who walk near it. It turns other zombies in the nearby area also into Poison Catalysts.</td>
+                        </tr>
+                        <tr>
+                            <td>Electric Catalyst</td>
+                            <td>Charges up and can unleash a blinding scream that can impair a players vision.</td>
+                        </tr>
+                        <tr>
+                            <td>Water Catalyst</td>
+                            <td>Actively avoids players and can infect normal zombies and make them have more health.</td>
+                        </tr>
+                    </table>
 
                     <h2>Achievments</h2>
                     <table>
