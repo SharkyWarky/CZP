@@ -1,289 +1,375 @@
-/* Reset default browser margins */
+/* ------------------ RESET ------------------ */
+
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
 }
 
+/* ------------------ BODY ------------------ */
+
 body {
     font-family: Arial, sans-serif;
-    background-color: lightgrey;
+    background: #121614;
+    color: #e8eee9;
+    min-height: 100vh;
 }
 
-h1 {
-    text-align: center;
-}
+/* ------------------ PAGE VISIBILITY ------------------ */
 
 #home {
     display: block;
 }
-#mapindex {
-    display: none;
-}
-#waw {
-    display: none;
-}
-#bo1 {
-    display: none;
-}
-#bo2 {
-    display: none;
-}
-#bo3 {
-    display: none;
-}
-#bo4 {
-    display: none;
-}
-#bocw {
-    display: none;
-}
-#bo6 {
-    display: none;
-}
-#bo7 {
-    display: none;
-}
-#infinitewarfare {
-    display: none;
-}
-#advancedwarfare {
-    display: none;
-}
-#mw3 {
-    display: none;
-}
-#ww2 {
-    display: none;
-}
+
+#mapindex,
+#waw,
+#bo1,
+#bo2,
+#bo3,
+#bo4,
+#bocw,
+#bo6,
+#bo7,
+#infinitewarfare,
+#advancedwarfare,
+#mw3,
+#ww2,
 #vanguard {
     display: none;
 }
 
-/* Top bar container layout */
+/* ------------------ TOP NAVIGATION BAR ------------------ */
+
 .top-bar {
     display: flex;
-    justify-content: space-between; /* Pushes logo left, links right */
-    align-items: center; /* Vertically centers everything */
-    background-color: #333; /* Dark background */
-    padding: 15px 30px; /* Padding around content */
+    justify-content: space-between;
+    align-items: center;
+
+    position: fixed;
+    top: 0;
+    left: 0;
+
     width: 100%;
-    position: fixed; /* Lock it to the screen viewport */
-    top: 0; /* Push it to the exact top edge */
-    left: 0; /* Push it to the exact left edge */
-    z-index: 1000; /* Ensures it floats above other content */
+    height: 70px;
+
+    padding: 0 30px;
+
+    background: rgba(25, 30, 27, 0.96);
+    border-bottom: 1px solid #344139;
+
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.35);
+
+    backdrop-filter: blur(10px);
+
+    z-index: 1000;
 }
 
-/* Logo styling */
+/* ------------------ LOGO ------------------ */
+
 .logo {
-    color: #fff;
+    color: #f1f5f2;
     font-size: 24px;
-    font-weight: bold;
+    font-weight: 700;
+    letter-spacing: 0.5px;
+
+    transition: color 0.2s ease;
 }
+
+.logo:hover {
+    color: #67d391;
+}
+
+/* ------------------ CURRENT PAGE ------------------ */
 
 .current {
-    color: #fff;
-    font-size: 24px;
-    font-weight: bold;
     position: absolute;
     left: 50%;
     transform: translateX(-50%);
+
+    color: #dce7df;
+    font-size: 23px;
+    font-weight: 700;
+
+    white-space: nowrap;
 }
+
+/* ------------------ MAP VERSION BUTTONS ------------------ */
 
 .map-versions {
     display: flex;
-    gap: 5px;
+    gap: 6px;
+
     position: absolute;
     left: calc(50% + 120px);
 }
 
 .map-versions button {
     white-space: nowrap;
-    padding: 8px 12px;
+
+    padding: 8px 13px;
+
     font-size: 14px;
-    border: none;
-    border-radius: 4px;
-    background-color: #333;
-    color: white;
+    font-weight: 600;
+
+    border: 1px solid #3a473e;
+    border-radius: 7px;
+
+    background: #242b27;
+    color: #dce7df;
+
     cursor: pointer;
-    transition: 0.3s ease;
+
+    transition: background-color 0.2s ease, border-color 0.2s ease, transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.map-versions button:hover {
+    background: #303a34;
+    border-color: #4e6054;
+
+    transform: translateY(-1px);
 }
 
 .map-versions button.active {
-    background-color: #007bff;
+    background: #2f8f57;
+    border-color: #48b873;
+    color: white;
+
+    box-shadow: 0 0 12px rgba(72, 184, 115, 0.2);
 }
 
 .map-versions button.active:hover {
-    background-color: #005fcc;
+    background: #267746;
+    border-color: #55c77e;
 }
 
-/* Individual links styling */
+/* ------------------ NAVIGATION LINKS ------------------ */
+
+.nav-links {
+    display: flex;
+    align-items: center;
+    gap: 5px;
+}
+
 .nav-links a {
-    color: #fff;
-    text-decoration: none; /* Removes standard underline */
-    padding: 8px 16px;
-    font-size: 16px;
-    transition: 0.3s ease; /* Smooth hover transition */
+    display: inline-flex;
+    align-items: center;
+
+    color: #dce7df;
+    text-decoration: none;
+
+    padding: 9px 15px;
+
+    font-size: 15px;
+    font-weight: 500;
+
+    border-radius: 7px;
+
+    transition: background-color 0.2s ease, color 0.2s ease;
 }
 
-/* Hover effect */
 .nav-links a:hover {
-    background-color: #555; /* Soft highlight on hover */
-    border-radius: 4px; /* Slightly rounded edges */
+    background: #303933;
+    color: #ffffff;
 }
 
-/* Active page link styling */
 .nav-links a.active {
-    background-color: #007bff; /* Highlight color for current page */
-    border-radius: 4px;
+    background: #2f8f57;
+    color: white;
+
+    box-shadow: 0 0 12px rgba(72, 184, 115, 0.15);
 }
 
-/* Active page link styling */
 .nav-links a.active:hover {
-    background-color: #005fcc; /* Highlight color for current page */
+    background: #267746;
     color: white;
 }
 
-/* Active page link styling */
-.dropbtn.active {
-    background-color: #007bff; /* Highlight color for current page */
-    border-radius: 4px;
-}
+/* ------------------ DROPDOWN ------------------ */
 
-/* ------------------ DROPDOWN MENU ------------------ */
-
-/* Dropdown Button */
-.dropbtn {
-    /*color: #fff;*/
-    text-decoration: none; /* Removes standard underline */
-    padding: 8px 16px;
-    font-size: 16px;
-    transition: 0.3s ease; /* Smooth hover transition */
-    border-radius: 4px;
-    border: none;
-    background-color: #333;
-    color: #fff;
-}
-
-/* The container <div> - needed to position the dropdown content */
 .dropdown {
     position: relative;
     display: inline-block;
 }
 
-/* Dropdown Content (Hidden by Default) */
+/* Dropdown button */
+
+.dropbtn {
+    display: inline-flex;
+    align-items: center;
+
+    padding: 9px 15px;
+
+    font-size: 15px;
+    font-weight: 500;
+
+    border: none;
+    border-radius: 7px;
+
+    background: transparent;
+    color: #dce7df;
+
+    cursor: pointer;
+
+    transition: background-color 0.2s ease, color 0.2s ease;
+}
+
+.dropbtn:hover {
+    background: #303933;
+    color: white;
+}
+
+.dropbtn.active {
+    background: #2f8f57;
+    color: white;
+}
+
+.dropbtn.active:hover {
+    background: #267746;
+    color: white;
+}
+
+/* ------------------ DROPDOWN ------------------ */
+
+.dropdown {
+    position: relative;
+    display: inline-block;
+}
+
+.dropbtn {
+    display: inline-flex;
+    align-items: center;
+
+    padding: 9px 15px;
+
+    font-size: 15px;
+    font-weight: 500;
+
+    border: none;
+    border-radius: 7px;
+
+    background: transparent;
+    color: #dce7df;
+
+    cursor: pointer;
+
+    transition: background-color 0.2s ease, color 0.2s ease;
+}
+
 .dropdown-content {
     display: none;
+
     position: absolute;
-    background-color: #515151;
-    min-width: 160px;
-    box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
-    z-index: 1;
+    top: 100%;
+    right: 0;
+
+    min-width: 190px;
+
+    padding: 7px;
+
+    background: #202622;
+
+    border: 1px solid #37433b;
+    border-radius: 9px;
+
+    box-shadow: 0 12px 30px rgba(0, 0, 0, 0.45);
+
+    overflow: hidden;
+
+    z-index: 1001;
 }
 
-/* Links inside the dropdown */
 .dropdown-content a {
-    color: #fff;
-    padding: 12px 16px;
-    text-decoration: none;
     display: block;
+
+    padding: 10px 13px;
+
+    color: #dce7df;
+
+    text-decoration: none;
+
+    border-radius: 6px;
+
+    font-size: 14px;
+
+    transition: background-color 0.2s ease, color 0.2s ease;
 }
 
-/* Change color of dropdown links on hover */
 .dropdown-content a:hover {
-    background-color: #a0a0a0;
-    color: #000000;
+    background: #303a34;
+    color: #72d99a;
 }
 
-/* Show the dropdown menu on hover */
 .dropdown:hover .dropdown-content {
     display: block;
 }
 
-/* Change the background color of the dropdown button when the dropdown content is shown */
-.dropdown:hover .dropbtn {
-    background-color: #005fcc;
-    color: white;
-}
+/* ------------------ MAP INDEX / HOME ------------------ */
 
-/* ------------------ MAP INDEX MENU ------------------ */
-
-#mapindex {
-    padding: 40px;
-}
-
-#mapindex h1 {
-    margin-top: 40px;
-    margin-bottom: 20px;
-}
-
+#mapindex,
 #home {
-    padding: 40px;
+    padding: 110px 40px 50px;
 }
 
+#mapindex h1,
 #home h1 {
-    margin-top: 40px;
-    margin-bottom: 20px;
+    margin-bottom: 35px;
+    text-align: center;
+
+    color: #f0f5f1;
+
+    font-size: 36px;
+    font-weight: 700;
+
+    letter-spacing: -0.5px;
 }
 
-#bo1 {
-    padding: 100px;
+/* Green accent under main headings */
+
+#mapindex h1::after,
+#home h1::after {
+    content: "";
+
+    display: block;
+
+    width: 60px;
+    height: 4px;
+
+    margin: 12px auto 0;
+
+    background: #3daf69;
+
+    border-radius: 10px;
 }
 
-#bo2 {
-    padding: 100px;
-}
+/* ------------------ GAME PAGES ------------------ */
 
-#bo3 {
-    padding: 100px;
-}
-
-#bo4 {
-    padding: 100px;
-}
-
-#bocw {
-    padding: 100px;
-}
-
-#bo6 {
-    padding: 100px;
-}
-
-#bo7 {
-    padding: 100px;
-}
-
-#infinitewarfare {
-    padding: 100px;
-}
-
-#advancedwarfare {
-    padding: 100px;
-}
-
-#vanguard {
-    padding: 100px;
-}
-
-#mw3 {
-    padding: 100px;
-}
-
-#waw {
-    padding: 100px;
-}
-
+#bo1,
+#bo2,
+#bo3,
+#bo4,
+#bocw,
+#bo6,
+#bo7,
+#infinitewarfare,
+#advancedwarfare,
+#vanguard,
+#mw3,
+#waw,
 #ww2 {
-    padding: 100px;
+    padding: 100px 40px 50px;
 }
 
 /* ------------------ MAP ORGANIZING ------------------ */
+
 .map-grid {
     display: grid;
-    margin-bottom: 25px;
-    gap: 25px;
+
+    margin-bottom: 28px;
+
+    gap: 22px;
+
     width: 100%;
+
     grid-auto-columns: 1fr;
 }
 
@@ -295,32 +381,234 @@ h1 {
     grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
 }
 
+/* ------------------ MAP CARDS ------------------ */
+
 .map-card {
     display: block;
+
+    position: relative;
+
     text-decoration: none;
-    color: white;
-    background: #222;
-    border-radius: 10px;
+
+    color: #e8eee9;
+
+    background: #202622;
+
+    border: 1px solid #354139;
+
+    border-radius: 12px;
+
     overflow: hidden;
+
     text-align: center;
+
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.25);
+
+    transition: transform 0.25s ease, background-color 0.25s ease, border-color 0.25s ease, box-shadow 0.25s ease;
 }
+
+/* Image */
 
 .map-card img {
+    display: block;
+
     width: 100%;
     height: 200px;
+
     object-fit: cover;
+
+    transition: transform 0.35s ease, filter 0.35s ease;
 }
+
+/* Dark overlay */
+
+.map-card::after {
+    content: "";
+
+    position: absolute;
+
+    top: 0;
+    left: 0;
+
+    width: 100%;
+    height: 200px;
+
+    background: linear-gradient(to bottom, rgba(0, 0, 0, 0.05), rgba(0, 0, 0, 0.25));
+
+    pointer-events: none;
+}
+
+/* Card title */
 
 .map-card h2 {
-    padding: 15px;
+    padding: 17px 15px;
+
     margin: 0;
+
+    color: #e8eee9;
+
+    font-size: 20px;
+    font-weight: 650;
+
+    transition: color 0.2s ease;
 }
 
+/* Hover */
+
 .map-card:hover {
-    transform: scale(1.03);
-    background: #333;
+    transform: translateY(-5px);
+
+    background: #28312c;
+
+    border-color: #4a7459;
+
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.4), 0 0 15px rgba(72, 184, 115, 0.08);
 }
+
+.map-card:hover img {
+    transform: scale(1.04);
+
+    filter: brightness(1.08);
+}
+
+.map-card:hover h2 {
+    color: #72d99a;
+}
+
+/* ------------------ DISABLED ------------------ */
 
 .disabled {
     display: none;
+}
+
+/* ------------------ RESPONSIVE ------------------ */
+
+@media (max-width: 1200px) {
+    .current {
+        display: none;
+    }
+
+    .map-versions {
+        position: static;
+        margin-left: auto;
+        margin-right: 20px;
+    }
+}
+
+@media (max-width: 900px) {
+    .top-bar {
+        height: auto;
+        min-height: 70px;
+
+        flex-wrap: wrap;
+
+        gap: 10px;
+
+        padding: 12px 20px;
+    }
+
+    .logo {
+        font-size: 21px;
+    }
+
+    .map-versions {
+        order: 3;
+
+        width: 100%;
+
+        margin: 0;
+
+        overflow-x: auto;
+
+        padding-bottom: 3px;
+    }
+
+    .nav-links {
+        margin-left: auto;
+    }
+
+    #mapindex,
+    #home {
+        padding: 110px 25px 40px;
+    }
+
+    #bo1,
+    #bo2,
+    #bo3,
+    #bo4,
+    #bocw,
+    #bo6,
+    #bo7,
+    #infinitewarfare,
+    #advancedwarfare,
+    #vanguard,
+    #mw3,
+    #waw,
+    #ww2 {
+        padding: 110px 25px 40px;
+    }
+
+    .map-grid {
+        gap: 18px;
+    }
+
+    .top-row,
+    .bottom-row {
+        grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    }
+}
+
+@media (max-width: 600px) {
+    .top-bar {
+        padding: 10px 15px;
+    }
+
+    .logo {
+        font-size: 19px;
+    }
+
+    .nav-links a,
+    .dropbtn {
+        padding: 8px 10px;
+        font-size: 14px;
+    }
+
+    #mapindex,
+    #home {
+        padding: 105px 15px 30px;
+    }
+
+    #bo1,
+    #bo2,
+    #bo3,
+    #bo4,
+    #bocw,
+    #bo6,
+    #bo7,
+    #infinitewarfare,
+    #advancedwarfare,
+    #vanguard,
+    #mw3,
+    #waw,
+    #ww2 {
+        padding: 105px 15px 30px;
+    }
+
+    #mapindex h1,
+    #home h1 {
+        font-size: 28px;
+    }
+
+    .map-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .map-card img {
+        height: 190px;
+    }
+
+    .dropdown-content {
+        right: 0;
+        min-width: 170px;
+    }
 }
