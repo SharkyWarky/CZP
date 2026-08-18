@@ -17,6 +17,7 @@ This is just a side project which compiles information about zombies maps form a
 - Blood of the Dead
 - Dead of the Night
 - Voyage of Despair
+- Ancient Evil
 
 ### Infinite Warfare
 - Zombies in Spaceland
