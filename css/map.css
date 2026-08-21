@@ -209,8 +209,15 @@ body {
 
     font-size: 26px;
     font-weight: 700;
+    line-height: 1;
 
     color: #62e6a0;
+    display: inline-block;
+    border-bottom: 2px solid #62e6a0;
+    padding-bottom: 5px;
+
+    padding-left: 15px;
+    padding-right: 60px;
 
     letter-spacing: -0.25px;
 }
