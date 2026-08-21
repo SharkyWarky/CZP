@@ -28,11 +28,11 @@ There will probably be a lot of typos due to fast typing without re-reading ever
 - Zombies in Spaceland
 
 ## How To Help
-Copy the most recent version of the template in the "!" folder and paste it onto the map (if the map currently has an old version OR no information currently on it)
-Change the information to make it accurate for that map (webpage title, other games the map appears on, ect. it all appears in the template)
-PLEASE site all sources used accurately in the "Credits" and look at other pages to copy the formatting.
-All information should be hand written or copied from a source AND TESTED (or compared to other sources) to confirm that it is accurate today. PLEASE DO NOT BLINDLY TRUST AI WITH THE STEPS!!!
-If you feel that a map marked "completed" does not have all the information it needs or needs corrections, you can edit it to add/change information. Just remember to add the Credit.
+- Copy the most recent version of the template in the "!" folder and paste it onto the map (if the map currently has an old version OR no information currently on it)
+- Change the information to make it accurate for that map (webpage title, other games the map appears on, ect. it all appears in the template)
+- PLEASE site all sources used accurately in the "Credits" and look at other pages to copy the formatting.
+- All information should be hand written or copied from a source AND TESTED (or compared to other sources) to confirm that it is accurate today. PLEASE DO NOT BLINDLY TRUST AI WITH THE STEPS!!!
+- If you feel that a map marked "completed" does not have all the information it needs or needs corrections, you can edit it to add/change information. Just remember to add the Credit.
 
 ### Some Useful Sources for Research:
 - https://www.codzombieguides.com (While some maps have tons of information, a lot of them aren't written fully or are just videos)
