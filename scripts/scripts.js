@@ -1,51 +1,57 @@
 const current = document.querySelector(".current");
 
+document.querySelectorAll(".top-row, .bottom-row").forEach((row) => {
+	const itemCount = row.children.length;
+
+	row.style.setProperty("--items", itemCount);
+});
+
 function updatePage() {
-    const hash = window.location.hash || "#home";
-    const id = hash.substring(1);
+	const hash = window.location.hash || "#home";
+	const id = hash.substring(1);
 
-    // Hide all sections
-    document.querySelectorAll("section").forEach((section) => {
-        section.style.display = "none";
-    });
+	// Hide all sections
+	document.querySelectorAll("section").forEach((section) => {
+		section.style.display = "none";
+	});
 
-    // Show current section
-    const page = document.getElementById(id);
+	// Show current section
+	const page = document.getElementById(id);
 
-    if (page) {
-        page.style.display = "block";
-    }
+	if (page) {
+		page.style.display = "block";
+	}
 
-    // Remove active classes
-    document.querySelectorAll(".active").forEach((element) => {
-        element.classList.remove("active");
-    });
+	// Remove active classes
+	document.querySelectorAll(".active").forEach((element) => {
+		element.classList.remove("active");
+	});
 
-    // Find matching link
-    const activeLink = document.querySelector(`a[href="${hash}"]`);
+	// Find matching link
+	const activeLink = document.querySelector(`a[href="${hash}"]`);
 
-    if (activeLink) {
-        activeLink.classList.add("active");
+	if (activeLink) {
+		activeLink.classList.add("active");
 
-        const dropdown = activeLink.closest(".dropdown");
+		const dropdown = activeLink.closest(".dropdown");
 
-        if (dropdown) {
-            dropdown.querySelector(".dropbtn")?.classList.add("active");
-        }
+		if (dropdown) {
+			dropdown.querySelector(".dropbtn")?.classList.add("active");
+		}
 
-        current.textContent = activeLink.textContent;
+		current.textContent = activeLink.textContent;
 
-        // Change browser title
-        document.title = `CZP - ${activeLink.textContent}`;
-    }
+		// Change browser title
+		document.title = `CZP - ${activeLink.textContent}`;
+	}
 }
 
 // When clicking a link, update URL hash
 document.querySelectorAll('nav a[href^="#"], .dropdown-content a[href^="#"]').forEach((link) => {
-    link.addEventListener("click", (e) => {
-        e.preventDefault();
-        window.location.hash = link.getAttribute("href");
-    });
+	link.addEventListener("click", (e) => {
+		e.preventDefault();
+		window.location.hash = link.getAttribute("href");
+	});
 });
 
 // Run when URL changes
