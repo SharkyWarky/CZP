@@ -1,0 +1,11 @@
+@import "tailwindcss";
+
+@utility navItem {
+	@apply mr-4;
+}
+
+@layer base {
+	a {
+		@apply font-bold;
+	}
+}
