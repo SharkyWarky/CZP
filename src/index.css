@@ -1,11 +1,105 @@
 @import "tailwindcss";
 
-@utility navItem {
-	@apply mr-4;
+@layer base {
+    a {
+        @apply inline-flex items-center rounded-md px-3.75 py-2.25 text-sm font-medium text-mist-200 no-underline transition-[background-color,color] duration-200 ease-[ease];
+    }
+
+    body {
+        @apply min-h-screen bg-[#121614] font-[Arial,sans-serif] text-[#e8eee9];
+    }
+
+    h1 {
+        @apply mb-8.75 text-center text-4xl font-bold tracking-normal text-olive-100 ms-0 me-0 mbs-[0.67em] mbe-[0.67em] block text-[2.5em] [unicode-bidi:isolate];
+        @apply after:mx-auto after:mt-3 after:mb-0 after:block after:h-1 after:w-15 after:rounded-lg after:bg-emerald-500;
+    }
 }
 
-@layer base {
-	a {
-		@apply font-bold;
-	}
+.nav-links {
+    @apply flex items-center gap-1.25;
+}
+
+.nav-links a {
+    @apply inline-flex items-center rounded-md px-3.75 py-2.25 text-sm font-medium text-mist-200 no-underline transition-[background-color,color] duration-200 ease-[ease];
+}
+
+.nav-links a.active {
+    @apply bg-emerald-600 text-white shadow-[0_0_12px_rgba(72,184,115,0.15)] hover:bg-emerald-700 hover:text-white;
+}
+
+.dropdown {
+    @apply relative inline-block;
+}
+
+.dropbtn.active {
+    @apply bg-emerald-600 text-white hover:bg-emerald-700 hover:text-white;
+}
+
+.dropbtn {
+    @apply inline-flex cursor-pointer items-center rounded-md border-none bg-transparent px-3.75 py-2.25 text-sm font-medium text-mist-200 transition-[background-color,color] duration-200 ease-[ease] hover:bg-neutral-700 hover:text-white;
+}
+
+.dropdown-content {
+    @apply absolute top-full right-0 z-1001 hidden min-w-47.5 overflow-hidden rounded-lg border border-mist-700 bg-neutral-800 p-1.75 shadow-[0_12px_30px_rgba(0,0,0,0.45)];
+}
+
+.dropdown-content a {
+    @apply block rounded-md px-3.25 py-2.5 text-sm text-mist-200 no-underline transition-[background-color,color] duration-200 ease-[ease] hover:bg-neutral-700 hover:text-emerald-300;
+}
+
+.dropdown:hover .dropdown-content {
+    @apply block;
+}
+
+@utility currentPage {
+    @apply absolute left-1/2 -translate-x-1/2 text-2xl font-bold whitespace-nowrap text-mist-200;
+}
+
+.map-card {
+    @apply relative block overflow-hidden rounded-xl border border-solid border-[#354139] text-center text-[#e8eee9] no-underline shadow-[0_5px_15px_rgba(0,0,0,0.25)] after:pointer-events-none after:absolute after:inset-0 after:content-[""] hover:-translate-y-1.25 hover:border-[#4f8a66] hover:shadow-[0_14px_30px_rgba(0,0,0,0.45),0_0_25px_rgba(72,184,115,0.12)];
+    @apply box-border p-0;
+
+    background: #202622;
+
+    transition: transform 0.55s cubic-bezier(0.22, 1, 0.36, 1), background-color 0.55s ease, border-color 0.55s ease, box-shadow 0.55s cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+.map-card::after {
+    background: linear-gradient(to bottom, rgba(0, 0, 0, 0.02) 0%, rgba(0, 0, 0, 0.05) 45%, rgba(0, 0, 0, 0.45) 100%);
+
+    transition: background 0.55s ease, opacity 0.55s ease;
+}
+
+.map-card img {
+    @apply block h-50 w-full object-cover;
+    @apply box-border p-0;
+
+    transition: transform 0.65s cubic-bezier(0.22, 1, 0.36, 1), filter 0.65s ease;
+}
+
+.map-card h2 {
+    @apply relative z-10 m-0 py-4.25 text-xl font-[650] text-[#e8eee9] transition-[color,transform] duration-300 ease-[ease];
+    transition: color 0.5s ease, transform 0.5s cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+.map-card:hover {
+    background: #28312c;
+}
+
+.map-card:hover::after {
+    background: linear-gradient(to bottom, rgba(0, 0, 0, 0.02) 0%, rgba(15, 35, 23, 0.08) 45%, rgba(18, 48, 31, 0.55) 100%);
+}
+
+.map-card:hover img {
+    @apply scale-[1.06] brightness-[1.12];
+
+    filter: saturate(1.08);
+}
+
+.map-card:hover h2 {
+    @apply -translate-y-0.5 text-[#72d99a];
+}
+
+.map-grid {
+    @apply grid w-full gap-5.5 mb-7 grid-cols-[repeat(var(--items),1fr)];
 }
