@@ -1,105 +1,268 @@
 @import "tailwindcss";
 
 @layer base {
-    a {
-        @apply inline-flex items-center rounded-md px-3.75 py-2.25 text-sm font-medium text-mist-200 no-underline transition-[background-color,color] duration-200 ease-[ease];
-    }
+	body {
+		@apply min-h-screen bg-[#121614] font-[Arial,sans-serif] text-[#e8eee9];
+	}
 
-    body {
-        @apply min-h-screen bg-[#121614] font-[Arial,sans-serif] text-[#e8eee9];
-    }
-
-    h1 {
-        @apply mb-8.75 text-center text-4xl font-bold tracking-normal text-olive-100 ms-0 me-0 mbs-[0.67em] mbe-[0.67em] block text-[2.5em] [unicode-bidi:isolate];
-        @apply after:mx-auto after:mt-3 after:mb-0 after:block after:h-1 after:w-15 after:rounded-lg after:bg-emerald-500;
-    }
+	h1 {
+		@apply mb-8.75 text-center text-4xl font-bold tracking-normal text-olive-100 ms-0 me-0 mbs-[0.67em] mbe-[0.67em] block text-[2.5em] [unicode-bidi:isolate];
+		@apply after:mx-auto after:mt-3 after:mb-0 after:block after:h-1 after:w-15 after:rounded-lg after:bg-emerald-500;
+	}
 }
 
 .nav-links {
-    @apply flex items-center gap-1.25;
+	@apply flex items-center gap-1.25;
 }
 
 .nav-links a {
-    @apply inline-flex items-center rounded-md px-3.75 py-2.25 text-sm font-medium text-mist-200 no-underline transition-[background-color,color] duration-200 ease-[ease];
+	@apply inline-flex items-center rounded-md px-3.75 py-2.25 text-sm font-medium text-mist-200 no-underline transition-[background-color,color] duration-200 ease-[ease];
 }
 
 .nav-links a.active {
-    @apply bg-emerald-600 text-white shadow-[0_0_12px_rgba(72,184,115,0.15)] hover:bg-emerald-700 hover:text-white;
+	@apply bg-emerald-600 text-white shadow-[0_0_12px_rgba(72,184,115,0.15)] hover:bg-emerald-700 hover:text-white;
 }
 
 .dropdown {
-    @apply relative inline-block;
+	@apply relative inline-block;
 }
 
 .dropbtn.active {
-    @apply bg-emerald-600 text-white hover:bg-emerald-700 hover:text-white;
+	@apply bg-emerald-600 text-white hover:bg-emerald-700 hover:text-white;
 }
 
 .dropbtn {
-    @apply inline-flex cursor-pointer items-center rounded-md border-none bg-transparent px-3.75 py-2.25 text-sm font-medium text-mist-200 transition-[background-color,color] duration-200 ease-[ease] hover:bg-neutral-700 hover:text-white;
+	@apply inline-flex cursor-pointer items-center rounded-md border-none bg-transparent px-3.75 py-2.25 text-sm font-medium text-mist-200 transition-[background-color,color] duration-200 ease-[ease] hover:bg-neutral-700 hover:text-white;
 }
 
 .dropdown-content {
-    @apply absolute top-full right-0 z-1001 hidden min-w-47.5 overflow-hidden rounded-lg border border-mist-700 bg-neutral-800 p-1.75 shadow-[0_12px_30px_rgba(0,0,0,0.45)];
+	@apply absolute top-full right-0 z-1001 hidden min-w-47.5 overflow-hidden rounded-lg border border-mist-700 bg-neutral-800 p-1.75 shadow-[0_12px_30px_rgba(0,0,0,0.45)];
 }
 
 .dropdown-content a {
-    @apply block rounded-md px-3.25 py-2.5 text-sm text-mist-200 no-underline transition-[background-color,color] duration-200 ease-[ease] hover:bg-neutral-700 hover:text-emerald-300;
+	@apply block rounded-md px-3.25 py-2.5 text-sm text-mist-200 no-underline transition-[background-color,color] duration-200 ease-[ease] hover:bg-neutral-700 hover:text-emerald-300;
 }
 
 .dropdown:hover .dropdown-content {
-    @apply block;
+	@apply block;
 }
 
 @utility currentPage {
-    @apply absolute left-1/2 -translate-x-1/2 text-2xl font-bold whitespace-nowrap text-mist-200;
+	@apply absolute left-1/2 -translate-x-1/2 text-2xl font-bold whitespace-nowrap text-mist-200;
 }
 
 .map-card {
-    @apply relative block overflow-hidden rounded-xl border border-solid border-[#354139] text-center text-[#e8eee9] no-underline shadow-[0_5px_15px_rgba(0,0,0,0.25)] after:pointer-events-none after:absolute after:inset-0 after:content-[""] hover:-translate-y-1.25 hover:border-[#4f8a66] hover:shadow-[0_14px_30px_rgba(0,0,0,0.45),0_0_25px_rgba(72,184,115,0.12)];
-    @apply box-border p-0;
+	@apply relative block overflow-hidden rounded-xl border border-solid border-[#354139] text-center text-[#e8eee9] no-underline shadow-[0_5px_15px_rgba(0,0,0,0.25)] after:pointer-events-none after:absolute after:inset-0 after:content-[""] hover:-translate-y-1.25 hover:border-[#4f8a66] hover:shadow-[0_14px_30px_rgba(0,0,0,0.45),0_0_25px_rgba(72,184,115,0.12)];
+	@apply box-border p-0;
 
-    background: #202622;
+	background: #202622;
 
-    transition: transform 0.55s cubic-bezier(0.22, 1, 0.36, 1), background-color 0.55s ease, border-color 0.55s ease, box-shadow 0.55s cubic-bezier(0.22, 1, 0.36, 1);
+	transition:
+		transform 0.55s cubic-bezier(0.22, 1, 0.36, 1),
+		background-color 0.55s ease,
+		border-color 0.55s ease,
+		box-shadow 0.55s cubic-bezier(0.22, 1, 0.36, 1);
 }
 
 .map-card::after {
-    background: linear-gradient(to bottom, rgba(0, 0, 0, 0.02) 0%, rgba(0, 0, 0, 0.05) 45%, rgba(0, 0, 0, 0.45) 100%);
+	background: linear-gradient(to bottom, rgba(0, 0, 0, 0.02) 0%, rgba(0, 0, 0, 0.05) 45%, rgba(0, 0, 0, 0.45) 100%);
 
-    transition: background 0.55s ease, opacity 0.55s ease;
+	transition:
+		background 0.55s ease,
+		opacity 0.55s ease;
 }
 
 .map-card img {
-    @apply block h-50 w-full object-cover;
-    @apply box-border p-0;
+	@apply block h-50 w-full object-cover;
+	@apply box-border p-0;
 
-    transition: transform 0.65s cubic-bezier(0.22, 1, 0.36, 1), filter 0.65s ease;
+	transition:
+		transform 0.65s cubic-bezier(0.22, 1, 0.36, 1),
+		filter 0.65s ease;
 }
 
 .map-card h2 {
-    @apply relative z-10 m-0 py-4.25 text-xl font-[650] text-[#e8eee9] transition-[color,transform] duration-300 ease-[ease];
-    transition: color 0.5s ease, transform 0.5s cubic-bezier(0.22, 1, 0.36, 1);
+	@apply relative z-10 m-0 py-4.25 text-xl font-[650] text-[#e8eee9] transition-[color,transform] duration-300 ease-[ease];
+	transition:
+		color 0.5s ease,
+		transform 0.5s cubic-bezier(0.22, 1, 0.36, 1);
 }
 
 .map-card:hover {
-    background: #28312c;
+	background: #28312c;
 }
 
 .map-card:hover::after {
-    background: linear-gradient(to bottom, rgba(0, 0, 0, 0.02) 0%, rgba(15, 35, 23, 0.08) 45%, rgba(18, 48, 31, 0.55) 100%);
+	background: linear-gradient(to bottom, rgba(0, 0, 0, 0.02) 0%, rgba(15, 35, 23, 0.08) 45%, rgba(18, 48, 31, 0.55) 100%);
 }
 
 .map-card:hover img {
-    @apply scale-[1.06] brightness-[1.12];
+	@apply scale-[1.06] brightness-[1.12];
 
-    filter: saturate(1.08);
+	filter: saturate(1.08);
 }
 
 .map-card:hover h2 {
-    @apply -translate-y-0.5 text-[#72d99a];
+	@apply -translate-y-0.5 text-[#72d99a];
 }
 
 .map-grid {
-    @apply grid w-full gap-5.5 mb-7 grid-cols-[repeat(var(--items),1fr)];
+	@apply grid w-full gap-5.5 mb-7 grid-cols-[repeat(var(--items),1fr)];
+}
+
+.map-layout {
+	@apply flex w-full items-start gap-6 pt-5;
+}
+
+.tab-menu {
+	@apply mt-20 ml-2 w-55 min-w-55 flex flex-col gap-2 self-start sticky top-42.5;
+	transform: translateY(-64px);
+}
+
+.tab-button {
+	@apply box-border w-full cursor-pointer rounded-[9px] border border-solid border-[#2d3933] bg-[#1a211e] px-4 py-3.25 text-left text-[15px] font-semibold text-[#aab8b0];
+
+	transition:
+		background-color 0.2s ease,
+		border-color 0.2s ease,
+		color 0.2s ease,
+		transform 0.2s ease,
+		box-shadow 0.2s ease;
+}
+
+.tab-button:hover {
+	@apply translate-x-0.5 border-[#3b4c43] bg-[#222c27] text-[#e8eee9];
+}
+
+.tab-button.active {
+	@apply border-[#35d07f] bg-[#1d5d3e] text-[#f2fff7];
+
+	box-shadow:
+		0 0 0 1px rgba(53, 208, 127, 0.15),
+		0 5px 18px rgba(0, 0, 0, 0.25);
+}
+
+.tab-button.active:hover {
+	@apply translate-x-0.5 border-[#62e6a0] bg-[#246f4b];
+}
+
+.info-box {
+	@apply box-border min-w-0 flex-1 min-h-125 rounded-xl border border-solid border-[#354139] bg-[#1a211e] pl-8 pr-8 pb-7 text-[#e8eee9] mr-5;
+	box-shadow: 0 5px 15px rgba(0, 0, 0, 0.25);
+}
+
+.info-box h2 {
+	@apply mt-7 mb-1 inline-block border-b-2 border-[#62e6a0] px-3.75 pb-1.25 pr-15 text-[26px] font-bold leading-none tracking-[-0.25px] text-[#62e6a0];
+}
+
+.info-box h2 + h3 {
+	@apply mt-2;
+}
+
+.info-box h3 {
+	@apply mt-6.25 mb-1 text-xl font-[650] text-[#45d58a];
+}
+
+.info-box b {
+	@apply font-bold text-[#7be9ad];
+}
+
+.info-box p {
+	@apply leading-normal text-[#d1dbd5];
+}
+
+.info-box p + p {
+	@apply mt-3;
+}
+
+.info-box ul,
+.info-box ol {
+	@apply mt-1.75 mb-3 ml-7.5 list-outside text-[#d1dbd5];
+}
+
+.info-box ul {
+	@apply list-disc;
+}
+
+.info-box ol {
+	@apply list-decimal;
+}
+
+.info-box li {
+	@apply mb-2;
+}
+
+.info-box li::marker {
+	@apply text-[#45d58a];
+}
+
+.info-box span:not(.anchor-glow) {
+	@apply block leading-[1.45];
+}
+
+.info-box a {
+	@apply font-[550] text-[#3fa866] no-underline;
+
+	transition:
+		color 0.2s ease,
+		text-shadow 0.2s ease;
+}
+
+.info-box a:hover {
+	@apply font-[550] text-[#72d99a] underline;
+	text-underline-offset: 3px;
+}
+
+.info-box table {
+	@apply mt-3 mb-3 w-full border-separate border-spacing-0 overflow-hidden rounded-[9px] border border-solid border-[#2d3933];
+}
+
+.info-box th {
+	@apply border-b border-solid border-[#34443b] bg-[#202a25] p-3.25 text-left font-bold text-[#62e6a0];
+}
+
+.info-box td {
+	@apply border-b border-solid border-[#29352f] p-3 text-[#d1dbd5];
+}
+
+.info-box tr:last-child td {
+	@apply border-b-0;
+}
+
+.info-box tr:hover td {
+	background: rgba(53, 208, 127, 0.035);
+}
+
+.anchor-glow {
+	@apply inline-block rounded-lg;
+}
+
+[id] {
+	scroll-margin-top: 100px;
+}
+
+@theme {
+	--animate-anchor-highlight: anchor-highlight 2s ease;
+}
+
+@keyframes anchor-highlight {
+	0% {
+		background-color: transparent;
+		box-shadow: 0 0 0 0 rgba(53, 208, 127, 0);
+	}
+
+	20%,
+	80% {
+		background-color: rgba(53, 208, 127, 0.22);
+		box-shadow: 0 0 0 6px rgba(53, 208, 127, 0.18);
+	}
+
+	100% {
+		background-color: transparent;
+		box-shadow: 0 0 0 0 rgba(53, 208, 127, 0);
+	}
+}
+
+.info-box span:not(.anchor-glow) {
+	@apply block leading-[1.45];
 }
