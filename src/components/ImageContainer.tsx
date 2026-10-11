@@ -48,7 +48,7 @@ export default function ImageContainer({ children }: ImageContainerProps) {
 									});
 								}
 							}}>
-							<img src={child.props.src} alt={child.props.alt ?? ""} className="h-auto w-full rounded-[10px] border border-solid border-[#34443b] object-contain transition-[transform,border-color,box-shadow] duration-250 ease-in-out hover:scale-[1.025] hover:border-[#45d58a] hover:shadow-[0_8px_25px_rgba(0,0,0,0.35)]" />
+							<img src={`${import.meta.env.BASE_URL}${child.props.src}`} alt={child.props.alt ?? ""} className="h-auto w-full rounded-[10px] border border-solid border-[#34443b] object-contain transition-[transform,border-color,box-shadow] duration-250 ease-in-out hover:scale-[1.025] hover:border-[#45d58a] hover:shadow-[0_8px_25px_rgba(0,0,0,0.35)]" />
 						</div>
 					);
 				})}

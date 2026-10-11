@@ -70,12 +70,15 @@ const mapRoutes = Object.entries(mapPages)
 		};
 	});
 
-const router = createBrowserRouter([
-	{
-		element: <NavbarLayout />,
-		children: [createChild("", Home, "Home"), createChild("mapindex", MapIndex, "Map Index"), ...gameRoutes.map(([path, component, title]) => createChild(path, component, title)), ...mapRoutes],
-	},
-]);
+const router = createBrowserRouter(
+	[
+		{
+			element: <NavbarLayout />,
+			children: [createChild("", Home, "Home"), createChild("mapindex", MapIndex, "Map Index"), ...gameRoutes.map(([path, component, title]) => createChild(path, component, title)), ...mapRoutes],
+		},
+	],
+	{ basename: "/CZP/" },
+);
 
 export default function App() {
 	return <RouterProvider router={router} />;
