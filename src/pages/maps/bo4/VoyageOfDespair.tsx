@@ -278,7 +278,10 @@ function SideEE() {
 			</h2>
 			<ol>
 				<li>
-					Activate the <a href="#side-ee/power">Sentinel Artifact</a>
+					Activate the{" "}
+					<TabLink tab="side-ee" target="power">
+						Sentinel Artifact
+					</TabLink>
 				</li>
 				<li>
 					Interact with 4 PaP Pedestals around the map. (Stone Tablets with 4 circles)
@@ -307,7 +310,10 @@ function SideEE() {
 						<li>Above the Poop Deck somewhere on the rope leading way up to the mast. will drop near shield workbench</li>
 						<li>Another Rope above the Aft Deck (start of rings on the rope) will drop near mystery box stairs</li>
 						<li>
-							along the rivets of the smoke stack by mid-deck <a id="#extras/fasttravel">Fast Travel</a>
+							along the rivets of the smoke stack by mid-deck{" "}
+							<TabLink tab="extras" target="fasttravel">
+								Fast Travel
+							</TabLink>
 						</li>
 						<li>below the crowsnest in the Forecastle area</li>
 					</ul>
@@ -342,12 +348,23 @@ function SideEE() {
 				<li>(Stamin-Up + Scepter of Ra Recommended) Melee each piano quickly with your specialist before it runs out</li>
 				<li>One piano will be on fire while the other 2 are not. Swpa the sheet music on the unlit pianos. Melee each piano again. They should all now be on fire</li>
 				<li>
-					After Meleeing the final piano, quickly melee a <a href="#weapons/mysterybox">Mystery Box</a> to trigger a fire sale. Upon purchasing the box, it will give you a new <a href="#weapons/specialist">specialist weapon</a>
+					After Meleeing the final piano, quickly melee a{" "}
+					<TabLink tab="weapons" target="mysterybox">
+						Mystery Box
+					</TabLink>{" "}
+					to trigger a fire sale. Upon purchasing the box, it will give you a new{" "}
+					<TabLink tab="weapons" target="specialist">
+						specialist weapon
+					</TabLink>
 				</li>
 			</ol>
 
 			<h2>
-				Upgraded <a href="#weapons/bowieknife">Bowie Knife</a> -{" "}
+				Upgraded{" "}
+				<TabLink tab="weapons" target="bowieknife">
+					Bowie Knife
+				</TabLink>{" "}
+				-{" "}
 				<a href="https://www.youtube.com/watch?v=Cld1xM2I_V8" target="_blank" rel="noopener noreferrer">
 					Video
 				</a>
@@ -355,7 +372,10 @@ function SideEE() {
 			<p>Makes the bowie knife a one-hit kill on round 30+ (but has a cooldown)</p>
 			<ol>
 				<li>
-					Buy the <a href="#weapons/bowieknife">Bowie Knife</a>
+					Buy the{" "}
+					<TabLink tab="weapons" target="bowieknife">
+						Bowie Knife
+					</TabLink>
 				</li>
 				<li>Knife a Blightfather until you get the bowie knife purchase animation</li>
 				<li>When knifing a zombie, he should now spew out acid.</li>
@@ -370,7 +390,14 @@ function SideEE() {
 			<p>Rewards: PaP at every location, PaP will now Re-Pack, Refill Ammo, and Boost Damage for 5000p (only lasts for the duration of the current round)</p>
 			<ol>
 				<li>
-					Get a <a href="#side-ee/pap">PaP'd</a> <a href="#wonder-weapon/elementalkraken">Elemental Kraken</a> (Will not work with Radiance or Electric)
+					Get a{" "}
+					<TabLink tab="side-ee" target="pap">
+						PaP'd
+					</TabLink>{" "}
+					<TabLink tab="wonder-weapon" target="elementalkraken">
+						Elemental Kraken
+					</TabLink>{" "}
+					(Will not work with Radiance or Electric)
 				</li>
 				<li>Go into the Engine Room and shoot the 4 center pistons 3-4 times with the kraken (Should start smoking then stop after all 4 have been shot)</li>
 				<li>
@@ -389,12 +416,16 @@ function SideEE() {
 			<p>
 				<span>Rewards: Free Kraken and Homunculus</span>
 				<span>
-					If completed during the <a href="#buildables/svalinnguard">Shield Upgrade Step</a> with the flying car, you'll be teleported into the flying car. (you can leave by meleeing or shooting, can be REPEATED after round 9 aswell)
+					If completed during the{" "}
+					<TabLink tab="buildables" target="svalinnguard">
+						Shield Upgrade Step
+					</TabLink>{" "}
+					with the flying car, you'll be teleported into the flying car. (you can leave by meleeing or shooting, can be REPEATED after round 9 aswell)
 				</span>
 			</p>
 			<ol>
 				<li>
-					Complete step 1 (time and wheel step) of the <a href="#main-ee">Main EE</a>
+					Complete step 1 (time and wheel step) of the <TabLink tab="main-ee">Main EE</TabLink>
 				</li>
 				<li>Get to Round 9 (CAN ONLY BE DONE ON ROUND 9)</li>
 				<li>Now standing in a specific corner on the poop deck and crouching and holding interact, you must walk a specific path</li>
@@ -411,16 +442,27 @@ function SideEE() {
 			<p>Rewards: Free fast travel 3 times per round for the entire rest of the game.</p>
 			<ol>
 				<li>
-					Get either the Helion Salvo, Hitchcock, Paladin, Hades, Rampart or ABR from the <a href="#weapons/mysterybox">box</a>
+					Get either the Helion Salvo, Hitchcock, Paladin, Hades, Rampart or ABR from the{" "}
+					<TabLink tab="weapons" target="mysterybox">
+						box
+					</TabLink>
 				</li>
 				<li>
-					Double <a href="#side-ee/pap">PaP</a> the weapon you got
+					Double{" "}
+					<TabLink tab="side-ee" target="pap">
+						PaP
+					</TabLink>{" "}
+					the weapon you got
 				</li>
 				<li>In the Boat Deck middle area, shoot the 3 small exhaust vents from the poles until an hourglass icon appears</li>
 				<li>Following the icon by going through the fast travels and standing near it.</li>
 				<li>Once it goes up in the Mail Rooms, you need to quickly run up to Forecastle to keep up</li>
 				<li>
-					Once it arrives at where the <a href="#side-ee/power">Sentinel Artifact</a> was, you can pick it up as a power-up
+					Once it arrives at where the{" "}
+					<TabLink tab="side-ee" target="power">
+						Sentinel Artifact
+					</TabLink>{" "}
+					was, you can pick it up as a power-up
 				</li>
 			</ol>
 		</section>
@@ -444,7 +486,10 @@ function MusicEE() {
 			<ul>
 				<li>behind a box in the burning barrels under the stairs above spawn</li>
 				<li>
-					On a crate on the left side of the back of the boat near <a href="#side-ee/power">Sentinel Artifact</a>
+					On a crate on the left side of the back of the boat near{" "}
+					<TabLink tab="side-ee" target="power">
+						Sentinel Artifact
+					</TabLink>
 				</li>
 				<li>Between some crates on the boat in the Sun Deck</li>
 				<li>At the PaP altar at the bottom of the stairs on a roof beam</li>

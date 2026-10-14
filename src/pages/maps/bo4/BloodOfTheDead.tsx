@@ -370,7 +370,7 @@ function WonderWeapons() {
 			<ol>
 				<li>
 					Obtain the{" "}
-					<TabLink tab="#wonder-weapon" target="hellsretriever">
+					<TabLink tab="wonder-weapon" target="hellsretriever">
 						Hell's Retriever
 					</TabLink>
 				</li>
@@ -520,7 +520,11 @@ function WonderWeapons() {
 				<li>Navigate to the Roof, begin to kill Zombies using the Acidgat or Magmagat. Blood will begin to drip in the tub from the previous step</li>
 				<li>Once the tub has filled all the way, activate it to drain it</li>
 				<li>
-					Locate the water tower near the Catwalk, if all has been done correctly the water tower will be leaking blood. Shoot all of the yellow supports off the Water Tower in order to make the Tower fall down. Once the Water Tower collapses, throw the <a href="#windoer-weapon/hellsretriever">Hell's Retriever</a> at a{" "}
+					Locate the water tower near the Catwalk, if all has been done correctly the water tower will be leaking blood. Shoot all of the yellow supports off the Water Tower in order to make the Tower fall down. Once the Water Tower collapses, throw the{" "}
+					<TabLink tab="wonder-weapon" target="hellsretriever">
+						Hell's Retriever
+					</TabLink>{" "}
+					at a{" "}
 					<a href="https://imgur.com/ZL8M5tF" target="_blank" rel="noopener noreferrer">
 						branch
 					</a>{" "}
@@ -530,9 +534,9 @@ function WonderWeapons() {
 
 			<h2 id="goldscalpel">
 				Golden Scalpel -{" "}
-				<a href="https://www.youtube.com/watch?v=OiUYXXlPfFs" target="_blank">
+				<a href="https://www.youtube.com/watch?v=OiUYXXlPfFs" target="_blank" rel="noopener noreferrer">
 					{" "}
-					rel="noopener noreferrer" Video
+					Video
 				</a>
 			</h2>
 			<ol>
@@ -1044,7 +1048,7 @@ function Extras() {
 			<p>
 				<span>As Richtofen, interact with Samuel Stuhlingers Cryopod at the start of the game (furthest to the left).</span>
 				<span>
-					Throughout the entire <TabLink tab="#main-ee">Main EE</TabLink>, you will now hear Stuhlinger Quotes (only Richtofen will hear)
+					Throughout the entire <TabLink tab="main-ee">Main EE</TabLink>, you will now hear Stuhlinger Quotes (only Richtofen will hear)
 				</span>
 			</p>
 			<h2>
