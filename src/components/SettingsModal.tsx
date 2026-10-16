@@ -5,7 +5,7 @@ import { baseColorAtom } from "../atoms";
 import { generatePalette, DEFAULT_COLOR } from "../utils/palette";
 
 export default function SettingsModal() {
-	const [settingsOpen, setSettingsOpen] = useAtom(settingsOpenAtom);
+	const [, setSettingsOpen] = useAtom(settingsOpenAtom);
 	const [baseColor, setBaseColor] = useAtom(baseColorAtom);
 	const preview = generatePalette(baseColor);
 
