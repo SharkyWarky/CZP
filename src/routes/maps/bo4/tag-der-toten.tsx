@@ -1,0 +1,1811 @@
+import { createFileRoute } from "@tanstack/react-router";
+/* ---- v2.1.0 ---- */
+import { MapNavigationProvider, useMapNavigation } from "../../../context/MapNavigationContext";
+
+import MapTabs from "../../../components/MapTabs";
+import InfoBox from "../../../components/InfoBox";
+import Source from "../../../components/Source";
+import TabLink from "../../../components/TabLink";
+import ImageContainer from "../../../components/ImageContainer";
+import VideoPlayer from "../../../components/VideoPlayer";
+
+import { mapModules } from "../../../data/mapModules";
+
+// ============================================================
+// 🔴 MAP TABS
+// ============================================================
+
+// 🔴 REMOVE: Tabs that do not apply to this map.
+// 🔴 ADD: Any applicable tabs not currently included.
+
+const tabs = [mapModules.overview, mapModules.mainEE, mapModules.sideEE, mapModules.musicEE, mapModules.wonderWeapon, mapModules.buildables, mapModules.weapons, mapModules.gauntlet, mapModules.perks, mapModules.extras, mapModules.credits];
+
+// ============================================================
+// OVERVIEW
+// ============================================================
+
+function Overview() {
+	return (
+		<section className="tab-content">
+			<h2>Tag der Toten</h2>
+			<p>Tag der Toten (German: Day of the Dead) is the eighth and final Zombies map for Call of Duty: Black Ops 4, the twenty-fifth and final Aether Story map, and the thirty-second map overall. It released on September 23rd, 2019 for PlayStation 4, and was released September 30th, 2019 on Xbox One and PC.</p>
+			<p>Tag der Toten serves as the finale to the Aether storyline that first began with Nacht der Untoten in Call of Duty: World at War. A new story, the Dark Aether Saga, set in a new universe following on from the events of Salvation Lies Above was introduced in Call of Duty: Black Ops Cold War.</p>
+
+			<h2>Overview</h2>
+			<p>Tag der Toten is a reimagining of the map Call of the Dead from Call of Duty: Black Ops. Instead of the Call of the Dead Cast, players play as Victis for the first time since Buried in Call of Duty: Black Ops II. The Call of the Dead Cast are however referenced in small ways throughout the map, and players can find and interact with George A Romero's glasses for a small point reward.</p>
+			<p>Victis are sent by Ultimis and Primis to the area in search of the Agarthan Device, the final item needed for Nikolai to complete his grand scheme and prevent a second Great War with Doctor Monty.</p>
+			<p>Much of the core layout of Call of the Dead is still present in this map, although some locations have been expanded and there are now several new areas and paths for the player to explore. A particularly major addition is a large Group 935 facility resting on the side of the mountain overlooking the entire map, where Richtofen and other members Group 935 conducted many experiments with Element 115. The map uniquely features three power switches, each powering a different segment of the map.</p>
+			<p>As with other maps in Black Ops 4, Tag der Toten features a variety of unique gameplay and map design elements. Tag der Toten sees the return of freezing bodies of water, Ziplines, and the Flinger as they appeared in Call of the Dead, as well as additional ones not previously seen. One of the new Flingers in particular can bring the player to a small island containing the Golden Pack-a-Punch Machine, allowing players to instantly fully upgrade their weapons for a steep discount. At the starts of the game, the other Flinger and the Ziplines are in a state of disrepair and disuse, but can be repaired by the player and a new character, The Hermit. Certain underwater tunnels can also be swam through by the player.</p>
+			<p>The Hermit himself is a part of the maps core gameplay loop, as multiple map mechanics and quest steps involve traveling to the top of the lighthouse and interacting with him. He will repair broken items for the player, reward them with resources and key items, and guides the player through the main quest. He is never seen, but will speak with the players frequently regardless.</p>
+			<p>The map includes a huge assortment of wonder weapons to aid the player in their quest for survival. Multiple new Wonder Weapons are introduced, including the Tundra Gun, Wunderwaffe DG-Scharfschütze, Samantha's Music Box, and the Golden Snowballs. In addition The Thundergun and Matryoshka Doll both make a reappearance on the map, as well as the Ray Gun, Ray Gun Mark II, and Monkey Bomb as in all aether maps. All the map exclusive weapons can be obtained from a quest, and nearly all can be obtained from the Mystery Box.</p>
+			<p>Buildables are also present on the map, with the standard Ballistic Shield returning. New buildables include the Heat Pack, allowing players to move faster and freeze slower in water, and the Dynamite Bomb, allowing players to blow up specific barricades and access more of the map. Additionally an Ice Pick, allowing the player to more quickly break out of ice if frozen, can be won from a challenge. Snowballs are also present on the map and can be used to freeze and shatter zombies.</p>
+			<p>The Pack-a-Punch Machine returns with similar mechanics to those featured in Call of the Dead, moving around to wherever the lighthouses beam points. As mentioned before, a Golden Pack-a-Punch is also introduced.</p>
+			<p>The map also features a return of Trials, this time as Challenge Totems, rewarding players greatly that complete them. Challenge Totems are spread around key areas of the map, and are static. Their parameters and rewards are the same from game to game.</p>
+		</section>
+	);
+}
+
+// ============================================================
+// MAIN EASTER EGG
+// ============================================================
+
+function MainEE() {
+	return (
+		<section className="tab-content">
+			<h2>Prerequisites</h2>
+			<ul>
+				<li>
+					<TabLink tab="side-ee" target="pap">
+						PaP
+					</TabLink>
+				</li>
+				<li>
+					<TabLink tab="extras" target="ziplines">
+						Zipline handle
+					</TabLink>
+				</li>
+				<li>
+					<TabLink tab="buildables" target="dynamite">
+						Dynamite
+					</TabLink>
+				</li>
+				<li>
+					<TabLink tab="side-ee" target="power">
+						All 3 Power Switches
+					</TabLink>
+				</li>
+				<li>
+					<TabLink tab="wonder-weapon" target="musicbox">
+						Samatha's Music Boxes
+					</TabLink>{" "}
+					(step 10)
+				</li>
+				<li>
+					<TabLink tab="wonder-weapon" target="wunderwaffe">
+						Wunderwaffe
+					</TabLink>{" "}
+					(step 14)
+				</li>
+			</ul>
+
+			<h2>Recommended Setup</h2>
+			<ul>
+				<li>
+					<b>Elixers</b>
+					<ul>
+						<li>Anywhere but Here</li>
+						<li>Undead Man Walking</li>
+						<li>Extra Credit</li>
+						<li>Temporal Gift</li>
+					</ul>
+				</li>
+				<li>
+					<b>Perks</b>
+					<ul>
+						<li>Dying Wish</li>
+						<li>Modifier - Winter's Wail</li>
+					</ul>
+				</li>
+				<li>Specialist - Path of Sorrows</li>
+				<li>Equipment - Wraith Fire</li>
+				<li>Starting Weapon - Strife + Stiletto Knife</li>
+				<li>
+					<b>During the Game</b>
+					<ul>
+						<li>
+							<TabLink tab="buildables" target="shield">
+								Shield
+							</TabLink>
+						</li>
+					</ul>
+				</li>
+			</ul>
+
+			<h2>
+				Main EE -{" "}
+				<a href="https://www.youtube.com/watch?v=dVsGol080vg" target="_blank" rel="noopener noreferrer">
+					Video
+				</a>
+			</h2>
+			<ol>
+				<li>
+					Complete 6{" "}
+					<TabLink tab="extras" target="challenges">
+						Challenges
+					</TabLink>{" "}
+					from 2 of the dummys (recommended: outside lighthouse and Forecastle)
+				</li>
+				<li>Head to the hermit and he should deliver 4 dials which you need to grab from the pulley</li>
+				<li>
+					<span>Head to the side room in the Artifact Storage area and place them on the boxes with glowing red lights on the walls. Spin them until you hear a ding, then repeat for all 4 dials. (apothicon blood should start talking)</span>
+					<span>
+						If you would prefer to legitemately find all the number around the map, you can find the locations{" "}
+						<a href="https://www.youtube.com/watch?v=1HI4CcS2BPQ" target="_blank" rel="noopener noreferrer">
+							Here
+						</a>
+					</span>
+				</li>
+				<li>
+					(Subtitles recommended) After the Apothicon Blood says "Find Us Offerings Three", pay attention to the lines after that. Then use the chart below to locate that clues location and pick it up. Repeat for 3 items.
+					<ul>
+						<li>"Where one mysteries": Lighthouse Level 1 - Staircase step near mystery box</li>
+						<li>"Where preservation freezes": Main Deck - Life preserver on right side of ship</li>
+						<li>"Where crows roost": Forecastle - Barrels To right of ship crows nest</li>
+						<li>"Where bounded slept": Forecastle - Inside the blue shipping container</li>
+						<li>"Where bread breaks": Gangway - Island countertop on the left edge</li>
+						<li>"Where earth crumbles": Geological Processing - left side end of the Conveyor belt</li>
+						<li>"Where falls freeze": Cargo Hold - floating to the left of the jerrycan</li>
+						<li>"Where feet slip": Ice Grotto - on left side of ice slide, must catch while going down</li>
+						<li>"Where filth cleanses": Decontamination - In knocked over cart</li>
+						<li>"Where fire sinks": Sunken Path - against the rocks to the right of lantern</li>
+						<li>"Where helixes peak": Lighthouse Level 4 - sitting ontop of the jars</li>
+						<li>"Where lightning aims": Security Lobby - on bench under Wunderwaffe blueprints</li>
+						<li>"Where lines berth": Docks - left side of snow pile under zipline leading to Lighthouse</li>
+						<li>"Where lungs close": Lagoon - Underwater cave on the ground ot the left when exiting</li>
+						<li>"Where madness sleeps": Specimen Storage - On the mattress in the prison cell</li>
+						<li>
+							"Where mountains throw": Outer Walkway (requires{" "}
+							<TabLink tab="buildables" target="dynamite">
+								Dynamite
+							</TabLink>
+							) - On the edge of the upper floor when standing on the flinger
+						</li>
+						<li>"Where north is found": Bridge - ontop of the compass across from the power switch</li>
+						<li>"Where power ends": Human Infusion - On the terminal to the right of the power switch</li>
+						<li>"Where hidden burns": Hidden Path - At the end of the burning water ontop of a generator</li>
+						<li>"Where thirst dawns": Stern - To the left of the soda perk on the railing next to the crane</li>
+					</ul>
+				</li>
+				<li>
+					Listen to the voice agian for another hint on where to "Seek the Seal of Duality". After meleeing the specific thing, you will find the safe, which requires a{" "}
+					<TabLink tab="buildables" target="dynamite">
+						Dynamite
+					</TabLink>{" "}
+					to be placed on it to be opened. Grab the seal.
+					<ul>
+						<li>"Where humans suffer" - Specimen Storage - Bulletin Board on left wall</li>
+						<li>"Inside an icy hall" - Ice Grotto - Sign on the right at the end of the ice slide</li>
+						<li>"Where Aether was gathered" - Geological Processing - Bulletin Board to the right of the big drum</li>
+						<li>"Where cages hang" - Boathouse - Bulletin Board in the small room with the lamp</li>
+					</ul>
+				</li>
+				<li>Once you have collected the seal, head to the Artifact Storage again and place it on the barrel in the center of the room</li>
+				<li>Shoot the orb that is now moving around the room 3 times. This will send other orbs flying around the map. (wunderwaffe or Explosive weapons will work best)</li>
+				<li>
+					<span>You now need to go around the map and find the 3 glowing orbs. They can be located anywhere and will remain there UNLESS you get too close to them.</span>
+					<span>When you find one, shoot a snowball at it to turn it blue, then shoot it with a gun. repeat for all orbs. (Zombie spawns are infinite during this step and will not yield any points)</span>
+				</li>
+				<li>Return to the Artifact Storage, freeze and shoot the orbs within the room one last time. Pickup the seal.</li>
+				<li>Head to the campfire in the Sunken Path and interact with it to place the seal ontop. Throw a samantha box on it to turn the flames blue. After a lore dump, grab the seal again.</li>
+				<li>Go to the Hermit and he will give you 2 soapstones. place them dow non the scorch marks behidn the lighthouse and activate the lighthouse trap. When finished, collect the stones and head to the facility (DO NOT TOUCH WATER orelse the stones will cool down and you'll have to re-heat them again)</li>
+				<li>Interact with the machine in the Human Infusion room to place down one of your stones. Place the other soapstone down on the scorchmarks under the Decontamination Room Water trap and activate it to cool it off. Once done, pick it up again and place it in the other side of the machine.</li>
+				<li>Between the 2 stones is a fuse you then need to grab. Head to the Lighthouse Station and place it in the power box beside the metal door on the first floor.</li>
+				<li>
+					Head back to the Facility and shoot a red battery on electrical towers using the Wunderwaffe (they will dissapear when shot)
+					<ul>
+						<li>On the tower to the left when arriving via the zipline</li>
+						<li>On the opposite side at the Loading Platform area</li>
+					</ul>
+				</li>
+				<li>
+					Now you need to power 3 generators around the map by killing electric zombies next to them. (will spark with blue when successful)
+					<ul>
+						<li>Outside the Lighthouse Platform visible from the Lighthouse Station</li>
+						<li>Behind the MX9 wallbuy in the Lighthouse Approach area</li>
+						<li>Next to the PaP location beside the Boathouse</li>
+					</ul>
+				</li>
+				<li>
+					<span>Go back to the Lighthouse Station door and interact with the fuse to open the door. Collect the Elemental Shard and return it to the Artifact Storage area by placing the seal and repeating the red orb Step</span>
+					<span>Shoot orb in the room 3 times. Find Orb around map. Hit with snowball the nshoot with normal gun. repeat 3 times. Repeat with orbs inside the room.</span>
+				</li>
+				<li>grab the seal and place it back down on the fire and use another samantha box on it. After the lore drop, you can grab the seal once more.</li>
+				<li>
+					<b>GET FULLY SETUP ATY THIS POINT BEFORE CONTINUING.</b> bring the seal to the Hermit (requires all players) and it will start a lockdown within the Lighthouse. (2 minute survival) Once complete you can grab the seal from the hermit.
+				</li>
+				<li>Visit each PaP location and PaP the seal by placing it in the machine and getting zombie kills nearby until the seal pops out again. Lighthouse will direct you to the next location.</li>
+				<li>Once all 4 PaP locations have been done (no golden PaP) then return it to the Artifact Storage. Shoot the glowing orb 3 times, find the 3 orbs WITHIN the room and use snowballs and bullets once more. Pickup the seal.</li>
+				<li>Bring the seal to the campfire and throw a samantha music box at it for the final lore dump. Grab the seal again.</li>
+				<li>
+					<span>
+						<b>BOSS FIGHT! get fully prepared with PaP, Shield, everything you'll need.</b> Fling over to the golden PaP when ready. Insert the seal into the golden PaP machine and charge it one last time. It should float into the air and change the entire map. YOU MUST REMAIN IN THE BUBBLE FROM THIS POINT ONWARDS. When the orb leaves you, wait until it's halfway before flinging or using a zipline to catch up.
+					</span>
+					<span>The orb will stop at 3 locations and be required to be filled with zombie souls before it continues. It will give you max ammo and carpenter after the soul box is filled. (Main Deck, Lighthouse Cove, Lighthouse Station)</span>
+					<span>At the Main Deck, take the stairs to catch up after it starts moving again. Powerups spawn behind you.</span>
+					<span>All water has now turned to lava and you'll need to jump onto the floating platforms in order to not take damage.</span>
+					<span>Once at Human Infusion, you'll enter the final event. During this one, the orb will slowly get smaller and smaller. Keep getting kills to charge the seal. Screen will glow white once complete.</span>
+				</li>
+				<li>Grab the Agarthan device once the characters stop talking and give it back to the hermit. Head to the top level of the Sun Deck and watch the Lighthouse.</li>
+				<li>Once you see the golden thing fall onto the map. Head to Forecastle and collect it to finish the Aether Story.</li>
+			</ol>
+		</section>
+	);
+}
+
+// ============================================================
+// SIDE EASTER EGGS
+// ============================================================
+
+function SideEE() {
+	return (
+		<section className="tab-content">
+			<h2 id="power">Power</h2>
+			<p>To turn on power in each of the 3 locations.</p>
+			<ul>
+				<li>Docks directly infront of you</li>
+				<li>The Bridge area on the boat</li>
+				<li>Human Infsion inside the facility</li>
+			</ul>
+
+			<h2 id="pap">
+				PaP -{" "}
+				<a href="https://www.youtube.com/watch?v=6WyofOc3ojQ" target="_blank" rel="noopener noreferrer">
+					Video
+				</a>
+			</h2>
+			<ol>
+				<li>After activating the power switches in the Docks and Bridge area, find, shoot and collect the Glowing blue rock located in the cave by the Beach</li>
+				<li>Return the rock to the Hermit via the pulley he sends down.</li>
+				<li>The PaP will then be melted where the lighthouse points, allowing you to PaP</li>
+			</ol>
+			<h3>Locations</h3>
+			<ul>
+				<li>Beach</li>
+				<li>Lagoon</li>
+				<li>Artifact Storage / Sunken Path (must extinguish fire by going through Artifact Storage and shooting pipe above the machine)</li>
+				<li>Boathouse</li>
+				<li>
+					Iceberg (
+					<TabLink tab="side-ee" target="goldenpap">
+						Golden PaP
+					</TabLink>
+					)
+				</li>
+			</ul>
+
+			<h2 id="goldenpap">
+				Golden PaP -{" "}
+				<a href="https://www.youtube.com/watch?v=6WyofOc3ojQ" target="_blank" rel="noopener noreferrer">
+					Video
+				</a>
+			</h2>
+			<p>
+				<span>
+					<b>
+						Requires the{" "}
+						<TabLink tab="extras" target="ziplines">
+							Zipline Handle
+						</TabLink>{" "}
+						and turn on all{" "}
+						<TabLink tab="side-ee" target="power">
+							Power Switches
+						</TabLink>
+					</b>
+				</span>
+				<span>Allows you to Fully Upgrade (Max Damage + AAT) For only 5000p</span>
+			</p>
+			<ol>
+				<li>
+					When the Lighthouse is shining it's light at the Golden PaP Machine (off the side of the boat), you can ride the{" "}
+					<TabLink tab="extras" target="flinger">
+						Flinger
+					</TabLink>{" "}
+					to be thrown to the golden PaP
+				</li>
+			</ol>
+
+			<h2>
+				Free 500 Points (George Romero Tribute) -{" "}
+				<a href="https://www.youtube.com/watch?v=gi4qxj-sdMI" target="_blank" rel="noopener noreferrer">
+					Video
+				</a>
+			</h2>
+			<p>Interact with the galsses on the counter in the Lighthouse Station on the upper floor</p>
+
+			<h2>
+				Free 5th Perk -{" "}
+				<a href="https://www.youtube.com/watch?v=r0Rn_fvznrY" target="_blank" rel="noopener noreferrer">
+					Video
+				</a>
+			</h2>
+			<p>
+				<b>Requires PaP open</b>
+			</p>
+			<ol>
+				<li>
+					collect a statue at each of the PaP spawn locations (can only pick up when the machine is at that particular location)
+					<ul>
+						<li>Golden PaP - To the right of the machine</li>
+						<li>Lighthouse Annex - Right of the machine</li>
+						<li>Beach - Behind the machine</li>
+						<li>Artifact Storage/Sunken Path - behind the machine (must extinguish fire by going through Artifact Storage and shooting pipe above the machine)</li>
+						<li>Lagoon - Behind the machine</li>
+					</ul>
+				</li>
+				<li>Head to the altar in the corner of the beach (on the right if you fall from Hidden Path) and interact to place them (Will start an all electric round which you need to survive)</li>
+				<li>Then return to the altar to collect the free perk.</li>
+			</ol>
+		</section>
+	);
+}
+
+// ============================================================
+// MUSIC EASTER EGGS
+// ============================================================
+
+function MusicEE() {
+	return (
+		<section className="tab-content">
+			<h2>
+				A Light from the Shore -{" "}
+				<a href="https://youtu.be/J-Nk1sAMvEY?si=TsWNLNahvksBZkeq&t=1724" target="_blank" rel="noopener noreferrer">
+					Video
+				</a>
+			</h2>
+			<p>Interact with 3 melee weapons around the map</p>
+			<ul>
+				<li>Hidden Path - Machete</li>
+				<li>Loading Platform - Pitchfork</li>
+				<li>Ice Grotto inside the bottom of the ice slide - Sickle</li>
+				<ImageContainer>
+					<img src="\images\guides\bo4\tag-der-toten\tag-der-toten-machete.png" alt="Machete Location - Hidden Path" />
+					<img src="\images\guides\bo4\tag-der-toten\tag-der-toten-sickle.png" alt="Sickle Location - Ice Grotto" />
+					<img src="\images\guides\bo4\tag-der-toten\tag-der-toten-pitchfork.png" alt="Pitch Fork - Loading Platform" />
+				</ImageContainer>
+			</ul>
+
+			<h2>
+				Reflections -{" "}
+				<a href="https://youtu.be/J-Nk1sAMvEY?si=68tyBU9WfGalU5dC&t=1786" target="_blank" rel="noopener noreferrer">
+					Video
+				</a>
+			</h2>
+			<p>Interact with the large metal door in the Lighthouse Station 3 times</p>
+		</section>
+	);
+}
+
+// ============================================================
+// WONDER WEAPONS
+// ============================================================
+
+function WonderWeapons() {
+	return (
+		<section className="tab-content">
+			<h2 id="musicbox">
+				Samantha's Music Box -{" "}
+				<a href="https://www.youtube.com/watch?v=Zoa8CngCbDg" target="_blank" rel="noopener noreferrer">
+					Video
+				</a>
+			</h2>
+			<p>
+				<span>Will catch all nearby zombies, launching them into the air before killing them.</span>
+				<span>
+					<b>
+						Requires{" "}
+						<TabLink tab="extras" target="ziplines">
+							Zipline Handle
+						</TabLink>
+					</b>
+				</span>
+			</p>
+			<ol>
+				<li>
+					You need to find a keycard located in the Facility right side room (Decontamination)
+					<ul>
+						<li>To the left hidden inside the dryer</li>
+						<li>In the center in an eye flushing unit</li>
+						<li>Behind the eye flushers in the second sink</li>
+					</ul>
+				</li>
+				<li>
+					Find a second keycard located in the Specimen Storage area
+					<ul>
+						<li>On the left as soon as you enter in the post box</li>
+						<li>Inside the toilet at the back of the room</li>
+						<li>At the bottom shelf of the canister rack on the right when entering</li>
+					</ul>
+				</li>
+				<li>Turn on facility power in Human Infusion and head up to the Security Lobby and interact with the slots in the leftmost panel in the center to place the keycards. collect them when they pop out again</li>
+				<li>Head back to Human Infusion and input the keycards into both sides of the large vault door. Interact with the vault to start a lockdown. Once finished, the vault will open and you can grab the music box from within.</li>
+			</ol>
+
+			<h2 id="wunderwaffe">
+				Wunderwaffe DG-Scharfschutze -{" "}
+				<a href="https://www.youtube.com/watch?v=kQskTD-jwa8" target="_blank" rel="noopener noreferrer">
+					Video
+				</a>
+			</h2>
+			<p>
+				<span>Can either be gotten through the mystery box or the EE. Basically a sniper version of the Wunderwaffe</span>
+				<span>
+					<b>
+						Requires{" "}
+						<TabLink tab="extras" target="ziplines">
+							Zipline Handle
+						</TabLink>
+					</b>
+				</span>
+			</p>
+			<ol>
+				<li>
+					Shoot down the icicle with a key inside and collect it and melt it down using the fire at the far end of the boat. collect the key from the pot when it's done.
+					<ul>
+						<li>Above blue cave entrance from the beach</li>
+						<li>up on the lighthouse juse below the catwalk when looking from the Lighthouse Station deck area (below left side of broken railing)</li>
+						<li>On the edge of the stairs above you when looking from Lighthouse Cove going into Lighthouse Station</li>
+					</ul>
+				</li>
+				<li>Head to the Specimen Storage area of the Facility and interact with the safe on the counter to open it. Charge it by killing 11 zombies nearby. (device should glow green when complete)</li>
+				<li>Pick up the Vrill device and give it to the hermit. He should return a key on the pulley which you can use to open the box on the floor behind you. The Wunderwaffe is inside.</li>
+			</ol>
+
+			<h2 id="tundragun">
+				Tundragun -{" "}
+				<a href="https://www.youtube.com/watch?v=lZ79Eb-jSY0" target="_blank" rel="noopener noreferrer">
+					Video
+				</a>
+			</h2>
+			<p>
+				<span>Can either be gotten through the mystery box or by the EE</span>
+				<span>
+					Fixing the{" "}
+					<TabLink tab="extras" target="flinger">
+						Flinger
+					</TabLink>{" "}
+					on the ship will help with the ee
+				</span>
+			</p>
+			<ol>
+				<li>
+					You must throw snowballs at 5 different targets aroudn the map in a specific order (Time limit)
+					<ol>
+						<li>Above the door on the Loading Platform</li>
+						<li>(zipline to spawn) Lagoon at the base of the ice slide</li>
+						<li>To the left of the right doorway on teh Sun Deck</li>
+						<li>(use flinger to get here) on the column in the center of the staircase on Lighthouse Level 3</li>
+						<li>(zipline to Cargo Hold) In the Cargo Hold to the left on a pillar</li>
+					</ol>
+				</li>
+				<li>The crate infront of the final target should open revealing the tundragun</li>
+			</ol>
+
+			<h2 id="thundergun">
+				Thundergun -{" "}
+				<a href="https://youtu.be/lZ79Eb-jSY0?si=2J7CartcpMtoh9Fd&t=71" target="_blank" rel="noopener noreferrer">
+					Video
+				</a>
+			</h2>
+			<p>
+				Can either be gotten through the mystery box or by completing all{" "}
+				<TabLink tab="extras" target="challenges">
+					5 hermit challenges
+				</TabLink>{" "}
+				the returning to the hermit to claim the key to open the box to the left of the pulley.
+			</p>
+
+			<h2>
+				Yellow Snowballs Upgrade -{" "}
+				<a href="https://www.youtube.com/watch?v=8D4itV6MtwY" target="_blank" rel="noopener noreferrer">
+					Video
+				</a>
+			</h2>
+			<p>
+				<b>
+					Requires{" "}
+					<TabLink tab="extras" target="zipline">
+						zipline handle
+					</TabLink>
+				</b>
+			</p>
+			<ol>
+				<li>
+					You need to find 4 sock puppets and hit them using a snowball
+					<ul>
+						<li>
+							Sunken Path
+							<ul>
+								<li>At the tip of a sharp rock just outside the path</li>
+								<li>Past the GKS wallbuy on the tip of the boat</li>
+								<li>On another sharp rock to the right of the boat at the tip of a large pointy rock</li>
+								<ImageContainer>
+									<img src="\images\guides\bo4\tag-der-toten\tag-der-toten-puppet11.png" alt="Sunken Path Puppet Location 1" />
+									<img src="\images\guides\bo4\tag-der-toten\tag-der-toten-puppet12.png" alt="Sunken Path Puppet Location 2" />
+									<img src="\images\guides\bo4\tag-der-toten\tag-der-toten-puppet13.png" alt="Sunken Path Puppet Location 3" />
+								</ImageContainer>
+							</ul>
+						</li>
+						<li>
+							Lighthouse
+							<ul>
+								<li>Outside the zombie spawn on Level 2 on the middle post</li>
+								<li>Outside zombie spawn on level 2 ontop of the power line coil</li>
+								<li>On Level 4 behind you as you come up the stairs, to the left of the friends mural</li>
+								<ImageContainer>
+									<img src="\images\guides\bo4\tag-der-toten\tag-der-toten-puppet21.png" alt="Lighthouse Puppet Location 1" />
+									<img src="\images\guides\bo4\tag-der-toten\tag-der-toten-puppet22.png" alt="Lighthouse Puppet Location 2" />
+									<img src="\images\guides\bo4\tag-der-toten\tag-der-toten-puppet23.png" alt="Lighthouse Puppet Location 3" />
+								</ImageContainer>
+							</ul>
+						</li>
+						<li>
+							Geological Processing
+							<ul>
+								<li>On the top right of the white box in the air when you enter</li>
+								<li>Ontop of the shelf on your left as you enter</li>
+								<li>At the back of the room on a power box inside the right zombie spawn</li>
+								<ImageContainer>
+									<img src="\images\guides\bo4\tag-der-toten\tag-der-toten-puppet31.png" alt="Geological Processing Puppet Location 1" />
+									<img src="\images\guides\bo4\tag-der-toten\tag-der-toten-puppet32.png" alt="Geological Processing Puppet Location 2" />
+									<img src="\images\guides\bo4\tag-der-toten\tag-der-toten-puppet33.png" alt="Geological Processing Puppet Location 3" />
+								</ImageContainer>
+							</ul>
+						</li>
+						<li>
+							Sun Deck
+							<ul>
+								<li>Ontop of the smokestack towards the bowie knife wallbuy</li>
+								<li>On the ledge above the speaker on the roof</li>
+								<li>In the middle top of the crane holding the zipline</li>
+								<ImageContainer>
+									<img src="\images\guides\bo4\tag-der-toten\tag-der-toten-puppet41.png" alt="Sun Deck Puppet Location 1" />
+									<img src="\images\guides\bo4\tag-der-toten\tag-der-toten-puppet42.png" alt="Sun Deck Puppet Location 2" />
+									<img src="\images\guides\bo4\tag-der-toten\tag-der-toten-puppet43.png" alt="Sun Deck Puppet Location 3" />
+								</ImageContainer>
+							</ul>
+						</li>
+					</ul>
+				</li>
+				<li>
+					Once all 4 puppets have been collected, you'll need to charge 3 blue campfires with zombie soul (will be one at a time and a different order each round, fire goes out when complete)
+					<ul>
+						<li>Beach</li>
+						<li>Behind the Boathouse near the PaP location</li>
+						<li>Frozen Crevasse ontop where the mystery box is (zombies need to be on the roof to count)</li>
+					</ul>
+				</li>
+				<li>
+					Head to the Human Infusion area and shoot giant tank hanging from the rofo to break it. Somewhere on the floor should be a spleen that you need to pick up.
+					<ImageContainer>
+						<img src="\images\guides\bo4\tag-der-toten\tag-der-toten-spleen.png" alt="Spleen in Human Infusion" />
+					</ImageContainer>
+				</li>
+				<li>You'll need to quickly head down the zipline to Docks and step into the freezing water to cool it off. (you'll hear a ticking noise that indicates its frozen-ness.)</li>
+				<li>Once the timer is slowly ticking, you need to use the zipline up to the Lighthouse and give it to the hermit. he will return with yellow snowballs. (all snowballs around the map will also be replaced)</li>
+			</ol>
+		</section>
+	);
+}
+
+// ============================================================
+// BUILDABLES
+// ============================================================
+
+function Buildables() {
+	return (
+		<section className="tab-content">
+			<h3 id="tables">Table Locations</h3>
+			<ul>
+				<li>Lighthouse Station</li>
+				<li>Gangway</li>
+				<li>Specimen Storage</li>
+			</ul>
+
+			<h2 id="shield">
+				Riot Shield -{" "}
+				<a href="https://www.youtube.com/watch?v=l8SbyGoYufk" target="_blank" rel="noopener noreferrer">
+					Video
+				</a>
+			</h2>
+			<ul>
+				<li>
+					Rectangle Piece - Docks (spawn)
+					<ul>
+						<li>Leaning against gas pump</li>
+						<li>In the water against the boat to the left of the power switch</li>
+						<li>Next to the far zombie spawn leaning against the shards of ice (in the corner)</li>
+					</ul>
+				</li>
+				<li>
+					Screen
+					<ul>
+						<li>Frozen Crevasse up the right side (jumpy bit) next to the gloawing blue</li>
+						<li>Frozen Crevasse to the left of the boxc location on the roof (jump from previous location)</li>
+						<li>In the Lagoon to the right of the PaP location (giant block of ice)</li>
+					</ul>
+				</li>
+				<li>
+					Counter
+					<ul>
+						<li>Lighthouse Level 1 to the right of zombie spawn</li>
+						<li>Lighthouse Level 2 close to the level 2 sign on the wall (2 segments to the right)</li>
+						<li>Lighthouse Level 3 opposite from the exit against the railing</li>
+					</ul>
+				</li>
+			</ul>
+
+			<h2 id="dynamite">
+				Dynamite -{" "}
+				<a href="https://www.youtube.com/watch?v=cr69p8_cbIo" target="_blank" rel="noopener noreferrer">
+					Video
+				</a>
+			</h2>
+			<p>
+				<span>Kill 3 Napalm Zombies using snowballs for them to drop the parts. Construct at any Buildable Table</span>
+				<span>NOTE: While carrying all 3 parts OR a completed dynamite, Napalm zombies will not spawn</span>
+				<span>The Dynamite can be used to blow up 3 doorways</span>
+			</p>
+			<ul>
+				<li>Facility Entrance</li>
+				<li>Lighthouse Cove</li>
+				<li>Lagoon</li>
+			</ul>
+
+			<h2 id="heatpack">
+				Heat Pack -{" "}
+				<a href="https://www.youtube.com/watch?v=XSyyHHgVKpE" target="_blank" rel="noopener noreferrer">
+					Video
+				</a>
+			</h2>
+			<p>
+				<span>Lets the player swim faster and walk through water easier</span>
+				<span>
+					<b>
+						Requires all 3{" "}
+						<TabLink tab="side-ee" target="power">
+							Power Switches
+						</TabLink>{" "}
+						to be on, the{" "}
+						<TabLink tab="extras" target="ziplines">
+							Zipline Handle
+						</TabLink>{" "}
+						and{" "}
+						<TabLink tab="buildables" target="dynamite">
+							Dynamite
+						</TabLink>
+					</b>
+				</span>
+			</p>
+			<ol>
+				<li>
+					Fix the{" "}
+					<TabLink tab="extras" target="flinger">
+						Flinger
+					</TabLink>{" "}
+					at the facility (requires{" "}
+					<TabLink tab="buildables" target="dynamite">
+						Dynamite
+					</TabLink>{" "}
+					to access and zipline handle to access)
+				</li>
+				<li>Ride the Flinger on all 3 sides (left, right, and middle) after ladning you will destroy the floor where you can pick up the piece.</li>
+			</ol>
+		</section>
+	);
+}
+
+// ============================================================
+// WEAPONS
+// ============================================================
+
+function Weapons() {
+	return (
+		<section className="tab-content">
+			<h3>Starting Weapons</h3>
+			<ul>
+				<li>Knife</li>
+				<li>Welling - Player Choice</li>
+				<li>Strife - Player Choice</li>
+				<li>RK 7 Garrison - Player Choice</li>
+				<li>Saug 9mm - Player Choice</li>
+				<li>Essex Model 07 - Player Choice</li>
+				<li>MOG 12 - Player Choice</li>
+				<li>Frag - Player Choice</li>
+				<li>Acid Bomb - Player Choice</li>
+				<li>Claymore - Player Choice</li>
+				<li>Wraith Fire - Player Choice</li>
+				<li>Sentry - Player Choice</li>
+			</ul>
+
+			<h3>Specialists</h3>
+			<ul>
+				<li id="hellfire">Hellfire - Player Choice</li>
+				<li>Overkill - Player Choice</li>
+				<li id="pathofsorrows">Path of Sorrows - Player Choice</li>
+				<li id="ragnarok">Ragnarock DG-5 - Player Choice</li>
+			</ul>
+
+			<h3>Wall Weapons</h3>
+			<ul>
+				<li>
+					<b>Strife</b> - Docks (500p)
+				</li>
+				<li>
+					<b>Essex Model 07</b> - Docks (500p)
+				</li>
+				<li>
+					<b>RK 7 Garrison</b> - Lighthouse Annex (700p)
+				</li>
+				<li>
+					<b>Saug 9mm</b> - Lagoon (750p)
+				</li>
+				<li>
+					<b>Escargot</b> - Lighthouse Cove (1000p)
+				</li>
+				<li>
+					<b>MOG 12</b> - Boathouse (1000p)
+				</li>
+				<li>
+					<b>Spitfire</b> - Cargo Hold (1150p)
+				</li>
+				<li>
+					<b>Swordfish</b> - Lighthouse Level 2 (1200p)
+				</li>
+				<li>
+					<b>Mozu</b> - Lighthouse Station (1300p)
+				</li>
+				<li>
+					<b>MX9</b> - Lighthouse Approach (1300p)
+				</li>
+				<li>
+					<b>GKS</b> - Sunken Path (1300p)
+				</li>
+				<li>
+					<b>M1897 Trebuchet</b> - Main Deck (1400p)
+				</li>
+				<li>
+					<b>Maddox RFB</b> - Hidden Path (1450p)
+				</li>
+				<li>
+					<b>KN-57</b> - Gangway (1450p)
+				</li>
+				<li>
+					<b>M1927</b> - Beach (1500p)
+				</li>
+				<li>
+					<b>ICR-7</b> - Beach (1550p)
+				</li>
+				<li>
+					<b>Vapr-XKG</b> - Lighthouse Level 4 (1550p)
+				</li>
+				<li>
+					<b>Auger DMR</b> - Forecastle (1550p)
+				</li>
+				<li>
+					<b>Bowie Knife</b> - Stern (3000p)
+				</li>
+				<li>
+					<b>Titan</b> - Upper Catwalk (3750p)
+				</li>
+				<li>
+					<b>Koshka</b> - Security Lobby (4500p)
+				</li>
+			</ul>
+
+			<h3 id="mysterybox">Mystery Box</h3>
+			<h4>Locations</h4>
+			<ul>
+				<li>Frozen Crevasse</li>
+				<li>Lighthouse Level 1</li>
+				<li>Cargo Hold</li>
+				<li>Forecastle</li>
+				<li>Navigation</li>
+				<li>Beach</li>
+				<li>Lighthouse Station</li>
+				<li>Human Infusion</li>
+			</ul>
+			<h4>Box Weapons</h4>
+			<ul>
+				<li>Maddox RFB</li>
+				<li>Hitchcock M9</li>
+				<li>Rampart 17</li>
+				<li>Vapr-XKG</li>
+				<li>Grav</li>
+				<li>SWAT RFT</li>
+				<li>Peacekeeper</li>
+				<li>AN-94</li>
+				<li>DoubleCross</li>
+				<li>Escargot</li>
+				<li>Spitfire</li>
+				<li>Cordite</li>
+				<li>MP-40</li>
+				<li>M1927</li>
+				<li>Daemon 3XB</li>
+				<li>Switchblade X9</li>
+				<li>VMP</li>
+				<li>MicroMG 9mm</li>
+				<li>SwordFish</li>
+				<li>Essex Model 07</li>
+				<li>ABR 223</li>
+				<li>S6 Stingray</li>
+				<li>M16</li>
+				<li>Hades</li>
+				<li>VKM 750</li>
+				<li>Zweihander</li>
+				<li>Tigershark</li>
+				<li>SDM</li>
+				<li>Paladin HB50</li>
+				<li>Outlaw</li>
+				<li>Vendetta</li>
+				<li>Locus</li>
+				<li>Havelina AA50</li>
+				<li>Mozu</li>
+				<li>Rk 7 Garrison</li>
+				<li>KAP 45</li>
+				<li>SG12</li>
+				<li>MOG 12</li>
+				<li>Rampage</li>
+				<li>Argus</li>
+				<li>Hellion Salvo</li>
+				<li>Ballistic Knife</li>
+				<li>Reaver C86</li>
+				<li>Ray Gun</li>
+				<li>Ray Gun Mark II</li>
+				<li>
+					<TabLink tab="wonder-weapon" target="wunderwaffe">
+						Wunderwaffe DG-Scharfschutze
+					</TabLink>
+				</li>
+				<li>
+					<TabLink tab="wonder-weapon" target="thundergun">
+						Thundergun
+					</TabLink>
+				</li>
+				<li>
+					<TabLink tab="wonder-weapon" target="tundragun">
+						Tundragun
+					</TabLink>
+				</li>
+				<li>Matryoshka Doll</li>
+				<li>Monkey Bomb</li>
+			</ul>
+		</section>
+	);
+}
+
+// ============================================================
+// GAUNTLET
+// ============================================================
+
+function Gauntlet() {
+	return (
+		<section className="tab-content">
+			<h2>An Ice Day in Hell</h2>
+			<table>
+				<thead>
+					<tr>
+						<th scope="col">Round</th>
+						<th scope="col">Name</th>
+						<th scope="col">Description</th>
+					</tr>
+				</thead>
+				<tbody>
+					<tr>
+						<td>1</td>
+						<td>Cold Feet</td>
+						<td>Players Can Only Attack When Standing In Freezing Water.</td>
+					</tr>
+					<tr>
+						<td>2</td>
+						<td>Safe Haven</td>
+						<td>Slowly Take Damage If Not Inside The Lighthouse Or Lighhouse Station.</td>
+					</tr>
+					<tr>
+						<td>3</td>
+						<td>Side Job</td>
+						<td>Use Unpacked Pistols Only.</td>
+					</tr>
+					<tr>
+						<td>4</td>
+						<td>Perched</td>
+						<td>Zombies Can Only Be Damaged While Much Higher Than Them.</td>
+					</tr>
+					<tr>
+						<td>5</td>
+						<td>Shocking Revelation</td>
+						<td>Survive A Horde Of Electric Zombies.</td>
+					</tr>
+					<tr>
+						<td>6</td>
+						<td>Situation Handled</td>
+						<td>Acquire The Zipline Handle By The End Of This Round.</td>
+					</tr>
+					<tr>
+						<td>7</td>
+						<td>Cold Hearted</td>
+						<td>No Health Regeneration.</td>
+					</tr>
+					<tr>
+						<td>8</td>
+						<td>Call of the Hermit</td>
+						<td>Complete One Challenge Totem By The End Of This Round.</td>
+					</tr>
+					<tr>
+						<td>9</td>
+						<td>Wunderbar</td>
+						<td>At Least One Player Must Possess Wunderwaffe By The End Of This Round.</td>
+					</tr>
+					<tr>
+						<td>10</td>
+						<td>Stationary Defense</td>
+						<td>Defend Lighthouse Station.</td>
+					</tr>
+					<tr>
+						<td>11</td>
+						<td>Heating Up</td>
+						<td>Craft The Heat Pack By The End Of This Round.</td>
+					</tr>
+					<tr>
+						<td>12</td>
+						<td>Open for Business</td>
+						<td>Must Open All Doors And Clear All Paths By The End Of This Round.</td>
+					</tr>
+					<tr>
+						<td>13</td>
+						<td>Toss Up</td>
+						<td>Kill Enemies With Flingers.</td>
+					</tr>
+					<tr>
+						<td>14</td>
+						<td>Heed the Hermit</td>
+						<td>Complete Two Challenge Totems By The End Of This Round.</td>
+					</tr>
+					<tr>
+						<td>15</td>
+						<td>Breaking the Ice</td>
+						<td>Defend The Frozen Crevasse.</td>
+					</tr>
+					<tr>
+						<td>16</td>
+						<td>Steady Aim</td>
+						<td>Use Unpacked Tactical Rifles Only.</td>
+					</tr>
+					<tr>
+						<td>17</td>
+						<td>Gilded Rage</td>
+						<td>Possess Two Fully-Packed Weapons At The End Of This Round.</td>
+					</tr>
+					<tr>
+						<td>18</td>
+						<td>Hermit's Little Helpers</td>
+						<td>Complete Three Challenge Totems By The End Of This Round.</td>
+					</tr>
+					<tr>
+						<td>19</td>
+						<td>Hush Puppies</td>
+						<td>Use Snowballs Only.</td>
+					</tr>
+					<tr>
+						<td>20</td>
+						<td>Repel the Boarders</td>
+						<td>Defend Navigation.</td>
+					</tr>
+					<tr>
+						<td>21</td>
+						<td>In the Spotlight</td>
+						<td>Can Only Attack While Standing In The Lighthouse Spotlight.</td>
+					</tr>
+					<tr>
+						<td>22</td>
+						<td>Hermit's Heroes</td>
+						<td>Complete Four Challenge Totems By The End Of This Round.</td>
+					</tr>
+					<tr>
+						<td>23</td>
+						<td>Cold Shoulder</td>
+						<td>Hunt Down And Open The Mystery Box Six Times This Round (Firesale Disabled).</td>
+					</tr>
+					<tr>
+						<td>24</td>
+						<td>Dead-line</td>
+						<td>Kill Zombies While They Are Using Ziplines.</td>
+					</tr>
+					<tr>
+						<td>25</td>
+						<td>Forecastle Frenzy</td>
+						<td>Defend Forecastle.</td>
+					</tr>
+					<tr>
+						<td>26</td>
+						<td>Honor the Hermit</td>
+						<td>Complete Five Challenge Totems By The End Of This Round.</td>
+					</tr>
+					<tr>
+						<td>27</td>
+						<td>Out of Scope</td>
+						<td>Use Unpacked Sniper Rifles Only.</td>
+					</tr>
+					<tr>
+						<td>28</td>
+						<td>Bloody Mess</td>
+						<td>Defend The Beach While Avoiding Apothicon Blood.</td>
+					</tr>
+					<tr>
+						<td>29</td>
+						<td>Molten Mayhem</td>
+						<td>Sprint To Avoid Health Drain. Slower Movement Drains Health Faster.</td>
+					</tr>
+					<tr>
+						<td>30</td>
+						<td>Infused Fury</td>
+						<td>Defend Human Infusion.</td>
+					</tr>
+				</tbody>
+			</table>
+			<VideoPlayer url="ALC4i5dkvpk" />
+		</section>
+	);
+}
+
+// ============================================================
+// PERKS
+// ============================================================
+
+function Perks() {
+	return (
+		<section className="tab-content">
+			<h3>Brew</h3>
+			<p>Lagoon</p>
+			<h3>Cola</h3>
+			<p>Artifact Storage</p>
+			<h3>Soda</h3>
+			<p>Stern</p>
+			<h3>Tonic</h3>
+			<p>Decontamination</p>
+		</section>
+	);
+}
+
+// ============================================================
+// EXTRAS
+// ============================================================
+
+function Extras() {
+	return (
+		<section className="tab-content">
+			<h2>
+				Margwa Jumpscare -{" "}
+				<a href="https://www.youtube.com/watch?v=iaN7e65m8y0" target="_blank" rel="noopener noreferrer">
+					Video
+				</a>
+			</h2>
+			<p>At the Forecastle fire, aim directly at the piece of paper on the wall to the left of it</p>
+
+			<h2>
+				Pablo Jumpscare -{" "}
+				<a href="https://www.youtube.com/watch?v=k9Mjls0ieHc" target="_blank" rel="noopener noreferrer">
+					Video
+				</a>
+			</h2>
+			<p>Aim a sniper rifle up at the top of the lighthouse from the Facility</p>
+
+			<h2 id="mars">
+				Mars Shangri-La EE -{" "}
+				<a href="https://youtu.be/J-Nk1sAMvEY?si=ks-Sr3riQwDsafSc&t=2006" target="_blank" rel="noopener noreferrer">
+					Video
+				</a>
+			</h2>
+			<p>
+				<span>This EE is required for the "Secret" Achievement</span>
+				<span>
+					<b>
+						Requires{" "}
+						<TabLink tab="buildables" target="heatpack">
+							Heat Pack
+						</TabLink>{" "}
+						and{" "}
+						<TabLink tab="extras" target="flinger">
+							facility Flinger
+						</TabLink>{" "}
+						repaired
+					</b>
+				</span>
+			</p>
+			<ol>
+				<li>Looking at it from the far side, spin quickly while standing on the right side corner of the flinger. You should be flung way outside the map. (easier on controller)</li>
+				<li>You then need to swim through the tunnel to the other end. take out your specialist if you start taking damage. Dying wish is also helpful.</li>
+				<li>You can interact with the boat infront of you to return to the map again.</li>
+			</ol>
+
+			<h2>
+				Don't Freeze! (Round 200) -{" "}
+				<a href="https://youtu.be/J-Nk1sAMvEY?si=bdgswB8w_04goBBr&t=2571" target="_blank" rel="noopener noreferrer">
+					Video
+				</a>
+			</h2>
+			<p>Puts you on round 200 and activates a mode where you need to kill zombies orelse you will freeze</p>
+			<ol>
+				<li>
+					You need to stand and freeze in every body of water
+					<ul>
+						<li>Docks</li>
+						<li>Frozen Crevasse</li>
+						<li>Lagoon</li>
+						<li>Ice Grotto</li>
+						<li>Lighthouse Cove (where the tunnel is)</li>
+						<li>Hidden Path (surrounded by fire)</li>
+						<li>Cargo Hold</li>
+						<li>Artifact Storage</li>
+						<li>Sunken Path</li>
+						<li>Beach</li>
+					</ul>
+				</li>
+				<li>Return to the Docks and there should be a button where you spawned in. Once you flip the round, you will be on round 200.</li>
+			</ol>
+
+			<h2>
+				Richtofen Film Reels -{" "}
+				<a href="https://youtu.be/J-Nk1sAMvEY?si=4S6bVfgHbV_y2A6b&t=2729" target="_blank" rel="noopener noreferrer">
+					Video
+				</a>
+			</h2>
+			<p>Film reels can be collected and played on the Projector in Geo Processing</p>
+			<ul>
+				<li>Decontamination inside a locker with a yellow suit</li>
+				<li>Specimen Storage on the corner of the desk</li>
+				<li>Docks on a concrete block below the small hut on the right</li>
+				<li>Lagoon/Lighthouse Cove underwater passage way on the roof</li>
+				<li>Upstairs Lighthosue Station on the small desk with a clock to the right of the larger desk opposite buildable table</li>
+				<li>On a crate on the beach across from the ICR wallbuy</li>
+			</ul>
+
+			<h2>
+				Pablo Audio Reels -{" "}
+				<a href="https://youtu.be/J-Nk1sAMvEY?si=f1Ltt7S7thj5F6Ar&t=3563" target="_blank" rel="noopener noreferrer">
+					Video
+				</a>
+			</h2>
+			<p>Interact with the audio reel players</p>
+			<ul>
+				<li>on the right when you jump up to the blue rock platform in the Frozen Crevasse</li>
+				<li>Lighthouse Level 3 under 2 metal boxes on the wall</li>
+				<li>In hidden path on the left side when walking towards the boat</li>
+				<li>On the beach across from the M1927 wallbuy</li>
+				<li>On the outer walkway on the left side before the flinger</li>
+			</ul>
+
+			<h2>
+				Ascension Group Radios -{" "}
+				<a href="https://youtu.be/J-Nk1sAMvEY?si=ajBgzE60DreSZQcl&t=4109" target="_blank" rel="noopener noreferrer">
+					Video
+				</a>
+			</h2>
+			<p>There are 5 radios around the map you can interact with to get audios related to the ascension group (look like boxes)</p>
+			<ul>
+				<li>On the stern, on the left side of the building (when facing soda machine)</li>
+				<li>In Navigation ontop of the rightmost console</li>
+				<li>In Forecastle in the inside corner of the blue crate</li>
+				<li>Artifact Storage/Cargo Hold inside a grey crate on the right after coming up the stairs</li>
+				<li>In Sunken Path behind the wallbuy</li>
+			</ul>
+
+			<h2>
+				Samantha's Wisps -{" "}
+				<a href="https://youtu.be/J-Nk1sAMvEY?si=mLhwzqMM8mDgSABP&t=4799" target="_blank" rel="noopener noreferrer">
+					Video
+				</a>
+			</h2>
+			<p>There are 4 yellow orbs outside the map that can be shot for Samantha dialogue to start playing</p>
+			<ul>
+				<li>Lighthouse Approach at the back left corner of the zombie spawn (blue cave)</li>
+				<li>Lighthouse Level 1 zombie spawn if you look in from the far right side looking left</li>
+				<li>Artifact Storage zombie spawn looking from far right to the left</li>
+				<li>Behind the metal panel hiding behind the red plus sign on the metal wall in Outer Walkway (Visible form just past the flinger)</li>
+			</ul>
+
+			<h2>
+				Jebediah Brown Records -{" "}
+				<a href="https://youtu.be/J-Nk1sAMvEY?si=E8NiosGNmqWqwPE1&t=5155" target="_blank" rel="noopener noreferrer">
+					Video
+				</a>
+			</h2>
+			<p>around the map you can find 5 red and black vinyls which will tell the story of PaP. They can be played via the gramaphone in Specimen Storage (facility)</p>
+			<ul>
+				<li>Lighthouse Station leaning against the cabinet behind the stairs</li>
+				<li>Hidden in the snow when going from the Beach to the blue cave on the right side</li>
+				<li>In the Boathouse on the chair facing the light in the small inside room</li>
+				<li>Between a large drum and the wall in Geological processing in the right</li>
+				<li>In Human Infusion on the left under the table ot the right of the sink.</li>
+			</ul>
+
+			<h2>
+				Campfire Quotes -{" "}
+				<a href="https://youtu.be/J-Nk1sAMvEY?si=oloB9jKY-TtFrwn0&t=5829" target="_blank" rel="noopener noreferrer">
+					Video
+				</a>
+			</h2>
+			<p>
+				<span>While playing through the EE, you can interact with the Sunken Path campfire to get extra dialogue. After getting the first quote, you can interact 2 more times each time you have to go to it.</span>
+				<span>In total there are 9 quotes and a song if you interact a third time the after the final quote.</span>
+			</p>
+
+			<h2 id="challenges">Hermit Challenge Totems</h2>
+			<p>
+				You must activate{" "}
+				<TabLink tab="side-ee" target="power">
+					2 power switches
+				</TabLink>{" "}
+				(not facility) in order to start the totems. You must return to the totem to claim the reward before the next challenge can begin.
+			</p>
+			<h3>Lighthouse Station</h3>
+			<table>
+				<thead>
+					<tr>
+						<th scope="col">Challenge</th>
+						<th scope="col">Reward</th>
+						<th scope="col">Tips</th>
+					</tr>
+				</thead>
+				<tbody>
+					<tr>
+						<td>Kill 25 enemies with headshots and collect brains</td>
+						<td>Carpenter Powerup</td>
+					</tr>
+					<tr>
+						<td>
+							Kill 20 enemies with a{" "}
+							<TabLink tab="buildables" target="shield">
+								shield
+							</TabLink>{" "}
+							bash
+						</td>
+						<td>Full Power Powerup</td>
+					</tr>
+					<tr>
+						<td>Pick up 3 pee jars on Lighthouse Level 4 and empty them in the Beach water</td>
+						<td>Self Revives</td>
+						<td>while carrying the jar, you cannot be hit or run or drop down orelse the jars will break and you'll have to restart.</td>
+					</tr>
+				</tbody>
+			</table>
+			<h3>Forecastle</h3>
+			<table>
+				<thead>
+					<tr>
+						<th scope="col">Challenge</th>
+						<th scope="col">Reward</th>
+						<th scope="col">Tips</th>
+					</tr>
+				</thead>
+				<tbody>
+					<tr>
+						<td>Kill 25 enemies while standing still</td>
+						<td>Carpenter Powerup</td>
+					</tr>
+					<tr>
+						<td>Kill 10 enemies with melee attacks (shield bash counts)</td>
+						<td>Fire Sale Powerup</td>
+					</tr>
+					<tr>
+						<td>Find Soup ingredients, add them to the cooking pot, and add water</td>
+						<td>Armor Powerup</td>
+						<td>
+							Gangway
+							<ul>
+								<li>Red booth seat on the right</li>
+								<li>corner of Island Countertop</li>
+								<li>right side of Bar Countertop</li>
+							</ul>
+							Beach
+							<ul>
+								<li>on left Wooden Barrel by the crashed boat</li>
+								<li>far right bush near snowball pile</li>
+								<li>to the left of the Thompson Wallbuy</li>
+							</ul>
+							Boathouse
+							<ul>
+								<li>On small crate to the right of the MOG wallbuy</li>
+								<li>On a barrel infron tof the heater</li>
+								<li>ontop of the oven in the next room</li>
+							</ul>
+							Place them into the pot at Forecastle and throw a snowball in
+						</td>
+					</tr>
+				</tbody>
+			</table>
+			<h3 id="challengestrap">Specimen Storage</h3>
+			<table>
+				<thead>
+					<tr>
+						<th scope="col">Challenge</th>
+						<th scope="col">Reward</th>
+						<th scope="col">Tips</th>
+					</tr>
+				</thead>
+				<tbody>
+					<tr>
+						<td>
+							<TabLink tab="extras" target="flinger">
+								Fling
+							</TabLink>{" "}
+							15 Zombies
+						</td>
+						<td>Instakill Powerup</td>
+					</tr>
+					<tr>
+						<td>Kill 10 Zombies while riding a zipline</td>
+						<td>team Full Power</td>
+					</tr>
+					<tr>
+						<td>Complete the Wack-a-mole station using only snowballs 3 times (outside the map on Loading Platform)</td>
+						<td>Traps are half price</td>
+					</tr>
+				</tbody>
+			</table>
+			<h3>Beach</h3>
+			<table>
+				<thead>
+					<tr>
+						<th scope="col">Challenge</th>
+						<th scope="col">Reward</th>
+						<th scope="col">Tips</th>
+					</tr>
+				</thead>
+				<tbody>
+					<tr>
+						<td>Kill 13 Enemies with snowballs</td>
+						<td>Bonus Points</td>
+					</tr>
+					<tr>
+						<td>Kill 15 enemies using the lighthouse trap</td>
+						<td>instakill Powerup</td>
+					</tr>
+					<tr>
+						<td>Complete 3 SOS messages (Lighthouse, boat entrance at beach, boat entrance at Sunken Path) using snowballs</td>
+						<td>Break Ice Faster</td>
+					</tr>
+				</tbody>
+			</table>
+			<h3>Frozen Crevasse</h3>
+			<table>
+				<thead>
+					<tr>
+						<th scope="col">Challenge</th>
+						<th scope="col">Reward</th>
+						<th scope="col">Tips</th>
+					</tr>
+				</thead>
+				<tbody>
+					<tr>
+						<td>Kill 20 enemies while standing in freezing water</td>
+						<td></td>
+					</tr>
+					<tr>
+						<td>Shatter 6 Frozen Zombies</td>
+						<td></td>
+					</tr>
+					<tr>
+						<td>Play the Hermit's Favorite tune on the bells in Docks</td>
+						<td>Increased snowball storage (6 -{">"} 10)</td>
+						<td>
+							TURN ON SUBTITLES!
+							<ul>
+								<li>C - Behind Boathouse</li>
+								<li>G - By Zombie Spawn</li>
+								<li>E - Outside of Map</li>
+								<li>A - By Power Switch</li>
+							</ul>
+						</td>
+					</tr>
+				</tbody>
+			</table>
+
+			<h2>Traps</h2>
+			<table>
+				<thead>
+					<tr>
+						<th scope="col">Type</th>
+						<th scope="col">Ability</th>
+						<th scope="col">Location</th>
+						<th scope="col">Cost</th>
+					</tr>
+				</thead>
+				<tbody>
+					<tr>
+						<td>Lighthouse Trap</td>
+						<td>Fires a beam on a set path within the area it was activated.</td>
+						<td>Beach/Lagoon/Ligthhouse Annex</td>
+						<td>
+							1000p (500p after{" "}
+							<TabLink tab="extras" target="challengestrap">
+								Trap Price Totem
+							</TabLink>{" "}
+							is completed)
+						</td>
+					</tr>
+					<tr>
+						<td>Decontamination trap</td>
+						<td>Sprays water down the hallway, killign any zombies that walk under it.</td>
+						<td>Decontamination</td>
+						<td>
+							1000p (500p after{" "}
+							<TabLink tab="extras" target="challengestrap">
+								Trap Price Totem
+							</TabLink>{" "}
+							is completed)
+						</td>
+					</tr>
+				</tbody>
+			</table>
+
+			<h2 id="ziplines">
+				Ziplines -{" "}
+				<a href="https://www.youtube.com/watch?v=FCtsxexjHyA" target="_blank" rel="noopener noreferrer">
+					Video
+				</a>
+			</h2>
+			<p>
+				<span>Some Ziplines require a hand to ride, to get this you must first find 2 cranks. Then place and rotate them both to completion (Main Deck near hole & Sun Deck)</span>
+				<span>Returning to the hermit, he will deliver you the zipline handle, allowing you to use ziplines both directions</span>
+			</p>
+			<ul>
+				<li>
+					Forecastle
+					<ul>
+						<li>When entering from left side, on your right beside the zombie spawn</li>
+						<li>When entering from the right, on your right besdie the ladder</li>
+						<li>At the bac knear the fire, leaning against a large generator</li>
+					</ul>
+				</li>
+				<li>
+					Stern
+					<ul>
+						<li>To the left of a yellow barrel on the right side</li>
+						<li>Inside the room to the left of the zombie spawn</li>
+						<li>Behind the room leaning on the wall near pile of snow</li>
+					</ul>
+				</li>
+			</ul>
+			<table>
+				<thead>
+					<tr>
+						<th scope="col">Activation Location</th>
+						<th scope="col">Destination</th>
+					</tr>
+				</thead>
+				<tbody>
+					<tr>
+						<td>Lighthouse Level 4</td>
+						<td>Docks</td>
+					</tr>
+					<tr>
+						<td>Lighthouse Level 4</td>
+						<td>Facility Entrance</td>
+					</tr>
+					<tr>
+						<td>Lighthouse Level 4</td>
+						<td>Cargo Hold</td>
+					</tr>
+					<tr>
+						<td>Lighthouse Station</td>
+						<td>Sun Deck</td>
+					</tr>
+					<tr>
+						<td>Forecastle</td>
+						<td>Lighthouse Level 4</td>
+					</tr>
+					<tr>
+						<td>Sun Deck</td>
+						<td>Beach</td>
+					</tr>
+					<tr>
+						<td>Docks</td>
+						<td>Lighthouse Level 4</td>
+					</tr>
+					<tr>
+						<td>Facility Entrance</td>
+						<td>Stern</td>
+					</tr>
+					<tr>
+						<td>Loading Platform</td>
+						<td>Docks</td>
+					</tr>
+				</tbody>
+			</table>
+
+			<h2 id="flinger">
+				Flingers -{" "}
+				<a href="https://www.youtube.com/watch?v=EWWHBqpfGkY" target="_blank" rel="noopener noreferrer">
+					Video
+				</a>
+			</h2>
+			<p>
+				<span>Flingers will Fling you to different parts of the map. One of which has 3 possible locations depending on where you are standing on the pad (left, right, or center)</span>
+				<span>There are 2 normal flingers and one special one, the normal ones require you to grab their broken gear box, return it to the hermit, and return the fixed to the flinger</span>
+			</p>
+			<table>
+				<thead>
+					<tr>
+						<th scope="col">Flinger Location</th>
+						<th scope="col">Destination</th>
+					</tr>
+				</thead>
+				<tbody>
+					<tr>
+						<td>Balcony of the Facility</td>
+						<td>
+							<ul>
+								<li>Left - Frozen Crevasse</li>
+								<li>Center - Lagoon</li>
+								<li>Right - Lighthouse Cave</li>
+							</ul>
+						</td>
+					</tr>
+					<tr>
+						<td>Left Side of Sun Deck</td>
+						<td>Lighthouse</td>
+					</tr>
+					<tr>
+						<td>Right Side of Sun Deck</td>
+						<td>
+							<TabLink tab="side-ee" target="goldenpap">
+								Golden PaP
+							</TabLink>
+						</td>
+					</tr>
+				</tbody>
+			</table>
+
+			<h2>Special Enemies</h2>
+			<table>
+				<thead>
+					<tr>
+						<th scope="col">Enemy Name</th>
+						<th scope="col">Special Abilities</th>
+						<th scope="col">Picture</th>
+					</tr>
+				</thead>
+				<tbody>
+					<tr>
+						<td>Napalm Zombies</td>
+						<td>
+							Throwing a Snowball at their head will give a{" "}
+							<TabLink tab="buildables" target="dynamite">
+								Dynamite
+							</TabLink>{" "}
+							Part. Once all Dynamite parts are aquired, they will stop spawning until the dynamite is used.
+						</td>
+					</tr>
+					<tr>
+						<td>Hellhounds</td>
+						<td>Hellhounds run faster than any other zombie but have much less health.</td>
+					</tr>
+					<tr>
+						<td>Electrified Zombies</td>
+						<td>When killed, they explode causing electric damage to player and surrounding zombies.</td>
+					</tr>
+				</tbody>
+			</table>
+
+			<h2>
+				Achievements -{" "}
+				<a href="https://www.youtube.com/watch?v=KRbKPX4gFCQ" target="_blank" rel="noopener noreferrer">
+					Video
+				</a>
+			</h2>
+			<table>
+				<thead>
+					<tr>
+						<th scope="col">Name</th>
+						<th scope="col">Description</th>
+						<th scope="col">Goal</th>
+					</tr>
+				</thead>
+				<tbody>
+					<tr>
+						<td>Salvation Lies Above</td>
+						<td>In Tag der Toten, Ascend from Darkness</td>
+						<td>
+							Compelete the <TabLink tab="main-ee">Main EE</TabLink>
+						</td>
+					</tr>
+					<tr>
+						<td>Everybody Freeze!</td>
+						<td>In Tag der Toten, freeze 10 zombies at once in a single match</td>
+						<td>
+							Using the{" "}
+							<TabLink tab="wonder-weapon" target="tundragun">
+								Tundragun
+							</TabLink>
+							, train zombies together then shoot to freeze them all with a single shot.
+						</td>
+					</tr>
+					<tr>
+						<td>Fetch</td>
+						<td>In Tag der Toten, kill 5 Hellhounds with snowballs in a single match</td>
+						<td>Throw snowballs at Hellhounds during a max ammo round</td>
+					</tr>
+					<tr>
+						<td>Lifeline</td>
+						<td>
+							In Tag der Toten, use all{" "}
+							<TabLink tab="extras" target="ziplines">
+								ziplines
+							</TabLink>{" "}
+							without killing an enemy or going in to last stand in a single match
+						</td>
+						<td>
+							Use all 9{" "}
+							<TabLink tab="extras" target="ziplines">
+								ziplines
+							</TabLink>{" "}
+							without going down or killing anything.
+						</td>
+					</tr>
+					<tr>
+						<td>Going Green</td>
+						<td>In Tag der Toten, open all paths without turning on the power</td>
+						<td>
+							Buy all doors (24 doors),{" "}
+							<TabLink tab="buildables" target="dynamite">
+								explode the 3 shortcuts
+							</TabLink>
+							, and enable all{" "}
+							<TabLink tab="extras" target="ziplines">
+								ziplines
+							</TabLink>{" "}
+							without turning on a single{" "}
+							<TabLink tab="side-ee" target="power">
+								power switch
+							</TabLink>
+						</td>
+					</tr>
+					<tr>
+						<td>Mile High Jug</td>
+						<td>In Tag der Toten, break the jar on top of the lighthouse with the Strife</td>
+						<td>
+							<ImageContainer>
+								<img src="\images\guides\bo4\tag-der-toten\tag-der-toten-jar.jpg" alt="Jar to Shoot With Strife" />
+							</ImageContainer>
+						</td>
+					</tr>
+					<tr>
+						<td>Abnormal Energy Bill</td>
+						<td>
+							In Tag der Toten, light up all the{" "}
+							<TabLink tab="extras" target="totems">
+								totems
+							</TabLink>{" "}
+							in a single match
+						</td>
+						<td></td>
+					</tr>
+					<tr>
+						<td>Pack Your Bags</td>
+						<td>In Tag der Toten, pack a weapon in all Pack-a-Punch locations in a single match</td>
+						<td>
+							You must PaP a gun at all 5 locations (lighthouse points to active location, Double PaP or changing AAT Counts)
+							<ul>
+								<li>Beach</li>
+								<li>Lagoon</li>
+								<li>Artifact Storage / Sunken Path (must extinguish fire by going through Artifact Storage and shooting pipe above the machine)</li>
+								<li>Boathouse</li>
+								<li>
+									Iceberg (
+									<TabLink tab="side-ee" target="goldenpap">
+										Golden PaP
+									</TabLink>
+									)
+								</li>
+							</ul>
+						</td>
+					</tr>
+					<tr>
+						<td>Bell of the Snowball</td>
+						<td>In Tag der Toten, ring all four bells with thrown snowballs in under 12 seconds</td>
+						<td>
+							<ol>
+								<li>Bell Near Power Switch</li>
+								<li>Bell Behind You</li>
+								<li>Bell to the right of you (left from last bell)</li>
+								<li>run to hit Bell beside the building</li>
+							</ol>
+						</td>
+					</tr>
+					<tr>
+						<td>Secret</td>
+						<td>In Tag der Toten, find the secret</td>
+						<td>
+							Find{" "}
+							<TabLink tab="extras" target="mars">
+								Mars
+							</TabLink>
+						</td>
+					</tr>
+				</tbody>
+			</table>
+		</section>
+	);
+}
+
+// ============================================================
+// CREDITS
+// ============================================================
+
+function Credits() {
+	return (
+		<section className="tab-content">
+			<h2>CREDITS</h2>
+			<Source href="https://callofduty.fandom.com/wiki/Mystery_Box/Spawn_Locations#Tag_der_Toten" name="Mystery Box Spawn Locations" author="Call of Duty Wiki" source="Fandom" />
+			<Source href="https://callofduty.fandom.com/wiki/Tag_der_Toten" name="Tag der Toten" author="Call of Duty Wiki" source="Fandom" />
+			<Source href="https://callofduty.fandom.com/wiki/Gauntlet_(Black_Ops_4)#An_Ice_Day_in_Hell" name="Gauntlet" author="Call of Duty Wiki" source="Fandom" />
+			<Source href="https://www.youtube.com/watch?v=KRbKPX4gFCQ" name="Tag Der Toten - Complete Trophy/Achievement Guide (All 10 Trophies) | Black Ops 4 Zombies DLC 4" author="Invalid" source="YouTube" />
+			<Source href="https://www.youtube.com/watch?v=EWWHBqpfGkY" name="TAG DER TOTEN - HOW TO USE THE FLINGER" author="NoobeyGaming" source="YouTube" />
+			<Source href="https://www.youtube.com/watch?v=6WyofOc3ojQ" name="TAG DER TOTEN - GOLDEN PACK-A-PUNCH GUIDE (Black Ops 4 Zombies Tutorial)" author="Fast Guides Glitch" source="YouTube" />
+			<Source href="https://www.youtube.com/watch?v=cr69p8_cbIo" name="TAG DER TOTEN - DYNAMITE BUNDLE GUIDE (Black Ops 4 Tutorial)" author="Fast Guides Glitch" source="YouTube" />
+			<Source href="https://www.youtube.com/watch?v=l8SbyGoYufk" name="TAG DER TOTEN - RIOT SHIELD GUIDE (Black Ops 4 Zombies Tutorial)" author="Fast Guides Glitch" source="YouTube" />
+			<Source href="https://www.youtube.com/watch?v=iaN7e65m8y0" name="TAG DER TOTEN - JUMP SCARE GUIDE (Black Ops 4 Zombies Tutorial)" author="Fast Guides Glitch" source="YouTube" />
+			<Source href="https://www.youtube.com/watch?v=r0Rn_fvznrY" name="TAG DER TOTEN - 5TH PERK GUIDE (Black Ops 4 Zombies Tutorial)" author="Fast Guides Glitch" source="YouTube" />
+			<Source href="https://www.youtube.com/watch?v=XSyyHHgVKpE" name="TAG DER TOTEN - HEAT PACK GUIDE (Black Ops 4 Zombies Tutorial)" author="Fast Guides Glitch" source="YouTube" />
+			<Source href="https://www.youtube.com/watch?v=Zoa8CngCbDg" name="TAG DER TOTEN - SAMANTHA'S MUSIC BOX GUIDE (Black Ops 4 Zombies Tutorial)" author="Fast Guides Glitch" source="YouTube" />
+			<Source href="https://www.youtube.com/watch?v=kQskTD-jwa8" name="TAG DER TOTEN - FREE MK2 WUNDERWAFFE GUIDE (Black Ops 4 Zombies Tutorial)" author="Fast Guides Glitch" source="YouTube" />
+			<Source href="https://www.youtube.com/watch?v=k9Mjls0ieHc" name="TAG DER TOTEN - 2ND JUMP SCARE GUIDE (Black Ops 4 Zombies Tutorial)" author="Fast Guides Glitch" source="YouTube" />
+			<Source href="https://www.youtube.com/watch?v=8D4itV6MtwY" name="TAG DER TOTEN - UPGRADED SNOWBALLS GUIDE (Black Ops 4 Zombies Tutorial)" author="Fast Guides Glitch" source="YouTube" />
+			<Source href="https://www.reddit.com/r/CODZombies/wiki/tag-der-toten/" name="Tag der Toten | Complete Map Breakdown" author="u/Kalinine" source="r/CODZombies" />
+			<Source href="https://www.youtube.com/watch?v=J-Nk1sAMvEY" name="ALL SIDE EASTER EGGS - TAG DER TOTEN - BLACK OPS 4 ZOMBIES" author="ZombieSlayaMr" source="YouTube" />
+			<Source href="https://www.youtube.com/watch?v=dVsGol080vg" name="TAG DER TOTEN - SOLO EASTER EGG GUIDE (Black Ops 4 Zombies Tutorial)" author="Fast Guides Glitch" source="YouTube" />
+			<Source href="https://www.youtube.com/watch?v=1HI4CcS2BPQ" name="TAG DER TOTEN - ALL 12 NUMBER LOCATIONS (Black Ops 4 Zombies Tutorial)" author="Fast Guides Glitch" source="YouTube" />
+		</section>
+	);
+}
+
+// ============================================================
+// MAIN MAP CONTENT
+// ============================================================
+
+export default function TagDerToten() {
+	return (
+		<MapNavigationProvider>
+			<TagDerTotenContent />
+		</MapNavigationProvider>
+	);
+}
+
+function TagDerTotenContent() {
+	const { activeTab } = useMapNavigation();
+
+	return (
+		<div className="map-layout">
+			<MapTabs modules={tabs} />
+
+			<InfoBox id="map-info">
+				{activeTab === "overview" && <Overview />}
+				{activeTab === "main-ee" && <MainEE />}
+				{activeTab === "side-ee" && <SideEE />}
+				{activeTab === "music-ee" && <MusicEE />}
+				{activeTab === "wonder-weapon" && <WonderWeapons />}
+				{activeTab === "buildables" && <Buildables />}
+				{activeTab === "weapons" && <Weapons />}
+				{activeTab === "gauntlet" && <Gauntlet />}
+				{activeTab === "perks" && <Perks />}
+				{activeTab === "extras" && <Extras />}
+				{activeTab === "credits" && <Credits />}
+			</InfoBox>
+		</div>
+	);
+}
+
+export const Route = createFileRoute("/maps/bo4/tag-der-toten")({
+	staticData: { title: "Tag der Toten" },
+	component: TagDerToten,
+});

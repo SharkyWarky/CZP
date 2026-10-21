@@ -1,0 +1,1663 @@
+import { createFileRoute } from "@tanstack/react-router";
+/* ---- v2.1.0 ---- */
+import { MapNavigationProvider, useMapNavigation } from "../../../context/MapNavigationContext";
+
+import MapTabs from "../../../components/MapTabs";
+import InfoBox from "../../../components/InfoBox";
+import Source from "../../../components/Source";
+import TabLink from "../../../components/TabLink";
+import ImageContainer from "../../../components/ImageContainer";
+import VideoPlayer from "../../../components/VideoPlayer";
+
+import { mapModules } from "../../../data/mapModules";
+
+// ============================================================
+// 🔴 MAP TABS
+// ============================================================
+
+// 🔴 REMOVE: Tabs that do not apply to this map.
+// 🔴 ADD: Any applicable tabs not currently included.
+
+const tabs = [mapModules.overview, mapModules.mainEE, mapModules.sideEE, mapModules.musicEE, mapModules.wonderWeapon, mapModules.buildables, mapModules.weapons, mapModules.gauntlet, mapModules.perks, mapModules.extras, mapModules.credits];
+
+// ============================================================
+// OVERVIEW
+// ============================================================
+
+function Overview() {
+	return (
+		<section className="tab-content">
+			<h2>Voyage of Despair</h2>
+			<p>Voyage of Despair is the first Zombies map featured in Call of Duty: Black Ops 4, and the twenty-fifth map overall. Chronologically, it is the second map in the Chaos story. The map is set on the RMS Titanic, after an attempt to steal an ancient artifact known as the Sentinel Artifact goes wrong. This map also introduces three new enemies; the Catalyst, Stoker, and Blightfather.</p>
+			<h2>Overview</h2>
+			<p>Voyage of Despair is a large map, set mostly on the upper decks and a few lower decks aboard the RMS Titanic. When players spawn in on the ship's forecastle, the ship will be in the process of striking a large iceberg, causing the ship to eventually stop moving and begin to slightly tip forward. Players will then be able to navigate to the stern of the ship, where the Sentinel Artifact can be found. Interacting with it will summon the four Pack-a-Punch altars and open up more areas within the ship that were previously inaccessible. Areas such as the Cargo Hold and the Engine/Turbine/Boiler Rooms will be flooded with water, although the water in those areas can be drained by interacting with a valve found in the rooms.</p>
+			<p>Similarly to Shadows of Evil from Call of Duty: Black Ops III, this map includes several portals in which allow the player to warp to certain points on the map. In this case, from the bow of the ship all the way to the stern of the ship. For a brief moment while using this portal, while the scripted animation is playing, the player can choose to land on the center of the ship.</p>
+			<h2>Features</h2>
+			<h3>Free Doors</h3>
+			<p>Upon completion of the Main EE, the player will be able to open doors on any map (except Alpha Omega and Tag der Toten) for free for the remainder of the game session. This ability persists until the player closes the game. In a co-op Private Match, only the party host will gain this ability, and the ability will extend to other players as long as they are playing in the same lobby with said host.</p>
+		</section>
+	);
+}
+
+// ============================================================
+// MAIN EASTER EGG
+// ============================================================
+
+function MainEE() {
+	return (
+		<section className="tab-content">
+			<h2>Prerequisites</h2>
+			<ul>
+				<li>
+					<TabLink tab="side-ee" target="power">
+						Sentinel Artifact
+					</TabLink>
+				</li>
+				<li>
+					<TabLink tab="side-ee/" target="pap">
+						PaP
+					</TabLink>{" "}
+					open
+				</li>
+				<li>Recommended to drain water in Cargo Hold and Engine Room</li>
+				<li>
+					<TabLink tab="buildables" target="shield">
+						Shield
+					</TabLink>{" "}
+					(For steps 4+)
+				</li>
+				<li>
+					<TabLink tab="wonder-weapon" target="elementalkraken">
+						Acid Kraken
+					</TabLink>{" "}
+					(For steps 6+)
+				</li>
+			</ul>
+
+			<h2>Recommended Setup</h2>
+			<ul>
+				<li>
+					<b>Starting Setup</b>
+					<ul>
+						<li>Specialist - Hammer of Valhalla / Scepter of Ra</li>
+						<li>Equipment - Wraith Fire</li>
+						<li>Stiletto Knife on Strife</li>
+					</ul>
+				</li>
+				<li>
+					<b>During the Game</b>
+					<ul>
+						<li>Helion Salvo</li>
+						<li>
+							<TabLink tab="wonder-weapon" target="kraken">
+								Kraken
+							</TabLink>{" "}
+							+{" "}
+							<TabLink tab="wonder-weapon" target="elementalkraken">
+								Water/Ice Upgrade
+							</TabLink>{" "}
+							+ PaP
+						</li>
+						<li>
+							<TabLink tab="buildables" target="svalinnguard">
+								Upgraded Shield
+							</TabLink>
+						</li>
+					</ul>
+				</li>
+			</ul>
+
+			<h2>
+				Main EE -{" "}
+				<a href="https://www.youtube.com/watch?v=wk_T29xR8Ug" target="_blank" rel="noopener noreferrer">
+					Video
+				</a>
+			</h2>
+			<ol>
+				<li>
+					Find 4 symbols around the map and record the time on each of the clocks nearby (you can write the hour and the minute as the hour number. IE 9,1 for 9:05)
+					<ul>
+						<li>Symbol Location - Clock Location</li>
+						<li>Under the stairs when entering the Mail Room - Beside the Door when entering the Cargo Hold</li>
+						<li>In the Cpatain's Bridge under the desk - On the wall above the steering wheel</li>
+						<li>Above a doorway (beside spitfire wallbuy) in Upper Grand Staircase - In wooden graving on the wall opposite the symbol (middle of stairs)</li>
+						<li>Left of 1st Class Lounge Mystery Box (on right side of cubby) - middle of lounge ontop of fireplace (small)</li>
+						<li>On end of cabinet in the Galley - On the wall behind the symbol</li>
+						<li>3rd Class Berths behind boxes visible from stairs - clock on wall opposite of the symbol</li>
+					</ul>
+				</li>
+				<li>
+					Head to the Captain's Bridge and on the 4 dials is a symbol mnatching one of the onces your recorded earlier. Input the last number in the ordered pair onto each of the wheels (point at the direction you want to move the hand and interact)
+					<ImageContainer>
+						<img src="\images\guides\bo4\voyage-of-despair\voyage-of-despair-dial1.jpg" alt="Minutes Dial Key" />
+					</ImageContainer>
+				</li>
+				<li>
+					Head to where the{" "}
+					<TabLink tab="side-ee" target="power">
+						Sentinel Artifact
+					</TabLink>{" "}
+					was and you'll find 2 more dials. Use the key below to match the symbols and spin them to match the hour hands. (You can use the minute hands to determine which time they correspond to aswell). The other 2 dials are located in the Engine ROom in the center (4 dials there but only 2 are interactable)
+					<ImageContainer>
+						<img src="\images\guides\bo4\voyage-of-despair\voyage-of-despair-dial2.jpg" alt="Hours Dial Key" />
+					</ImageContainer>
+				</li>
+				<li>
+					Find 4 wall outlets, each will have a specific element spewing out of it. Kill that{" "}
+					<TabLink tab="extras" target="specialenemies">
+						catalyst zombie
+					</TabLink>{" "}
+					type. Symbol will spawn. (One can be done per round)
+					<ul>
+						<li>Left side bedroosm in the State Rooms coming up from spawn</li>
+						<li>Wall at the top of Grand Staircase</li>
+						<li>Left of Zeus Perk Statue in the 1st Class Lounge</li>
+						<li>Back of a wall in side area in Dining Hall (left side)</li>
+						<li>Behind zombie spawn in the Aft Deck between chair legs</li>
+						<li>3rd Class Berths area on the wall when coming down the stairs from Poop Deck</li>
+					</ul>
+				</li>
+				<li>
+					<span>When the big orange symbols are on the floor, interact with them in the order Acid - Water - Electric - Fire to begin the challenges. pick up the sentinel artifact to finish the challenge after screen goes white.</span>
+					<span>RECOMMENDED: Pick up the Acid part for the kraken during the Acid Challenge</span>
+				</li>
+				<li>
+					Get the{" "}
+					<TabLink tab="wonder-weapon" target="elementalkraken">
+						Acid Kraken
+					</TabLink>{" "}
+					and shoot 9 steaming pipes to make them leak water. (might take a few shots to line up properly. will get hitmarker when hit properly.)
+					<ul>
+						<li>2 above PaP</li>
+						<li>2 to the left</li>
+						<li>2 more on same side but at the back of the area</li>
+						<li>2 more on the opposite end to the right</li>
+						<li>One more to the right of PaP</li>
+					</ul>
+				</li>
+				<li>When the Turbine Room fills, go to the PaP location and see if it is there. If not, end the round to get it there. Interact with it to PaP the Sentinel Artifact. (can drain the water again in the Engine Room)</li>
+				<li>
+					Activate 9 symbols around the map (in no particular order) to spawn a planet in the sky
+					<ul>
+						<li>In the Forecastle area on the right side of the fast travel</li>
+						<li>Infront of you when coming dow nthe stairs from Forecastle to Mail Rooms</li>
+						<li>on wall behind plant in State Rooms bathroom</li>
+						<li>On side of cabinet in Captain's Bridge (by zombie spawn)</li>
+						<li>On back wall opposite Dining Hall entrance in Grand Staircase</li>
+						<li>Below Bedside Table in Millionaire Suites</li>
+						<li>Inside Life Preserver on Aft Decks</li>
+						<li>On the grate flooring in the Engine Room infront of Odin Perk statue</li>
+						<li>Located on wall below the catwalk in the Boiler Room (opposite fast travel, beside red pipe)</li>
+					</ul>
+				</li>
+				<li>
+					Head to the Cargo Hold and drain the water. Interact with the solar system model and remember the order the planets light up in. (Will start INfinite Zombie Round)
+					<ImageContainer>
+						<img src="\images\guides\bo4\voyage-of-despair\voyage-of-despair-planets.png" alt="Planet Key" />
+					</ImageContainer>
+				</li>
+				<li>
+					Go outside and shoot the planets in the sky in the same order they lit up. After shooting a planet, you have around 30 seconds to find where it landed and pick it up.
+					<ImageContainer>
+						<img src="\images\guides\bo4\voyage-of-despair\voyage-of-despair-planetcolour.png" alt="Planet Colour Key" />
+					</ImageContainer>
+					<ul>
+						<li>Neptune (Moves in and out of the water) - Lands on Aft Deck Boat (Shoot from Poop Deck)</li>
+						<li>Jupiter (big brown streaks) - Engine room floating above the stairs (Shoot from poop deck)</li>
+						<li>Venus (Slightly larger then mars, more orange) - Millionaire Suites on the bed (Shoot from Aft/Boat/Mid Deck)</li>
+						<li>Moon - Outside window in Grand Staircase before entering Dining Hall (Shoot from same window)</li>
+						<li>Mercury (small purple) - On cart infront of the stairs leading down into Mail Room (Shoot from Spawn)</li>
+						<li>Mard (tiny red) - Boiler Room Catwalk across from Fast Travel (Shoot from Poop Deck)</li>
+						<li>Saturn (big, yellow, rings) - Chair in Bridge Area behind wallbuy (Shoot from spawn)</li>
+						<li>Uranus (big pruple) - Ontop of pile of luggage in the Estate Rooms bathroom (Shoot from Spawn)</li>
+						<li>Sun (Always Last) - drop across from fast travel in Forecastle (Shoot from spawn)</li>
+					</ul>
+				</li>
+				<li>
+					<span>After picking up the sun, you will be put into a time trial. You need to make your way across the boat by shooting the ice blocks to destroy them.</span>
+					<span>Easiest route is to stick to the rght side path (Ice kraken and Wraith Fire useful for defending, Specialist good for destroying)</span>
+					<span>finishes once the ice at the end of the Poop Deck has been destroyed (Can be sniped from Aft Decks mystery box location with Helion Salvo)</span>
+					<span>IF YOU FAIL: flip the round and the orb will immediately spawn back into the place. You have 30 seconds to re-activate it to try again</span>
+				</li>
+				<li>Prepare yourself fully and interact with the sylbol on the floor to be teleported. Swim and interact with the Sentinel Artifact to start the boss fight</li>
+			</ol>
+
+			<h2>Boss Fight</h2>
+			<ul>
+				<li>Recommended to get new shield, helion salvo fully PaP'd, all perks charged, Upgraded Ice Kraken, homunculus</li>
+				<li>
+					<b>Phase 1</b>
+					<ul>
+						<li>Kill Everything</li>
+						<li>Make sure to grab powerups before the start of the next round</li>
+					</ul>
+				</li>
+				<li>
+					<b>Phase 2</b>
+					<ul>
+						<li>Kill Everything (ice circles don't do anything btw)</li>
+						<li>Grab powerups</li>
+					</ul>
+				</li>
+				<li>
+					<b>Phase 3</b>
+					<ul>
+						<li>Survive against enemies and wait for the boss to laser down a hallway. Without getting hit, shoot the eye to damage it.</li>
+						<li>Pickup Powerups</li>
+					</ul>
+				</li>
+				<li>
+					<b>Phase 4</b>
+					<ul>
+						<li>Damage the eye while it's shooting the beam.</li>
+						<li>Pickup Powerups</li>
+					</ul>
+				</li>
+				<li>
+					<b>Phase 5</b>
+					<ul>
+						<li>When you hear the charging noise, you have a short amount of time to damage the boss before he insta-downs you</li>
+						<li>Damage the boss when he beams</li>
+					</ul>
+				</li>
+			</ul>
+		</section>
+	);
+}
+
+// ============================================================
+// SIDE EASTER EGGS
+// ============================================================
+
+function SideEE() {
+	return (
+		<section className="tab-content">
+			<h2 id="power">Power</h2>
+			<p>Interact with the Sentinel Artifact located on the Poop Deck</p>
+
+			<h2 id="pap">
+				PaP -{" "}
+				<a href="https://youtu.be/r0wVoJ13Phw?si=6J7COwQx5U34wJdS&t=232" target="_blank" rel="noopener noreferrer">
+					Video
+				</a>
+			</h2>
+			<ol>
+				<li>
+					Activate the{" "}
+					<TabLink tab="side-ee" target="power">
+						Sentinel Artifact
+					</TabLink>
+				</li>
+				<li>
+					Interact with 4 PaP Pedestals around the map. (Stone Tablets with 4 circles)
+					<ul>
+						<li>Cargo Hold</li>
+						<li>Turbine Room</li>
+						<li>Poop Deck</li>
+						<li>Lower Grand Staircase</li>
+					</ul>
+				</li>
+			</ol>
+
+			<h2>
+				Free Viking Perk -{" "}
+				<a href="https://www.youtube.com/watch?v=CyIiNE4Kt2g" target="_blank" rel="noopener noreferrer">
+					Video
+				</a>
+			</h2>
+			<p>Rewards: 5th Perk (You will lose it when you enter last stand)</p>
+			<ol>
+				<li>
+					Find, Shoot and Collect 6 fish around the map. (will spawn in an order so just keep looking at the locaitons until you find one then re-check)
+					<ul>
+						<li>Engine Room by the Zues Perk Statue (Easiest to shoot through floor in the Promenade Starboard Deck then going down to get it)</li>
+						<li>Boiler Room. Drain the water through the valve by fast travel and shoot the fish next to the bend in a blue pipe at the roof (front face). pay attention to where it lands as it will drop into the water and not be visible.</li>
+						<li>Above the Poop Deck somewhere on the rope leading way up to the mast. will drop near shield workbench</li>
+						<li>Another Rope above the Aft Deck (start of rings on the rope) will drop near mystery box stairs</li>
+						<li>
+							along the rivets of the smoke stack by mid-deck{" "}
+							<TabLink tab="extras" target="fasttravel">
+								Fast Travel
+							</TabLink>
+						</li>
+						<li>below the crowsnest in the Forecastle area</li>
+					</ul>
+					<ImageContainer>
+						<img src="\images\guides\bo4\voyage-of-despair\voyage-of-despair-fish1.png" alt="Perk Fish - Engine Room" />
+						<img src="\images\guides\bo4\voyage-of-despair\voyage-of-despair-fish6.png" alt="Perk Fish - Boiler Room (What splash to pick up)" />
+						<img src="\images\guides\bo4\voyage-of-despair\voyage-of-despair-fish4.png" alt="Perk Fish - Poop Deck Rope" />
+						<img src="\images\guides\bo4\voyage-of-despair\voyage-of-despair-fish2.png" alt="Perk Fish - Aft Decks" />
+						<img src="\images\guides\bo4\voyage-of-despair\voyage-of-despair-fish3.png" alt="Perk Fish - Sun Deck Smokestack" />
+						<img src="\images\guides\bo4\voyage-of-despair\voyage-of-despair-fish5.png" alt="Perk Fish - Forecastle Crows Nest" />
+					</ImageContainer>
+				</li>
+				<li>After collecting all of the fish, head over to the box with 2 fish on it in the Sun Deck and interact with it. Will spawn the Power-up for the perk.</li>
+			</ol>
+
+			<h2>
+				Switch Special Weapons Mid Game -{" "}
+				<a href="https://www.youtube.com/watch?v=MbRvsNC1Yb0" target="_blank" rel="noopener noreferrer">
+					Video
+				</a>
+			</h2>
+			<p>Can be repeated unlimited times by meleeing all the pianos again at the end.</p>
+			<ol>
+				<li>
+					Find 3 sheets of music and place them on 3 different pianos (Pianos do not need to match with the sheets, just place them each at a different piano location. The ones written below are recommendations, not requirements.
+					<ol>
+						<li>Bench in Promenade Port Deck - Piano Outside Dining Hall</li>
+						<li>Table to the right when entering the Dining Hall - Piano to the left in Dining Hall</li>
+						<li>On the floor in the Promenade Starboard Deck in the revolving door - Piano at the top of the Grabd Staircase</li>
+					</ol>
+				</li>
+				<li>(Stamin-Up + Scepter of Ra Recommended) Melee each piano quickly with your specialist before it runs out</li>
+				<li>One piano will be on fire while the other 2 are not. Swpa the sheet music on the unlit pianos. Melee each piano again. They should all now be on fire</li>
+				<li>
+					After Meleeing the final piano, quickly melee a{" "}
+					<TabLink tab="weapons" target="mysterybox">
+						Mystery Box
+					</TabLink>{" "}
+					to trigger a fire sale. Upon purchasing the box, it will give you a new{" "}
+					<TabLink tab="weapons" target="specialist">
+						specialist weapon
+					</TabLink>
+				</li>
+			</ol>
+
+			<h2>
+				Upgraded{" "}
+				<TabLink tab="weapons" target="bowieknife">
+					Bowie Knife
+				</TabLink>{" "}
+				-{" "}
+				<a href="https://www.youtube.com/watch?v=Cld1xM2I_V8" target="_blank" rel="noopener noreferrer">
+					Video
+				</a>
+			</h2>
+			<p>Makes the bowie knife a one-hit kill on round 30+ (but has a cooldown)</p>
+			<ol>
+				<li>
+					Buy the{" "}
+					<TabLink tab="weapons" target="bowieknife">
+						Bowie Knife
+					</TabLink>
+				</li>
+				<li>Knife a Blightfather until you get the bowie knife purchase animation</li>
+				<li>When knifing a zombie, he should now spew out acid.</li>
+			</ol>
+
+			<h2>
+				Super PaP -{" "}
+				<a href="https://www.youtube.com/watch?v=AcQMg6fGY4k" target="_blank" rel="noopener noreferrer">
+					Video
+				</a>
+			</h2>
+			<p>Rewards: PaP at every location, PaP will now Re-Pack, Refill Ammo, and Boost Damage for 5000p (only lasts for the duration of the current round)</p>
+			<ol>
+				<li>
+					Get a{" "}
+					<TabLink tab="side-ee" target="pap">
+						PaP'd
+					</TabLink>{" "}
+					<TabLink tab="wonder-weapon" target="elementalkraken">
+						Elemental Kraken
+					</TabLink>{" "}
+					(Will not work with Radiance or Electric)
+				</li>
+				<li>Go into the Engine Room and shoot the 4 center pistons 3-4 times with the kraken (Should start smoking then stop after all 4 have been shot)</li>
+				<li>
+					<span>6 lights will begin to flash on the surrounding machines. Turn the wheels below the flashing lights. (white = smaller wheels, red = Larger wheels below).</span>
+					<span>Make sure to check the backs of the machines aswell</span>
+				</li>
+				<li>Once Complete, flick the lever on the right wall after entering the Turbine Room (PaP will then spawn at every location)</li>
+			</ol>
+
+			<h2>
+				Dev EE -{" "}
+				<a href="https://youtu.be/r0wVoJ13Phw?si=a2Qjh69ERZZ2b7Ko&t=1130" target="_blank" rel="noopener noreferrer">
+					Video
+				</a>
+			</h2>
+			<p>
+				<span>Rewards: Free Kraken and Homunculus</span>
+				<span>
+					If completed during the{" "}
+					<TabLink tab="buildables" target="svalinnguard">
+						Shield Upgrade Step
+					</TabLink>{" "}
+					with the flying car, you'll be teleported into the flying car. (you can leave by meleeing or shooting, can be REPEATED after round 9 aswell)
+				</span>
+			</p>
+			<ol>
+				<li>
+					Complete step 1 (time and wheel step) of the <TabLink tab="main-ee">Main EE</TabLink>
+				</li>
+				<li>Get to Round 9 (CAN ONLY BE DONE ON ROUND 9)</li>
+				<li>Now standing in a specific corner on the poop deck and crouching and holding interact, you must walk a specific path</li>
+				<li>At the end of the path, you must release interact, melee twice, stand up and switch weapons</li>
+				<li>You will then be given a kraken and homunculus</li>
+			</ol>
+
+			<h2>
+				Hourglass EE (Free Fast Travel) -{" "}
+				<a href="https://youtu.be/r0wVoJ13Phw?si=znyDxXjQcbMNsbeH&t=1969" target="_blank" rel="noopener noreferrer">
+					Video
+				</a>
+			</h2>
+			<p>Rewards: Free fast travel 3 times per round for the entire rest of the game.</p>
+			<ol>
+				<li>
+					Get either the Helion Salvo, Hitchcock, Paladin, Hades, Rampart or ABR from the{" "}
+					<TabLink tab="weapons" target="mysterybox">
+						box
+					</TabLink>
+				</li>
+				<li>
+					Double{" "}
+					<TabLink tab="side-ee" target="pap">
+						PaP
+					</TabLink>{" "}
+					the weapon you got
+				</li>
+				<li>In the Boat Deck middle area, shoot the 3 small exhaust vents from the poles until an hourglass icon appears</li>
+				<li>Following the icon by going through the fast travels and standing near it.</li>
+				<li>Once it goes up in the Mail Rooms, you need to quickly run up to Forecastle to keep up</li>
+				<li>
+					Once it arrives at where the{" "}
+					<TabLink tab="side-ee" target="power">
+						Sentinel Artifact
+					</TabLink>{" "}
+					was, you can pick it up as a power-up
+				</li>
+			</ol>
+		</section>
+	);
+}
+
+// ============================================================
+// MUSIC EASTER EGGS
+// ============================================================
+
+function MusicEE() {
+	return (
+		<section className="tab-content">
+			<h2>
+				Drowning -{" "}
+				<a href="https://youtu.be/r0wVoJ13Phw?si=ncCEhgufmuei-05t&t=1730" target="_blank" rel="noopener noreferrer">
+					Video
+				</a>
+			</h2>
+			<p>You must find and shoot 4 coins</p>
+			<ul>
+				<li>behind a box in the burning barrels under the stairs above spawn</li>
+				<li>
+					On a crate on the left side of the back of the boat near{" "}
+					<TabLink tab="side-ee" target="power">
+						Sentinel Artifact
+					</TabLink>
+				</li>
+				<li>Between some crates on the boat in the Sun Deck</li>
+				<li>At the PaP altar at the bottom of the stairs on a roof beam</li>
+			</ul>
+			<ImageContainer>
+				<img src="\images\guides\bo4\voyage-of-despair\voyage-of-despair-coin1.png" alt="Music EE Coin" />
+				<img src="\images\guides\bo4\voyage-of-despair\voyage-of-despair-coin2.png" alt="Music EE Coin" />
+				<img src="\images\guides\bo4\voyage-of-despair\voyage-of-despair-coin3.png" alt="Music EE Coin" />
+				<img src="\images\guides\bo4\voyage-of-despair\voyage-of-despair-coin4.png" alt="Music EE Coin" />
+			</ImageContainer>
+		</section>
+	);
+}
+
+// ============================================================
+// WONDER WEAPONS
+// ============================================================
+
+function WonderWeapons() {
+	return (
+		<section className="tab-content">
+			<h2 id="kraken">
+				Kraken -{" "}
+				<a href="https://www.youtube.com/watch?v=vg7yvwrpX7k" target="_blank" rel="noopener noreferrer">
+					Video
+				</a>
+			</h2>
+			<p>Either obtained from the box or via the Free Kraken EE below.</p>
+			<ol>
+				<li>
+					Activate the{" "}
+					<TabLink tab="side-ee" target="power">
+						Sentinel Artifact
+					</TabLink>
+				</li>
+				<li>
+					Kill a{" "}
+					<TabLink tab="extras" target="specialenemies">
+						Stoker
+					</TabLink>{" "}
+					and collect the key he drops (won't spawn in until around round 10) CANNOT BE KILLED USING SPECIALIST
+				</li>
+				<li>
+					Locate and interact with a treasure chest. Fill it with zombie souls until it closes and dissapears. find it and do this 3 times. (can return to previous locations)
+					<ul>
+						<li>Mail Rooms after coming down the stairs</li>
+						<li>Back of the estate Rooms found by takign the second lowest set of doors out of spawn</li>
+						<li>In the Galley (gigantic chest)</li>
+						<li>In Provisions below the Poop Deck next to a zombie spawn in the frozen area</li>
+						<li>On the right of the Pap in the Turbine room in the corner (Drain the water at the opposite end)</li>
+					</ul>
+				</li>
+				<li>
+					When the chest opens for the final time, it will reveal an item. You need to find the box relating to that item to recieve the kraken (will appear when close to the box, can be left without picking it up)
+					<ul>
+						<li>Binoculars - Right side of Forecastle Area</li>
+						<li>Compass - On the side of the Boat Deck</li>
+						<li>Globe - Side of Mid Deck</li>
+						<li>Compass Drawing Tool - Aft Decks in the middle of the staircase on left side</li>
+						<li>Telescope - Upper Area of Poop Deck</li>
+					</ul>
+				</li>
+			</ol>
+
+			<h2 id="elementalkraken">
+				Elemental Kraken -{" "}
+				<a href="https://www.youtube.com/watch?v=k4I3nS0eYO0" target="_blank" rel="noopener noreferrer">
+					Video
+				</a>
+			</h2>
+			<p>
+				4 variations. requires the{" "}
+				<TabLink tab="wonder-weapon" target="kraken">
+					Kraken
+				</TabLink>{" "}
+				(duh)
+			</p>
+			<ol>
+				<li>
+					Activate the{" "}
+					<TabLink tab="side-ee" target="power">
+						Sentinel Artifact
+					</TabLink>
+				</li>
+				<li>
+					Find 3 parts to craft the upgrade kit
+					<ul>
+						<li>
+							Column Thing - Cargo Hold (Drain the water to make moving easier)
+							<ul>
+								<li>On the corner of burning boxes</li>
+								<li>near bike by PaP Altar</li>
+							</ul>
+						</li>
+						<li>
+							Pot - 1st Class Lounge
+							<ul>
+								<li>Table to the right when entering the 1st Class Lounge</li>
+								<li>On table on the opposite end of the room</li>
+							</ul>
+						</li>
+						<li>
+							pipes - Galley
+							<ul>
+								<li>on the counter to your right</li>
+								<li>behind you on the opposite end on the shelf next to the zombie spawn</li>
+							</ul>
+						</li>
+						<li>Build at the Engine Room Table</li>
+						<li>
+							Kill a{" "}
+							<TabLink tab="extras" target="specialenemies">
+								catalyst zombie
+							</TabLink>{" "}
+							using the kraken to get the elemental upgrade part (Which catalyst zombie type you kill will determine the elemental upgrade)
+						</li>
+						<li>Adding this element to the upgrade kit will give your kraken that elemental upgrade (can swap as much as you want but will cost 6000p after the first upgrade)</li>
+					</ul>
+				</li>
+			</ol>
+		</section>
+	);
+}
+
+// ============================================================
+// BUILDABLES
+// ============================================================
+
+function Buildables() {
+	return (
+		<section className="tab-content">
+			<h3 id="tables">Table Locations</h3>
+			<ul>
+				<li>
+					Engine Room -{" "}
+					<TabLink tab="wonder-weapon" target="elementalkraken">
+						Kraken Upgrade Kit
+					</TabLink>
+				</li>
+				<li>Poop Deck - Shield</li>
+			</ul>
+
+			<h2 id="shield">Shield</h2>
+			<p>
+				<span>
+					Can be{" "}
+					<TabLink tab="buildables" target="svalinnguard">
+						Upgraded
+					</TabLink>
+				</span>
+				<span>
+					Must be built on the Poop Deck{" "}
+					<TabLink tab="buildables" target="tables">
+						Table
+					</TabLink>
+				</span>
+			</p>
+			<ul>
+				<li>
+					<b>Part 1</b> - State Rooms
+					<ul>
+						<li>On the shelf with a bunch of towels</li>
+						<li>On the chair in the second bedroom straight</li>
+						<li>On Chair in First Bedroom down the Right Hallway</li>
+					</ul>
+				</li>
+				<li>
+					<b>Part 2</b> - (requires{" "}
+					<TabLink tab="side-ee" target="power">
+						Sentinel Artifact
+					</TabLink>
+					)
+					<ul>
+						<li>3rd Class Berths on the railing to the left</li>
+						<li>On the box at the end of the hallway in Provisions</li>
+						<li>In Provisions on the opposite hallway sitting on an apple box</li>
+					</ul>
+				</li>
+				<li>
+					<b>Part 3</b> - Bridge
+					<ul>
+						<li>On the bench behind the right side staircase</li>
+						<li>On the boxes between the middle section between the 2 hallways</li>
+						<li>On the railing towards the back of the area</li>
+					</ul>
+				</li>
+			</ul>
+
+			<h2 id="svalinnguard">
+				Svalinn Guard (Shield Upgrade) -{" "}
+				<a href="https://www.youtube.com/watch?v=EbGCRHmN6So" target="_blank" rel="noopener noreferrer">
+					Video
+				</a>
+			</h2>
+			<p>
+				Requires:{" "}
+				<TabLink tab="buildables" target="shield">
+					Shield
+				</TabLink>
+			</p>
+			<ol>
+				<li>
+					Dislodge a firework from a pipe by shooting it
+					<ul>
+						<li>
+							In zombie spawn next to{" "}
+							<TabLink tab="weapons" target="rk7">
+								RK 7 Garrison wallbuy
+							</TabLink>{" "}
+							in Bridge
+						</li>
+						<li>Another zombie spawn in Bidge down the hall</li>
+						<li>
+							To the left of mirror in window next to <TabLink tab="perks">Zeus Perk</TabLink> in 1st Class Lounge
+						</li>
+						<li>Past the green room leading away from the Aft Deck in the zombie spawn</li>
+						<li>In window directly infront of you when coming down from the Poop Deck in the 3rd Class Berths</li>
+					</ul>
+				</li>
+				<li>Once Dislodged, re-check all of the locations and dislodge it again.</li>
+				<li>
+					Locate the pipe that the firework came out of and interact with it to pick it up
+					<ul>
+						<li>In the back corner of the Mail Room area</li>
+						<li>Corner of room in Millionaire Suites</li>
+						<li>Beside help decal in Engine Room</li>
+					</ul>
+				</li>
+				<li>
+					Head to the Mail Room and find 4 skeleton body parts (DO NOT TOUCH THEM) and the paper nearby with a series of 4 numbers on them. You need to remember these numbers
+					<ol>
+						<li>On the table right when you leave the dirst set of stairs. Code on the box behind (shoot the bottles and view from the stairs)</li>
+						<li>On another table to your right when going down the second flight of stairs. Code on the floor between the left 2 table legs.</li>
+						<li>back corner in one of the largeer mail cubbbies. Code between the rightmsot table legs.</li>
+						<li>In the Cargo Hold (Drain the Water with the valve in the back) in a small tipepd over box on the floor. Code is directly beside it.</li>
+					</ol>
+				</li>
+				<li>
+					<span>Head to the safe in the Mail Rooms and bash the lock with your shield. pick up the lock that fell. You now need to bring the lock to 4 safe locations</span>
+					<span>You need to interact with the safe, after cycling for a bit it will display a number combo that will match with one of the ones you recorded. Go back to that skeleton part, pick it up, return it back to the safe.</span>
+					<span>When the safe glows purple, shield bash it and pick up the lock again. Repeat with all safes and bones.</span>
+					<ol>
+						<li>Bridge near a bathroom</li>
+						<li>
+							Left of{" "}
+							<TabLink tab="weapons" target="bowieknife">
+								Bowie Knife wallbuy
+							</TabLink>{" "}
+							in the 1st Class Lounge
+						</li>
+						<li>In the area before the bedroom in the Millionaire Suites</li>
+						<li>In the 3rd Class Berths right beside the way to Provisions</li>
+					</ol>
+				</li>
+				<li>
+					Head to the Cargo Hold and interact with the skeleton in the car by the{" "}
+					<TabLink tab="extras" target="fasttravel">
+						Fast Travel
+					</TabLink>
+				</li>
+				<li>
+					<span>Head up to the deck and you should hear honking. You will see the skeleton flying around the map. You need to place your rocket in one of the white things on either side of the deck and shoot it right as the car passes over to hit him with the rocket.</span>
+					<span>(his car should break, if you fail you need to colelct another firework by repeating the first steps with the pipes.)</span>
+				</li>
+				<li>When he eventually crashes into the iceberg and sends a chunk flying, it should land on your shield where yo ucan now pick up the upgrade.</li>
+			</ol>
+		</section>
+	);
+}
+
+// ============================================================
+// WEAPONS
+// ============================================================
+
+function Weapons() {
+	return (
+		<section className="tab-content">
+			<h3>Starting Weapons</h3>
+			<ul>
+				<li>Knife</li>
+				<li>Welling - Player Choice</li>
+				<li>Strife - Player Choice</li>
+				<li>Rk 7 Garrison - Player Choice</li>
+				<li>Saug 9mm - Player Choice</li>
+				<li id="essex">Essex Model 07 - Player Choice</li>
+				<li>MOG 12 - Player Choice</li>
+				<li>Frag - Player Choice</li>
+				<li>Acid Bomb - Player Choice</li>
+				<li>Claymore - Player Choice</li>
+				<li>Wraith Fire - Player Choice</li>
+				<li>Sentry - Player Choice</li>
+			</ul>
+
+			<h3 id="specialist">Specialists</h3>
+			<ul>
+				<li>Chakrams of Vengeance</li>
+				<li>Hammer of Valhalla</li>
+				<li>Scepter of Ra</li>
+				<li>Viper and Dragon</li>
+			</ul>
+
+			<h3>Wall Weapons</h3>
+			<ul>
+				<li>
+					<b>Strife</b> - Forecastle (500p)
+				</li>
+				<li>
+					<b>Essex Model 07</b> - Forecastle (500p)
+				</li>
+				<li id="rk7">
+					<b>RK 7 Garrison</b> - Bridge (700p)
+				</li>
+				<li id="saug">
+					<b>Saug 9mm</b> - State Rooms (750p)
+				</li>
+				<li>
+					<b>Escargot</b> - Bridge (1000p)
+				</li>
+				<li id="mog">
+					<b>MOG 12</b> - State Room (1000p)
+				</li>
+				<li>
+					<b>Spitfire</b> - Upper Grand Staircase (1150p)
+				</li>
+				<li>
+					<b>Swordfish</b> - Lower Grand Staircase (1200p)
+				</li>
+				<li>
+					<b>MX9</b> - Gallery (1300p)
+				</li>
+				<li>
+					<b>GKS</b> - Aft Decks/Promenade Starboard Deck (1300p)
+				</li>
+				<li id="m1897">
+					<b>M1897 Terbuchet</b> - 1st Class Lounge (1400p)
+				</li>
+				<li>
+					<b>Maddox RFB</b> - 3rd Class Berths (1400p)
+				</li>
+				<li>
+					<b>KN-57</b> - Poop Deck (1450p)
+				</li>
+				<li>
+					<b>ICR-7</b> - Provisions (1550p)
+				</li>
+				<li id="vapr">
+					<b>Vapr-XKG</b> - Sun Deck/Mail Rooms (1550p)
+				</li>
+				<li id="auger">
+					<b>Auger DMR</b> - Boat Deck (1550p)
+				</li>
+				<li id="bowieknife">
+					<b>Bowie Knife</b> - 1st Class Lounge/Gallery (3000p)
+				</li>
+				<li>
+					<b>Titan</b> - Cargo Hold (3750p)
+				</li>
+				<li id="koshka">
+					<b>Koshka</b> - Engine Room (4500p)
+				</li>
+			</ul>
+
+			<h3 id="mysterybox">Mystery Box</h3>
+			<h4>Locations</h4>
+			<ul>
+				<li>Upper Grand Staircase</li>
+				<li>Lower Grand Staircase</li>
+				<li>1st Class Lounge</li>
+				<li>Mail Rooms</li>
+				<li>Boat Deck</li>
+				<li>Aft Decks</li>
+				<li>Boiler Room</li>
+				<li>Dining Hall</li>
+			</ul>
+			<h4>Box Weapons</h4>
+			<ul>
+				<li>Maddox RFB</li>
+				<li>Hitchcock M9</li>
+				<li>Rampart 17</li>
+				<li>Vapr-XKG</li>
+				<li>Grav</li>
+				<li>SWAT RFT</li>
+				<li>Peacekeeper</li>
+				<li>AN-94</li>
+				<li>DoubleCross</li>
+				<li>Escargot</li>
+				<li>Spitfire</li>
+				<li>Cordite</li>
+				<li>MP-40</li>
+				<li>Daemon 3XB</li>
+				<li>Switchblade X9</li>
+				<li>VMP</li>
+				<li>MicroMG 9mm</li>
+				<li>Swordfish</li>
+				<li>Essex Model 07</li>
+				<li>ABR 223</li>
+				<li>S6 Stingray</li>
+				<li>M16</li>
+				<li>Hades</li>
+				<li>VKM 750</li>
+				<li>Zweihander</li>
+				<li>Tigershark</li>
+				<li>SDM</li>
+				<li>Paladin HB50</li>
+				<li>Outlaw</li>
+				<li>Vendetta</li>
+				<li>Locus</li>
+				<li>Havelina AA50</li>
+				<li>Mozu</li>
+				<li>RK 7 Garrison</li>
+				<li>KAP 45</li>
+				<li>SG12</li>
+				<li>MOG 12</li>
+				<li>Rampage</li>
+				<li>Argus</li>
+				<li>Hellion Salvo</li>
+				<li>Ballistic Knife</li>
+				<li>Reaver C86</li>
+				<li>
+					<TabLink tab="wonder-weapons" target="kraken">
+						Kraken
+					</TabLink>
+				</li>
+				<li>Homunculus</li>
+			</ul>
+		</section>
+	);
+}
+
+// ============================================================
+// GAUNTLET
+// ============================================================
+
+function Gauntlet() {
+	return (
+		<section className="tab-content">
+			<h2>Unsinkable</h2>
+			<table>
+				<thead>
+					<tr>
+						<th scope="col">Round</th>
+						<th scope="col">Name</th>
+						<th scope="col">Description</th>
+					</tr>
+				</thead>
+				<tbody>
+					<tr>
+						<td>1</td>
+						<td>Unsinkable</td>
+						<td>Survive the Round without taking Damage.</td>
+					</tr>
+					<tr>
+						<td>2</td>
+						<td>Well Equipped</td>
+						<td>Kill Zombies with Equipment Only.</td>
+					</tr>
+					<tr>
+						<td>3</td>
+						<td>Shall We Dance?</td>
+						<td>Use Melee Only.</td>
+					</tr>
+					<tr>
+						<td>4</td>
+						<td>Perk Up</td>
+						<td>Survive the Round with At Least One Perk Active.</td>
+					</tr>
+					<tr>
+						<td>5</td>
+						<td>Never Say Lever</td>
+						<td>
+							Use the{" "}
+							<TabLink tab="weapons" target="essex">
+								Essex Model 07
+							</TabLink>{" "}
+							Lever Action Rifle Only.
+						</td>
+					</tr>
+					<tr>
+						<td>6</td>
+						<td>Artifacts of Life</td>
+						<td>
+							Activate the{" "}
+							<TabLink tab="side-ee" target="power">
+								Sentinel Artifact
+							</TabLink>
+							.
+						</td>
+					</tr>
+					<tr>
+						<td>7</td>
+						<td>Shielded</td>
+						<td>
+							Possess the{" "}
+							<TabLink tab="buildables" target="shield">
+								Shield
+							</TabLink>{" "}
+							at the End of the Round.
+						</td>
+					</tr>
+					<tr>
+						<td>8</td>
+						<td>Closed for Business</td>
+						<td>All Buys are Disabled.</td>
+					</tr>
+					<tr>
+						<td>9</td>
+						<td>Mystery Shopper</td>
+						<td>
+							Obtain a Weapon From the{" "}
+							<TabLink tab="weapons" target="mysterybox">
+								Mystery Box
+							</TabLink>
+							.
+						</td>
+					</tr>
+					<tr>
+						<td>10</td>
+						<td>Waterlogged</td>
+						<td>Defend the Cargo Hold While Flooded.</td>
+					</tr>
+					<tr>
+						<td>11</td>
+						<td>Door Man</td>
+						<td>Open all Doors in the Map.</td>
+					</tr>
+					<tr>
+						<td>12</td>
+						<td>Crawling With Zombies</td>
+						<td>Survive a Wave of Crawling Dead.</td>
+					</tr>
+					<tr>
+						<td>13</td>
+						<td>RePackaged</td>
+						<td>Possess a Re-Packed Weapon at the End of the Round.</td>
+					</tr>
+					<tr>
+						<td>14</td>
+						<td>Perk Allergy</td>
+						<td>Complete the Round with Zero Perks.</td>
+					</tr>
+					<tr>
+						<td>15</td>
+						<td>Pooped</td>
+						<td>Defend the Poop Deck.</td>
+					</tr>
+					<tr>
+						<td>16</td>
+						<td>Lever Again</td>
+						<td>Use the Lever Action Rifle Only.</td>
+					</tr>
+					<tr>
+						<td>17</td>
+						<td>Head Games</td>
+						<td>Kill Zombies with Headshots Only.</td>
+					</tr>
+					<tr>
+						<td>18</td>
+						<td>Powerless</td>
+						<td>Avoid All Powerups.</td>
+					</tr>
+					<tr>
+						<td>19</td>
+						<td>Missing the Point(s)</td>
+						<td>Damage to Players Causes Points Drain.</td>
+					</tr>
+					<tr>
+						<td>20</td>
+						<td>Engine Room Rumble</td>
+						<td>Survive a Stoker Onslaught in the Engine Room.</td>
+					</tr>
+					<tr>
+						<td>21</td>
+						<td>Level Headed</td>
+						<td>Every Player Must Possess a Level 3 Special Weapon.</td>
+					</tr>
+					<tr>
+						<td>22</td>
+						<td>Cat Fight</td>
+						<td>Kill Catalyst Zombies using the corresponding reactive AAT.</td>
+					</tr>
+					<tr>
+						<td>23</td>
+						<td>Press Start</td>
+						<td>Reset To Your Starting Weapon.</td>
+					</tr>
+					<tr>
+						<td>24</td>
+						<td>Unhealthy</td>
+						<td>Replenish Health Drain with Zombie Kills.</td>
+					</tr>
+					<tr>
+						<td>25</td>
+						<td>Fore!</td>
+						<td>Defend the Forecastle with No Special Weapons.</td>
+					</tr>
+					<tr>
+						<td>26</td>
+						<td>Fast Times</td>
+						<td>Complete the Round Before the Timer Runs Out.</td>
+					</tr>
+					<tr>
+						<td>27</td>
+						<td>Better Late Than Lever</td>
+						<td>Use the Essex Model 07 Lever Action Rifle Only.</td>
+					</tr>
+					<tr>
+						<td>28</td>
+						<td>H.eads U.p D.eactivated</td>
+						<td>No HUD.</td>
+					</tr>
+					<tr>
+						<td>29</td>
+						<td>Unpacked</td>
+						<td>Pack-A-Punch Weapons are Disabled.</td>
+					</tr>
+					<tr>
+						<td>30</td>
+						<td>The Grand Finale!</td>
+						<td>Clear the Grand Staircase!</td>
+					</tr>
+				</tbody>
+			</table>
+
+			<VideoPlayer url="wCtFJUUn_K0" />
+
+			<h2>Unsinkable (hard)</h2>
+			<table>
+				<thead>
+					<tr>
+						<th scope="col">Round</th>
+						<th scope="col">Name</th>
+						<th scope="col">Description</th>
+					</tr>
+				</thead>
+				<tbody>
+					<tr>
+						<td>1</td>
+						<td>Unsinkable</td>
+						<td>Avoid Taking Damage From Sprinting Zombies.</td>
+					</tr>
+					<tr>
+						<td>2</td>
+						<td>Well Equipped</td>
+						<td>Kill Sprinting Zombies with Equipment Only.</td>
+					</tr>
+					<tr>
+						<td>3</td>
+						<td>Shall We Dance Again?</td>
+						<td>Use Melee Attacks Only. Damage From Zombies Fails the Round.</td>
+					</tr>
+					<tr>
+						<td>4</td>
+						<td>Perk Up</td>
+						<td>Survive Round of Sprinting Zombies with At Least One Perk Active.</td>
+					</tr>
+					<tr>
+						<td>5</td>
+						<td>Never Say Lever Again</td>
+						<td>Use Essex Model 07 Only. Missed Shots Damage Players. Regen Disabled.</td>
+					</tr>
+					<tr>
+						<td>6</td>
+						<td>Artifacts of Life</td>
+						<td>Activate Sentinel Artifact and Finish the Round within Time Limit.</td>
+					</tr>
+					<tr>
+						<td>7</td>
+						<td>Shielded</td>
+						<td>Possess Shield at End of Round. Sprinting Zombies Do Double Damage.</td>
+					</tr>
+					<tr>
+						<td>8</td>
+						<td>Closed for Business</td>
+						<td>All Buys are Disabled. Weapon Fire Drains Points.</td>
+					</tr>
+					<tr>
+						<td>9</td>
+						<td>Mystery Shopper</td>
+						<td>Obtain 2 Items From the Mystery Box. Players are Randomly Teleported.</td>
+					</tr>
+					<tr>
+						<td>10</td>
+						<td>Waterlogged</td>
+						<td>Defend Cargo Hold While Flooded. Friendly Fire Enabled. Perks Cause Blurred Vision.</td>
+					</tr>
+					<tr>
+						<td>11</td>
+						<td>Door Man</td>
+						<td>Open All Doors in the Map Within Time Limit. Then Complete the Round.</td>
+					</tr>
+					<tr>
+						<td>12</td>
+						<td>We Are the Crawling Dead!</td>
+						<td>Survive a Wave of Crawling Dead. Players Can Only Attack While Prone.</td>
+					</tr>
+					<tr>
+						<td>13</td>
+						<td>RePackaged</td>
+						<td>Possess Re-Packed Weapon at End of the Round. Points Drain the Slower You Move.</td>
+					</tr>
+					<tr>
+						<td>14</td>
+						<td>Allergic to Everything</td>
+						<td>Perks, Elixirs, Packed Weapons, Health Regen, Special Weapons, and HUD Are All Disabled.</td>
+					</tr>
+					<tr>
+						<td>15</td>
+						<td>So Pooped, I Can Barely Move</td>
+						<td>Defend the Poop Deck. Horizontal Movement Damages Players.</td>
+					</tr>
+					<tr>
+						<td>16</td>
+						<td>Lever Again Will I See You</td>
+						<td>Use the Essex Model 07 Only. Zombies Only Appear While Firing.</td>
+					</tr>
+					<tr>
+						<td>17</td>
+						<td>Head Games. No Aim</td>
+						<td>Kill Zombies with Headshots Only. ADS is Disabled.</td>
+					</tr>
+					<tr>
+						<td>18</td>
+						<td>This Close to Powerless</td>
+						<td>Avoid All Power Ups. Players Must Be Close to Damage Enemies.</td>
+					</tr>
+					<tr>
+						<td>19</td>
+						<td>Missing the Point(s) Even More</td>
+						<td>Damage to Players Causes Points Drain.</td>
+					</tr>
+					<tr>
+						<td>20</td>
+						<td>Engine Room Rumble</td>
+						<td>Survive Stokers in the Engine Room. Players are Randomly Blinded.</td>
+					</tr>
+					<tr>
+						<td>21</td>
+						<td>Level Headed</td>
+						<td>Get Level 3 Special Weapon. Regen and Weapons Only Work While Jumping or Sliding.</td>
+					</tr>
+					<tr>
+						<td>22</td>
+						<td>Feral Cat Fight</td>
+						<td>Kill Catalyst Zombies Using the Corresponding Reactive AAT. Zombies Do Double Damage.</td>
+					</tr>
+					<tr>
+						<td>23</td>
+						<td>Give Me a Hand Here</td>
+						<td>Survive the Round for the Given Time Before Getting Your Starting Weapons Back.</td>
+					</tr>
+					<tr>
+						<td>24</td>
+						<td>Unhealthy</td>
+						<td>Replenish Health Drain with Zombie Kills. Players Must End Round Inside Engine Room.</td>
+					</tr>
+					<tr>
+						<td>25</td>
+						<td>Fore-Low</td>
+						<td>Defend Forecastle with No Special Weapons. Health Drains Unless Player Crouches.</td>
+					</tr>
+					<tr>
+						<td>26</td>
+						<td>Extremely Fast And Incredibly Close</td>
+						<td>Complete Round Before Timer Runs Out. Players Must Be Close to Damage Enemies.</td>
+					</tr>
+					<tr>
+						<td>27</td>
+						<td>You'll Shoot Your Eye Out</td>
+						<td>Use the Essex Model 07 Only. ADS Hurts Players.</td>
+					</tr>
+					<tr>
+						<td>28</td>
+						<td>H.eads U.p D.eactivated</td>
+						<td>HUD, ADS, Equipment, Special Weapons, and Melee Attacks are All Disabled.</td>
+					</tr>
+					<tr>
+						<td>29</td>
+						<td>Unpacked After Traveling</td>
+						<td>Fast Travel Within Time Limit, Packed Weapons are Disabled, Sprinting Causes Damage.</td>
+					</tr>
+					<tr>
+						<td>30</td>
+						<td>!elaniF dnarG ehT</td>
+						<td>desreveR era slortnoC, tegraT dna rekcattA struH eriF yldneirF .esacriatS dnarG eht dnefeD</td>
+					</tr>
+				</tbody>
+			</table>
+			<VideoPlayer url="" />
+		</section>
+	);
+}
+
+// ============================================================
+// PERKS
+// ============================================================
+
+function Perks() {
+	return (
+		<section className="tab-content">
+			<h3>Danu</h3>
+			<p>On the Forecastle to the right of spawn.</p>
+			<h3>Ra</h3>
+			<p>In the Dining Hall, facing the front of the ship.</p>
+			<h3>Zeus</h3>
+			<p>In the 1st Class Lounge.</p>
+			<h3>Odin</h3>
+			<p>In the Engine Room near the back of the ship, under the Poop Deck. This Altar can only be accessed after interacting with the Sentinel Artifact.</p>
+		</section>
+	);
+}
+
+// ============================================================
+// EXTRAS
+// ============================================================
+
+function Extras() {
+	return (
+		<section className="tab-content">
+			<h2>Draining Water</h2>
+			<p>Water can be drained in the Cargo Hold and in the Boiler Room by interacting with draining pipes</p>
+
+			<h2>
+				Tutorial Zweihander -{" "}
+				<a href="https://youtu.be/r0wVoJ13Phw?si=Wpu1xPH1-XJUz3Ag&t=1871" target="_blank" rel="noopener noreferrer">
+					Video
+				</a>
+			</h2>
+			<p>
+				<span>When you are playing through the beginner tutorial, before crounching under the debris, yo ucan knife the glowing door on the left and grab as hield piece and a Zweihander off the floor.</span>
+				<span>WARNING: Trading out your Welling for the MOG 12 off the wall in the next tutorial step will softlock the tutorial from continuing.</span>
+			</p>
+
+			<h2>
+				Floating Zombies EE -{" "}
+				<a href="https://youtu.be/r0wVoJ13Phw?si=GUJYT9vjqIsbHyoP&t=2499" target="_blank" rel="noopener noreferrer">
+					Video
+				</a>
+			</h2>
+			<p>
+				<span>Will make zombies float at the beginning of the next round. Can be re-activated every 9 rounds.</span>
+				<span>Requires shooting and collecting 3 parts and returning them to a skeleton.</span>
+			</p>
+			<ul>
+				<li>
+					Crown - Bridge (Needs to be shot twice)
+					<ImageContainer>
+						<img src="\images\guides\bo4\voyage-of-despair\voyage-of-despair-crown.png" alt="Floating Zombies - Crown" />
+					</ImageContainer>
+				</li>
+				<li>
+					Trident - Engine Room
+					<ImageContainer>
+						<img src="\images\guides\bo4\voyage-of-despair\voyage-of-despair-trident.png" alt="Floating Zombies - Trident" />
+					</ImageContainer>
+				</li>
+				<li>
+					Mask
+					<ImageContainer>
+						<img src="\images\guides\bo4\voyage-of-despair\voyage-of-despair-mask.png" alt="Floating Zombies - Mask" />
+					</ImageContainer>
+				</li>
+				<li>
+					Return to this zombie in the Galley by interacting with him
+					<ImageContainer>
+						<img src="\images\guides\bo4\voyage-of-despair\voyage-of-despair-zombie.png" alt="Floating Zombies - Zombie" />
+					</ImageContainer>
+				</li>
+			</ul>
+
+			<h2>
+				Phonograph Cylinders -{" "}
+				<a href="https://youtu.be/r0wVoJ13Phw?si=RbrqYI6iGwvNxsCQ&t=2839" target="_blank" rel="noopener noreferrer">
+					Video
+				</a>
+			</h2>
+			<p>
+				<span>Around the map there are 9 phonograph cylinders and 5 phonographs (1 cylinder per phonograph so you need to play 2 games to hear them all)</span>
+				<span>
+					<b>Cylinders</b>
+				</span>
+			</p>
+			<ul>
+				<li>In a broken crate in the Cargo Hold beside the burning yellow car</li>
+				<li>Inside the plant pot in the Lower Grand Staircase balcony area</li>
+				<li>In the Dining Hall in the hand of a molten corpse across from the piano</li>
+				<li>In the Bridge Bathroom on a dish above the sink in a hand</li>
+				<li>In a luggage at the end of the Promenade Starboard Deck (left coming down from Mid Deck)</li>
+				<li>Behind the luggage ontop of the boxes in Aft Decks down ramp</li>
+				<li>In provisions on the shelf in the frozen area (near bucket)</li>
+				<li>In the Engine Room turn right before PaP room and walk up the stairs. In the dead bodies hand.</li>
+				<li>In the 3rd Class Berths ontop of the corner at the cieling when entering from stairs</li>
+			</ul>
+			<p>
+				<b>Phonographs</b>
+			</p>
+			<ul>
+				<li>In State Rooms on the left when entering in the corner of the hallway</li>
+				<li>In the Millionaire Suites when entering from the Staircase on your right</li>
+				<li>At the end of the Dining Hall</li>
+				<li>On couch to the right of the perk statue in 1st Class Lounge</li>
+			</ul>
+
+			<h2>Book Cipher</h2>
+			<p>By shooting the bird at the very top of the pole using the toxic upgraded kraken (will get a hit marker) Then go to the book by the Zeus Perk will be a Cipher.</p>
+
+			<h2>Yes No Doll</h2>
+			<p>There is a doll you are able to interact with underneath a flipped couch in the Lower Grand Staircase outside the Dining Hall. It will say Yes or No in a random order. The order stays consistent every game and will keep repeating itself if you keep interacting with it.</p>
+
+			<h2 id="specialenemies">Special Enemies</h2>
+			<table>
+				<thead>
+					<tr>
+						<th scope="col">Enemy Name</th>
+						<th scope="col">Special Abilities</th>
+						<th scope="col">Picture</th>
+					</tr>
+				</thead>
+				<tbody>
+					<tr>
+						<td>Blightfather</td>
+						<td>The Blightfather runs underground to get closer to you and can spit acid that does a lot of damage to whoever it hits.</td>
+						<td>
+							<a href="https://i.imgur.com/D8JZ4TP.jpg" target="_blank" rel="noopener noreferrer">
+								Here
+							</a>
+						</td>
+					</tr>
+					<tr>
+						<td>Stoker</td>
+						<td>Uses a shovel to swing and send burning coal flying towards you.</td>
+						<td>
+							<a href="https://i.imgur.com/zKcqQhx.jpg" target="_blank" rel="noopener noreferrer">
+								Here
+							</a>
+						</td>
+					</tr>
+					<tr>
+						<td>Fire Catalyst</td>
+						<td>Walks slowly towards players. If a player gets too close to it it will explode.</td>
+						<td></td>
+					</tr>
+					<tr>
+						<td>Poison Catalyst</td>
+						<td>Does damage to players who walk near it. It turns other zombies in the nearby area also into Poison Catalysts.</td>
+						<td></td>
+					</tr>
+					<tr>
+						<td>Electric Catalyst</td>
+						<td>Charges up and can unleash a blinding scream that can impair a players vision.</td>
+						<td></td>
+					</tr>
+					<tr>
+						<td>Water Catalyst</td>
+						<td>Actively avoids players and can infect normal zombies and make them have more health.</td>
+						<td></td>
+					</tr>
+				</tbody>
+			</table>
+
+			<h2 id="fasttravel">Fast Travel</h2>
+			<table>
+				<thead>
+					<tr>
+						<th scope="col">Portal Location</th>
+						<th scope="col">Ending Location</th>
+						<th scope="col">Cost</th>
+					</tr>
+				</thead>
+				<tbody>
+					<tr>
+						<td>Boiler Room (Top Level)</td>
+						<td>Boat Deck</td>
+						<td>500 Points</td>
+					</tr>
+					<tr>
+						<td>Boiler Room (Bottom Level)</td>
+						<td>Grand Staircase</td>
+						<td>500 Points</td>
+					</tr>
+					<tr>
+						<td>Turbine Room</td>
+						<td>Cargo Hold</td>
+						<td>500 Points</td>
+					</tr>
+					<tr>
+						<td>Millionaire Suites</td>
+						<td>Provisions</td>
+						<td>500 Points</td>
+					</tr>
+					<tr>
+						<td>Forecastle</td>
+						<td>Poop Deck</td>
+						<td>500 Points</td>
+					</tr>
+					<tr>
+						<td>Cargo Hold</td>
+						<td>Boiler Room</td>
+						<td>500 Points</td>
+					</tr>
+					<tr>
+						<td>Poop Deck</td>
+						<td>Forecastle</td>
+						<td>500 Points</td>
+					</tr>
+					<tr>
+						<td>Mid Deck</td>
+						<td>Engine Room</td>
+						<td>500 Points</td>
+					</tr>
+				</tbody>
+			</table>
+
+			<h2>Achievements</h2>
+			<table>
+				<thead>
+					<tr>
+						<th scope="col">Name</th>
+						<th scope="col">Description</th>
+						<th scope="col">Goal</th>
+					</tr>
+				</thead>
+				<tbody>
+					<tr>
+						<td>Abandon Ship</td>
+						<td>In Voyage of Despair, complete the Trial</td>
+						<td>
+							Complete the <TabLink tab="main-ee">Main Quest</TabLink>
+						</td>
+					</tr>
+					<tr>
+						<td>Off the Deep End</td>
+						<td>In Voyage of Despair, survive to round 20 without draining the water</td>
+						<td>Get to Round 20 without draining the water in the Engine Room or Cargo Hold</td>
+					</tr>
+					<tr>
+						<td>A Little Pack Here, a Little Punch There</td>
+						<td>In Voyage of Despair, use the Pack-a-Punch at every possible location in a single game</td>
+						<td>Pack-a-Punch a weapon at least 1 weapon at each of the 4 locations Pack-a-Punch can be in a single match</td>
+					</tr>
+					<tr>
+						<td>Rock, Paper, Plasma</td>
+						<td>Horde up a group of zombies around a Fire Catalyst or Electric Catalyst and make it explode by shooting it. It should kill a good number of zombies. Do this until you successfully get the explosion to kill 9 zombies in total</td>
+						<td>In Voyage of Despair, kill 9 zombies via Catalytic Detonations in a single game</td>
+					</tr>
+					<tr>
+						<td>I Know a Shortcut</td>
+						<td>In Voyage of Despair, take every fast travel path in a single game</td>
+						<td>
+							Take each of the{" "}
+							<TabLink tab="extras" target="fasttravel">
+								8 Fast Travels
+							</TabLink>{" "}
+							at least 1 time in a single game
+						</td>
+					</tr>
+					<tr>
+						<td>Stoking the Flames</td>
+						<td>In Voyage of Despair, kill 3 Stokers via weak point in a single round</td>
+						<td>Kill 3 Stoker zombies by using a bullet weapon and shooting it in its large orange glowing weak spot. This is most easily achieved in the step of the Main Quest where you are doing the Fire Catalyst outlet trial</td>
+					</tr>
+					<tr>
+						<td>Stowaway</td>
+						<td>In Voyage of Despair, spend 5 consecutive rounds in the Cargo Hold</td>
+						<td>Pass 5 full rounds without leaving the Cargo Hold area in a single match</td>
+					</tr>
+					<tr>
+						<td>Swimming with the Fishes</td>
+						<td>In Voyage of Despair, kill 50 zombies that are underwater in a single game</td>
+						<td>Kill 50 zombies in the Cargo Hold or Engine Room underwater without draining the water</td>
+					</tr>
+					<tr>
+						<td>Kraken Unfettered</td>
+						<td>In Voyage of Despair, kill 9 enemies with a single shot of the Kraken</td>
+						<td>Use the regular Pack-a-Punched Kraken or Plasmastic Kraken and kill 9 zombies within 1 shot</td>
+					</tr>
+					<tr>
+						<td>Trialing Experience</td>
+						<td>In Voyage of Despair, acquire the Sentinel Artifact</td>
+						<td>Head to the Poop Deck and activate the Sentinel Artifact</td>
+					</tr>
+				</tbody>
+			</table>
+
+			<h2>Dark Ops Challenges</h2>
+			<table>
+				<thead>
+					<tr>
+						<th scope="col">Name</th>
+						<th scope="col">Quest</th>
+					</tr>
+				</thead>
+				<tbody>
+					<tr>
+						<td>Sea Legs</td>
+						<td>Complete the Main Quest without going into Last Stand</td>
+					</tr>
+				</tbody>
+			</table>
+		</section>
+	);
+}
+
+// ============================================================
+// CREDITS
+// ============================================================
+
+function Credits() {
+	return (
+		<section className="tab-content">
+			<h2>CREDITS</h2>
+			<Source href="https://callofduty.fandom.com/wiki/Voyage_of_Despair" name="Voyage of Despair" author="Call of Duty Wiki" source="Fandom" />
+			<Source href="https://callofduty.fandom.com/wiki/Gauntlet_(Black_Ops_4)" name="Gauntlet" author="Call of Duty Wiki" source="Fandom" />
+			<Source href="https://www.youtube.com/watch?v=CyIiNE4Kt2g" name="VOYAGE OF DESPAIR - FREE VIKING PERK GUIDE IN 2 MINUTES (Black Ops 4 Zombies Tutorial)" author="Fast Guides Glitch" source="YouTube" />
+			<Source href="https://www.youtube.com/watch?v=MbRvsNC1Yb0" name="VOYAGE OF DESPAIR - SPECIAL WEAPONS FROM MYSTERY BOX GUIDE IN 90 SECONDS (Black Ops 4 Zombies)" author="Fast Guides Glitch" source="YouTube" />
+			<Source href="https://www.youtube.com/watch?v=Cld1xM2I_V8" name="VOYAGE OF DESPAIR - UPGRADED BOWIE KNIFE GUIDE IN 40 SECONDS (Black Ops 4 Zombies Tutorial)" author="Fast Guides Glitch" source="YouTube" />
+			<Source href="https://www.youtube.com/watch?v=AcQMg6fGY4k" name="VOYAGE OF DESPAIR - SUPER PACK-A-PUNCH EASTER EGG GUIDE IN 70 SECONDS (Black Ops 4 Zombies Tutorial)" author="Fast Guides Glitch" source="YouTube" />
+			<Source href="https://www.youtube.com/watch?v=k4I3nS0eYO0" name="VOYAGE OF DESPAIR - ELEMENTAL KRAKEN UPGRADE GUIDE IN 2 MINUTES (Black Ops 4 Zombies Tutorial)" author="Fast Guides Glitch" source="YouTube" />
+			<Source href="https://www.youtube.com/watch?v=vg7yvwrpX7k" name="VOYAGE OF DESPAIR - FREE KRAKEN GUIDE IN 3 MINUTES (Black Ops 4 Zombies Tutorial)" author="Fast Guides Glitch" source="YouTube" />
+			<Source href="https://www.youtube.com/watch?v=EbGCRHmN6So" name="VOYAGE OF DESPAIR - ELEMENTAL SHIELD UPGRADE GUIDE IN 4 MINUTES (Black Ops 4 Zombies Tutorial)" author="Fast Guides Glitch" source="YouTube" />
+			<Source href="https://www.reddit.com/r/CODZombies/wiki/voyage-of-despair" name="Voyage of Despair | Complete Map Breakdown" author="u/The_Beebat" source="r/CODZombies" />
+			<Source href="https://www.youtube.com/watch?v=r0wVoJ13Phw" name="ALL SIDE EASTER EGGS - VOYAGE OF DESPAIR - BLACK OPS 4 ZOMBIES" author="ZombieSlayaMr" source="YouTube" />
+			<Source href="https://www.youtube.com/watch?v=wk_T29xR8Ug" name="VOYAGE OF DESPAIR - SOLO EASTER EGG GUIDE IN 18 MINUTES (Black Ops 4 Zombies Tutorial)" author="Fast Guides Glitch" source="YouTube" />
+		</section>
+	);
+}
+
+// ============================================================
+// MAIN MAP CONTENT
+// ============================================================
+
+export default function VoyageOfDespair() {
+	return (
+		<MapNavigationProvider>
+			<VoyageOfDespairContent />
+		</MapNavigationProvider>
+	);
+}
+
+function VoyageOfDespairContent() {
+	const { activeTab } = useMapNavigation();
+
+	return (
+		<div className="map-layout">
+			<MapTabs modules={tabs} />
+
+			<InfoBox id="map-info">
+				{activeTab === "overview" && <Overview />}
+				{activeTab === "main-ee" && <MainEE />}
+				{activeTab === "side-ee" && <SideEE />}
+				{activeTab === "music-ee" && <MusicEE />}
+				{activeTab === "wonder-weapon" && <WonderWeapons />}
+				{activeTab === "buildables" && <Buildables />}
+				{activeTab === "weapons" && <Weapons />}
+				{activeTab === "gauntlet" && <Gauntlet />}
+				{activeTab === "perks" && <Perks />}
+				{activeTab === "extras" && <Extras />}
+				{activeTab === "credits" && <Credits />}
+			</InfoBox>
+		</div>
+	);
+}
+
+export const Route = createFileRoute("/maps/bo4/voyage-of-despair")({
+	staticData: { title: "Voyage of Despair" },
+	component: VoyageOfDespair,
+});

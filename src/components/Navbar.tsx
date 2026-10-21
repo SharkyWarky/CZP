@@ -1,7 +1,5 @@
-import { NavLink, useLocation } from "react-router";
-
+import { Link, useLocation } from "@tanstack/react-router";
 import usePageTitle from "../hooks/usePageTitle";
-
 import SettingsModal from "./SettingsModal";
 import { settingsOpenAtom } from "../atoms";
 import { useAtom } from "jotai";
@@ -24,45 +22,45 @@ const games: [string, string][] = [
 
 const mapVersions: Record<string, [string, string, string][]> = {
 	"kino-der-toten": [
-		["bo1", "Black Ops", "/bo1/kino-der-toten"],
-		["bo3", "Black Ops III", "/bo3/kino-der-toten"],
+		["bo1", "Black Ops", "/maps/bo1/kino-der-toten"],
+		["bo3", "Black Ops III", "/maps/bo3/kino-der-toten"],
 	],
 	ascension: [
-		["bo1", "Black Ops", "/bo1/ascension"],
-		["bo3", "Black Ops III", "/bo3/ascension"],
+		["bo1", "Black Ops", "/maps/bo1/ascension"],
+		["bo3", "Black Ops III", "/maps/bo3/ascension"],
 	],
 	"der-riese": [
-		["waw", "World at War", "/waw/der-riese"],
-		["bo1", "Black Ops", "/bo1/der-riese"],
-		["bo3", "Black Ops III", "/bo3/the-giant"],
+		["waw", "World at War", "/maps/waw/der-riese"],
+		["bo1", "Black Ops", "/maps/bo1/der-riese"],
+		["bo3", "Black Ops III", "/maps/bo3/the-giant"],
 	],
 	moon: [
-		["bo1", "Black Ops", "/bo1/moon"],
-		["bo3", "Black Ops III", "/bo3/moon"],
+		["bo1", "Black Ops", "/maps/bo1/moon"],
+		["bo3", "Black Ops III", "/maps/bo3/moon"],
 	],
 	"nacht-der-untoten": [
-		["waw", "World at War", "/waw/nacht-der-untoten"],
-		["bo1", "Black Ops", "/bo1/nacht-der-untoten"],
-		["bo3", "Black Ops III", "/bo3/nacht-der-untoten"],
+		["waw", "World at War", "/maps/waw/nacht-der-untoten"],
+		["bo1", "Black Ops", "/maps/bo1/nacht-der-untoten"],
+		["bo3", "Black Ops III", "/maps/bo3/nacht-der-untoten"],
 	],
 	"shangri-la": [
-		["bo1", "Black Ops", "/bo1/shangri-la"],
-		["bo3", "Black Ops III", "/bo3/shangri-la"],
+		["bo1", "Black Ops", "/maps/bo1/shangri-la"],
+		["bo3", "Black Ops III", "/maps/bo3/shangri-la"],
 	],
 	"shi-no-numa": [
-		["waw", "World at War", "/waw/shi-no-numa"],
-		["bo1", "Black Ops", "/bo1/shi-no-numa"],
-		["bo3", "Black Ops III", "/bo3/shi-no-numa"],
-		["vanguard", "Vanguard", "/vanguard/shi-no-numa"],
+		["waw", "World at War", "/maps/waw/shi-no-numa"],
+		["bo1", "Black Ops", "/maps/bo1/shi-no-numa"],
+		["bo3", "Black Ops III", "/maps/bo3/shi-no-numa"],
+		["vanguard", "Vanguard", "/maps/vanguard/shi-no-numa"],
 	],
 	verruckt: [
-		["waw", "World at War", "/waw/verruckt"],
-		["bo1", "Black Ops", "/bo1/verruckt"],
-		["bo3", "Black Ops III", "/bo3/verruckt"],
+		["waw", "World at War", "/maps/waw/verruckt"],
+		["bo1", "Black Ops", "/maps/bo1/verruckt"],
+		["bo3", "Black Ops III", "/maps/bo3/verruckt"],
 	],
 	origins: [
-		["bo2", "Black Ops II", "/bo2/origins"],
-		["bo3", "Black Ops III", "/bo3/origins"],
+		["bo2", "Black Ops II", "/maps/bo2/origins"],
+		["bo3", "Black Ops III", "/maps/bo3/origins"],
 	],
 };
 
@@ -71,14 +69,16 @@ export default function Navbar() {
 	const routerLocation = useLocation();
 	const [settingsOpen, setSettingsOpen] = useAtom(settingsOpenAtom);
 
-	const gameIsActive = games.some(([path]) => {
-		return routerLocation.pathname === `/${path}` || routerLocation.pathname.startsWith(`/${path}/`);
-	});
-
+	// Parse path segments regardless of whether prefix is /games or /maps
 	const pathParts = routerLocation.pathname.split("/").filter(Boolean);
+	const prefix = pathParts[0]; // "games" or "maps"
+	const currentGame = prefix === "games" || prefix === "maps" ? pathParts[1] : pathParts[0];
+	const currentMap = prefix === "games" || prefix === "maps" ? pathParts[2] : pathParts[1];
 
-	const currentGame = pathParts[0];
-	const currentMap = pathParts[1];
+	// Highlight the Games dropdown if inside /games/ or /maps/
+	const gameIsActive = games.some(([path]) => {
+		return routerLocation.pathname.startsWith(`/games/${path}`) || routerLocation.pathname.startsWith(`/maps/${path}`);
+	});
 
 	const currentMapVersions = currentMap ? mapVersions[currentMap] : undefined;
 
@@ -95,9 +95,9 @@ export default function Navbar() {
 							{currentMapVersions.map(([game, name, path]) => {
 								const isActive = currentGame === game;
 								return (
-									<NavLink key={game} to={path} className={`rounded border px-2.5 py-1 text-xs font-semibold whitespace-nowrap transition-colors ${isActive ? "border-[var(--bg-hover)] bg-[var(--muted)] text-white hover:bg-[var(--border)]" : "border-[#34443b] text-[#d1dbd5] hover:bg-neutral-700 hover:text-[var(--highlight-light)]"}`}>
+									<Link key={game} to={path as string} className={`rounded border px-2.5 py-1 text-xs font-semibold whitespace-nowrap transition-colors ${isActive ? "border-(--bg-hover) bg-(--muted) text-white hover:bg-(--border)" : "border-[#34443b] text-[#d1dbd5] hover:bg-neutral-700 hover:text-(--highlight-light)"}`}>
 										{name}
-									</NavLink>
+									</Link>
 								);
 							})}
 						</div>
@@ -110,7 +110,7 @@ export default function Navbar() {
 					<div className="dropdown">
 						<button className={`dropbtn ${gameIsActive ? "active" : ""}`}>Games</button>
 
-						<div className="dropdown-content">{games.map(([path, name]) => quickLink(path, name, undefined, false, routerLocation.pathname.startsWith(`/${path}`)))}</div>
+						<div className="dropdown-content">{games.map(([path, name]) => quickLink(`games/${path}`, name, undefined, false, currentGame === path))}</div>
 					</div>
 
 					{quickLink("mapindex", "Map Index", "hover:bg-neutral-700 hover:text-white")}
@@ -125,10 +125,11 @@ export default function Navbar() {
 	);
 }
 
-function quickLink(location: string, name: string, tail?: string, end?: boolean, active?: boolean) {
+function quickLink(location: string, name: string, tail?: string, exact?: boolean, forceActive?: boolean) {
+	const cleanPath = location ? `/${location}` : "/";
 	return (
-		<NavLink to={`/${location}`} end={end} className={({ isActive }) => `${tail ?? ""} ${isActive || active ? "active" : ""}`}>
+		<Link to={cleanPath as string} activeOptions={{ exact }} activeProps={{ className: "active" }} className={`${tail ?? ""} ${forceActive ? "active" : ""}`}>
 			{name}
-		</NavLink>
+		</Link>
 	);
 }

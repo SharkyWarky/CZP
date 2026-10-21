@@ -19,6 +19,15 @@ type TabLinkProps = {
 };
 
 export default function TabLink({ tab, target, children }: TabLinkProps) {
+	// Guard against incorrect usage where a '#' is passed into the prop
+	if (tab && tab.startsWith("#")) {
+		throw new Error(`[TabLink Error]: Do not include '#' in the tab prop. Pass it cleanly as tab="${tab.replace(/^#/, "")}" instead of tab="${tab}".`);
+	}
+
+	if (target && target.startsWith("/")) {
+		throw new Error(`[TabLink Error]: Do not include '/' in the target prop. Pass it cleanly as target="${target.replace(/^\//, "")}" instead of target="${target}".`);
+	}
+
 	const { navigateTo } = useMapNavigation();
 
 	return (
