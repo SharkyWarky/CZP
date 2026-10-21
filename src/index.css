@@ -36,12 +36,12 @@
 }
 
 .nav-links a.active {
-	@apply bg-[var(--muted)] text-white;
+	@apply bg-(--muted) text-white;
 	box-shadow: 0 0 12px color-mix(in srgb, var(--highlight) 15%, transparent);
 }
 
 .nav-links a.active:hover {
-	@apply bg-[var(--border)] text-white;
+	@apply bg-(--border) text-white;
 }
 
 .dropdown {
@@ -49,7 +49,7 @@
 }
 
 .dropbtn.active {
-	@apply bg-[var(--muted)] text-white hover:bg-[var(--border)] hover:text-white;
+	@apply bg-(--muted) text-white hover:bg-(--border) hover:text-white;
 }
 
 .dropbtn {
@@ -73,7 +73,7 @@
 }
 
 .map-card {
-	@apply relative block overflow-hidden rounded-xl border border-solid border-[#354139] text-center text-[#e8eee9] no-underline shadow-[0_5px_15px_rgba(0,0,0,0.25)] after:pointer-events-none after:absolute after:inset-0 after:content-[""] hover:-translate-y-1.25 hover:border-[var(--normal)];
+	@apply relative block overflow-hidden rounded-xl border border-solid border-[#354139] text-center text-[#e8eee9] no-underline shadow-[0_5px_15px_rgba(0,0,0,0.25)] after:pointer-events-none after:absolute after:inset-0 after:content-[""] hover:-translate-y-1.25 hover:border-(--normal);
 	@apply box-border p-0;
 
 	background: #202622;
@@ -127,7 +127,7 @@
 }
 
 .map-card:hover h2 {
-	@apply -translate-y-0.5 text-[var(--highlight-light)];
+	@apply -translate-y-0.5 text-(--highlight-light);
 }
 
 .map-grid {
@@ -159,7 +159,7 @@
 }
 
 .tab-button.active {
-	@apply border-[var(--highlight-light)] bg-[var(--bg-hover)] text-white;
+	@apply border-(--highlight-light) bg-(--bg-hover) text-white;
 
 	box-shadow:
 		0 0 0 1px color-mix(in srgb, var(--highlight) 20%, transparent),
@@ -167,7 +167,7 @@
 }
 
 .tab-button.active:hover {
-	@apply translate-x-0.5 border-[var(--highlight-light)] bg-[var(--border)];
+	@apply translate-x-0.5 border-(--highlight-light) bg-(--border);
 }
 
 .info-box {
@@ -176,7 +176,7 @@
 }
 
 .info-box h2 {
-	@apply mt-7 mb-1 inline-block border-b-2 border-[var(--highlight-light)] px-3.75 pb-1.25 pr-15 text-[26px] font-bold leading-none tracking-[-0.25px] text-[var(--highlight-light)];
+	@apply mt-7 mb-1 inline-block border-b-2 border-(--highlight-light) px-3.75 pb-1.25 pr-15 text-[26px] font-bold leading-none tracking-[-0.25px] text-(--highlight-light);
 }
 
 .info-box h2 + h3 {
@@ -184,11 +184,11 @@
 }
 
 .info-box h3 {
-	@apply mt-6.25 mb-1 text-xl font-[650] text-[var(--highlight)];
+	@apply mt-6.25 mb-1 text-xl font-[650] text-(--highlight);
 }
 
 .info-box b {
-	@apply font-bold text-[var(--highlight-light)];
+	@apply font-bold text-(--highlight-light);
 }
 
 .info-box p {
@@ -217,7 +217,7 @@
 }
 
 .info-box li::marker {
-	@apply text-[var(--highlight)];
+	@apply text-(--highlight);
 }
 
 .info-box span:not(.anchor-glow) {
@@ -225,7 +225,7 @@
 }
 
 .info-box a {
-	@apply font-[550] text-[var(--muted)] no-underline;
+	@apply font-[550] text-(--muted) no-underline;
 
 	transition:
 		color 0.2s ease,
@@ -233,7 +233,7 @@
 }
 
 .info-box a:hover {
-	@apply font-[550] text-[var(--highlight-light)] underline;
+	@apply font-[550] text-(--highlight-light) underline;
 	text-underline-offset: 3px;
 }
 
@@ -242,7 +242,7 @@
 }
 
 .info-box th {
-	@apply border-b border-solid border-[#34443b] bg-[#202a25] p-3.25 text-left font-bold text-[var(--highlight-light)];
+	@apply border-b border-solid border-[#34443b] bg-[#202a25] p-3.25 text-left font-bold text-(--highlight-light);
 }
 
 .info-box td {
