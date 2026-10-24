@@ -1,5 +1,5 @@
-import { createFileRoute } from "@tanstack/react-router";
 /* ---- v2.1.0 ---- */
+import { createFileRoute } from "@tanstack/react-router";
 import { MapNavigationProvider, useMapNavigation } from "../../../context/MapNavigationContext";
 
 import MapTabs from "../../../components/MapTabs";
@@ -18,61 +18,147 @@ const achievementRows = [
 		id: "alchemical-opus",
 		name: "Alchemical Opus",
 		description: "In Dead of the Night, create Prima Materia 3 times.",
-		goal: "Fully upgrade Alistair's Folly",
+		goal: (
+			<>
+				Fully upgrade{" "}
+				<TabLink tab="wonder-weapon" target="alistairsannihilator">
+					Alistair's Folly
+				</TabLink>
+			</>
+		),
 	},
 	{
 		id: "board-gamer",
 		name: "Board Gamer",
 		description: "In Dead of the Night, kill a Werewolf in the Library with a revolver.",
-		goal: "Kill a werewolf in the Library with Alistair's Folly, Welling, or Mozu",
+		goal: (
+			<>
+				Kill a werewolf in the Library with{" "}
+				<TabLink tab="wonder-weapon" target="alistairsfolly">
+					Alistair's Folly
+				</TabLink>
+				, Welling, or Mozu
+			</>
+		),
 	},
 	{
 		id: "master-your-craft",
 		name: "Master Your Craft",
 		description: "In Dead of the Night, use every crafting table.",
-		goal: "Fully upgrade Alistair's Folly, build silver bullets and build the Stake knife",
+		goal: (
+			<>
+				Fully upgrade{" "}
+				<TabLink tab="wonder-weapon" target="alistairsannihilator">
+					Alistair's Folly
+				</TabLink>
+				, build{" "}
+				<TabLink tab="buildables" target="silverbullets">
+					silver bullets
+				</TabLink>{" "}
+				and build the{" "}
+				<TabLink tab="wonder-weapon" target="stakeknife">
+					Stake Knife
+				</TabLink>
+			</>
+		),
 	},
 	{
 		id: "mega-bite",
 		name: "Mega Bite",
 		description: "In Dead of the Night, get bitten by a Crimson Nosferatu.",
-		goal: "During the process of upgrading the Chaos Theory to Alistair's Annihilator, Crimson Vampires will begin to spawn in to the map. Allow one to pounce onto you.",
+		goal: (
+			<>
+				During the process of upgrading the{" "}
+				<TabLink tab="wonder-weapon" target="chaostheory">
+					Chaos Theory
+				</TabLink>{" "}
+				to{" "}
+				<TabLink tab="wonder-weapon" target="alistairsannihilator">
+					Alistair's Annihilator
+				</TabLink>
+				, Crimson Vampires will begin to spawn into the map. Allow one to pounce onto you.
+			</>
+		),
 	},
 	{
 		id: "on-the-clock",
 		name: "On the Clock",
 		description: "In Dead of the Night, stay within the clock circle until the time runs out.",
-		goal: "During the Pack a Punch steps, you will have to tune a clock by standing in a circle for 30-60 seconds. Complete this step without leaving the circle.",
+		goal: (
+			<>
+				During the{" "}
+				<TabLink tab="side-ee" target="pap">
+					Pack-a-Punch
+				</TabLink>{" "}
+				steps, you will have to tune a clock by standing in a circle for 30-60 seconds. Complete this step without leaving the circle.
+			</>
+		),
 	},
 	{
 		id: "quick-thinking",
 		name: "Quick Thinking",
 		description: "In Dead of the Night, unlock the Forest by round 7.",
-		goal: "Open Pack a Punch (see above) by round 7",
+		goal: (
+			<>
+				Open{" "}
+				<TabLink tab="side-ee" target="pap">
+					Pack-a-Punch
+				</TabLink>{" "}
+				(see above) by round 7
+			</>
+		),
 	},
 	{
 		id: "shockingly-good-time",
 		name: "Shockingly Good Time",
 		description: "In Dead of the Night, electrocute a Werewolf.",
-		goal: "Kill a werewolf with the trap located in the Greenhouse",
+		goal: (
+			<>
+				Kill a werewolf with the{" "}
+				<TabLink tab="extras" target="electrictrap">
+					trap
+				</TabLink>{" "}
+				located in the Greenhouse
+			</>
+		),
 	},
 	{
 		id: "shrinking-feeling",
 		name: "Shrinking Feeling",
 		description: "In Dead of the Night, shrink 15 zombies with a single shot from Alistair’s Annihilator.",
-		goal: "One of the charge effects of the Alistair's Annihilator shrinks zombies. As these effects are random, train up a horde of zombies and kill them with a charged shot until you get the desired effect.",
+		goal: (
+			<>
+				One of the charge effects of{" "}
+				<TabLink tab="wonder-weapon" target="alistairsannihilator">
+					Alistair's Annihilator
+				</TabLink>{" "}
+				shrinks zombies. As these effects are random, train up a horde of zombies and kill them with a charged shot until you get the desired effect.
+			</>
+		),
 	},
 	{
 		id: "trial-by-ordeal",
 		name: "Trial by Ordeal",
 		description: "In Dead of the Night, defeat the evil within.",
-		goal: "Complete the Main Quest",
+		goal: (
+			<>
+				Complete the <TabLink tab="main-ee">Main Quest</TabLink>
+			</>
+		),
 	},
 	{
 		id: "well-done",
 		name: "Well Done",
 		description: "In Dead of the Night, stake a Nosferatu in the Dining Room.",
-		goal: "Obtain the Stake Knife, and then melee a Vampire in the Dining Room",
+		goal: (
+			<>
+				Obtain the{" "}
+				<TabLink tab="wonder-weapon" target="stakeknife">
+					Stake Knife
+				</TabLink>
+				, and then melee a Vampire in the Dining Room
+			</>
+		),
 	},
 ];
 
@@ -90,63 +176,226 @@ function Overview() {
 	return (
 		<section className="tab-content">
 			<h2>Dead of the Night</h2>
-			<p>Dead of the Night is the fifth Zombies map featured in Call of Duty: Black Ops 4, and the twenty-ninth map overall. Chronologically, it is the first map in the Chaos story. It was released on December 11th, 2018 first for PlayStation 4, and a week later on December 18th, 2018 for Xbox One and PC. The map is available through the Black Ops Pass</p>
-			<p>The map features a cast of new characters portrayed by celebrities as they find themselves fighting the undead in the midst of a scheme orchestrated by The Order in order to kidnap Alistair Rhodes during a party. The map introduces three new enemies, as well as three new wonder weapons; a revolver-like weapon known as Alistair's Folly, a pneumatic crossbow known as the Savage Impaler, and a wooden stake known as the Stake Knife.</p>
+			<p>Dead of the Night is the fifth Zombies map featured in Call of Duty: Black Ops 4, and the twenty-ninth map overall. Chronologically, it is the first map in the Chaos story. It was released on December 11th, 2018 first for PlayStation 4, and a week later on December 18th, 2018 for Xbox One and PC. The map is available through the Black Ops Pass.</p>
+			<p>
+				The map features a cast of new characters portrayed by celebrities as they find themselves fighting the undead in the midst of a scheme orchestrated by The Order in order to kidnap Alistair Rhodes during a party. The map introduces three new enemies, as well as three new wonder weapons; a revolver-like weapon known as{" "}
+				<TabLink tab="wonder-weapon" target="alistairsfolly">
+					Alistair's Folly
+				</TabLink>
+				, a pneumatic crossbow known as the{" "}
+				<TabLink tab="wonder-weapon" target="savageimpaler">
+					Savage Impaler
+				</TabLink>
+				, and a wooden stake known as the{" "}
+				<TabLink tab="wonder-weapon" target="stakeknife">
+					Stake Knife
+				</TabLink>
+				.
+			</p>
 
 			<h2>Overview</h2>
 			<p>Dead of the Night is set in Alistair Rhodes' mansion in England. The map is quite large, beating out IX but is smaller than Voyage of Despair. When players first spawn in, they will be divided by a barrier that can only be opened by acquiring the map's Sentinel Artifact, acting in a similar manner to Verrückt and Voyage of Despair. When a player opens a door on one side of the barrier, the other set of doors will open on the other. When the player reaches the Sentinel Artifact and activates it, more of the map will be opened up.</p>
-			<p>From the Main Hall, the player can travel north, west, or east. Heading east will bring the player through the bedrooms, dining room, and eventually the gardens and greenhouse laboratory. Heading west will bring the player through the billiards room, library, and eventually the cemetery and mausoleum. Heading north will bring the player to the forest, which can be opened by collecting three tuning forks. There are also small hallways that connect the main hall with the dining room and library, and beneath the grand staircase is the wine cellar. In each of the main areas at the end of each direction are fast travel portals which brings the player back to the main hall. There is also a fast travel portal in the entrance hall that brings the player to the forest once the latter is unlocked</p>
-			<p>This map also features different spawnable locations for each of the Perk Altars aside from Danu Altar. While Danu will always spawn in the entrance hall, Ra, Zeus, and Odin will spawn at either the forest terrace, wine cellar, gardens, or mausoleum</p>
+			<p>From the Main Hall, the player can travel north, west, or east. Heading east will bring the player through the bedrooms, dining room, and eventually the gardens and greenhouse laboratory. Heading west will bring the player through the billiards room, library, and eventually the cemetery and mausoleum. Heading north will bring the player to the forest, which can be opened by collecting three tuning forks. There are also small hallways that connect the main hall with the dining room and library, and beneath the grand staircase is the wine cellar. In each of the main areas at the end of each direction are fast travel portals which brings the player back to the main hall. There is also a fast travel portal in the entrance hall that brings the player to the forest once the latter is unlocked.</p>
+			<p>This map also features different spawnable locations for each of the Perk Altars aside from Danu Altar. While Danu will always spawn in the entrance hall, Ra, Odin, and Zeus will spawn at either the forest terrace, wine cellar, gardens, or mausoleum.</p>
 			<p>
-				Dead of the Night introduces several new enemy types. The Nosferatu are special enemies that spawn sporadically or as part of events, similarly to the Gladiator in IX. Nosferatu are small and move incredibly quickly, and while they inflict low damage and are generally weak compared to zombies they can inflict a bleeding effect on players, slowing their health regeneration. The more powerful variant, Crimson Nosferatu are mostly similar, though they have more health, move faster, and hit harder. They can also latch onto a players and take a bite out of them, causing severe damage. They spawn less frequently until high rounds, though players are required to face one to obtain Alistair's Annihilator. Werewolves also feature in Dead of the Night, with the first one attacking the players in the Forest when they first open Pack-A-Punch. Werewolves are large, strong, and high health enemies that fill a roll similar to a Blightfather, being devastating targets that will require
-				co-operation or quick thinking to take down. Finally, Catalysts return on this map
+				Dead of the Night introduces several new enemy types. The Nosferatu are special enemies that spawn sporadically or as part of events, similarly to the Gladiator in IX. Nosferatu are small and move incredibly quickly, and while they inflict low damage and are generally weak compared to zombies they can inflict a bleeding effect on players, slowing their health regeneration. The more powerful variant, Crimson Nosferatu are mostly similar, though they have more health, move faster, and hit harder. They can also latch onto players and take a bite out of them, causing severe damage. They spawn less frequently until high rounds, though players are required to face one to obtain{" "}
+				<TabLink tab="wonder-weapon" target="alistairsannihilator">
+					Alistair's Annihilator
+				</TabLink>
+				. Werewolves also feature in Dead of the Night, with the first one attacking the players in the Forest when they first open{" "}
+				<TabLink tab="side-ee" target="pap">
+					Pack-a-Punch
+				</TabLink>
+				. Werewolves are large, strong, and high health enemies that fill a role similar to a Blightfather, being devastating targets that will require co-operation or quick thinking to take down. Finally, Catalysts return on this map.
 			</p>
-			<p>Both the Nosferatu and Werewolf have weakness to new utilities featured on the map. Both the regular and Crimson Nosferatu can be killed in a single hit from the Stake Knife, even if regular zombies have begun to show damage fall off. A new buildable on the map, Silver Bullets, grant players significantly higher damage against Werewolves, allowing a well coordinated team to trivialize encounters with them. The Ballistic Shield returns as well, though there is no upgrade available for it unlike on Voyage of Despair</p>
+			<p>
+				Both the Nosferatu and Werewolf have weaknesses to new utilities featured on the map. Both the regular and Crimson Nosferatu can be killed in a single hit from the{" "}
+				<TabLink tab="wonder-weapon" target="stakeknife">
+					Stake Knife
+				</TabLink>
+				, even if regular zombies have begun to show damage fall off. A new buildable on the map,{" "}
+				<TabLink tab="buildables" target="silverbullets">
+					Silver Bullets
+				</TabLink>
+				, grant players significantly higher damage against Werewolves, allowing a well-coordinated team to trivialize encounters with them. The{" "}
+				<TabLink tab="buildables" target="shield">
+					Ballistic Shield
+				</TabLink>{" "}
+				returns as well, though there is no upgrade available for it unlike on Voyage of Despair.
+			</p>
 
 			<h2>Layout</h2>
 			<h3>North Atrium Bridge / East/West Gallery</h3>
-			<p>Players will spawn on two ends of the North Atrium Bridge, located on the second floor of the Main Hall. Like Verrückt, the players will be separated by a barrier, which can only be opened upon activating the map's Sentinel Artifact. Two players will be on the East Gallery side, which contains the Strife for 500 points, as well as two red barriers that can only be opened through the Sentinel Artifact. There is also a door costing 750 points that leads to the East Balcony and Music Room. On the West Gallery side is the Essex Model 07, as well as another red barrier. There is also a door costing 750 points in the adjacent Tea Room that brings the players through the West Balcony and Smoking Room</p>
-			<p>On each side is a bookshelf, both of which are used to open a secret room on the East Gallery</p>
+			<p>
+				Players will spawn on two ends of the North Atrium Bridge, located on the second floor of the Main Hall. Like Verrückt, the players will be separated by a barrier, which can only be opened upon activating the map's Sentinel Artifact. Two players will be on the East Gallery side, which contains the Strife for 500 points, as well as two red barriers that can only be opened through the Sentinel Artifact. There is also a door costing 750 points that leads to the East Balcony and Music Room. On the West Gallery side is the{" "}
+				<TabLink tab="weapons" target="essex">
+					Essex Model 07
+				</TabLink>
+				, as well as another red barrier. There is also a door costing 750 points in the adjacent Tea Room that brings the players through the West Balcony and Smoking Room.
+			</p>
+			<p>
+				On each side is a bookshelf, both of which are used to open a{" "}
+				<TabLink tab="side-ee" target="bookshelfroom">
+					secret room
+				</TabLink>{" "}
+				on the East Gallery.
+			</p>
 			<h3>East/West Balcony / Music/Smoking Room</h3>
-			<p>From the East Gallery's 750 point door will bring the players across the East Balcony, which contains the Saug 9mm for 750 points and a potential shield part location. Continuing across the East Balcony will bring the players to the Music Room, which contains a door costing 1000 points that brings the players to the Grand Staircase</p>
-			<p>From the West Gallery's 750 point door will bring the players across the West Balcony, which contains the RK 7 Garrison for 700 points and another potential shield part location. Continuing on across the West Balcony will bring players to the Smoking Room, which contains a red barrier leading to the Billiards Room and a door costing 1000 points leading to the Grand Staircase. The crafting bench for the Ballistic Shield can be found here, directly to the left of the entrance leading into the Billiards Room.</p>
+			<p>
+				From the East Gallery's 750 point door will bring the players across the East Balcony, which contains the{" "}
+				<TabLink tab="weapons" target="saug">
+					Saug 9mm
+				</TabLink>{" "}
+				for 750 points and a potential shield part location. Continuing across the East Balcony will bring the players to the Music Room, which contains a door costing 1000 points that brings the players to the Grand Staircase.
+			</p>
+			<p>
+				From the West Gallery's 750 point door will bring the players across the West Balcony, which contains the RK 7 Garrison for 700 points and another potential shield part location. Continuing on across the West Balcony will bring players to the Smoking Room, which contains a red barrier leading to the Billiards Room and a door costing 1000 points leading to the Grand Staircase. The crafting bench for the{" "}
+				<TabLink tab="buildables" target="shield">
+					Ballistic Shield
+				</TabLink>{" "}
+				can be found here, directly to the left of the entrance leading into the Billiards Room.
+			</p>
 			<h3>Grand Staircase / Main Hall / North Atrium</h3>
-			<p>Players will be reunited on the Grand Staircase, which contains the map's Sentinel Artifact on a broken pillar overlooking the Main Hall below. There is also the MOG 12 for a 1000 points next to the doorway leading into the Smoking Room. Upon activating the Sentinel Artifact, every red barrier in the map will be opened, allowing access to the full North Atrium Bridge, the Bedroom Hallway, and the Billiards Room. The red barriers blocking the two staircases in the East and West Galleries will be opened, allowing players another way down into the Main Hall. A Mystery Box can be found in the middle of the Grand Staircase leading down into the Main Hall.</p>
-			<p>Coming down the Grand Staircase or the two side staircases will bring players to the Main Hall, which has branching paths leading to the East and West Hallways, the Wine Cellar, and the Forest Terrace, which is located at the North Atrium. All four of these doors cost 1000 points each to open. There is also a Mozu for 1300 points to the right of the entrance leading into the North Terrace. A potential spawn for the candlestick for the Silver Melter can be found on a table near the Mozu</p>
+			<p>
+				Players will be reunited on the Grand Staircase, which contains the map's Sentinel Artifact on a broken pillar overlooking the Main Hall below. There is also the{" "}
+				<TabLink tab="weapons" target="mog">
+					MOG 12
+				</TabLink>{" "}
+				for 1000 points next to the doorway leading into the Smoking Room. Upon activating the Sentinel Artifact, every red barrier in the map will be opened, allowing access to the full North Atrium Bridge, the Bedroom Hallway, and the Billiards Room. The red barriers blocking the two staircases in the East and West Galleries will be opened, allowing players another way down into the Main Hall. A{" "}
+				<TabLink tab="weapons" target="mysterybox">
+					Mystery Box
+				</TabLink>{" "}
+				can be found in the middle of the Grand Staircase leading down into the Main Hall.
+			</p>
+			<p>
+				Coming down the Grand Staircase or the two side staircases will bring players to the Main Hall, which has branching paths leading to the East and West Hallways, the Wine Cellar, and the Forest Terrace, which is located at the North Atrium. All four of these doors cost 1000 points each to open. There is also a{" "}
+				<TabLink tab="weapons" target="mozu">
+					Mozu
+				</TabLink>{" "}
+				for 1300 points to the right of the entrance leading into the North Terrace. A potential spawn for the candlestick for the Silver Melter can be found on a table near the{" "}
+				<TabLink tab="weapons" target="mozu">
+					Mozu
+				</TabLink>
+				.
+			</p>
 			<h3>Entrance Hall</h3>
-			<p>Once the Sentinel Artifact is activated, the door behind it will open, revealing the Entrance Hall. Here, the players can find a potential spawn location for the candlestick on a table, the Danu altar, and a fast travel portal that brings the player to the Forest once the latter is opened</p>
+			<p>Once the Sentinel Artifact is activated, the door behind it will open, revealing the Entrance Hall. Here, the players can find a potential spawn location for the candlestick on a table, the Danu altar, and a fast travel portal that brings the player to the Forest once the latter is unlocked.</p>
 			<h3>East/West Hallways</h3>
-			<p>Both the East and West Hallways are connecting paths that connect the Main Hall with the Dining Room and Library. In the East Hallway is a potential spawn for a shield part, and in the West Hallway is a potential spawn location for the silver pot needed to craft the Silver Melter</p>
+			<p>Both the East and West Hallways are connecting paths that connect the Main Hall with the Dining Room and Library. In the East Hallway is a potential spawn for a shield part, and in the West Hallway is a potential spawn location for the silver pot needed to craft the Silver Melter.</p>
 			<h3>Wine Cellar</h3>
-			<p>The Wine Cellar is a small area, which contains the crafting table for the Silver Melter, a possible Perk Altar spawn location, as well as the MX9 for 1300 points. The silver plate needed for the Silver Melter will always spawn in this area, as well as the blue crystal used to help open the Forest and later activate the easter egg</p>
+			<p>The Wine Cellar is a small area, which contains the crafting table for the Silver Melter, a possible Perk Altar spawn location, as well as the MX9 for 1300 points. The silver plate needed for the Silver Melter will always spawn in this area, as well as the blue crystal used to help open the Forest and later activate the easter egg.</p>
 			<h3>Billiards Room</h3>
-			<p>The Billiards Room is another small area, containing a spawn location for the candlestick on the ground. The pool table in the center of the room is used to unlock a secret room in the area, which rewards the player a special item. A door costing 1000 points can be found in the back of the room, which brings the players to the second floor of the Library</p>
+			<p>
+				The Billiards Room is another small area, containing a spawn location for the candlestick on the ground. The pool table in the center of the room is used to unlock a{" "}
+				<TabLink tab="side-ee" target="billiardssecret">
+					secret room
+				</TabLink>{" "}
+				in the area, which rewards the player a special item. A door costing 1000 points can be found in the back of the room, which brings the players to the second floor of the Library.
+			</p>
 			<h3>Study / Library</h3>
-			<p>The Library and Study is a medium sized area, containing various items of interest. Firstly, the green crystal used to help open the Forest and later activate the easter egg can be found either on a table on the second floor Study, or at two other locations on the first floor Library, both of which are close to the area's Mystery Box. The Silver Bullet Dispenser's crafting bench is located in this area, directly right to the staircase connecting the two floors. The gun case holding a free Alistair's Folly is located in the back of the Library. The M1897 Trebuchet can be found for 1400 points. A door costing 1000 points that opened the West Hallway is found in the Library. Both the first and second floors have a potential spawn location for a shield part</p>
-			<p>On the second floor Study is the Spitfire, costing 1150 points. To the right of it is a door costing 1250 points that brings the player to the Cemetery Path</p>
+			<p>
+				The Library and Study is a medium-sized area, containing various items of interest. Firstly, the green crystal used to help open the Forest and later activate the easter egg can be found either on a table on the second floor Study, or at two other locations on the first floor Library, both of which are close to the area's{" "}
+				<TabLink tab="weapons" target="mysterybox">
+					Mystery Box
+				</TabLink>
+				. The{" "}
+				<TabLink tab="buildables" target="silverbullets">
+					Silver Bullet Dispenser's
+				</TabLink>{" "}
+				crafting bench is located in this area, directly right to the staircase connecting the two floors. The gun case holding a free{" "}
+				<TabLink tab="wonder-weapon" target="alistairsfolly">
+					Alistair's Folly
+				</TabLink>{" "}
+				is located in the back of the Library. The{" "}
+				<TabLink tab="weapons" target="m1897">
+					M1897 Trebuchet
+				</TabLink>{" "}
+				can be found for 1400 points. A door costing 1000 points that opened the West Hallway is found in the Library. Both the first and second floors have a potential spawn location for a shield part.
+			</p>
+			<p>On the second floor Study is the Spitfire, costing 1150 points. To the right of it is a door costing 1250 points that brings the player to the Cemetery Path.</p>
 			<h3>Bedroom Hallway / Master Bedroom / Trophy Room</h3>
-			<p>Coming from the East Balcony or the Dining Room will bring the players to the Bedroom Hallway, which branches off to the Master Bedroom and the Trophy Room. Each of these three rooms houses the pink crystal used to help open the Forest and later activate the easter egg. The Escargot can be found by the doorway connecting the Master Bedroom and Trophy Room, costing 1000 points. There is also a door leading down to the Dining Room at the end of the Bedroom Hallway, costing 1000 points to open</p>
+			<p>Coming from the East Balcony or the Dining Room will bring the players to the Bedroom Hallway, which branches off to the Master Bedroom and the Trophy Room. Each of these three rooms houses the pink crystal used to help open the Forest and later activate the easter egg. The Escargot can be found by the doorway connecting the Master Bedroom and Trophy Room, costing 1000 points. There is also a door leading down to the Dining Room at the end of the Bedroom Hallway, costing 1000 points to open.</p>
 			<h3>Dining Room</h3>
-			<p>The Dining Room, like the Library and Study, is a medium sized area. The player can find the door leading to the East Hallway or door leading to the Bedroom Hallway, as well as two potential shield spawn locations and two spawn locations for the pot. A Mystery Box location can be found in this area, as well as the SwordFish for 1200 points. There is also a 1250 point door that leads to the Greenhouse Terrace</p>
+			<p>
+				The Dining Room, like the Library and Study, is a medium-sized area. The player can find the door leading to the East Hallway or door leading to the Bedroom Hallway, as well as two potential shield spawn locations and two spawn locations for the pot. A{" "}
+				<TabLink tab="weapons" target="mysterybox">
+					Mystery Box
+				</TabLink>{" "}
+				location can be found in this area, as well as the SwordFish for 1200 points. There is also a 1250 point door that leads to the Greenhouse Terrace.
+			</p>
 			<h3>Greenhouse Terrace</h3>
-			<p>The Greenhouse Terrace acts as a connecting area for the Dining Room, Greenhouse Laboratory, and Gardens. At the fountain located at the center of the terrace is the Maddox RFB, costing 1400 points, as well as two doors, both costing 1500 points. Opening either or will open the other, allowing access to the Gardens and Greenhouse Laboratory</p>
+			<p>The Greenhouse Terrace acts as a connecting area for the Dining Room, Greenhouse Laboratory, and Gardens. At the fountain located at the center of the terrace is the Maddox RFB, costing 1400 points, as well as two doors, both costing 1500 points. Opening either or will open the other, allowing access to the Gardens and Greenhouse Laboratory.</p>
 			<h3>Gardens</h3>
-			<p>The Gardens is a small maze-like area, featuring two main pathways that connect at the end, leading to a side entrance into the Greenhouse Terrace. On one path is the Vapr-XKG, costing 1550 points, and the other containing a guaranteed spawn location for a Perk Altar. A Mystery Box can be found tucked in a corner near the Vapr-XKG</p>
+			<p>
+				The Gardens is a small maze-like area, featuring two main pathways that connect at the end, leading to a side entrance into the Greenhouse Terrace. On one path is the{" "}
+				<TabLink tab="weapons" target="vapr">
+					Vapr-XKG
+				</TabLink>
+				, costing 1550 points, and the other containing a guaranteed spawn location for a Perk Altar. A{" "}
+				<TabLink tab="weapons" target="mysterybox">
+					Mystery Box
+				</TabLink>{" "}
+				can be found tucked in a corner near the{" "}
+				<TabLink tab="weapons" target="vapr">
+					Vapr-XKG
+				</TabLink>
+				.
+			</p>
 			<h3>Greenhouse Laboratory</h3>
-			<p>The Greenhouse Laboratory is a large area, consisting of large machines, work benches, and plants. At the end of the room is a fast travel portal that brings the player back to the Main Hall. The ICR-7 can be found near the portal, costing 1550 points. The map's only Electric Trap can be found near the main entrance to the room. Both crafting benches for the Chaos Theory and Alistair's Annihilator are found here. There is also a staircase leading up to a large telescope, which plays a role in the easter egg</p>
+			<p>
+				The Greenhouse Laboratory is a large area, consisting of large machines, work benches, and plants. At the end of the room is a fast travel portal that brings the player back to the Main Hall. The ICR-7 can be found near the portal, costing 1550 points. The map's only Electric Trap can be found near the main entrance to the room. Both crafting benches for the{" "}
+				<TabLink tab="wonder-weapon" target="chaostheory">
+					Chaos Theory
+				</TabLink>{" "}
+				and{" "}
+				<TabLink tab="wonder-weapon" target="alistairsannihilator">
+					Alistair's Annihilator
+				</TabLink>{" "}
+				are found here. There is also a staircase leading up to a large telescope, which plays a role in the easter egg.
+			</p>
 			<h3>Cemetery Path</h3>
-			<p>The Cemetery Path is a small area, featuring the KN-57 for 1450 points, as well as two 1500 point doors that lead up to the Cemetery and Mausoleum areas. Like the Greenhouse Terrace, if one door is opened, the other will automatically be opened</p>
+			<p>The Cemetery Path is a small area, featuring the KN-57 for 1450 points, as well as two 1500 point doors that lead up to the Cemetery and Mausoleum areas. Like the Greenhouse Terrace, if one door is opened, the other will automatically be opened.</p>
 			<h3>Cemetery / Mausoleum</h3>
-			<p>The Cemetery is a large area, featuring various paths around tombstones. A Mystery Box location can be found under the railing of the Mausoleum area. The Stake Knife crafting bench can be found at the south entrance of the Cemetery. At the end of all of the paths in the Cemetery is a stone staircase that brings the player up to the Mausoleum, which contains a guaranteed Perk Altar spawn location, the Auger DMR for 1550 points, and a fast travel portal back to the Main Hall behind the Mausoleum</p>
+			<p>
+				The Cemetery is a large area, featuring various paths around tombstones. A{" "}
+				<TabLink tab="weapons" target="mysterybox">
+					Mystery Box
+				</TabLink>{" "}
+				location can be found under the railing of the Mausoleum area. The{" "}
+				<TabLink tab="wonder-weapon" target="stakeknife">
+					Stake Knife
+				</TabLink>{" "}
+				crafting bench can be found at the south entrance of the Cemetery. At the end of all of the paths in the Cemetery is a stone staircase that brings the player up to the Mausoleum, which contains a guaranteed Perk Altar spawn location, the Auger DMR for 1550 points, and a fast travel portal back to the Main Hall behind the Mausoleum.
+			</p>
 			<h3>Crypt</h3>
-			<p>The Crypt is a hidden room found within the Cemetery. The entrance to it is located under a stone coffin to the left of the left side staircase leading up to the Mausoleum, and can only be opened by completing a small easter egg. The room is a small stone chamber, containing several pillars and torches. At the back of the room is a small altar like area with three stained glass windows. On the stone altar is the Savage Impaler, which can be picked up by the player. Upon doing so, the player will be locked in the Crypt until the player kills all of the attacking Nosferatus and Crimson Nosferatus</p>
+			<p>
+				The Crypt is a hidden room found within the Cemetery. The entrance to it is located under a stone coffin to the left of the left side staircase leading up to the Mausoleum, and can only be opened by completing a small easter egg. The room is a small stone chamber, containing several pillars and torches. At the back of the room is a small altar-like area with three stained glass windows. On the stone altar is the{" "}
+				<TabLink tab="wonder-weapon" target="savageimpaler">
+					Savage Impaler
+				</TabLink>
+				, which can be picked up by the player. Upon doing so, the player will be locked in the Crypt until the player kills all of the attacking Nosferatus and Crimson Nosferatus.
+			</p>
 			<h3>Forest Terrace</h3>
-			<p>The Forest Terrace is a small balcony like area, containing the GKS for 1300 points, the Bowie Knife for 3000 points, and a potential Perk Altar spawn on the center of the balcony. There is also the entrance into the Forest, which can be opened upon collecting the three Tuning Forks.</p>
+			<p>The Forest Terrace is a small balcony-like area, containing the GKS for 1300 points, the Bowie Knife for 3000 points, and a potential Perk Altar spawn on the center of the balcony. There is also the entrance into the Forest, which can be opened upon collecting the three Tuning Forks.</p>
 			<h3>Forest</h3>
-			<p>The Forest is a large area, featuring three different paths that converge at the end, where the Pack-a-Punch Machine is located. On both of the side paths are the Titan for 3750 points and the Koshka for 4500 points. There is also a Mystery Box location on the center path, and a fast travel portal back to the North Atrium to the right of the Pack-a-Punch Machine. There is also a stone wall hiding the entrance to the Ruins on the right-side path if coming from the Forest Terrace</p>
-			<p>Upon initially opening the Forest, a Werewolf will always spawn</p>
+			<p>
+				The Forest is a large area, featuring three different paths that converge at the end, where the{" "}
+				<TabLink tab="side-ee" target="pap">
+					Pack-a-Punch Machine
+				</TabLink>{" "}
+				is located. On both of the side paths are the Titan for 3750 points and the Koshka for 4500 points. There is also a{" "}
+				<TabLink tab="weapons" target="mysterybox">
+					Mystery Box
+				</TabLink>{" "}
+				location on the center path, and a fast travel portal back to the North Atrium to the right of the{" "}
+				<TabLink tab="side-ee" target="pap">
+					Pack-a-Punch Machine
+				</TabLink>
+				. There is also a stone wall hiding the entrance to the Ruins on the right-side path if coming from the Forest Terrace.
+			</p>
+			<p>Upon initially opening the Forest, a Werewolf will always spawn.</p>
 			<h3>Ruins</h3>
-			<p>The Ruins is the final area that is accessible in the map. It can only be opened after collecting the three stones during the easter egg. The room itself is large and square in size, featuring no obstacles in the center of the room. The room serves as the arena during the fight against the Shadow Werewolf</p>
+			<p>The Ruins is the final area that is accessible in the map. It can only be opened after collecting the three stones during the easter egg. The room itself is large and square in size, featuring no obstacles in the center of the room. The room serves as the arena during the fight against the Shadow Werewolf.</p>
 		</section>
 	);
 }
@@ -162,7 +411,7 @@ function MainEE() {
 			<ul>
 				<li>
 					<TabLink tab="side-ee" target="power">
-						power (Sentinel Artifact)
+						Power (Sentinel Artifact)
 					</TabLink>
 				</li>
 				<li>
@@ -229,15 +478,19 @@ function MainEE() {
 						<li>
 							<b>Telescope</b>
 							<ol>
-								<li>Head to the Cemetery and shoot the antenna coming from the top of the Mausoleum with silver bullets (everyone in the game must shoot it. a beam should shoot out.)</li>
 								<li>
-									<span>Head to the North Atrium Bridge (Spawn) and interact with the 3 boxes to open them. Moce the rings above the statue by turning the things left so that the lights are being blocked. use the following combination by blocking the speciifed lights and the puzzle should be solved and the statues head should come off.</span>
-									<span>
-										Green -{">"} Blue -{">"} Red -{">"} Green -{">"} Blue -{">"} Red
-									</span>
+									Head to the Cemetery and shoot the antenna coming from the top of the Mausoleum with{" "}
+									<TabLink tab="buildables" target="silverbullets">
+										silver bullets
+									</TabLink>{" "}
+									(everyone in the game must shoot it. A beam should shoot out.)
 								</li>
 								<li>
-									Find 3 zodiak symbols (7 possible locations, each with 3 sets of scratch marks that need to be added up (some locations can have 0 scratch marks. don't worry.)). take note of the symbol and the total amount of scratch marks.
+									<span>Head to the North Atrium Bridge (Spawn) and interact with the 3 boxes to open them. Move the rings above the statue by turning the things left so that the lights are being blocked. Use the following combination by blocking the specified lights and the puzzle should be solved and the statue's head should come off.</span>
+									<span>Green -&gt; Blue -&gt; Red -&gt; Green -&gt; Blue -&gt; Red</span>
+								</li>
+								<li>
+									Find 3 zodiac symbols (7 possible locations, each with 3 sets of scratch marks that need to be added up (some locations can have 0 scratch marks, don't worry)). Take note of the symbol and the total amount of scratch marks.
 									<ul>
 										<li>
 											Under left side of left table in Entrance hall
@@ -284,7 +537,7 @@ function MainEE() {
 											<ul>
 												<li>On the far wall behind between the first 2 things (Circle)</li>
 												<li>On the end of the dining table</li>
-												<li>On the cieling above silver part in the lower roof area (above painting)</li>
+												<li>On the ceiling above silver part in the lower roof area (above painting)</li>
 											</ul>
 										</li>
 										<li>
@@ -297,13 +550,37 @@ function MainEE() {
 										</li>
 									</ul>
 								</li>
-								<li>Head to the top floor of the Greenhouse Laboratory and input the symbols in the order from lowest to highest scratch mark count (interact to spin, knife to select) The telescope should start rotating</li>
-								<li>Walk up to the wheel thing and pull out your shield and hold interact to open the observatory roof. Shield bash to lock it in place</li>
-								<li>Buy the electric trap beneath you and walk through it with your shield out. bash the shield into the telescope (everybody must do this at the same time)</li>
+								<li>Head to the top floor of the Greenhouse Laboratory and input the symbols in the order from lowest to highest scratch mark count (interact to spin, knife to select). The telescope should start rotating.</li>
 								<li>
-									Go back down the stairs and a panel will open showing a stone. <b>LOCKDOWN:</b> Interact with the stone to start the lockdown. (everybody must do this at the same time)
+									Walk up to the wheel thing and pull out your{" "}
+									<TabLink tab="buildables" target="shield">
+										shield
+									</TabLink>{" "}
+									and hold interact to open the observatory roof.{" "}
+									<TabLink tab="buildables" target="shield">
+										Shield
+									</TabLink>{" "}
+									bash to lock it in place.
 								</li>
-								<li>Interact with the stone to claim a max ammo as a reward</li>
+								<li>
+									Buy the{" "}
+									<TabLink tab="extras" target="electrictrap">
+										electric trap
+									</TabLink>{" "}
+									beneath you and walk through it with your{" "}
+									<TabLink tab="buildables" target="shield">
+										shield
+									</TabLink>{" "}
+									out. Bash the{" "}
+									<TabLink tab="buildables" target="shield">
+										shield
+									</TabLink>{" "}
+									into the telescope (everybody must do this at the same time).
+								</li>
+								<li>
+									Go back down the stairs and a panel will open showing a stone. <b>LOCKDOWN:</b> Interact with the stone to start the lockdown (everybody must do this at the same time).
+								</li>
+								<li>Interact with the stone to claim a max ammo as a reward.</li>
 							</ol>
 						</li>
 						<li>
@@ -314,23 +591,23 @@ function MainEE() {
 									<TabLink tab="wonder-weapon" target="alistairsannihilator">
 										Alistair's Annihilator
 									</TabLink>{" "}
-									to shoot the trunk and make the step easier (branches can be shot with a normal weapon)). leaves will fall off the trees when you walk up to them if they are the right ones.
+									to shoot the trunk and make the step easier; branches can be shot with a normal weapon). Leaves will fall off the trees when you walk up to them if they are the right ones.
 									<ul>
 										<li>To the left when entering the cemetery path area (broken gate is leaning on it)</li>
 										<li>2 right across from each other in the middle of the cemetery</li>
-										<li>2 on opposite ends in the Mosaleum area.</li>
+										<li>2 on opposite ends in the Mausoleum area.</li>
 									</ul>
 								</li>
-								<li>Check the graves in the center of the cemetery for the engraved date of 1912 (Solo: Interact with it. Multiplayer: the person on the tombstone interacts with it)</li>
+								<li>Check the graves in the center of the cemetery for the engraved date of 1912 (Solo: Interact with it. Multiplayer: the person on the tombstone interacts with it).</li>
 								<li>
-									Shoot a Charged Fire shot infront of the Effigy while under the effect with{" "}
+									Shoot a Charged Fire shot in front of the Effigy while under the effect with{" "}
 									<TabLink tab="wonder-weapon" target="alistairsannihilator">
 										Alistair's Annihilator
 									</TabLink>
-									. interact with the effigy.
+									. Interact with the effigy.
 								</li>
 								<li>
-									<span>Find the ghost lady and ecort her back to the cemetery. Some common locations (not all):</span>
+									<span>Find the ghost lady and escort her back to the cemetery. Some common locations (not all):</span>
 									<span>(going down will lose the afterlife effect for this step, zombies can still see you)</span>
 									<ul>
 										<li>Danu Perk Statue</li>
@@ -343,9 +620,15 @@ function MainEE() {
 									<span>
 										Interact with the stone to leave the effect. <b>LOCKDOWN:</b> Hold interact with the square to start the lockdown.
 									</span>
-									<span>TIP: hold up in the Mausoleum and use the fire trap and charged trap to hold both sides</span>
+									<span>
+										TIP: hold up in the Mausoleum and use the{" "}
+										<TabLink tab="extras" target="firetrap">
+											fire trap
+										</TabLink>{" "}
+										and charged trap to hold both sides.
+									</span>
 								</li>
-								<li>Interact with the stone again to gain your max ammo</li>
+								<li>Interact with the stone again to gain your max ammo.</li>
 							</ol>
 						</li>
 						<li>
@@ -356,21 +639,43 @@ function MainEE() {
 									<TabLink tab="buildables" target="firetrap">
 										Fire Energy Core
 									</TabLink>{" "}
-									into a fire trap (preferably nearby to the set you want to complete), activate and shoot it using the{" "}
+									into a{" "}
+									<TabLink tab="extras" target="firetrap">
+										fire trap
+									</TabLink>{" "}
+									(preferably nearby to the set you want to complete), activate and shoot it using the{" "}
 									<TabLink tab="wonder-weapon" target="alistairsannihilator">
 										Alistair's Annihilator
 									</TabLink>{" "}
-									charged shot to turn it blue. walk through the flames with your shield to light it on fire.
+									charged shot to turn it blue. Walk through the flames with your{" "}
+									<TabLink tab="buildables" target="shield">
+										shield
+									</TabLink>{" "}
+									to light it on fire.
 								</li>
 								<li>
-									Visit 3 sets of 4 fireplaces and shield bash them to light them on fire (each fireplace in a set must be done in a specific order but the order of sets doesn't matter. must finish the set before the fire dissapears.). Once a set is completed, pick up the gem that spawns in the last fireplace activated.
+									Visit 3 sets of 4 fireplaces and{" "}
+									<TabLink tab="buildables" target="shield">
+										shield
+									</TabLink>{" "}
+									bash them to light them on fire (each fireplace in a set must be done in a specific order but the order of sets doesn't matter. Must finish the set before the fire disappears.). Once a set is completed, pick up the gem that spawns in the last fireplace activated.
 									<ul>
 										<li>
 											Set 1
 											<ol>
 												<li>Smoking Room</li>
-												<li>Right of Library Fire Trap</li>
-												<li>left of Library Fire trap</li>
+												<li>
+													Right of Library{" "}
+													<TabLink tab="extras" target="firetrap">
+														Fire Trap
+													</TabLink>
+												</li>
+												<li>
+													Left of Library{" "}
+													<TabLink tab="extras" target="firetrap">
+														Fire Trap
+													</TabLink>
+												</li>
 												<li>Billiards Room</li>
 											</ol>
 										</li>
@@ -400,16 +705,16 @@ function MainEE() {
 										Vapr Wallbuy
 									</TabLink>
 								</li>
-								<li>Bring them to the forest adnd in the lanes there will be faint circles which you need to walk over for the gems to move to and become a ghost knight. Once all 3 have been placed, they become soul boxes. You must fill all 3 knights a total of 2 times.</li>
+								<li>Bring them to the forest and in the lanes there will be faint circles which you need to walk over for the gems to move to and become a ghost knight. Once all 3 have been placed, they become soul boxes. You must fill all 3 knights a total of 2 times.</li>
 								<li>When they form a triangle, get a werewolf kill within the triangle to finish the step.</li>
 								<li>
-									<b>LOCKDOWN:</b> interact with the stone that spawns to start the lockdown.
+									<b>LOCKDOWN:</b> Interact with the stone that spawns to start the lockdown.
 								</li>
 							</ol>
 						</li>
 					</ul>
 				</li>
-				<li>You can now interact with the door with the glowing stones in the forest area to access the bossfight. (in multiplayer, everyone must interact with the door to enter)</li>
+				<li>You can now interact with the door with the glowing stones in the forest area to access the boss fight (in multiplayer, everyone must interact with the door to enter).</li>
 			</ol>
 
 			<h2>BOSSFIGHT</h2>
@@ -423,8 +728,8 @@ function MainEE() {
 					silver bullets
 				</TabLink>
 				, homunculus,{" "}
-				<TabLink tab="side-ee" target="takeknife">
-					stake knife
+				<TabLink tab="wonder-weapon" target="stakeknife">
+					Stake Knife
 				</TabLink>
 				, new{" "}
 				<TabLink tab="buildables" target="shield">
@@ -443,7 +748,7 @@ function MainEE() {
 					<b>Phase 2</b>
 				</p>
 				<li>Survive against hordes of zombies, vampires and werewolves.</li>
-				<li>Collect the power-ups once everything stops spawning</li>
+				<li>Collect the power-ups once everything stops spawning.</li>
 				<p>
 					<b>Phase 3</b>
 				</p>
@@ -470,9 +775,9 @@ function SideEE() {
 				</a>
 			</h2>
 			<ol>
-				<li>Aquire the Sentinel Artifact on the opposite end from where you spawn (unlocks areas)</li>
+				<li>Acquire the Sentinel Artifact on the opposite end from where you spawn (unlocks areas).</li>
 				<li>
-					Break 4 vases that have gems in them (8 vases to search) by knifing them, fill them with 4 souls then interact with them to get a vision
+					Break 4 vases that have gems in them (8 vases to search) by knifing them, fill them with 4 souls then interact with them to get a vision:
 					<ul>
 						<li>Vase 1: Study area in the middle table</li>
 						<li>
@@ -488,14 +793,14 @@ function SideEE() {
 							</TabLink>{" "}
 							in the library
 						</li>
-						<li>Vase 2: Wine Cellar directly infront of the stairs</li>
+						<li>Vase 2: Wine Cellar directly in front of the stairs</li>
 						<li>Vase 2: In Wine Cellar in the area to the right on a small table in the center</li>
 						<li>Vase 3: Bedroom Hallway on table next to a plant</li>
-						<li>Vase 3: Large pot infront of the bed in the Master Bedroom</li>
+						<li>Vase 3: Large pot in front of the bed in the Master Bedroom</li>
 						<li>Vase 3: On the table in the Trophy Room</li>
 					</ul>
 				</li>
-				<li>The Image you get changes what you have to do per stone</li>
+				<li>The Image you get changes what you have to do per stone:</li>
 				<table>
 					<thead>
 						<tr>
@@ -516,8 +821,8 @@ function SideEE() {
 							</td>
 							<td>
 								<ol>
-									<li>Find the clock somewhere on the map (should be ticking) and interact with it to spawn a circle</li>
-									<li>Stand in the circle until the clock opens revealing a tuning fork to pick up</li>
+									<li>Find the clock somewhere on the map (should be ticking) and interact with it to spawn a circle.</li>
+									<li>Stand in the circle until the clock opens revealing a tuning fork to pick up.</li>
 								</ol>
 							</td>
 						</tr>
@@ -528,8 +833,8 @@ function SideEE() {
 							</td>
 							<td>
 								<ol>
-									<li>Go to that perk machine and kill a swarm of vampires that spawn</li>
-									<li>Will spawn the tuning fork</li>
+									<li>Go to that perk machine and kill a swarm of vampires that spawn.</li>
+									<li>Will spawn the tuning fork.</li>
 								</ol>
 							</td>
 						</tr>
@@ -538,8 +843,8 @@ function SideEE() {
 							<td>Entrance Hall</td>
 							<td>
 								<ol>
-									<li>Interact with the doll on the table in the Entrance Hall</li>
-									<li>You need to follow the ghost that spawns (tuning fork appears at the end)</li>
+									<li>Interact with the doll on the table in the Entrance Hall.</li>
+									<li>You need to follow the ghost that spawns (tuning fork appears at the end).</li>
 								</ol>
 							</td>
 						</tr>
@@ -554,7 +859,7 @@ function SideEE() {
 											debris
 										</TabLink>
 									</li>
-									<li>You need to follow the ghost that spawns (tuning fork appears at the end)</li>
+									<li>You need to follow the ghost that spawns (tuning fork appears at the end).</li>
 								</ol>
 							</td>
 						</tr>
@@ -563,8 +868,8 @@ function SideEE() {
 							<td>Wine Cellar</td>
 							<td>
 								<ol>
-									<li>Interact with the Noose hanging off the chair in the Wine Cellar</li>
-									<li>You need to follow the ghost that spawns (tuning fork appears at the end)</li>
+									<li>Interact with the Noose hanging off the chair in the Wine Cellar.</li>
+									<li>You need to follow the ghost that spawns (tuning fork appears at the end).</li>
 								</ol>
 							</td>
 						</tr>
@@ -580,20 +885,20 @@ function SideEE() {
 							</td>
 							<td>
 								<ol>
-									<li>Interact with the painting it showed</li>
-									<li>You need to follow the ghost that spawns (tuning fork appears at the end)</li>
+									<li>Interact with the painting it showed.</li>
+									<li>You need to follow the ghost that spawns (tuning fork appears at the end).</li>
 								</ol>
 							</td>
 						</tr>
 					</tbody>
 				</table>
 				<li>
-					<span>After obtaining all 3 tuning forks, head to the Forest Terrace and interact with the massive debris</span>
+					<span>After obtaining all 3 tuning forks, head to the Forest Terrace and interact with the massive debris.</span>
 					<span>
 						<b>A WEREWOLF WILL SPAWN, BEST TO DO THIS STEP WHEN YOU NEED TO KILL ONE</b>
 					</span>
 				</li>
-				<li>The PaP Machine is located at the very far back of the Forest area</li>
+				<li>The PaP Machine is located at the very far back of the Forest area.</li>
 			</ol>
 
 			<h2>
@@ -602,46 +907,52 @@ function SideEE() {
 					Video
 				</a>
 			</h2>
-			<p>Potential Rewards: Power-up which will not despawn, a random weapon, elixir, or free Silver Bullets. (each can be done individually, messing up a step for a door locks you out of that particular room for the rest of the game)</p>
+			<p>
+				Potential Rewards: Power-up which will not despawn, a random weapon, elixir, or free{" "}
+				<TabLink tab="buildables" target="silverbullets">
+					Silver Bullets
+				</TabLink>
+				. (Each can be done individually; messing up a step for a door locks you out of that particular room for choir/rest of the game).
+			</p>
 			<ul>
 				<li id="bookshelfroom">
 					West/East Balcony
 					<ol>
-						<li>Look for the bookshelves in the East and West Balconys</li>
-						<li>Interact with 4 books (2 books per side) with symbols on them in the order "Q", "Star", "end of tuning fork", "u looking shape with some dots in the center"</li>
+						<li>Look for the bookshelves in the East and West Balconies.</li>
+						<li>Interact with 4 books (2 books per side) with symbols on them in the order "Q", "Star", "end of tuning fork", "u looking shape with some dots in the center".</li>
 					</ol>
 				</li>
-				<li>
+				<li id="billiardssecret">
 					Billiards Room
 					<ol>
-						<li>In the pool room, shoot all of the balls on the table into any pocket in the order of 1-9</li>
-						<li>Bookcase infront of you will open up. (Grenade means you did it wrong)</li>
+						<li>In the pool room, shoot all of the balls on the table into any pocket in the order of 1-9.</li>
+						<li>Bookcase in front of you will open up. (Grenade means you did it wrong).</li>
 					</ol>
 				</li>
 				<li>
 					Wine Cellar
 					<ol>
-						<li>Knife 6 barrels which are dripping wine in the order from fastest to slowest dripping (correct order means wine spurts out)</li>
-						<li>Wine shelf around the corner will open up</li>
+						<li>Knife 6 barrels which are dripping wine in the order from fastest to slowest dripping (correct order means wine spurts out).</li>
+						<li>Wine shelf around the corner will open up.</li>
 					</ol>
 				</li>
 			</ul>
 
 			<h2 id="impossible">
-				Free Perks and infinite ammo Impossible EE -{" "}
+				Free Perks and Infinite Ammo Impossible EE -{" "}
 				<a href="https://www.youtube.com/watch?v=pDsLWlROEZE" target="_blank" rel="noopener noreferrer">
 					Video
 				</a>
 			</h2>
 			<p>
-				<span>Rewards: 6 free perks, INFINITE ammo for the gun you are currently holding</span>
+				<span>Rewards: 6 free perks, INFINITE ammo for the gun you are currently holding.</span>
 				<span>
 					<b>WARNING: please read all of the instructions BEFORE starting your game since there are a lot of things to remember</b>
 				</span>
 			</p>
 			<ol>
 				<li>
-					Around the map is 6 gramophones that you must remember what order you looked at them (order doesn't matter but remembering the order does, lists here are in an order which you can follow (already reversed))
+					Around the map are 6 gramophones that you must remember what order you looked at them in (order doesn't matter, but remembering the order does; lists here are in an order which you can follow (already reversed)):
 					<ol>
 						<li>Music room to the left of the fireplace</li>
 						<li>Master Bedroom to the right of the fire gate/doorway</li>
@@ -657,14 +968,14 @@ function SideEE() {
 					</ol>
 				</li>
 				<li>
-					There are 6 doors around the map which you must remember the order of which you opened them
+					There are 6 doors around the map which you must remember the order in which you opened them:
 					<ol>
-						<li>Main Hall -{">"} Cellars</li>
-						<li>Main Hall -{">"} West Hallway/Library</li>
-						<li>North Atrium/Main Hall -{">"} Forest Terrace/PaP</li>
-						<li>Main Hall -{">"} East Hallway/Dining Room</li>
-						<li>Dining Room -{">"} Greenhouse Terrace</li>
-						<li>Library -{">"} Cemetery</li>
+						<li>Main Hall -&gt; Cellars</li>
+						<li>Main Hall -&gt; West Hallway/Library</li>
+						<li>North Atrium/Main Hall -&gt; Forest Terrace/PaP</li>
+						<li>Main Hall -&gt; East Hallway/Dining Room</li>
+						<li>Dining Room -&gt; Greenhouse Terrace</li>
+						<li>Library -&gt; Cemetery</li>
 					</ol>
 				</li>
 				<li>
@@ -676,57 +987,57 @@ function SideEE() {
 						<TabLink tab="weapons" target="m1897">
 							M1897 Trebuchet
 						</TabLink>{" "}
-						by getting the grenade to land inside of it (vase located high on the pillars in the direction of the door locations, listed below.)
+						by getting the grenade to land inside of it (vases located high on the pillars in the direction of the door locations, listed below).
 					</span>
-					<span>You can check if you succeded by going to the Forest Terrace fountain and checking if the candle is not lit</span>
+					<span>You can check if you succeeded by going to the Forest Terrace fountain and checking if the candle is not lit.</span>
 
 					<ol>
 						<li>
-							Main Hall -{">"} Cellars | <b>Staircase Fountain</b>
+							Main Hall -&gt; Cellars | <b>Staircase Fountain</b>
 						</li>
 						<li>
-							Main Hall -{">"} West Hallway/Library | <b>West Hall (Lower)</b>
+							Main Hall -&gt; West Hallway/Library | <b>West Hall (Lower)</b>
 						</li>
 						<li>
-							North Atrium/Main Hall -{">"} Forest Terrace/PaP | <b>Above Forest Door</b>
+							North Atrium/Main Hall -&gt; Forest Terrace/PaP | <b>Above Forest Door</b>
 						</li>
 						<li>
-							Main Hall -{">"} East Hallway/Dining Room | <b>East Wall (Lower)</b>
+							Main Hall -&gt; East Hallway/Dining Room | <b>East Wall (Lower)</b>
 						</li>
 						<li>
-							Dining Room -{">"} Greenhouse Terrace | <b>East Wall (Higher)</b>
+							Dining Room -&gt; Greenhouse Terrace | <b>East Wall (Higher)</b>
 						</li>
 						<li>
-							Library -{">"} Cemetery | <b>West Wall (Higher)</b>
+							Library -&gt; Cemetery | <b>West Wall (Higher)</b>
 						</li>
 					</ol>
 				</li>
 				<li>
-					Ignite 6 candles around the map in the REVERSE order you opened the doors in (candles located near the doors, light using Wraith Fires)
+					Ignite 6 candles around the map in the REVERSE order you opened the doors in (candles located near the doors, light using Wraith Fires):
 					<ol>
 						<li>
-							Library -{">"} Cemetery | <b>Library on bookshelf in Study</b>
+							Library -&gt; Cemetery | <b>Library on bookshelf in Study</b>
 						</li>
 						<li>
-							Dining Room -{">"} Greenhouse Terrace | <b>Greenhouse Terrace beside one of the small statue lamps</b>
+							Dining Room -&gt; Greenhouse Terrace | <b>Greenhouse Terrace beside one of the small statue lamps</b>
 						</li>
 						<li>
-							Main Hall -{">"} East Hallway/Dining Room | <b>Hallway Dining Room/Main Hall (East Hallway) on table with lamp</b>
+							Main Hall -&gt; East Hallway/Dining Room | <b>Hallway Dining Room/Main Hall (East Hallway) on table with lamp</b>
 						</li>
 						<li>
-							North Atrium/Main Hall -{">"} Forest Terrace/PaP | <b>on the edge of the Forest Fountain</b>
+							North Atrium/Main Hall -&gt; Forest Terrace/PaP | <b>On the edge of the Forest Fountain</b>
 						</li>
 						<li>
-							Main Hall -{">"} West Hallway/Library | <b>Hallway Library/Main Hall (West Hallway) on table</b>
+							Main Hall -&gt; West Hallway/Library | <b>Hallway Library/Main Hall (West Hallway) on table</b>
 						</li>
 						<li>
-							Main Hall -{">"} Cellars | <b>Cellars ontop of large barrel to the right coming down the stairs</b>
+							Main Hall -&gt; Cellars | <b>Cellars on top of large barrel to the right coming down the stairs</b>
 						</li>
 					</ol>
 				</li>
-				<li>Grab the record on the East Stairway</li>
+				<li>Grab the record on the East Stairway.</li>
 				<li>
-					Interact with the 6 Gramophones in the REVERSE order you looked at them in (you will hear parts of the EE song play when correct)
+					Interact with the 6 Gramophones in the REVERSE order you looked at them in (you will hear parts of the EE song play when correct):
 					<ol>
 						<li>On the floor in the dining room</li>
 						<li>In the Library on the table</li>
@@ -741,8 +1052,8 @@ function SideEE() {
 						<li>Music room to the left of the fireplace</li>
 					</ol>
 				</li>
-				<li>An invisible ghost will spawn near the entrance to the PaP area from the Main Hall which you need to follow into the Wine Cellar (you can locate it be hearing it only. Recommended to use Undead Man Walking and In Plain Sight Elixirs)</li>
-				<li>Once you reach the Wine Cellar, you must go prone and crawl while still following the ghost (can only hear while proned), once you make it to the jumpscare, you will recieve the rewards.</li>
+				<li>An invisible ghost will spawn near the entrance to the PaP area from the Main Hall which you need to follow into the Wine Cellar (you can locate it by hearing it only. Recommended to use Undead Man Walking and In Plain Sight Elixirs).</li>
+				<li>Once you reach the Wine Cellar, you must go prone and crawl while still following the ghost (can only hear while proned); once you make it to the jumpscare, you will receive the rewards.</li>
 			</ol>
 		</section>
 	);
@@ -756,7 +1067,7 @@ function MusicEE() {
 	return (
 		<section className="tab-content">
 			<h2>Mystery</h2>
-			<p>Collect 4 glowing coins around the map</p>
+			<p>Collect 4 glowing coins around the map:</p>
 			<ol>
 				<li>
 					Under the small table in the Main Hall near the{" "}
@@ -766,7 +1077,7 @@ function MusicEE() {
 				</li>
 				<li>On the stack of stuff in the library (can be shot from the Study above)</li>
 				<li>In a broken barrel in the Wine Cellar near the stairs</li>
-				<li>in a wall decoration behind a door in the East Hallway</li>
+				<li>In a wall decoration behind a door in the East Hallway</li>
 			</ol>
 		</section>
 	);
@@ -790,11 +1101,11 @@ function WonderWeapons() {
 				<TabLink tab="weapons" target="mysterybox">
 					Mystery Box
 				</TabLink>{" "}
-				or via the quest below
+				or via the quest below:
 			</p>
 			<ol>
 				<li>
-					Find and take note of 4 symbols (shape and colour)
+					Find and take note of 4 symbols (shape and color):
 					<ul>
 						<li>
 							Blue Symbol - Cemetery
@@ -836,7 +1147,13 @@ function WonderWeapons() {
 						</li>
 					</ul>
 				</li>
-				<li>Input all 4 symbols in the correct colour into the lock in the Library to unlock the case and grab the Alistair's Folly.</li>
+				<li>
+					Input all 4 symbols in the correct color into the lock in the Library to unlock the case and grab{" "}
+					<TabLink tab="wonder-weapon" target="alistairsfolly">
+						Alistair's Folly
+					</TabLink>
+					.
+				</li>
 			</ol>
 
 			<h2 id="chaostheory">
@@ -863,17 +1180,23 @@ function WonderWeapons() {
 					<TabLink tab="buildables" target="silverbullets">
 						Silver Bullets
 					</TabLink>{" "}
-					and pick up the part he dropped
+					and pick up the part he dropped.
 				</li>
-				<li>Place the material into the machine in the Greenhouse Laboratory and grab the output from the left side</li>
+				<li>Place the material into the machine in the Greenhouse Laboratory and grab the output from the left side.</li>
 				<li>
-					Open up the secret bookshelf in the library (looks suspiscious) by bashing it with a{" "}
+					Open up the secret bookshelf in the library (looks suspicious) by bashing it with a{" "}
 					<TabLink tab="buildables" target="shield">
 						shield
 					</TabLink>
-					. grab the part that is inside.
+					. Grab the part that is inside.
 				</li>
-				<li>Craft the Chaos Theory in the Greenhouse Laboratory using the workbench in the back</li>
+				<li>
+					Craft the{" "}
+					<TabLink tab="wonder-weapon" target="chaostheory">
+						Chaos Theory
+					</TabLink>{" "}
+					in the Greenhouse Laboratory using the workbench in the back.
+				</li>
 			</ol>
 
 			<h2 id="alistairsannihilator">
@@ -893,28 +1216,46 @@ function WonderWeapons() {
 						Chaos Theory Variant
 					</TabLink>
 				</span>
-				<span>After a part has been obtained, take them to the Greenhouse Laboratory and input them into the machine and grab the output from the left side (repeat for 3 parts)</span>
-				<span>Craft at the table inside the Greenhouse Laboratory</span>
+				<span>After a part has been obtained, take them to the Greenhouse Laboratory and input them into the machine and grab the output from the left side (repeat for 3 parts).</span>
+				<span>Craft at the table inside the Greenhouse Laboratory.</span>
 			</p>
 			<ul>
 				<li>
 					Part 1
 					<ol>
-						<li>Collect 3 things of bile by killing vampires with the tornado shot from the Chaos Theory (Cemetary and Forest areas spawn more Vampires)</li>
-						<li>Interact with the glowing red tomb in the cemetary to unleash a crimson vampire. Kill him for a part.</li>
+						<li>
+							Collect 3 vials of bile by killing vampires with the tornado shot from the{" "}
+							<TabLink tab="wonder-weapon" target="chaostheory">
+								Chaos Theory
+							</TabLink>{" "}
+							(Cemetery and Forest areas spawn more Vampires).
+						</li>
+						<li>Interact with the glowing red tomb in the cemetery to unleash a crimson vampire. Kill him for a part.</li>
 					</ol>
 				</li>
 				<li>
 					Part 2
 					<ol>
-						<li>Head to the Mausoleum balcony in teh Cemetary and shoot 4 orange flickering lights using the the Chaos Theory.</li>
+						<li>
+							Head to the Mausoleum balcony in the Cemetery and shoot 4 orange flickering lights using the{" "}
+							<TabLink tab="wonder-weapon" target="chaostheory">
+								Chaos Theory
+							</TabLink>
+							.
+						</li>
 						<li>A bat will spawn on the last lamp and must be killed quickly for a part.</li>
 					</ol>
 				</li>
 				<li>
 					Part 3
 					<ol>
-						<li>Make a Zombie dig up a pile in the Forest area using the yellow shot from the Chaos Theory</li>
+						<li>
+							Make a Zombie dig up a pile in the Forest area using the yellow shot from the{" "}
+							<TabLink tab="wonder-weapon" target="chaostheory">
+								Chaos Theory
+							</TabLink>
+							.
+						</li>
 					</ol>
 				</li>
 			</ul>
@@ -927,7 +1268,7 @@ function WonderWeapons() {
 			</h2>
 			<ol>
 				<li>
-					Find and put out 6 candles using your knife (can be done in any order)
+					Find and put out 6 candles using your knife (can be done in any order):
 					<ul>
 						<li>Table in the study room</li>
 						<li>On the table after taking the right side staircase into the Wine Cellar</li>
@@ -942,10 +1283,10 @@ function WonderWeapons() {
 					<TabLink tab="side-ee" target="pap">
 						forest
 					</TabLink>{" "}
-					and take the right side lane away from pap you'll find a stone statue. interact with the water below it.
+					and take the right side lane away from PaP; you'll find a stone statue. Interact with the water below it.
 				</li>
 				<li>
-					Find a ghost lady (possible locations below) and escort (follow) her to the Mausoleum. If you lose the effect, end the round and go back to the statue. (ghost should stay in place)
+					Find a ghost lady (possible locations below) and escort (follow) her to the Mausoleum. If you lose the effect, end the round and go back to the statue (ghost should stay in place):
 					<ul>
 						<li>Entrance Hall, Master Bedroom</li>
 						<li>Master Bedroom</li>
@@ -956,7 +1297,7 @@ function WonderWeapons() {
 					</ul>
 				</li>
 				<li>
-					Once there, 4 zombies will begin to glow. You need to kill each one with a different method in the following order. Each zombie will drop a purple item you need to collect.
+					Once there, 4 zombies will begin to glow. You need to kill each one with a different method in the following order. Each zombie will drop a purple item you need to collect:
 					<ol>
 						<li>Any Type of Weapon</li>
 						<li>Equipment (not Homunculus)</li>
@@ -969,8 +1310,14 @@ function WonderWeapons() {
 						</li>
 					</ol>
 				</li>
-				<li>After colelcting all 4, enter the Mausoleum and place each of the items on the circles in the room. Get 15 vampire kills in the room (white parts of circle will turn blue when successful)</li>
-				<li>Head out to the tomb and interact with it to move it aside and open a secret area. Enter and grab the Savage Impaler to start a lockdown</li>
+				<li>After collecting all 4, enter the Mausoleum and place each of the items on the circles in the room. Get 15 vampire kills in the room (white parts of circle will turn blue when successful).</li>
+				<li>
+					Head out to the tomb and interact with it to move it aside and open a secret area. Enter and grab the{" "}
+					<TabLink tab="wonder-weapon" target="savageimpaler">
+						Savage Impaler
+					</TabLink>{" "}
+					to start a lockdown.
+				</li>
 				<li>Complete the lockdown and leave.</li>
 			</ol>
 
@@ -981,21 +1328,27 @@ function WonderWeapons() {
 				</a>
 			</h2>
 			<ol>
-				<li>Head to the tree with a lantern on it in the Forest area. Positioning yourself properly infront of it, you'l be bale to see 4 symbols on the trees. remember the symbol and the order.</li>
+				<li>Head to the tree with a lantern on it in the Forest area. Positioning yourself properly in front of it, you'll be able to see 4 symbols on the trees. Remember the symbol and the order.</li>
 				<li>
-					<span>Find 4 stones in the Garden and shoot them in the order of which the symbosl were on the trees.</span>
+					<span>Find 4 stones in the Garden and shoot them in the order of which the symbols were on the trees.</span>
 					<span>
-						<b>WARNING: failing this step means you cannot get the Stake Knife for the duration of the game and must restart</b>
+						<b>
+							WARNING: failing this step means you cannot get the{" "}
+							<TabLink tab="wonder-weapon" target="stakeknife">
+								Stake Knife
+							</TabLink>{" "}
+							for the duration of the game and must restart
+						</b>
 					</span>
 
 					<ul>
 						<li>On the gazebo ledge</li>
-						<li>Behind the Vapr Wall buy</li>
+						<li>Behind the Vapr Wallbuy</li>
 						<li>Behind the fountain with the perk statue</li>
-						<li>on the railing behind the previous stone.</li>
+						<li>On the railing behind the previous stone.</li>
 					</ul>
 				</li>
-				<li>Buy the Bowie Knife and head to the tree behind the lantern tree (should have a symbol on each side of it). You now nee to knife the symbols in the same order as before. (will become scratched)</li>
+				<li>Buy the Bowie Knife and head to the tree behind the lantern tree (should have a symbol on each side of it). You now need to knife the symbols in the same order as before (will become scratched).</li>
 				<li>
 					Use the{" "}
 					<TabLink tab="buildables" target="shield">
@@ -1003,8 +1356,14 @@ function WonderWeapons() {
 					</TabLink>{" "}
 					to bash each of the symbols until a tree branch falls which you can pick up.
 				</li>
-				<li>Head to the stone infront of the Mausoleum and place the stick. get 15 vampire kills near the branch until it starts smoking. pick it back up.</li>
-				<li>Head to the workbecnh just outside the cemetery to build the stake knife</li>
+				<li>Head to the stone in front of the Mausoleum and place the stick. Get 15 vampire kills near the branch until it starts smoking. Pick it back up.</li>
+				<li>
+					Head to the workbench just outside the cemetery to build the{" "}
+					<TabLink tab="wonder-weapon" target="stakeknife">
+						Stake Knife
+					</TabLink>
+					.
+				</li>
 			</ol>
 		</section>
 	);
@@ -1068,23 +1427,29 @@ function Buildables() {
 					Video
 				</a>
 			</h2>
-			<p>Grab the Silver and Gunpowder, then build at the Library workbench. Interact while holding the weapon you want to put silver bullets on.</p>
+			<p>
+				Grab the Silver and Gunpowder, then build at the Library workbench. Interact while holding the weapon you want to put{" "}
+				<TabLink tab="buildables" target="silverbullets">
+					silver bullets
+				</TabLink>{" "}
+				on.
+			</p>
 			<ul>
 				<li>
-					Silver - Grab the 3 parts and melt them down in the Cellar Workbench
+					Silver - Grab the 3 parts and melt them down in the Cellar Workbench:
 					<ul>
 						<li>
 							Candle Holder
 							<ul>
 								<li>Entrance Hall on table</li>
 								<li>Floor in the Billiards Room</li>
-								<li>Main Hall infront of giant vase</li>
+								<li>Main Hall in front of giant vase</li>
 							</ul>
 						</li>
 						<li>
 							Cup
 							<ul>
-								<li>Small Table in the Dining Room infront of couch</li>
+								<li>Small Table in the Dining Room in front of couch</li>
 								<li>Corner of larger table in Dining Room</li>
 								<li>Laying on the floor in the West Hallway beside the couch</li>
 							</ul>
@@ -1100,7 +1465,7 @@ function Buildables() {
 					</ul>
 				</li>
 				<li>
-					Gunpowder
+					Gunpowder:
 					<ul>
 						<li>
 							Charcoal
@@ -1113,9 +1478,9 @@ function Buildables() {
 						<li>
 							Poop
 							<ul>
-								<li>Cemetary on the ground infront of the boy statue</li>
-								<li>Cemetary on the ground further down the path</li>
-								<li>Cemetary by the tree next to the Mausoleum</li>
+								<li>Cemetery on the ground in front of the boy statue</li>
+								<li>Cemetery on the ground further down the path</li>
+								<li>Cemetery by the tree next to the Mausoleum</li>
 							</ul>
 						</li>
 						<li>
@@ -1131,7 +1496,13 @@ function Buildables() {
 			</ul>
 
 			<h2 id="firetrap">Fire Trap</h2>
-			<p>Around the map you can find Fire Core trap parts which can be places to activate the fire traps around the map.</p>
+			<p>
+				Around the map you can find Fire Core trap parts which can be placed to activate the{" "}
+				<TabLink tab="extras" target="firetrap">
+					fire traps
+				</TabLink>{" "}
+				around the map.
+			</p>
 			<VideoPlayer url="JKU3gZnlHPE" />
 			<ul>
 				<li>
@@ -1141,8 +1512,8 @@ function Buildables() {
 					</TabLink>
 				</li>
 				<li>Music room on the overturned piano bench</li>
-				<li>Infront of a huge vase in the Main Hall</li>
-				<li>On the barrel directly infront of the stairs in the Wine Cellar</li>
+				<li>In front of a huge vase in the Main Hall</li>
+				<li>On the barrel directly in front of the stairs in the Wine Cellar</li>
 				<li>On desk in the Trophy Room</li>
 				<li>On the farthest bench in the dining room</li>
 				<li>On the bench to the left when entering the gardens area</li>
@@ -1172,7 +1543,7 @@ function Weapons() {
 				<li>Strife - Player Choice</li>
 				<li>RK 7 Garrison - Player Choice</li>
 				<li>Saug 9mm - Player Choice</li>
-				<li>Essex Model 07 - Player Choice</li>
+				<li id="essex">Essex Model 07 - Player Choice</li>
 				<li>MOG 12 - Player Choice</li>
 				<li>Frag - Player Choice</li>
 				<li>Acid Bomb - Player Choice</li>
@@ -1225,7 +1596,7 @@ function Weapons() {
 					<b>GKS</b> - Aft Decks/Promenade Starboard Deck (1300p)
 				</li>
 				<li id="m1897">
-					<b>M1897 Terbuchet</b> - 1st Class Lounge (1400p)
+					<b>M1897 Trebuchet</b> - 1st Class Lounge (1400p)
 				</li>
 				<li>
 					<b>Maddox RFB</b> - 3rd Class Berths (1400p)
@@ -1404,7 +1775,13 @@ function Gauntlet() {
 					<tr>
 						<td>13</td>
 						<td>Stake in the Ground</td>
-						<td>Get 25 Kills with the Stake Knife.</td>
+						<td>
+							Get 25 Kills with the{" "}
+							<TabLink tab="wonder-weapon" target="stakeknife">
+								Stake Knife
+							</TabLink>
+							.
+						</td>
 					</tr>
 					<tr>
 						<td>14</td>
@@ -1429,7 +1806,13 @@ function Gauntlet() {
 					<tr>
 						<td>18</td>
 						<td>Cross Eyed</td>
-						<td>At Least One Player Must Possess the Savage Impaler by the End of the Round.</td>
+						<td>
+							At Least One Player Must Possess the{" "}
+							<TabLink tab="wonder-weapon" target="savageimpaler">
+								Savage Impaler
+							</TabLink>{" "}
+							by the End of the Round.
+						</td>
 					</tr>
 					<tr>
 						<td>19</td>
@@ -1510,7 +1893,7 @@ function Perks() {
 			<h3>Ra, Odin, Zeus</h3>
 			<p>Switches Locations every game</p>
 			<ul>
-				<li>Mausoleum in the middle of the Cemetary</li>
+				<li>Mausoleum in the middle of the Cemetery</li>
 				<li>Gardens</li>
 				<li>Forest Terrace or Wine Cellar</li>
 			</ul>
@@ -1531,22 +1914,22 @@ function Extras() {
 					Video
 				</a>
 			</h2>
-			<p>Around the map there are 6 Audio Cylinders that can be picked up and played on the gramophone in the music room. knife to remove a currently playing one. (only 1 cylinder can be held at a time)</p>
+			<p>Around the map there are 6 Audio Cylinders that can be picked up and played on the gramophone in the music room. Knife to remove a currently playing one (only 1 cylinder can be held at a time).</p>
 			<ul>
 				<li>
-					Infront of the Mausoleum on the railing across from the{" "}
+					In front of the Mausoleum on the railing across from the{" "}
 					<TabLink tab="weapons" target="auger">
 						Auger wallbuy
 					</TabLink>
 				</li>
-				<li>In the Billiards room on the chiar in the corner</li>
-				<li>In the Forest Terrace on the right side railing directly infront of you</li>
+				<li>In the Billiards room on the chair in the corner</li>
+				<li>In the Forest Terrace on the right side railing directly in front of you</li>
 				<li>In the Entrance hall on the desk to the left after entering</li>
 				<li>Dining Room on the corner of the table</li>
 				<li>
 					Inside the greenhouse Laboratory on the table across from the{" "}
 					<TabLink tab="wonder-weapon" target="alistairsannihilator">
-						Alistairs Annihilator
+						Alistair's Annihilator
 					</TabLink>{" "}
 					Workbench
 				</li>
@@ -1567,7 +1950,7 @@ function Extras() {
 				</thead>
 				<tbody>
 					<tr>
-						<td>Electric Trap</td>
+						<td id="electrictrap">Electric Trap</td>
 						<td>Electrocutes zombies, instantly killing them</td>
 						<td>Greenhouse</td>
 						<td>1500 Points</td>
@@ -1622,7 +2005,7 @@ function Extras() {
 				<tbody>
 					<tr>
 						<td>Nosferatu</td>
-						<td>Fast running, will prevent you from regening health for roughly 5 seconds after being hit.</td>
+						<td>Fast running, will prevent you from regenerating health for roughly 5 seconds after being hit.</td>
 					</tr>
 					<tr>
 						<td>Crimson Nosferatu</td>
@@ -1630,7 +2013,13 @@ function Extras() {
 					</tr>
 					<tr>
 						<td>Werewolf</td>
-						<td>Will rush at the player and melee them. They take increased damage when shot with silver bullets.</td>
+						<td>
+							Will rush at the player and melee them. They take increased damage when shot with{" "}
+							<TabLink tab="buildables" target="silverbullets">
+								silver bullets
+							</TabLink>
+							.
+						</td>
 					</tr>
 					<tr>
 						<td>Fire Catalyst</td>
@@ -1642,7 +2031,7 @@ function Extras() {
 					</tr>
 					<tr>
 						<td>Electric Catalyst</td>
-						<td>Charges up and can unleash a blinding scream that can impair a players vision.</td>
+						<td>Charges up and can unleash a blinding scream that can impair a player's vision.</td>
 					</tr>
 					<tr>
 						<td>Water Catalyst</td>

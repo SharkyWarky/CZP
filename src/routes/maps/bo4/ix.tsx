@@ -1,5 +1,5 @@
-import { createFileRoute } from "@tanstack/react-router";
 /* ---- v2.1.0 ---- */
+import { createFileRoute } from "@tanstack/react-router";
 import { MapNavigationProvider, useMapNavigation } from "../../../context/MapNavigationContext";
 
 import MapTabs from "../../../components/MapTabs";
@@ -20,11 +20,11 @@ const achievementRows = [
 		description: "Survive to Round 20 without opening a gate",
 		goal: (
 			<>
-				<span>Spawn with Mog 12 with Long Barrel, Fast Mags, rapid Fire and Dragon Breath (one hit kill headhshots till round 15)</span>
+				<span>Spawn with MOG 12 with Long Barrel, Fast Mags, Rapid Fire, and Dragon's Breath (one-hit kill headshots till round 15)</span>
 				<span>
-					Wallpower elixir + Strife for remaining rounds (or{" "}
+					Wall Power elixir + Strife for remaining rounds (or{" "}
 					<TabLink tab="extras" target="freestrife">
-						free PaP strife from challenges
+						free PaP Strife from challenges
 					</TabLink>
 					)
 				</span>
@@ -58,14 +58,14 @@ const achievementRows = [
 		id: "the-slaughterhouse",
 		name: "The Slaughterhouse",
 		description: "Dismember 13 limbs in a single game while in the pit",
-		goal: "shoot zombies with body shots for them to lose their arms",
+		goal: "Shoot zombies with body shots for them to lose their arms",
 	},
 	{
 		id: "gong-like-the-wind",
 		name: "Gong like the Wind",
 		description: (
 			<>
-				defeat all 8 challengers summoned by a{" "}
+				Defeat all 8 challengers summoned by a{" "}
 				<TabLink tab="side-ee" target="gong">
 					gong
 				</TabLink>{" "}
@@ -77,7 +77,7 @@ const achievementRows = [
 	{
 		id: "gift-of-serket",
 		name: "Gift of Serket",
-		description: "Aquire the Serket's Kiss",
+		description: "Acquire the Serket's Kiss",
 		goal: (
 			<>
 				<TabLink tab="side-ee" target="pap">
@@ -87,7 +87,7 @@ const achievementRows = [
 				<TabLink tab="wonder-weapon" target="deathoforion">
 					Death of Orion
 				</TabLink>{" "}
-				(aquired via mystery box or side EE)
+				(acquired via Mystery Box or side EE)
 			</>
 		),
 	},
@@ -102,7 +102,7 @@ const achievementRows = [
 		name: "Acidic Alchemy",
 		description: (
 			<>
-				get a kill with the{" "}
+				Get a kill with the{" "}
 				<TabLink tab="side-ee" target="acidtrap">
 					acid trap
 				</TabLink>{" "}
@@ -111,7 +111,7 @@ const achievementRows = [
 		),
 		goal: (
 			<>
-				<span>Aquire all of the parts then build in each of the following locations:</span>
+				<span>Acquire all of the parts then build in each of the following locations:</span>
 				<ul>
 					<li>Entrance to Ra Tower</li>
 					<li>Entrance to Danu Tower</li>
@@ -134,8 +134,8 @@ const achievementRows = [
 		),
 		goal: (
 			<>
-				<span>CANNOT be done with the upgraded Serkets Kiss</span>
-				<span>hoard up a bunch of zombies and fire an uncharged shot at their heads</span>
+				<span>CANNOT be done with the upgraded Serket's Kiss</span>
+				<span>Hoard up a bunch of zombies and fire an uncharged shot at their heads</span>
 			</>
 		),
 	},
@@ -155,16 +155,32 @@ function Overview() {
 	return (
 		<section className="tab-content">
 			<h2>IX</h2>
-			<p>IX (pronounced Nine) is the second Zombies map featured in Call of Duty: Black Ops 4, and the twenty-sixth map overall. Chronologically, it is the third map in the Chaos story. This map introduces two new special enemies: the Destroyers and the Marauders. There are also Zombified Tigers that appear randomly throughout the map. The map also introduces a new wonder weapon, the Death of Orion, as well as a new variant of the shield, the Brazen Bull.</p>
+			<p>
+				IX (pronounced Nine) is the second Zombies map featured in Call of Duty: Black Ops 4, and the twenty-sixth map overall. Chronologically, it is the third map in the Chaos story. This map introduces two new special enemies: the Destroyers and the Marauders. There are also Zombified Tigers that appear randomly throughout the map. The map also introduces a new wonder weapon, the{" "}
+				<TabLink tab="wonder-weapon" target="deathoforion">
+					Death of Orion
+				</TabLink>
+				, as well as a new variant of the shield, the{" "}
+				<TabLink tab="buildables" target="shield">
+					Brazen Bull
+				</TabLink>
+				.
+			</p>
 			<h2>Overview</h2>
-			<p>IX is set in a gladiatorial arena in Egypt during the time of the Roman Empire. The map is relatively small, with players spawning in a tunnel that leads into the main arena. From there, the player can either buy the door to the Danu temple or Ra temple, with the Odin and Zeus temple gates being accessible from the inside. Each of the temples hold their respective Perk Altars and connect to a circular underground chamber, which leads into the main temple that contains the Pack-a-Punch Altar.</p>
+			<p>
+				IX is set in a gladiatorial arena in Egypt during the time of the Roman Empire. The map is relatively small, with players spawning in a tunnel that leads into the main arena. From there, the player can either buy the door to the Danu temple or Ra temple, with the Odin and Zeus temple gates being accessible from the inside. Each of the temples hold their respective Perk Altars and connect to a circular underground chamber, which leads into the main temple that contains the{" "}
+				<TabLink tab="side-ee" target="pap">
+					Pack-a-Punch
+				</TabLink>{" "}
+				Altar.
+			</p>
 			<h2>Features</h2>
 			<p>IX shares similar mechanics to previous maps in the Zombies franchise. As each round progresses, difficulty gradually increases. A new element unique to this map is that in certain key areas the floors are fitted with a device that produces streams of fire. The pattern in which they go off is randomized by each round, but rotates through a few specific patterns.</p>
 			<h3>Crowd Affinity</h3>
-			<p>With the setting of a gladiatorial arena, you are measured by the crowd from how well you perform in the game. This is measured by the skeletal hand right above your character icon and points. The hand will gradually move to a thumbs up the better you do and gradually move to a thumbs down the worse you do.</p>
+			<p>With the setting of a gladiatorial arena, you are measured by the crowd from how well you perform in the game. This is measured by the skeletal hand right above your character icon and points. The hand will gradually move to a thumbs-up the better you do and gradually move to a thumbs-down the worse you do.</p>
 			<p id="posaff">To increase your affinity, you simply kill zombies. The speed in which you kill zombies matters too. The longer you take to advance between rounds might make your affinity go up slower. Killing Gladiators or Brawlers increases the affinity the most.</p>
 			<p id="negaff">To lose affinity, you simply take damage. By taking damage from any zombie enemy, you have a chance of lowering the affinity. Taking damage from traps has a much higher chance to lower your affinity. Going down guarantees you lose affinity. Another way to lose affinity is by attacking the crowd by throwing a Frag Grenade, Acid Bomb, or Wraith Fires at them.</p>
-			<p>When your affinity is close to being completely good or bad, the crowd will start to give you rewards. If your affinity is good or almost good, then every round the crowd will throw a random power-up to the Arena. If your affinity isbad or almost bad, then the crowd will throw a chunk of poop to the Arena. Picking up the poop makes you lose 250 points and might cause a small amount of damage to you. If you’re in the arena while your affinity is this low, the crowd might even hurl things at you, causing a decent amount of damage.</p>
+			<p>When your affinity is close to being completely good or bad, the crowd will start to give you rewards. If your affinity is good or almost good, then every round the crowd will throw a random power-up to the Arena. If your affinity is bad or almost bad, then the crowd will throw a chunk of poop to the Arena. Picking up the poop makes you lose 250 points and might cause a small amount of damage to you. If you’re in the arena while your affinity is this low, the crowd might even hurl things at you, causing a decent amount of damage.</p>
 
 			<h3>Trials</h3>
 			<p>
@@ -185,7 +201,9 @@ function Overview() {
 			</ul>
 
 			<h3>Free Doors</h3>
-			<p>Upon completion of the Main EE, the player will be able to open doors on any map (except Alpha Omega and Tag der Toten) for free for the remainder of the game session. This ability persists until the player closes the game. In a co-op Private Match, only the party host will gain this ability, and the ability will extend to other players as long as they are playing in the same lobby with said host.</p>
+			<p>
+				Upon completion of the <TabLink tab="main-ee">main EE</TabLink>, the player will be able to open doors on any map (except Alpha Omega and Tag der Toten) for free for the remainder of the game session. This ability persists until the player closes the game. In a co-op Private Match, only the party host will gain this ability, and the ability will extend to other players as long as they are playing in the same lobby with said host.
+			</p>
 		</section>
 	);
 }
@@ -231,7 +249,7 @@ function MainEE() {
 						<li>Bandolier Bandit</li>
 						<li>Victorious Turtle</li>
 						<li>Dying Wish</li>
-						<li>Modifier - Stamin-up OR Winters Wail</li>
+						<li>Modifier - Stamin-Up OR Winter's Wail</li>
 					</ul>
 				</li>
 				<li>
@@ -266,7 +284,13 @@ function MainEE() {
 					<img src="\images\guides\bo4\ix\ix-skull2.jpg" alt="Skull Locations 7-12" />
 				</ImageContainer>
 				<li>Pull out your specialist to make the skull fall. Pick it up.</li>
-				<li>Find the skull in the flooded crypt area by interacting with the grinder to place the skull and shooting it with 3 charged Death of Orion shots</li>
+				<li>
+					Find the skull in the flooded crypt area by interacting with the grinder to place the skull and shooting it with 3 charged{" "}
+					<TabLink tab="wonder-weapon" target="deathoforion">
+						Death of Orion
+					</TabLink>{" "}
+					shots
+				</li>
 				<li>Pick up the bone mesh under the grinder</li>
 				<li>
 					Get the Poop and Chunk of Wood
@@ -290,7 +314,7 @@ function MainEE() {
 							<TabLink tab="overview" target="negaff">
 								Negative Affinity
 							</TabLink>{" "}
-							(step into arena fire and throw grenades at the crowd, indicated by red thumbs down) and wait for the crowd to throw poop into the arena. pick it up.
+							(step into arena fire and throw grenades at the crowd, indicated by red thumbs down) and wait for the crowd to throw poop into the arena. Pick it up.
 						</li>
 					</ul>
 				</li>
@@ -301,16 +325,22 @@ function MainEE() {
 					</span>
 				</li>
 				<li>
-					<span>Place the poop again inbetween the trees at the bottom level of Danu Tower</span>
+					<span>Place the poop again in between the trees at the bottom level of Danu Tower</span>
 					<span>
 						<b>Wait 2-3 Rounds</b> (Until poop becomes stinky again)
 					</span>
 				</li>
-				<li>Get a zombie ontop of the poop and kill it using the Fire Bomb PaP (screen flashes white when successful)</li>
-				<li>Stand ontop of the glowing poop and interact with it until screen flashes white again and you get transported</li>
+				<li>Get a zombie on top of the poop and kill it using the Fire Bomb PaP (screen flashes white when successful)</li>
+				<li>Stand on top of the glowing poop and interact with it until screen flashes white again and you get transported</li>
 				<li>On each floor, find and shoot down the glowing red pockets off the walls. (Max ammos spawn after each is destroyed)</li>
 				<li>
-					<span>Find and shoot 4 stone plates with the shield gun (9 locations)</span>
+					<span>
+						Find and shoot 4 stone plates with the{" "}
+						<TabLink tab="buildables" target="shield">
+							shield
+						</TabLink>{" "}
+						gun (9 locations)
+					</span>
 					<span>
 						<b>AFTER a symbol has been shot, a gladiator will spawn. Simply kill him and continue with the next symbol location.</b>
 					</span>
@@ -341,7 +371,7 @@ function MainEE() {
 							<b>Danu Tunnel</b> - Located next to a zombie window, with a torch nearby
 						</li>
 						<li>
-							<b>Ra Burial Chamber</b> - Through hole in the wall sitting ontop of a pillar
+							<b>Ra Burial Chamber</b> - Through hole in the wall sitting on top of a pillar
 						</li>
 					</ul>
 				</li>
@@ -359,25 +389,39 @@ function MainEE() {
 				</li>
 				<li>
 					<span>Interact with the podium in the center of the arena to be locked into the underground temple. Find and shoot 4 hanging metal rods behind barriers to move them all the way up.</span>
-					<span>Fastest way is to use shield ammo and purchase new shield when you run out</span>
+					<span>
+						Fastest way is to use{" "}
+						<TabLink tab="buildables" target="shield">
+							shield
+						</TabLink>{" "}
+						ammo and purchase new{" "}
+						<TabLink tab="buildables" target="shield">
+							shield
+						</TabLink>{" "}
+						when you run out
+					</span>
 					<ul>
 						<li>Odin Tunnel - near Maddox RFB wallbuy</li>
-						<li>Danu Tunnel - near Mozu Wallbuy</li>
+						<li>Danu Tunnel - near Mozu wallbuy</li>
 						<li>Collapsed Tunnel - near MX9 wallbuy</li>
-						<li>The Cursed Room - near KN-57 Wallbuy</li>
+						<li>The Cursed Room - near KN-57 wallbuy</li>
 					</ul>
 				</li>
 				<li>
 					<span>Head back to the Arena and locate the 4 prongs on the outside walls</span>
 					<span>Kill 15 zombies affected by Kill-O-Watt BEFORE Kill-O-Watt kills them within the circles around the prongs (shoot zombies once for Kill-O-Watt and again for the progress)</span>
-					<span>Alternativey, you can get Gladiator kills to fill the prongs halfway instantly (2 kills = full) Circle Dissapears when the prong is full</span>
+					<span>Alternatively, you can get Gladiator kills to fill the prongs halfway instantly (2 kills = full) Circle disappears when the prong is full</span>
 				</li>
 				<li>
 					<span>Have all players interact with the 4 podiums in the middle of the arena. You will be given an unlimited specialist weapon and must survive against gladiators, tigers and brawlers for 1-2 minutes.</span>
 					<span>Screen goes white upon completion.</span>
 				</li>
 				<li>
-					Go down to the temple area and trick-shot 9 symbols (in groups of 3) so that a single shot from the Death of Orion hits 3 symbols. symbols will remain glowing if hit properly
+					Go down to the temple area and trick-shot 9 symbols (in groups of 3) so that a single shot from the{" "}
+					<TabLink tab="wonder-weapon" target="deathoforion">
+						Death of Orion
+					</TabLink>{" "}
+					hits 3 symbols. Symbols will remain glowing if hit properly
 					<ul>
 						<li>Danu Tunnel - Located on one of the pillars, simply jump to shoot at it to achieve the correct angle</li>
 						<li>The Pit - Located on a brick wall, you will want to aim between a broken wall and directly beneath the hanging chain to get the correct angle</li>
@@ -391,18 +435,18 @@ function MainEE() {
 				</li>
 				<li>
 					<span>Head to the Pit area, stand on the podium near the grate to start a lockdown (screen glows white when activated)</span>
-					<span>The Max ammos will not despawn during this step</span>
-					<span>When the zombies stop spawning and the blightfather is dead, walk over to the grate and collect the sparing key</span>
+					<span>The max ammos will not despawn during this step</span>
+					<span>When the zombies stop spawning and the Blightfather is dead, walk over to the grate and collect the sparing key</span>
 					<span>
 						<b>TIP: Zombies will not continue spawning until the key has been picked up (break time)</b>
 					</span>
 				</li>
-				<li>Head back to the arena and interact with the gate to enter the bossfight when ready</li>
+				<li>Head back to the arena and interact with the gate to enter the boss fight when ready</li>
 			</ol>
 
 			<h2>Boss Fight</h2>
-			<p>Any max ammos the bossfight supplies will not despawn.</p>
-			<p>The boss constist of 3 phases:</p>
+			<p>Any max ammos the boss fight supplies will not despawn.</p>
+			<p>The boss consist of 3 phases:</p>
 			<ol>
 				<li>Waves of Gladiators, Tigers, and Brawlers</li>
 				<li>First elephant</li>
@@ -427,8 +471,13 @@ function SideEE() {
 				</a>
 			</h2>
 			<ol>
-				<li id="gong">Ring the Gong at the top of all 4 towers and kill the boss that spawns. Collect the head powerup they drop</li>
-				<li>Head down into the temple area underground and interact with the spikes to unlock Pack-A-Punch</li>
+				<li id="gong">Ring the Gong at the top of all 4 towers and kill the boss that spawns. Collect the head power-up they drop</li>
+				<li>
+					Head down into the temple area underground and interact with the spikes to unlock{" "}
+					<TabLink tab="side-ee" target="pap">
+						Pack-a-Punch
+					</TabLink>
+				</li>
 			</ol>
 
 			<h2 id="acidtrap">
@@ -451,7 +500,7 @@ function SideEE() {
 					<b>Pot</b>
 					<ol>
 						<li>
-							Knife the Rope on the wall of the colloseum to start the{" "}
+							Knife the Rope on the wall of the colosseum to start the{" "}
 							<TabLink tab="extras" target="challenges">
 								challenges
 							</TabLink>
@@ -492,8 +541,8 @@ function SideEE() {
 					Head up to the top of Odin Temple and interact with the skeleton in the boat 3 times to place sword, helmet, and cup in the appropriate places
 					<ul>
 						<li>Sword in Hands</li>
-						<li>Cup in Boats Mouth</li>
-						<li>Helmet on Skeletons Head</li>
+						<li>Cup in Boat's Mouth</li>
+						<li>Helmet on Skeleton's Head</li>
 					</ul>
 				</li>
 				<li>
@@ -502,7 +551,7 @@ function SideEE() {
 						<img src="\images\guides\bo4\ix\ix-lineup.png" alt="Line-Up for Wraith Fire" />
 					</ImageContainer>
 				</li>
-				<li>Survive 7 Rounds before returning and picking up the viking powerup beside the baot</li>
+				<li>Survive 7 Rounds before returning and picking up the Viking power-up beside the boat</li>
 			</ol>
 
 			<h2>
@@ -513,12 +562,24 @@ function SideEE() {
 			</h2>
 			<p>Awards the player the ability to not take damage from the specific arena fire and less damage from spike and acid traps for the duration of the round</p>
 			<ol>
-				<li>Build the Acid trap and kill each of the 4 catalyst type zombies and a tiger using the trap (can be through multiple activations)</li>
+				<li>
+					Build the{" "}
+					<TabLink tab="side-ee" target="acidtrap">
+						Acid Trap
+					</TabLink>{" "}
+					and kill each of the 4 catalyst type zombies and a tiger using the trap (can be through multiple activations)
+				</li>
 				<li>Purchase a spike trap and slide under it without taking damage</li>
-				<li>Purchase the acid trap and slide under it without taking damage (will play a noise when successful)</li>
+				<li>
+					Purchase the{" "}
+					<TabLink tab="side-ee" target="acidtrap">
+						Acid Trap
+					</TabLink>{" "}
+					and slide under it without taking damage (will play a noise when successful)
+				</li>
 				<li>
 					<span>Step through the arena fire once to activate the immunity (will take damage on first walk-through)</span>
-					<span>Must be done for every bit of fire in the arena and every new round for immmunity to take effect</span>
+					<span>Must be done for every bit of fire in the arena and every new round for immunity to take effect</span>
 				</li>
 			</ol>
 
@@ -535,26 +596,53 @@ function SideEE() {
 						shield
 					</TabLink>
 				</span>
-				<span>Parts + Upgrade are per person (everyone in a multiplayer gmae will need to do it themselves)</span>
+				<span>Parts + Upgrade are per person (everyone in a multiplayer game will need to do it themselves)</span>
 			</p>
 			<ol>
 				<li>
-					Head to the top of zeus tower and shoot 3 bull heasd so their eyes light on fire
+					Head to the top of Zeus tower and shoot 3 bull heads so their eyes light on fire
 					<ul>
-						<li>Above blue banner next to couldron infron of pillar</li>
+						<li>Above blue banner next to cauldron in front of pillar</li>
 						<li>On the roof on a golden square</li>
-						<li>Ontop of the 3rd pillar from the left</li>
+						<li>On top of the 3rd pillar from the left</li>
 					</ul>
 				</li>
-				<li>Go to the temple and look for the sparkling piece on the cieling above PaP. shoot the piece and pick it up</li>
 				<li>
-					<span>Ignite the shields blade from a special enemy melee kill 4 times. (catalyst zombies, brawlers and gladiators count)</span>
+					Go to the temple and look for the sparkling piece on the ceiling above{" "}
+					<TabLink tab="side-ee" target="pap">
+						PaP
+					</TabLink>
+					. Shoot the piece and pick it up
+				</li>
+				<li>
+					<span>
+						Ignite the{" "}
+						<TabLink tab="buildables" target="shield">
+							shield's
+						</TabLink>{" "}
+						blade from a special enemy melee kill 4 times. (catalyst zombies, brawlers and gladiators count)
+					</span>
 					<span>Easiest to do by getting 8 melee kills normally then getting the 9th with a special zombie type</span>
 				</li>
-				<li>The part will be available on a statue in the odin-zeus temple entrance in the bottom</li>
-				<li>Kill a brawler, gladiator, and tiger with the ignited shield blade (you can kill normal zombies during this step aswell)</li>
-				<li>Grab the part ontop of the doorway leading out of the fallen hero area by shooting it</li>
-				<li>Go to the shield workbench to grab the Iron Bull Shield</li>
+				<li>The part will be available on a statue in the Odin-Zeus temple entrance in the bottom</li>
+				<li>
+					Kill a brawler, gladiator, and tiger with the ignited{" "}
+					<TabLink tab="buildables" target="shield">
+						shield
+					</TabLink>{" "}
+					blade (you can kill normal zombies during this step as well)
+				</li>
+				<li>Grab the part on top of the doorway leading out of the fallen hero area by shooting it</li>
+				<li>
+					Go to the{" "}
+					<TabLink tab="buildables" target="shield">
+						shield
+					</TabLink>{" "}
+					workbench to grab the{" "}
+					<TabLink tab="buildables" target="shield">
+						Iron Bull Shield
+					</TabLink>
+				</li>
 			</ol>
 
 			<h2>
@@ -575,9 +663,24 @@ function SideEE() {
 				</TabLink>
 			</p>
 			<ol>
-				<li>During a max ammo round, shoot one of the gladiators playing the drums above the arena door with your shield (will make guitar riff)</li>
+				<li>
+					During a max ammo round, shoot one of the gladiators playing the drums above the arena door with your{" "}
+					<TabLink tab="buildables" target="shield">
+						shield
+					</TabLink>{" "}
+					(will make guitar riff)
+				</li>
 				<li>Get Kill-O-Watt and get 9 headshot kills (each kill will make guitar riff)</li>
-				<li>Pull out the shield and fully charge the knife. Head to the Odin Altar Room and shoot the bottom of the zeus statue with the shield</li>
+				<li>
+					Pull out the{" "}
+					<TabLink tab="buildables" target="shield">
+						shield
+					</TabLink>{" "}
+					and fully charge the knife. Head to the Odin Altar Room and shoot the bottom of the Zeus statue with the{" "}
+					<TabLink tab="buildables" target="shield">
+						shield
+					</TabLink>
+				</li>
 				<ImageContainer>
 					<img src="\images\guides\bo4\ix\ix-statue.png" alt="Bottom of Zeus Statue Lineup" />
 				</ImageContainer>
@@ -601,9 +704,13 @@ function MusicEE() {
 			</h2>
 			<p>Plays Mad Hatter by Avenged Sevenfold</p>
 			<ul>
-				<li>You Must Shoot each of the Coloured Coins around the map</li>
+				<li>You Must Shoot each of the Colored Coins around the map</li>
 				<li>
-					<b>Red</b> - In the Burial Chamber of the Ra Tower, behind a chest to the right of the room's Mystery Box location
+					<b>Red</b> - In the Burial Chamber of the Ra Tower, behind a chest to the right of the room's{" "}
+					<TabLink tab="weapons" target="mysterybox">
+						Mystery Box
+					</TabLink>{" "}
+					location
 				</li>
 				<li>
 					<b>Green</b> - Outside the left barrier in the entrance of the Danu Tower, on the underside of a wooden platform
@@ -643,9 +750,15 @@ function WonderWeapons() {
 				</a>
 			</h2>
 			<p>
-				<span>Either pull from the mystery box or complete the following EE</span>
+				<span>Either pull from the Mystery Box or complete the following EE</span>
 				<span>
-					<b>Prerequisites: Build Acid Trap (step 4)</b>
+					<b>
+						Prerequisites: Build{" "}
+						<TabLink tab="side-ee" target="acidtrap">
+							Acid Trap
+						</TabLink>{" "}
+						(step 4)
+					</b>
 				</span>
 			</p>
 			<ol>
@@ -657,7 +770,7 @@ function WonderWeapons() {
 				</li>
 				<li>Go through the door to the Danu-Ra Temple Entrance and shoot a cauldron at the back of the window straight forwards</li>
 				<li>
-					Go to the drawbridge between the towers and look at the direction the fire arrow on the ground is facing. go to the bottom level of that tower and grab the stone head
+					Go to the drawbridge between the towers and look at the direction the fire arrow on the ground is facing. Go to the bottom level of that tower and grab the stone head
 					<ImageContainer>
 						<img src="\images\guides\bo4\ix\ix-head.png" alt="Stone Head Locations" />
 					</ImageContainer>
@@ -671,7 +784,7 @@ function WonderWeapons() {
 				<li>Interact with the grate under the trap to place the skull. Activate the trap and collect the new part when it finishes.</li>
 				<li>
 					Maintain{" "}
-					<TabLink tab="overview/" target="posaff">
+					<TabLink tab="overview" target="posaff">
 						Positive crowd affinity
 					</TabLink>{" "}
 					(Straight up thumb) for 1-2 rounds until you get the "Gift from Serket" Dialogue.
@@ -684,7 +797,16 @@ function WonderWeapons() {
 					</span>
 				</li>
 				<li>Pick up the Vase (should be full)</li>
-				<li>Head to the mystery box and poison it by interacting with the heads on the left side. Spin the box to get a guaranteed Death of Orion</li>
+				<li>
+					Head to the{" "}
+					<TabLink tab="weapons" target="mysterybox">
+						Mystery Box
+					</TabLink>{" "}
+					and poison it by interacting with the heads on the left side. Spin the box to get a guaranteed{" "}
+					<TabLink tab="wonder-weapon" target="deathoforion">
+						Death of Orion
+					</TabLink>
+				</li>
 			</ol>
 		</section>
 	);
@@ -716,14 +838,20 @@ function Buildables() {
 					<b>Middle</b> - Odin Tower (one location per floor)
 					<ul>
 						<li>Floor next to support beam on bottom level</li>
-						<li>On shield rack on first level</li>
+						<li>
+							On{" "}
+							<TabLink tab="buildables" target="shield">
+								shield
+							</TabLink>{" "}
+							rack on first level
+						</li>
 						<li>Leaning on the barrel near stairs on top level</li>
 					</ul>
 				</li>
 				<li>
 					<b>Key</b> - Zeus Tower (One location per floor)
 					<ul>
-						<li>Infront of wall engraving on mantel on bottom floor</li>
+						<li>In front of wall engraving on mantel on bottom floor</li>
 						<li>In the hand of the statue across from stairs going up on first floor</li>
 						<li>By the foot of a statue on top floor</li>
 					</ul>
@@ -745,7 +873,7 @@ function Weapons() {
 				<li>Knife</li>
 				<li>Welling - Player Choice</li>
 				<li>Strife - Player Choice</li>
-				<li>Rk 7 Garrison - Player Choice</li>
+				<li>RK 7 Garrison - Player Choice</li>
 				<li>Saug 9mm - Player Choice</li>
 				<li>Essex Model 07 - Player Choice</li>
 				<li>MOG 12 - Player Choice</li>
@@ -779,7 +907,7 @@ function Weapons() {
 					<b>Vapr-XKG</b> - Odin Tower: Entrance (1550p)
 				</li>
 				<li>
-					<b>Escargot</b> - RA Tower: Entrance (1000p)
+					<b>Escargot</b> - Ra Tower: Entrance (1000p)
 				</li>
 				<li>
 					<b>Spitfire</b> - The Pit (1150p)
@@ -809,7 +937,7 @@ function Weapons() {
 					<b>Bowie Knife</b> - Ra Tower: Burial Chamber (3000p)
 				</li>
 				<li>
-					<b>RK7 Garrison</b> - Danu Tower: Entrance (700p)
+					<b>RK 7 Garrison</b> - Danu Tower: Entrance (700p)
 				</li>
 				<li>
 					<b>M1897 Trebuchet</b> - Ra Altar Room (1400p)
@@ -821,11 +949,11 @@ function Weapons() {
 					<b>Strife</b> - Arena (500p)
 				</li>
 				<li>
-					<b>Mog 12</b> - Danu Altar Room (1000p)
+					<b>MOG 12</b> - Danu Altar Room (1000p)
 				</li>
 			</ul>
 
-			<h3>Mystery Box</h3>
+			<h3 id="mysterybox">Mystery Box</h3>
 			<h4>Locations</h4>
 			<ul>
 				<li>Ra Tower: Burial Chamber</li>
@@ -934,7 +1062,13 @@ function Gauntlet() {
 					<tr>
 						<td>5</td>
 						<td>Shielded</td>
-						<td>Possess the Shield at the End of the Round.</td>
+						<td>
+							Possess the{" "}
+							<TabLink tab="buildables" target="shield">
+								Shield
+							</TabLink>{" "}
+							at the End of the Round.
+						</td>
 					</tr>
 					<tr>
 						<td>6</td>
@@ -944,7 +1078,12 @@ function Gauntlet() {
 					<tr>
 						<td>7</td>
 						<td>By The Horns</td>
-						<td>Shield Attacks Only.</td>
+						<td>
+							<TabLink tab="buildables" target="shield">
+								Shield
+							</TabLink>{" "}
+							Attacks Only.
+						</td>
 					</tr>
 					<tr>
 						<td>8</td>
@@ -974,7 +1113,12 @@ function Gauntlet() {
 					<tr>
 						<td>13</td>
 						<td>Pack It In</td>
-						<td>Pack-a-Punch Two Different Weapons during the Round.</td>
+						<td>
+							<TabLink tab="side-ee" target="pap">
+								Pack-a-Punch
+							</TabLink>{" "}
+							Two Different Weapons during the Round.
+						</td>
 					</tr>
 					<tr>
 						<td>14</td>
@@ -1144,7 +1288,12 @@ function Extras() {
 								<li>Kill 5 Zombie Tigers</li>
 								<li>Survive a full round inside the Temple</li>
 								<li>Stop 3 Catalyst transformations</li>
-								<li>Get 9 kills with the Brazen Bull</li>
+								<li>
+									Get 9 kills with the{" "}
+									<TabLink tab="buildables" target="shield">
+										Brazen Bull
+									</TabLink>
+								</li>
 								<li>Break off 9 pieces of Gladiator Armor</li>
 							</ul>
 						</td>
@@ -1157,7 +1306,12 @@ function Extras() {
 								<li>Kill 5 Zombie Tigers</li>
 								<li>Survive a full round inside the Temple</li>
 								<li>Stop 3 Catalyst transformations</li>
-								<li>Get 9 kills with the Brazen Bull</li>
+								<li>
+									Get 9 kills with the{" "}
+									<TabLink tab="buildables" target="shield">
+										Brazen Bull
+									</TabLink>
+								</li>
 								<li>Break off 9 pieces of Gladiator Armor</li>
 							</ul>
 						</td>
@@ -1170,7 +1324,12 @@ function Extras() {
 								<li>Kill 5 Zombie Tigers</li>
 								<li>Survive a full round inside the Temple</li>
 								<li>Stop 3 Catalyst transformations</li>
-								<li>Get 9 kills with the Brazen Bull</li>
+								<li>
+									Get 9 kills with the{" "}
+									<TabLink tab="buildables" target="shield">
+										Brazen Bull
+									</TabLink>
+								</li>
 								<li>Break off 9 pieces of Gladiator Armor</li>
 							</ul>
 						</td>
@@ -1183,7 +1342,12 @@ function Extras() {
 								<li>Maintain maximum crowd affinity for 2 minutes</li>
 								<li>Kill 9 Gladiators</li>
 								<li>Strike the killing blow on a Blightfather</li>
-								<li>Hit 9 zombies with a single charged shot from the Death of Orion</li>
+								<li>
+									Hit 9 zombies with a single charged shot from the{" "}
+									<TabLink tab="wonder-weapon" target="deathoforion">
+										Death of Orion
+									</TabLink>
+								</li>
 								<li>Kill a Blightfather while being grappled by its tongue</li>
 							</ul>
 						</td>
@@ -1196,7 +1360,12 @@ function Extras() {
 								<li>Maintain maximum crowd affinity for 2 minutes</li>
 								<li>Kill 9 Gladiators</li>
 								<li>Strike the killing blow on a Blightfather</li>
-								<li>Hit 9 zombies with a single charged shot from the Death of Orion</li>
+								<li>
+									Hit 9 zombies with a single charged shot from the{" "}
+									<TabLink tab="wonder-weapon" target="deathoforion">
+										Death of Orion
+									</TabLink>
+								</li>
 								<li>Kill a Blightfather while being grappled by its tongue</li>
 							</ul>
 						</td>
@@ -1209,7 +1378,12 @@ function Extras() {
 								<li>Maintain maximum crowd affinity for 2 minutes</li>
 								<li>Kill 9 Gladiators</li>
 								<li>Strike the killing blow on a Blightfather</li>
-								<li>Hit 9 zombies with a single charged shot from the Death of Orion</li>
+								<li>
+									Hit 9 zombies with a single charged shot from the{" "}
+									<TabLink tab="wonder-weapon" target="deathoforion">
+										Death of Orion
+									</TabLink>
+								</li>
 								<li>Kill a Blightfather while being grappled by its tongue, Get 20 kills without leaving the Challenge Podium</li>
 							</ul>
 						</td>
@@ -1231,7 +1405,7 @@ function Extras() {
 				</a>
 			</h2>
 			<p>
-				<span>Killing 830 zombies in the zeus tower bath house makes the name change to "Blood Bath House"</span>
+				<span>Killing 830 zombies in the Zeus tower bath house makes the name change to "Blood Bath House"</span>
 				<span>Supposedly to reference a Dev's son's birthday (August 30th)</span>
 			</p>
 			<h2>
@@ -1286,7 +1460,7 @@ function Extras() {
 					</ImageContainer>
 				</li>
 				<li>
-					In the Odin Tower Entrance laying ontop of a barrel
+					In the Odin Tower Entrance laying on top of a barrel
 					<ImageContainer>
 						<img src="\images\guides\bo4\ix\ix-barton2.png" alt="Barton Scroll 2 Location" />
 					</ImageContainer>
@@ -1298,7 +1472,7 @@ function Extras() {
 					</ImageContainer>
 				</li>
 				<li>
-					In the Danu Tower Arboretum next to the wall of rocks (not visible and very finnicky. keep laying down and interacting in the corner)
+					In the Danu Tower Arboretum next to the wall of rocks (not visible and very finnicky. Keep laying down and interacting in the corner)
 					<ImageContainer>
 						<img src="\images\guides\bo4\ix\ix-barton4.png" alt="Barton Scroll 4 Location" />
 						<img src="\images\guides\bo4\ix\ix-barton4spec.png" alt="Barton Scroll 4 Location" />
@@ -1314,32 +1488,42 @@ function Extras() {
 			<p>Reveals a Cipher which translates to "All that you believe in will crumble to dust" (no gameplay changes or rewards, purely for Lore)</p>
 			<ol>
 				<li>
-					<span>Go to the pit and interact with the left corner of the shield table (no message will pop up)</span>
-					<span>After hitting the right spot, a piece of paper will spawn in a nearby empt pot/torch. interact with it. (no noise)</span>
+					<span>
+						Go to the pit and interact with the left corner of the{" "}
+						<TabLink tab="buildables" target="shield">
+							shield
+						</TabLink>{" "}
+						table (no message will pop up)
+					</span>
+					<span>After hitting the right spot, a piece of paper will spawn in a nearby empty pot/torch. Interact with it. (no noise)</span>
 					<ImageContainer>
 						<img src="\images\guides\bo4\ix\ix-paper1.png" alt="First Page in Prisoner's Quest" />
 					</ImageContainer>
 				</li>
 				<li>
-					Go to the hallway towards Odin to find another piece of paper. interact with it.55
+					Go to the hallway towards Odin to find another piece of paper. Interact with it.
 					<ImageContainer>
 						<img src="\images\guides\bo4\ix\ix-paper2.png" alt="Second Page in Prisoner's Quest" />
 					</ImageContainer>
 				</li>
 				<li>
-					Go to the temple railing overlooking the PaP to find another piece. Interact with it.
+					Go to the temple railing overlooking{" "}
+					<TabLink tab="side-ee" target="pap">
+						PaP
+					</TabLink>{" "}
+					to find another piece. Interact with it.
 					<ImageContainer>
 						<img src="\images\guides\bo4\ix\ix-paper3.png" alt="Final Page in Prisoner's Quest" />
 					</ImageContainer>
 				</li>
 				<li>
-					In the temple you'll hear a crying man. go near the wall where the sound is coming from and interact with it.
+					In the temple you'll hear a crying man. Go near the wall where the sound is coming from and interact with it.
 					<ImageContainer>
 						<img src="\images\guides\bo4\ix\ix-crying1.png" alt="First Crying Wall in Prisoner's Quest" />
 					</ImageContainer>
 				</li>
 				<li>
-					Head outside the bottom entrance of Odin Tower and you'll hear him crying again. interact with the wall.
+					Head outside the bottom entrance of Odin Tower and you'll hear him crying again. Interact with the wall.
 					<ImageContainer>
 						<img src="\images\guides\bo4\ix\ix-crying2.png" alt="Second Crying Wall in Prisoner's Quest" />
 					</ImageContainer>
@@ -1354,7 +1538,13 @@ function Extras() {
 				<li>Head to the temple and interact with the torch next to the snake symbol.</li>
 				<li>Head to The Pit and interact with the lion fountain spewing blood on the wall</li>
 				<li>Head to the bottom of Ra Tower and interact with the sarcophagus in the middle of the room</li>
-				<li>Head to the bottom floor of Odin and interact with the middle shield on the wall with the wolves</li>
+				<li>
+					Head to the bottom floor of Odin and interact with the middle{" "}
+					<TabLink tab="buildables" target="shield">
+						shield
+					</TabLink>{" "}
+					on the wall with the wolves
+				</li>
 				<li>
 					Interact with the wall near the entrance to Odin
 					<ImageContainer>
@@ -1437,7 +1627,7 @@ function Extras() {
 					</tr>
 					<tr>
 						<td>Electric Catalyst</td>
-						<td>Charges up and can unleash a blinding scream that can impair a players vision.</td>
+						<td>Charges up and can unleash a blinding scream that can impair a player's vision.</td>
 						<td></td>
 					</tr>
 					<tr>

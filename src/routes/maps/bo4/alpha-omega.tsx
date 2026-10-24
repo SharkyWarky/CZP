@@ -1,5 +1,5 @@
-import { createFileRoute } from "@tanstack/react-router";
 /* ---- v2.1.0 ---- */
+import { createFileRoute } from "@tanstack/react-router";
 import { MapNavigationProvider, useMapNavigation } from "../../../context/MapNavigationContext";
 
 import MapTabs from "../../../components/MapTabs";
@@ -18,7 +18,11 @@ const achievementRows = [
 		id: "electromagnetic-awakening-party",
 		name: "Electromagnetic Awakening Party",
 		description: "In Alpha Omega, begin Nikolai's Grand Scheme",
-		goal: "",
+		goal: (
+			<>
+				<TabLink tab="main-ee">Complete the Main Quest</TabLink>
+			</>
+		),
 	},
 	{
 		id: "checkpoint-zulu",
@@ -34,7 +38,7 @@ const achievementRows = [
 	},
 	{
 		id: "entrapment-entrepeneur",
-		name: "Entrapment Entrepeneur",
+		name: "Entrapment Entrepreneur",
 		description: "In Alpha Omega, kill 11 zombies with 5 different traps",
 		goal: "",
 	},
@@ -90,13 +94,25 @@ function Overview() {
 	return (
 		<section className="tab-content">
 			<h2>Alpha Omega</h2>
-			<p>Alpha Omega is the seventh Zombies map featured in Call of Duty: Black Ops 4, and the thirty-first map overall. The map was released on July 9th, 2019 on PlayStation 4, and was released on July 16th, 2019 for Xbox One and PC.[1] It serves as the penultimate map of the Aether Story.</p>
+			<p>Alpha Omega is the seventh Zombies map featured in Call of Duty: Black Ops 4, and the thirty-first map overall. The map was released on July 9th, 2019 on PlayStation 4, and was released on July 16th, 2019 for Xbox One and PC. It serves as the penultimate map of the Aether Story.</p>
 			<h2>Overview</h2>
 			<p>Alpha Omega is a reimagined and heavily expanded version of Nuketown, taking elements from both the Nuketown Zombies map and the Nuketown point of interest in Blackout. Set at the Broken Arrow facility prior to what was thought to be a nuclear explosion that leveled the testing site, Alpha Omega greatly expands on the original predecessor, adding new areas such as the other houses before the cul-de-sac, and allowing players to access the large underground bunker and research facility that resides below the surface.</p>
 			<p>Players will have the ability to play as both Primis and Ultimis characters, mixing and matching crew compositions for the first time. However, there cannot be two of the same character, such as a Primis and Ultimis Dempsey present at once. It is the first map in Zombies history to feature more than four canonical playable characters.</p>
-			<p>The map also re-introduces the Ray Gun Mark II, this time with four unique elemental variants to craft, each with their own unique abilities. The Galvaknuckles from Call of Duty: Black Ops II also return in this map, being slightly stronger and costing 5000 points as opposed to the original 6000. Players are also able to craft Telepads that function similarly to the Teleporters on "Five" and Classified. The locations of the teleporters are also chosen by players from a set of fixed locations, and can be modified at any time. Finally, players can activate a robotic sentry named Sergeant A.D.A.M., who will fight zombies with the player for a short time.</p>
+			<p>
+				The map also re-introduces the Ray Gun Mark II, this time with four unique elemental variants to craft, each with their own unique abilities. The{" "}
+				<TabLink tab="weapons" target="galvaknuckles">
+					Galvaknuckles
+				</TabLink>{" "}
+				from Call of Duty: Black Ops II also return in this map, being slightly stronger and costing 5000 points as opposed to the original 6000. Players are also able to craft{" "}
+				<TabLink tab="buildables" target="telepad">
+					Telepads
+				</TabLink>{" "}
+				that function similarly to the Teleporters on "Five" and Classified. The locations of the teleporters are also chosen by players from a set of fixed locations, and can be modified at any time. Finally, players can activate a robotic sentry named Sergeant A.D.A.M., who will fight zombies with the player for a short time.
+			</p>
 			<p>Several new enemies are introduced in this map; the Lightning Hounds are electrified versions of normal Hellhounds, Nova 6 Bombers are mutated Nova 6 Crawlers with the ability to empower nearby zombies, and Jolting Jacks are another variant of Nova 6 Crawlers with the ability to shoot lightning ball-based projectiles towards the player.</p>
-			<p>The Avogadro is featured in the map as the Demonic Announcer, final boss, and main antagonist. The end of Electromagnetic Awakening Party sees the Avogadro sent to the Hanford site in Washington, setting up his later appearance in TranZit. Marlton Johnson is also briefly heard in the bunker as part of the quest to build Sergeant A.D.A.M, a reference to his appearance in Nuketown Zombies.</p>
+			<p>
+				The Avogadro is featured in the map as the Demonic Announcer, final boss, and main antagonist. The end of <TabLink tab="main-ee">Electromagnetic Awakening Party</TabLink> sees the Avogadro sent to the Hanford site in Washington, setting up his later appearance in TranZit. Marlton Johnson is also briefly heard in the bunker as part of the quest to build Sergeant A.D.A.M., a reference to his appearance in Nuketown Zombies.
+			</p>
 		</section>
 	);
 }
@@ -117,7 +133,11 @@ function MainEE() {
 					</TabLink>
 				</li>
 				<li>Activate Rushmore (After opening PaP, skip the round and interact with the computer in Operations.)</li>
-				<li>Galvaknuckles</li>
+				<li>
+					<TabLink tab="weapons" target="galvaknuckles">
+						Galvaknuckles
+					</TabLink>
+				</li>
 			</ul>
 
 			<h2>Recommended Setup</h2>
@@ -147,9 +167,15 @@ function MainEE() {
 				</a>
 			</h2>
 			<ol>
-				<li>Locate a static Tv within the Bunker in Beds, Diner, or Lounge. Kill a zombie using the galvaknuckles infront of the Tv to turn it on. it will then spew out a bunch of numbers and codes WRITE DOWN EVERY SINGLE COMBO (Letter and 4 digit number)</li>
 				<li>
-					You then need to head to each house (letters are on the mail boxes) and input the code as a time onto the clock (ie. A 0115 would be 1:15 into the clock in house A) and repeat for all the houses you got the codes for. (knife moves time by 1 hour and interacting moves by 15 minutes)
+					Locate a static TV within the Bunker in Beds, Diner, or Lounge. Kill a zombie using the{" "}
+					<TabLink tab="weapons" target="galvaknuckles">
+						galvaknuckles
+					</TabLink>{" "}
+					in front of the TV to turn it on. It will then spew out a bunch of numbers and codes. WRITE DOWN EVERY SINGLE COMBO (Letter and 4 digit number)
+				</li>
+				<li>
+					You then need to head to each house (letters are on the mailboxes) and input the code as a time onto the clock (i.e. A 0115 would be 1:15 into the clock in house A) and repeat for all the houses you got the codes for. (Knife moves time by 1 hour and interacting moves by 15 minutes)
 					<ul>
 						<li>A - Yellow House</li>
 						<li>B - Green House</li>
@@ -159,7 +185,7 @@ function MainEE() {
 						<li>F - APD Interrogation</li>
 					</ul>
 				</li>
-				<li>Once complete, head to the final house which did not have a code and interact with the clock to cause it to spin rapidly. It will stop at a time, you must input this time into rushmore (ie 6:15 is 0615)</li>
+				<li>Once complete, head to the final house which did not have a code and interact with the clock to cause it to spin rapidly. It will stop at a time, you must input this time into Rushmore (i.e. 6:15 is 0615)</li>
 			</ol>
 		</section>
 	);
@@ -181,12 +207,35 @@ function SideEE() {
 					Video
 				</a>
 			</h2>
-			<p>After opening PaP, after a few rounds the houses will start expelling green gas again and you will need to empty the valves again to re-open PaP</p>
+			<p>
+				After opening{" "}
+				<TabLink tab="side-ee" target="pap">
+					PaP
+				</TabLink>
+				, after a few rounds the houses will start expelling green gas again and you will need to empty the valves again to re-open PaP
+			</p>
 			<ol>
-				<li>Turn on Power</li>
-				<li>Head down into the basement into the room behind the PaP machine and interact with the monitor on the left side (Starts a lockdown)</li>
+				<li>
+					Turn on{" "}
+					<TabLink tab="side-ee" target="power">
+						Power
+					</TabLink>
+				</li>
+				<li>
+					Head down into the basement into the room behind the{" "}
+					<TabLink tab="side-ee" target="pap">
+						PaP
+					</TabLink>{" "}
+					machine and interact with the monitor on the left side (Starts a lockdown)
+				</li>
 				<li>Once the lockdown is finished, head back up to the town and find houses that have green gas coming out of them. Find the valve (usually inside the garage or backyard) and interact until the valve turns green</li>
-				<li>Once all the houses are no longer green, you should get a dialogue and the PaP will open.</li>
+				<li>
+					Once all the houses are no longer green, you should get a dialogue and the{" "}
+					<TabLink tab="side-ee" target="pap">
+						PaP
+					</TabLink>{" "}
+					will open.
+				</li>
 			</ol>
 
 			<h2>
@@ -196,28 +245,34 @@ function SideEE() {
 				</a>
 			</h2>
 			<p>
-				<span>Sergeant ADAM can be purchased from Storage Room for 300p or free the first time after unlocking him. He follows the player for 3 rounds and acts as an AI.</span>
+				<span>Sergeant A.D.A.M. can be purchased from Storage Room for 300p or free the first time after unlocking him. He follows the player for 3 rounds and acts as an AI.</span>
 				<span>
 					<b>
 						Requires{" "}
-						<TabLink tab="side-ee" target="PaP">
+						<TabLink tab="side-ee" target="pap">
 							PaP Open
 						</TabLink>
 					</b>
 				</span>
 			</p>
 			<ol>
-				<li>Inside of Operation, interact with rushmore</li>
+				<li>Inside of Operations, interact with Rushmore</li>
 				<li>
 					Locate 4 codes around the map
 					<ul>
-						<li>Activation code - 7626 (Always the same, on the desk to the right of ray gun mark II frames)</li>
-						<li>Sawyer: APD Interrogation - Top of desk behind tv on first floor, below the Stairs, On computer desk upstairs</li>
-						<li>Peter McCain: APD Control - Shoot or Melee the stack of papers on the desk to the left when entering</li>
+						<li>
+							Activation code - 7626 (Always the same, on the desk to the right of{" "}
+							<TabLink tab="wonder-weapon" target="frame">
+								Ray Gun Mark II frames
+							</TabLink>
+							)
+						</li>
+						<li>Sawyer: APD Interrogation - Top of desk behind TV on first floor, below the stairs, on computer desk upstairs</li>
+						<li>Peter McCain: APD Control - Shoot or melee the stack of papers on the desk to the left when entering</li>
 						<li>Pernell: Solitary - Obtain the key from the keybox in solitary and unlock the desk drawer in Upstairs Yellow House to reveal the code.</li>
 					</ul>
 				</li>
-				<li>Starting with the activation code, input every code you recieved until he says that "project toy soldier" is active.</li>
+				<li>Starting with the activation code, input every code you received until he says that "Project Toy Soldier" is active.</li>
 			</ol>
 
 			<h2>
@@ -229,14 +284,14 @@ function SideEE() {
 			<p>
 				<b>
 					Requires{" "}
-					<TabLink tab="side-ee" target="PaP">
+					<TabLink tab="side-ee" target="pap">
 						PaP Open
 					</TabLink>
 				</b>
 			</p>
 			<ol>
-				<li>Shoot off all 30 heads from mannequins (CANNOT be meleed orelse you're locked out for the remainder of the game)</li>
-				<li>This will trigger a mannequin only round which you must survive. A free perk drop will fall from the sky when you succeed.</li>
+				<li>Shoot off all 30 heads from mannequins (CANNOT be meleed or else you're locked out for the remainder of the game)</li>
+				<li>This will trigger a mannequin-only round which you must survive. A free perk drop will fall from the sky when you succeed.</li>
 			</ol>
 
 			<h2>
@@ -246,10 +301,10 @@ function SideEE() {
 				</a>
 			</h2>
 			<ol>
-				<li>Knife off all 30 mannequin heads (CANNOT be shot orelse you're locked out for the remainder of the game)</li>
-				<li>Behind the population sign will be a new mannequin which will follow the player like a weeping angel. (not looking at him causes him to move)</li>
-				<li>Lead this mannequin down into the Generator room and you'll find a new headless female mannequin. Escort both of them to the Green House ched in the backyard</li>
-				<li>Look away for them to enter then wait a few seconds until the door closes and the self revive is infront of the door.</li>
+				<li>Knife off all 30 mannequin heads (CANNOT be shot or else you're locked out for the remainder of the game)</li>
+				<li>Behind the population sign will be a new mannequin which will follow the player like a weeping angel. (Not looking at him causes him to move)</li>
+				<li>Lead this mannequin down into the Generator room and you'll find a new headless female mannequin. Escort both of them to the Green House shed in the backyard</li>
+				<li>Look away for them to enter then wait a few seconds until the door closes and the self-revive is in front of the door.</li>
 			</ol>
 		</section>
 	);
@@ -271,7 +326,7 @@ function MusicEE() {
 			<p>Interact with 3 mannequin heads around the map</p>
 			<ul>
 				<li>On the floor under the Green House bed upstairs</li>
-				<li>On stall in the Bunker next to the pool table</li>
+				<li>On a stall in the Bunker next to the pool table</li>
 				<li>In Solitary opposite the desk on the floor</li>
 			</ul>
 		</section>
@@ -285,7 +340,13 @@ function MusicEE() {
 function WonderWeapons() {
 	return (
 		<section className="tab-content">
-			<p>Only one ray gun can be carried per person. The ray guns can be returned to the place where you got the frames if you want to get another. Once a canister has been grabbed, you must complete that ray gun to start another. All rayguns can also be PaP'd.</p>
+			<p>
+				Only one ray gun can be carried per person. The ray guns can be returned to the place where you got the frames if you want to get another. Once a canister has been grabbed, you must complete that ray gun to start another. All ray guns can also be{" "}
+				<TabLink tab="side-ee" target="pap">
+					PaP'd
+				</TabLink>
+				.
+			</p>
 			<h2 id="frame">
 				Ray Gun Mark II Frames -{" "}
 				<a href="https://www.youtube.com/watch?v=QuHE8NeYZww" target="_blank" rel="noopener noreferrer">
@@ -297,7 +358,7 @@ function WonderWeapons() {
 				<span>
 					<b>
 						Requires{" "}
-						<TabLink tab="side-ee" target="PaP">
+						<TabLink tab="side-ee" target="pap">
 							PaP Open
 						</TabLink>{" "}
 						and Rushmore Activated (After opening PaP, skip the round and interact with the computer in Operations.)
@@ -306,7 +367,7 @@ function WonderWeapons() {
 			</p>
 			<ul>
 				<li>
-					You need to find one of 4 static tvs and fill it with souls, once full teh screen will show a number which you need to remember (ORDER DOES MATTER) then look at the remaining tvs and continue until they all show numbers and you have a 4 digit code
+					You need to find one of 4 static TVs and fill it with souls. Once full, the screen will show a number which you need to remember (ORDER DOES MATTER) then look at the remaining TVs and continue until they all show numbers and you have a 4-digit code
 					<ul>
 						<li>Site Entrance</li>
 						<li>Yellow House Backyard</li>
@@ -314,7 +375,13 @@ function WonderWeapons() {
 						<li>APD Control</li>
 					</ul>
 				</li>
-				<li>Enter the code into rushmore to be given access to the Ray Gun Frames. You must grab one in order to get the Ray Gun variants.</li>
+				<li>
+					Enter the code into Rushmore to be given access to the{" "}
+					<TabLink tab="wonder-weapon" target="frame">
+						Ray Gun Frames
+					</TabLink>
+					. You must grab one in order to get the Ray Gun variants.
+				</li>
 			</ul>
 
 			<h2>
@@ -331,7 +398,7 @@ function WonderWeapons() {
 					</TabLink>
 					,{" "}
 					<TabLink tab="buildables" target="raygunassemblykit">
-						Ray Gun ASsembly Kit
+						Ray Gun Assembly Kit
 					</TabLink>{" "}
 					and a weapon with Kill-O-Watt on it.
 				</b>
@@ -341,12 +408,12 @@ function WonderWeapons() {
 					Head to the Generator room and look for a sparking panel (3 locations) then shoot it with the weapon to open the panel and pick up the canister.
 					<ul>
 						<li>Generators near Beds entrance</li>
-						<li>Generators near ventilation Console</li>
-						<li>Generators near Tonic Perk</li>
+						<li>Generators near ventilation console</li>
+						<li>Generators near Tonic perk</li>
 					</ul>
 				</li>
 				<li>
-					Head up to the above ground area and look above telephone poles for sparking yellow, shoot it with the Kil-O-Watt gun to turn it into a yellow orb. repeat with all 5 poles. (They should shoot beams when complete)
+					Head up to the above-ground area and look above telephone poles for sparking yellow, shoot it with the Kill-O-Watt gun to turn it into a yellow orb. Repeat with all 5 poles. (They should shoot beams when complete)
 					<ul>
 						<li>Transfusion Facility Backyard x2</li>
 						<li>Cul-de-sac outside Prisoner Holding</li>
@@ -355,7 +422,7 @@ function WonderWeapons() {
 					</ul>
 				</li>
 				<li>Head to the front of Yellow House and interact with the panel where the beams are pointing to place the canister. Get kills while remaining inside the circle until the canister is fully charged.</li>
-				<li>Grab the canister and head to the Mark II Table inside the top of Rushmores house to craft the ray gun variant.</li>
+				<li>Grab the canister and head to the Mark II Table inside the top of Rushmore's house to craft the Ray Gun variant.</li>
 			</ol>
 			<h2>
 				Ray Gun Mark II-X (Cryofreeze) -{" "}
@@ -371,7 +438,7 @@ function WonderWeapons() {
 					</TabLink>
 					,{" "}
 					<TabLink tab="buildables" target="raygunassemblykit">
-						Ray Gun Assemly Kit
+						Ray Gun Assembly Kit
 					</TabLink>{" "}
 					and a weapon with Cryofreeze on it.
 				</b>
@@ -385,9 +452,9 @@ function WonderWeapons() {
 						<li>Operations</li>
 					</ul>
 				</li>
-				<li>Within the Bunker, blue mist zombies will spawn. Shoot them using the Cryofreeze weapon and melee it once they freeze. pick up the blue goo on the floor and repeat 2 more times (3 times total)</li>
-				<li>Head to APD Control and place the canister in the broken container near the map on the wall. a blue circle will form on the floor.</li>
-				<li>While within the circle, get kills to charge up the canister. when the circle dissapear you can pick it up and bring it to the Ray Gun Assembly Table to craft the Ray Gun.</li>
+				<li>Within the Bunker, blue mist zombies will spawn. Shoot them using the Cryofreeze weapon and melee it once they freeze. Pick up the blue goo on the floor and repeat 2 more times (3 times total)</li>
+				<li>Head to APD Control and place the canister in the broken container near the map on the wall. A blue circle will form on the floor.</li>
+				<li>While within the circle, get kills to charge up the canister. When the circle disappears you can pick it up and bring it to the Ray Gun Assembly Table to craft the Ray Gun.</li>
 			</ol>
 
 			<h2>
@@ -404,7 +471,7 @@ function WonderWeapons() {
 					</TabLink>
 					,{" "}
 					<TabLink tab="buildables" target="raygunassemblykit">
-						Ray Gun Assemly Kit
+						Ray Gun Assembly Kit
 					</TabLink>
 					,{" "}
 					<TabLink tab="buildables" target="telepad">
@@ -415,17 +482,23 @@ function WonderWeapons() {
 			</p>
 			<ol>
 				<li>
-					Find a glowing green dirt pile somewhere outside and get a brain rot zombie near it to break the pile. grab the canister which is within.
+					Find a glowing green dirt pile somewhere outside and get a brain rot zombie near it to break the pile. Grab the canister which is within.
 					<ul>
 						<li>Green House Backyard near shed</li>
 						<li>Center Street near light pole</li>
 						<li>Yellow House Backyard near backdoor</li>
 					</ul>
 				</li>
-				<li>Find a yellow orb above any of the possible telepad locations. Place a telepad ontop under the orb and shoot/knife it to move it.</li>
-				<li>Look aroudn the map again looking for the orb again.place the 2nd teleporter pad under it and shoot/melee it again. now use the teleporter.</li>
+				<li>
+					Find a yellow orb above any of the possible{" "}
+					<TabLink tab="buildables" target="telepad">
+						telepad
+					</TabLink>{" "}
+					locations. Place a telepad on top under the orb and shoot/knife it to move it.
+				</li>
+				<li>Look around the map again looking for the orb again. Place the 2nd teleporter pad under it and shoot/melee it again. Now use the teleporter.</li>
 				<li>Head to Storage where the orb will be and canister can be placed to create a circle on the floor.</li>
-				<li>While within the circle, get kills to charge up the canister. when the circle dissapear you can pick it up and bring it to the Ray Gun Assembly Table to craft the Ray Gun.</li>
+				<li>While within the circle, get kills to charge up the canister. When the circle disappears you can pick it up and bring it to the Ray Gun Assembly Table to craft the Ray Gun.</li>
 			</ol>
 
 			<h2>
@@ -442,7 +515,7 @@ function WonderWeapons() {
 					</TabLink>
 					,{" "}
 					<TabLink tab="buildables" target="raygunassemblykit">
-						Ray Gun Assemly Kit
+						Ray Gun Assembly Kit
 					</TabLink>{" "}
 					and a weapon with Acid Bomb on it.
 				</b>
@@ -456,9 +529,9 @@ function WonderWeapons() {
 						<li>Lounge near pool table</li>
 					</ul>
 				</li>
-				<li>FInd which house has a chimney which is secreting pruple smoke. Throw a Wraith Fire, Frag or Acid Bomb directly on top of the chimney, when done correctly the smoke should go away.</li>
+				<li>Find which house has a chimney which is secreting purple smoke. Throw a Wraith Fire, Frag, or Acid Bomb directly on top of the chimney. When done correctly the smoke should go away.</li>
 				<li>Enter the house and place the canister inside the fireplace to spawn a circle on the floor</li>
-				<li>While within the circle, get kills to charge up the canister. when the circle dissapear you can pick it up and bring it to the Ray Gun Assembly Table to craft the Ray Gun.</li>
+				<li>While within the circle, get kills to charge up the canister. When the circle disappears you can pick it up and bring it to the Ray Gun Assembly Table to craft the Ray Gun.</li>
 			</ol>
 		</section>
 	);
@@ -473,7 +546,13 @@ function Buildables() {
 		<section className="tab-content">
 			<h3 id="tables">Table Locations</h3>
 			<ul>
-				<li>Upstairs in the house to the left of Power switch</li>
+				<li>
+					Upstairs in the house to the left of{" "}
+					<TabLink tab="side-ee" target="power">
+						Power
+					</TabLink>{" "}
+					switch
+				</li>
 				<li>In the APD room on the right side when entering</li>
 			</ul>
 
@@ -485,20 +564,30 @@ function Buildables() {
 			</h2>
 			<ul>
 				<li>
-					Glass Piece - PaP Room
+					Glass Piece -{" "}
+					<TabLink tab="side-ee" target="pap">
+						PaP
+					</TabLink>{" "}
+					Room
 					<ul>
-						<li>To the left of tv when entering</li>
+						<li>To the left of TV when entering</li>
 						<li>On the right side of the couch to the left of the teleporter location</li>
-						<li>On the bookshelf when entering the room past PaP from the right side</li>
+						<li>
+							On the bookshelf when entering the room past{" "}
+							<TabLink tab="side-ee" target="pap">
+								PaP
+							</TabLink>{" "}
+							from the right side
+						</li>
 					</ul>
 				</li>
 
 				<li>
 					Bar Part - Rushmore's House
 					<ul>
-						<li>Leaning against filling cabinet in Rushmores house garage (right of spawn)</li>
-						<li>On the table when heading up the stairs in rushmores house</li>
-						<li>On a box in the upstairs office in Rushmores house</li>
+						<li>Leaning against filing cabinet in Rushmore's house garage (right of spawn)</li>
+						<li>On the table when heading up the stairs in Rushmore's house</li>
+						<li>On a box in the upstairs office in Rushmore's house</li>
 					</ul>
 				</li>
 
@@ -506,8 +595,8 @@ function Buildables() {
 					Square Piece - Main Area
 					<ul>
 						<li>Leaning on the front of the bus in the main area</li>
-						<li>Leaning against the car with a manneqiun sitting on it in the main area</li>
-						<li>Leaning against pile of junk infront of other bus</li>
+						<li>Leaning against the car with a mannequin sitting on it in the main area</li>
+						<li>Leaning against pile of junk in front of other bus</li>
 					</ul>
 				</li>
 			</ul>
@@ -530,7 +619,11 @@ function Buildables() {
 				</li>
 
 				<li>
-					Solid Circle - Green House (Left of Power)
+					Solid Circle - Green House (Left of{" "}
+					<TabLink tab="side-ee" target="power">
+						Power
+					</TabLink>
+					)
 					<ul>
 						<li>On the outside roof upstairs</li>
 						<li>To the left when entering from main area</li>
@@ -541,7 +634,7 @@ function Buildables() {
 				<li>
 					Half Circle (Transfusion Facility)
 					<ul>
-						<li>Ontop of boxes infront of mystery box location when going towards power from the right side</li>
+						<li>On top of boxes in front of Mystery Box location when going towards power from the right side</li>
 						<li>Inside the closet near the door when exiting the building</li>
 						<li>Leaning against the operating table opposite the previous location.</li>
 					</ul>
@@ -549,18 +642,21 @@ function Buildables() {
 			</ul>
 
 			<h2 id="raygunassemblykit">
-				Raygun Mark II Assembly Kit -{" "}
+				Ray Gun Mark II Assembly Kit -{" "}
 				<a href="https://www.youtube.com/watch?v=8HAYhm7FCzQ" target="_blank" rel="noopener noreferrer">
 					Video
 				</a>
 			</h2>
-			<p>Can only be built in the table upstairs in Rushmores house</p>
+			<p>Can only be built in the table upstairs in Rushmore's house</p>
 			<ul>
 				<li>
-					Tubing - House to the right of power
+					Tubing - House to the right of{" "}
+					<TabLink tab="side-ee" target="power">
+						power
+					</TabLink>
 					<ul>
 						<li>On the table in the dining room</li>
-						<li>upstairs on the bookshelf</li>
+						<li>Upstairs on the bookshelf</li>
 						<li>On the table upstairs opposite from telepad location</li>
 					</ul>
 				</li>
@@ -568,8 +664,8 @@ function Buildables() {
 				<li>
 					Container
 					<ul>
-						<li>On the desk infront of the maniquin before entering the room</li>
-						<li>On the chair in the right side when entering from previous location</li>
+						<li>On the desk in front of the mannequin before entering the room</li>
+						<li>On the chair on the right side when entering from previous location</li>
 						<li>On the shelf on the opposite corner of the room</li>
 					</ul>
 				</li>
@@ -577,7 +673,13 @@ function Buildables() {
 				<li>
 					Canister
 					<ul>
-						<li>On a shelf near the Titan wallbuy</li>
+						<li>
+							On a shelf near the{" "}
+							<TabLink tab="weapons" target="titan">
+								Titan
+							</TabLink>{" "}
+							wallbuy
+						</li>
 						<li>On a barrel near Generators tunnel</li>
 						<li>On a barrel near the exit</li>
 					</ul>
@@ -615,7 +717,7 @@ function Weapons() {
 				<li id="hellfire">Hellfire - Player Choice</li>
 				<li>Overkill - Player Choice</li>
 				<li id="pathofsorrows">Path of Sorrows - Player Choice</li>
-				<li id="ragnarok">Ragnarock DG-5 - Player Choice</li>
+				<li id="ragnarok">Ragnarok DG-5 - Player Choice</li>
 			</ul>
 
 			<h3>Wall Weapons</h3>
@@ -677,13 +779,13 @@ function Weapons() {
 				<li>
 					<b>Bowie Knife</b> - Generators (3000p)
 				</li>
-				<li>
+				<li id="titan">
 					<b>Titan</b> - Storage (3750p)
 				</li>
 				<li>
 					<b>Koshka</b> - APD Control (4500p)
 				</li>
-				<li>
+				<li id="galvaknuckles">
 					<b>Galvaknuckles</b> - Cul-de-sac, Red Truck (5000p)
 				</li>
 			</ul>
@@ -802,17 +904,33 @@ function Gauntlet() {
 					<tr>
 						<td>7</td>
 						<td>Deep Breath</td>
-						<td>Complete The Gass Venting Event In Generators By End Of Round.</td>
+						<td>Complete The Gas Venting Event In Generators By End Of Round.</td>
 					</tr>
 					<tr>
 						<td>8</td>
 						<td>Population Control</td>
-						<td>Round Ends When The Population Counter Is Hit With Galvaknuckles At Zero.</td>
+						<td>
+							Round Ends When The Population Counter Is Hit With{" "}
+							<TabLink tab="weapons" target="galvaknuckles">
+								Galvaknuckles
+							</TabLink>{" "}
+							At Zero.
+						</td>
 					</tr>
 					<tr>
 						<td>9</td>
 						<td>Civil Engineering</td>
-						<td>Build The Teleporters And Shield By The End Of Round.</td>
+						<td>
+							Build The{" "}
+							<TabLink tab="buildables" target="telepad">
+								Telepads
+							</TabLink>{" "}
+							And{" "}
+							<TabLink tab="buildables" target="shield">
+								Shield
+							</TabLink>{" "}
+							By The End Of Round.
+						</td>
 					</tr>
 					<tr>
 						<td>10</td>
@@ -847,7 +965,13 @@ function Gauntlet() {
 					<tr>
 						<td>16</td>
 						<td>Galva-anting</td>
-						<td>Use Galvaknuckles Only.</td>
+						<td>
+							Use{" "}
+							<TabLink tab="weapons" target="galvaknuckles">
+								Galvaknuckles
+							</TabLink>{" "}
+							Only.
+						</td>
 					</tr>
 					<tr>
 						<td>17</td>
@@ -907,7 +1031,13 @@ function Gauntlet() {
 					<tr>
 						<td>28</td>
 						<td>Mobile Man</td>
-						<td>Use The Telepads In 10 Different Positions By End Of Round.</td>
+						<td>
+							Use The{" "}
+							<TabLink tab="buildables" target="telepad">
+								Telepads
+							</TabLink>{" "}
+							In 10 Different Positions By End Of Round.
+						</td>
 					</tr>
 					<tr>
 						<td>29</td>
@@ -954,19 +1084,29 @@ function Extras() {
 	return (
 		<section className="tab-content">
 			<h2>
-				Avagadro Jumpscare -{" "}
+				Avogadro Jumpscare -{" "}
 				<a href="https://youtu.be/k423piuqfIk?t=1328" target="_blank" rel="noopener noreferrer">
 					Video
 				</a>
 			</h2>
-			<p>Aquire a sniper and head to the Green House Backyard balcony. While aiming out into the dessert, look for an idle zombie. When aimed at, it will trigger the jumpscare.</p>
+			<p>Acquire a sniper and head to the Green House Backyard balcony. While aiming out into the desert, look for an idle zombie. When aimed at, it will trigger the jumpscare.</p>
 			<h2>
-				Mannquin Jumpscare -{" "}
+				Mannequin Jumpscare -{" "}
 				<a href="https://youtu.be/k423piuqfIk?t=1362" target="_blank" rel="noopener noreferrer">
 					Video
 				</a>
 			</h2>
-			<p>Aquire the Galvaknuckles and knife off all 30 mannequin heads (if any heads have been shot off or meleed, you cannot complete this.) Once complete, head down to PaP and you'll find a new female mannequin with its head on backwards. Stare at it for a few seconds to trigger the jumpscare.</p>
+			<p>
+				Acquire the{" "}
+				<TabLink tab="weapons" target="galvaknuckles">
+					Galvaknuckles
+				</TabLink>{" "}
+				and knife off all 30 mannequin heads (if any heads have been shot off or meleed, you cannot complete this.) Once complete, head down to{" "}
+				<TabLink tab="side-ee" target="pap">
+					PaP
+				</TabLink>{" "}
+				and you'll find a new female mannequin with its head on backwards. Stare at it for a few seconds to trigger the jumpscare.
+			</p>
 			<h2>
 				Round 200 (Insanity Mode) -{" "}
 				<a href="https://youtu.be/k423piuqfIk?t=2203" target="_blank" rel="noopener noreferrer">
@@ -974,7 +1114,7 @@ function Extras() {
 				</a>
 			</h2>
 			<p>
-				<span>This will take the player to Round 200 and lock the map down to the roginal nuketown layout for the remainder of the game.</span>
+				<span>This will take the player to Round 200 and lock the map down to the original Nuketown layout for the remainder of the game.</span>
 				<span>
 					<b>
 						Requires{" "}
@@ -987,8 +1127,8 @@ function Extras() {
 			</p>
 			<ol>
 				<li>Kill zombies until the population sign shows 15 and the clock is at 1 (115)</li>
-				<li>Head to the shed behind Yellow House and there should be a purple orb inside. Open the door ind interact with the orb. Escort it (follow) until it reaches APD Interogation (if you stay away for too long, you will need to restart compeltely)</li>
-				<li>When the orb enters the monitor, knife it using the bowie knife to break it. Use the code that is within the monitor in Rushmore to trigger the EE.</li>
+				<li>Head to the shed behind Yellow House and there should be a purple orb inside. Open the door and interact with the orb. Escort it (follow) until it reaches APD Interrogation (if you stay away for too long, you will need to restart completely)</li>
+				<li>When the orb enters the monitor, knife it using the Bowie knife to break it. Use the code that is within the monitor in Rushmore to trigger the EE.</li>
 			</ol>
 			<h2>
 				T.E.D.D. Electrifying Room -{" "}
@@ -996,14 +1136,20 @@ function Extras() {
 					Video
 				</a>
 			</h2>
-			<p>After activating T.E.D.D THrough Rushmore code 8333, you can find him in the Bunkers where you can melee him several times with the galvaknuckles enough times that he will get mad and make the floor electric. (remains this way for 2 minutes after activation)</p>
+			<p>
+				After activating T.E.D.D. through Rushmore code 8333, you can find him in the bunkers where you can melee him several times with the{" "}
+				<TabLink tab="weapons" target="galvaknuckles">
+					galvaknuckles
+				</TabLink>{" "}
+				enough times that he will get mad and make the floor electric. (Remains this way for 2 minutes after activation)
+			</p>
 			<h2>
-				Avagadro Quotes -{" "}
+				Avogadro Quotes -{" "}
 				<a href="https://youtu.be/k423piuqfIk?t=2396" target="_blank" rel="noopener noreferrer">
 					Video
 				</a>
 			</h2>
-			<p>Every round, you can interact with the tv inside Yellow House to get quotes from Avogadro</p>
+			<p>Every round, you can interact with the TV inside Yellow House to get quotes from Avogadro</p>
 			<h2>
 				Maxis Radios -{" "}
 				<a target="_blank" href="https://youtu.be/k423piuqfIk?t=3717" rel="noopener noreferrer">
@@ -1014,9 +1160,15 @@ function Extras() {
 			<ul>
 				<li>On the counter in the Green House Downstairs kitchen</li>
 				<li>In APD Interrogation on the far right corner of the room when entering from spawn</li>
-				<li>In Prisoner Holding in the table directly infron to you when entering from the street</li>
-				<li>In the Lounge on the right when entering fro mthe stairs on table with a lamp</li>
-				<li>In the Diner on the counter when entering from PaP on the right</li>
+				<li>In Prisoner Holding in the table directly in front of you when entering from the street</li>
+				<li>In the Lounge on the right when entering from the stairs on table with a lamp</li>
+				<li>
+					In the Diner on the counter when entering from{" "}
+					<TabLink tab="side-ee" target="pap">
+						PaP
+					</TabLink>{" "}
+					on the right
+				</li>
 			</ul>
 			<h2>
 				Audio Reels -{" "}
@@ -1027,7 +1179,7 @@ function Extras() {
 			<p>Around the map are 3 audio reels which can be activated by shooting them</p>
 			<ul>
 				<li>In the tent on your left after dropping down from spawn</li>
-				<li>Through the door of the bus on the left of Cul-de-sac</li>
+				<li>Through the door of the bus on the left of cul-de-sac</li>
 				<li>In Storage through caged door to the left of radioactive symbol</li>
 			</ul>
 			<h2>
@@ -1036,9 +1188,15 @@ function Extras() {
 					Video
 				</a>
 			</h2>
-			<p>Around the map you can find 5 film reels which can be played using the projector located in Operations garage (Rushmores house)</p>
+			<p>Around the map you can find 5 film reels which can be played using the projector located in Operations garage (Rushmore's house)</p>
 			<ul>
-				<li>On box above arrow pointing to power switch on the left side of Center Street</li>
+				<li>
+					On box above arrow pointing to{" "}
+					<TabLink tab="side-ee" target="power">
+						power
+					</TabLink>{" "}
+					switch on the left side of Center Street
+				</li>
 				<li>In Transfusion Facility to the right of the wallbuy on the shelf</li>
 				<li>In Yellow House Backyard on the table under umbrella</li>
 				<li>Green House Backyard on the corner of the pool thing in the middle</li>
@@ -1052,11 +1210,17 @@ function Extras() {
 			</h2>
 			<p>You can find 5 punchcards around the map and play them using the console in APD Control upstairs</p>
 			<ul>
-				<li>On the back window of the car infront of Prisoner Holding</li>
-				<li>On a box to the right of the power switch before the static tvs</li>
-				<li>On box in Generators to the left of the bowie knife wallbuy</li>
+				<li>On the back window of the car in front of Prisoner Holding</li>
+				<li>
+					On a box to the right of the{" "}
+					<TabLink tab="side-ee" target="power">
+						power
+					</TabLink>{" "}
+					switch before the static TVs
+				</li>
+				<li>On box in Generators to the left of the Bowie knife wallbuy</li>
 				<li>In APD Control to the left when entering from solitary just before entering the smaller side area</li>
-				<li>On the Diner outer counter when entering straight from the stairs. leaning on a stack of plates.</li>
+				<li>On the Diner outer counter when entering straight from the stairs, leaning on a stack of plates.</li>
 			</ul>
 			<h2>
 				Audio Players (Russman) -{" "}
@@ -1068,7 +1232,7 @@ function Extras() {
 			<ul>
 				<li>On the shelf in Yellow House Upstairs</li>
 				<li>On the couch to the left when entering from Lounge in Bunker Beds</li>
-				<li>In Generators on the back right side of the room on a pipe leading form a generator on the left side.</li>
+				<li>In Generators on the back right side of the room on a pipe leading from a generator on the left side.</li>
 			</ul>
 			<h2>
 				Rushmore Codes -{" "}
@@ -1199,7 +1363,7 @@ function Extras() {
 					<tr>
 						<td>Puke</td>
 						<td>7853</td>
-						<td>When you melee a zombies they will puke</td>
+						<td>When you melee a zombie they will puke</td>
 					</tr>
 					<tr>
 						<td>Fall</td>
@@ -1339,11 +1503,14 @@ function Extras() {
 						<TabLink tab="side-ee" target="pap">
 							PaP open
 						</TabLink>{" "}
-						and Galvaknuckles
+						and{" "}
+						<TabLink tab="weapons" target="galvaknuckles">
+							Galvaknuckles
+						</TabLink>
 					</b>
 				</span>
 				<span>
-					Complete up to step 3 of the <TabLink tab="main-ee">Main EE</TabLink> then the traps should open in the houses. In operation you can grab the PaP'd raygun Mark II from the case and in Prisoner Holding you can get a free random PaP'd weapon from the locker.
+					Complete up to step 3 of the <TabLink tab="main-ee">Main EE</TabLink> then the traps should open in the houses. In operations you can grab the PaP'd Ray Gun Mark II from the case and in Prisoner Holding you can get a free random PaP'd weapon from the locker.
 				</span>
 			</p>
 			<h2>Fast Travel</h2>
@@ -1352,7 +1519,7 @@ function Extras() {
 				<TabLink tab="buildables" target="telepad">
 					Telepad
 				</TabLink>{" "}
-				and can be places and moved between any of the following 10 locations.
+				and can be placed and moved between any of the following 10 locations.
 			</p>
 			<ul>
 				<li>Power House</li>

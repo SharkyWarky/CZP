@@ -3,6 +3,7 @@ import { createFileRoute } from "@tanstack/react-router";
 import InfoBox from "../../../components/InfoBox";
 import MapTabs from "../../../components/MapTabs";
 import Source from "../../../components/Source";
+import TabLink from "../../../components/TabLink";
 import { MapNavigationProvider, useMapNavigation } from "../../../context/MapNavigationContext";
 import { mapModules } from "../../../data/mapModules";
 import AchievementTable from "../../../components/AchievementTable";
@@ -80,10 +81,21 @@ function Overview() {
 				<li>Of the four random rooms that the Teleporter momentarily takes the player to, the Conference Room and the Dentist Room are not present.</li>
 				<li>The Reels for the projector are not present. Instead, the projector plays a short loop of various images from the Reels. The camera pointing into the projector room is also not present.</li>
 				<li>The Radios found around the map are not present.</li>
-				<li>Mule Kick is not featured on the map.</li>
+				<li>
+					<TabLink tab="perks" target="mule-kick">
+						Mule Kick
+					</TabLink>{" "}
+					is not featured on the map.
+				</li>
 				<li>There are no swastikas in the map anymore. They are replaced by the Wehrmacht eagle logo.</li>
 			</ul>
-			<p>A remastered version of Kino der Toten is available on Call of Duty: Black Ops III if the player has purchased the Zombies Chronicles map pack. The map has been designed to look very high quality while still maintaining the look and feel of the original. Differences include new better Zombies artificial intelligence, and futuristic Black Ops III-era weapons are now available in the Mystery Box and the walls instead of the Cold War weapons (although some do return in the box), as well as the original wonder weapons. The characters are once again the Ultimis versions of "Tank" Dempsey, Nikolai Belinski, Takeo Masaki and Edward Richtofen.</p>
+			<p>
+				A remastered version of Kino der Toten is available on Call of Duty: Black Ops III if the player has purchased the Zombies Chronicles map pack. The map has been designed to look very high quality while still maintaining the look and feel of the original. Differences include new better Zombies artificial intelligence, and futuristic Black Ops III-era weapons are now available in the{" "}
+				<TabLink tab="weapons" target="mystery-box">
+					Mystery Box
+				</TabLink>{" "}
+				and the walls instead of the Cold War weapons (although some do return in the box), as well as the original wonder weapons. The characters are once again the Ultimis versions of "Tank" Dempsey, Nikolai Belinski, Takeo Masaki and Edward Richtofen.
+			</p>
 		</section>
 	);
 }
@@ -144,11 +156,26 @@ function WonderWeapons() {
 	return (
 		<section className="tab-content">
 			<h3>Thundergun</h3>
-			<p>Found in Mystery Box</p>
+			<p>
+				Found in{" "}
+				<TabLink tab="weapons" target="mystery-box">
+					Mystery Box
+				</TabLink>
+			</p>
 			<h3>Ray Gun</h3>
-			<p>Found in Mystery Box</p>
+			<p>
+				Found in{" "}
+				<TabLink tab="weapons" target="mystery-box">
+					Mystery Box
+				</TabLink>
+			</p>
 			<h3>Ray Gun Mark II</h3>
-			<p>Found in Mystery Box</p>
+			<p>
+				Found in{" "}
+				<TabLink tab="weapons" target="mystery-box">
+					Mystery Box
+				</TabLink>
+			</p>
 		</section>
 	);
 }
@@ -156,20 +183,34 @@ function WonderWeapons() {
 function SideEE() {
 	return (
 		<section className="tab-content">
-			<h2>Power</h2>
+			<h2 id="power">Power</h2>
 			<p>Switch is located in the backstage area</p>
-			<h2>Pack-A-Punch</h2>
+			<h2 id="pap">Pack-A-Punch</h2>
 			<ol>
-				<li>Turn on Power</li>
+				<li>
+					Turn on{" "}
+					<TabLink tab="side-ee" target="power">
+						Power
+					</TabLink>
+				</li>
 				<li>Enter the teleporter on the stage and activate it</li>
 				<li>head to the starting room and interact with the platform on the floor to link the teleporter</li>
-				<li>stand in the teleporter to be teleporter to PaP</li>
+				<li>
+					stand in the teleporter to be teleporter to{" "}
+					<TabLink tab="side-ee" target="pap">
+						PaP
+					</TabLink>
+				</li>
 			</ol>
 			<h2>Movie Projector</h2>
 			<p>Compeleting this EE will paly a movie on the projector screen in the main room</p>
 			<ul>
 				<li>
-					Locate 3 reels located in the rooms you teleport to after using the PaP Teleporter (can only grab one at a time)
+					Locate 3 reels located in the rooms you teleport to after using the{" "}
+					<TabLink tab="side-ee" target="pap">
+						PaP
+					</TabLink>{" "}
+					Teleporter (can only grab one at a time)
 					<ul>
 						<li>
 							Samantha's Room
@@ -204,7 +245,13 @@ function SideEE() {
 						</li>
 					</ul>
 				</li>
-				<li>After Grabbing one reel, you must return it to the projector in PaP before you can grab another</li>
+				<li>
+					After Grabbing one reel, you must return it to the projector in{" "}
+					<TabLink tab="side-ee" target="pap">
+						PaP
+					</TabLink>{" "}
+					before you can grab another
+				</li>
 			</ul>
 		</section>
 	);
@@ -215,13 +262,13 @@ function Perks() {
 		<section className="tab-content">
 			<h3>Quick Revive (500p solo, 1500p coop)</h3>
 			<p>Located in the starting spawn room, on the right side next to the bar/barrier</p>
-			<h3>Juggernog (2500p)</h3>
+			<h3 id="juggernog">Juggernog (2500p)</h3>
 			<p>Located in the main theater area, near the seating rows on the left side when entering from spawn (requires power)</p>
 			<h3>Double Tap Root Beer (2000p)</h3>
 			<p>Located outside in the back alleyway area past the fire trap room</p>
-			<h3>Speed Cola (3000p)</h3>
+			<h3 id="speed-cola">Speed Cola (3000p)</h3>
 			<p>Located in the large dressing/storage room downstairs past the double stairs from the foyer</p>
-			<h3>Mule Kick (4000p)</h3>
+			<h3 id="mule-kick">Mule Kick (4000p)</h3>
 			<p>Located in the room upstairs on the right side of the map near the electric trap</p>
 			<h3>Der Wunderfizz (1500p)</h3>
 			<p>On the Theater Stage</p>
@@ -281,7 +328,7 @@ function Weapons() {
 				</li>
 			</ul>
 
-			<h3>Mystery Box</h3>
+			<h3 id="mystery-box">Mystery Box</h3>
 			<h4>Locations</h4>
 			<ul>
 				<li>Spawn Room on balcony</li>
@@ -289,9 +336,20 @@ function Weapons() {
 				<li>Lower Hall near door to Alley</li>
 				<li>Back Room next to window above Alley</li>
 				<li>Theater (Stage) near power</li>
-				<li>Theater (Center) near Juggernog</li>
+				<li>
+					Theater (Center) near{" "}
+					<TabLink tab="perks" target="juggernog">
+						Juggernog
+					</TabLink>
+				</li>
 				<li>Dressing Room with MP5K wallbuy</li>
-				<li>Foyer with Speed Cola machine</li>
+				<li>
+					Foyer with{" "}
+					<TabLink tab="perks" target="speed-cola">
+						Speed Cola
+					</TabLink>{" "}
+					machine
+				</li>
 				<li>Alley in the middle under rooftop zombie spawn</li>
 			</ul>
 			<h4>Box Weapons</h4>
@@ -342,7 +400,12 @@ function Extras() {
 			<h2>Rocket Ship</h2>
 			<p>Does Nothing</p>
 			<ol>
-				<li>Turn on the Power</li>
+				<li>
+					Turn on the{" "}
+					<TabLink tab="side-ee" target="power">
+						Power
+					</TabLink>
+				</li>
 				<li>Stand infront of the left mannequin in the dressing room and jump 5 times</li>
 				<li>Use the Teleporter to enter the pentagon's office</li>
 				<li>Interact with the rocket figurine to launch it</li>
@@ -367,7 +430,7 @@ function Credits() {
 
 export const Route = createFileRoute("/maps/bo3/kino-der-toten")({
 	staticData: {
-		title: "Kino der Toten", // Automatically updates your navbar page title!
+		title: "Kino der Toten",
 	},
 	component: KinoDerToten,
 });

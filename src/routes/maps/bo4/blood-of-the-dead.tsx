@@ -1,5 +1,5 @@
-import { createFileRoute } from "@tanstack/react-router";
 /* ---- v2.1.0 ---- */
+import { createFileRoute } from "@tanstack/react-router";
 import { MapNavigationProvider, useMapNavigation } from "../../../context/MapNavigationContext";
 
 import MapTabs from "../../../components/MapTabs";
@@ -38,7 +38,23 @@ const achievementRows = [
 		id: "historical-reenactment",
 		name: "Historical Reenactment",
 		description: "In Blood of the Dead, equip Hell’s Retriever, Spoon, Blundergat and Tommy Gun",
-		goal: "Hold the Blundergat, Retriever, Spoon, and M1927 without any of them being upgraded",
+		goal: (
+			<>
+				Hold the{" "}
+				<TabLink tab="wonder-weapon" target="blundergat">
+					Blundergat
+				</TabLink>
+				,{" "}
+				<TabLink tab="wonder-weapon" target="hellsretriever">
+					Retriever
+				</TabLink>
+				,{" "}
+				<TabLink tab="wonder-weapon" target="spoon">
+					Spoon
+				</TabLink>
+				, and M1927 without any of them being upgraded
+			</>
+		),
 	},
 	{
 		id: "hot-stuff-coming-through",
@@ -73,7 +89,15 @@ const achievementRows = [
 		id: "paranormal-patch-up",
 		name: "Paranormal Patch Up",
 		description: "In Blood of the Dead, revive another Player with a shield",
-		goal: "Get a Spirit Blast charge with the shield and when another player in your game goes down you must Spirit Blast them to instantly revive them",
+		goal: (
+			<>
+				Get a Spirit Blast charge with the{" "}
+				<TabLink tab="buildables" target="shield">
+					shield
+				</TabLink>{" "}
+				and when another player in your game goes down you must Spirit Blast them to instantly revive them
+			</>
+		),
 	},
 	{
 		id: "senseless-axe-of-violence",
@@ -114,11 +138,55 @@ function Overview() {
 			<p>Blood of the Dead is the third Zombies map that is featured in Call of Duty: Black Ops 4, and the twenty-seventh map overall. It is a reimagined version of, as well as a sequel to, the fan-favorite map Mob of the Dead from Call of Duty: Black Ops II.</p>
 
 			<h2>Overview</h2>
-			<p>Blood of the Dead, as a follow-up to Mob of the Dead, retains most of the original maps locations and gameplay features while including multiple additions and twists of its own</p>
-			<p>Blood of the Dead includes most of the original areas from Mob of the Dead, with the only substantial cut being the Golden Gate Bridge. Certain areas have also been modified, such as only half of the roof being accessible, a new entrance to the Mob of the Dead starting room being added, and a few of the locations for aircraft parts on Mob of the Dead are either inaccessible or heavily changed. More notably, Blood of the Dead includes a number of brand new areas such as Richtofen's lab, New Industries, the Power House, the Warden's House, and the dangerous Catwalk and Recreation Yard respectively. As a result of these changes, most gameplay elements like the Pack-a-Punch Machine, Perk Machines, Cerberus, and buildable parts have had their locations altered</p>
-			<p>Blood of the Dead features the Primis crew - "Tank" Dempsey, Nikolai Belinksi, Takeo Masaki, and Edward Richtofen - as the four playable characters, replacing Albert "Weasel" Arlington, Finn O'Leary, Salvatore "Sal" DeLuca, and Billy Handsome. Brutus also makes a return, this time as the main antagonist of the map, as the Warden. Hellhounds are also present on the map, originally only being available in the Grief version of Mob of the Dead, Cell Block</p>
-			<p>Gameplay wise a number of items and equipment from Mob of the Dead return and have been expanded on. The Blundergat and it's Acidgat upgrade are both present, as well as the brand new Magmagat. The Hell's Retriever, as well as it's Hell's Redeemer upgrade, returns following a short quest. The Golden Spork can be obtained, with two new upgrades available, the Golden Scalpel and the Golden Spork Knife. The Acid Trap and Saw Trap both return, though the Tower Trap is collapsed and unusable. The most notable change is that Afterlife is no longer a gameplay mechanic, though elements of it have been wrapped into the new Spectral Shield. Specifically, the Spectral Shield allows players to still power the Voltmeters around the map, to access various utilities and progress quests</p>
-			<p>Blood of the Deads plot finds the Primis crew trapped in the Alcatraz Pocket Dimension, following Albert Arlington breaking the cycle of the multiverse. As a result, they must find a way to escape in the new main quest, Most Escape Alive</p>
+			<p>Blood of the Dead, as a follow-up to Mob of the Dead, retains most of the original map's locations and gameplay features while including multiple additions and twists of its own.</p>
+			<p>
+				Blood of the Dead includes most of the original areas from Mob of the Dead, with the only substantial cut being the Golden Gate Bridge. Certain areas have also been modified, such as only half of the roof being accessible, a new entrance to the Mob of the Dead starting room being added, and a few of the locations for aircraft parts on Mob of the Dead being either inaccessible or heavily changed. More notably, Blood of the Dead includes a number of brand new areas such as Richtofen's lab, New Industries, the Power House, the Warden's House, and the dangerous Catwalk and Recreation Yard respectively. As a result of these changes, most gameplay elements like the{" "}
+				<TabLink tab="side-ee" target="pap">
+					Pack-a-Punch Machine
+				</TabLink>
+				, Perk Machines, Cerberus, and buildable parts have had their locations altered.
+			</p>
+			<p>Blood of the Dead features the Primis crew - "Tank" Dempsey, Nikolai Belinski, Takeo Masaki, and Edward Richtofen - as the four playable characters, replacing Albert "Weasel" Arlington, Finn O'Leary, Salvatore "Sal" DeLuca, and Billy Handsome. Brutus also makes a return, this time as the main antagonist of the map, as the Warden. Hellhounds are also present on the map, originally only being available in the Grief version of Mob of the Dead, Cell Block.</p>
+			<p>
+				Gameplay-wise a number of items and equipment from Mob of the Dead return and have been expanded on. The{" "}
+				<TabLink tab="wonder-weapon" target="blundergat">
+					Blundergat
+				</TabLink>{" "}
+				and its{" "}
+				<TabLink tab="wonder-weapon" target="acidgat">
+					Acidgat
+				</TabLink>{" "}
+				upgrade are both present, as well as the brand new{" "}
+				<TabLink tab="wonder-weapon" target="magmagat">
+					Magmagat
+				</TabLink>
+				. The{" "}
+				<TabLink tab="wonder-weapon" target="hellsretriever">
+					Hell's Retriever
+				</TabLink>
+				, as well as its{" "}
+				<TabLink tab="wonder-weapon" target="hellsredeemer">
+					Hell's Redeemer
+				</TabLink>{" "}
+				upgrade, returns following a short quest. The{" "}
+				<TabLink tab="wonder-weapon" target="goldspork">
+					Golden Spork
+				</TabLink>{" "}
+				can be obtained, with two new upgrades available, the{" "}
+				<TabLink tab="wonder-weapon" target="goldscalpel">
+					Golden Scalpel
+				</TabLink>{" "}
+				and the{" "}
+				<TabLink tab="wonder-weapon" target="goldsporkknife">
+					Golden Spork-Knife
+				</TabLink>
+				. The Acid Trap and Saw Trap both return, though the Tower Trap is collapsed and unusable. The most notable change is that Afterlife is no longer a gameplay mechanic, though elements of it have been wrapped into the new{" "}
+				<TabLink tab="buildables" target="shield">
+					Spectral Shield
+				</TabLink>
+				. Specifically, the Spectral Shield allows players to still power the Voltmeters around the map, to access various utilities and progress quests.
+			</p>
+			<p>Blood of the Dead's plot finds the Primis crew trapped in the Alcatraz Pocket Dimension, following Albert Arlington breaking the cycle of the multiverse. As a result, they must find a way to escape in the new main quest, Most Escape Alive.</p>
 		</section>
 	);
 }
@@ -206,33 +274,73 @@ function MainEE() {
 				</a>
 			</h2>
 			<ol>
-				<li>Knife the wall at the top of the stairs in the Warden's House with the silver spoon to scratch it.</li>
-				<li>Go into the Citadel Tunnels and input the number 666 by shocking the number swith a shield blast and interacting with them (this will force a Warden Spawn)</li>
-				<li>Lead the Warden to the scratched wall using a monkey bomb (when he slams on the monkey, the wall should break)</li>
-				<li>Upon entering the room, pick up the red orb on the corner of the table to your immediate left and interact with the switch next to the electric chair</li>
-				<li>Return to spawn and interact with the map on the wall to place the orb. Now interact with the kronorium on the floor behind you</li>
+				<li>
+					Knife the wall at the top of the stairs in the Warden's House with the{" "}
+					<TabLink tab="wonder-weapon" target="spoon">
+						silver spoon
+					</TabLink>{" "}
+					to scratch it.
+				</li>
+				<li>
+					Go into the Citadel Tunnels and input the number 666 by shocking the number switch with a{" "}
+					<TabLink tab="buildables" target="shield">
+						shield blast
+					</TabLink>{" "}
+					and interacting with them (this will force a Warden spawn).
+				</li>
+				<li>
+					Lead the Warden to the scratched wall using a{" "}
+					<TabLink tab="side-ee" target="freemonkey">
+						monkey bomb
+					</TabLink>{" "}
+					(when he slams on the monkey, the wall should break).
+				</li>
+				<li>Upon entering the room, pick up the red orb on the corner of the table to your immediate left and interact with the switch next to the electric chair.</li>
+				<li>Return to spawn and interact with the map on the wall to place the orb. Now interact with the Kronorium on the floor behind you.</li>
 				<li>
 					<span>
 						<a href="https://www.youtube.com/watch?v=roBKFoVz_Qo" target="_blank" rel="noopener noreferrer">
 							Bird Locations
 						</a>
 					</span>
-					<span>Find the bird somewhere around the map by listening for the squack when activating afterlife vision. When you find the bird, shoot it with a shield blast.</span>
 					<span>
-						<b>Must repeat 4 times on 4 seperate rounds (1 bird per round)</b>
+						Find the bird somewhere around the map by listening for the squawk when activating afterlife vision. When you find the bird, shoot it with a{" "}
+						<TabLink tab="buildables" target="shield">
+							shield blast
+						</TabLink>
+						.
 					</span>
-					<span>To get the final bird, (you won't be able to see it) you'll need to look for a blue glint and hear the warden crying which indicates you're looking directly at it</span>
-					<span>Input the number 872 into the number pad and pick up the zombie blood power up.</span>
-					<span>Looking through your shield at the spot you found ebfore should now show the bird, throw you're hell's retriever at it to grab it. Pick up the kronorium that is infront of the location.</span>
+					<span>
+						<b>Must repeat 4 times on 4 separate rounds (1 bird per round)</b>
+					</span>
+					<span>To get the final bird (you won't be able to see it), you'll need to look for a blue glint and hear the Warden crying, which indicates you're looking directly at it.</span>
+					<span>Input the number 872 into the number pad and pick up the Zombie Blood power-up.</span>
+					<span>
+						Looking through your{" "}
+						<TabLink tab="buildables" target="shield">
+							shield
+						</TabLink>{" "}
+						at the spot you found before should now show the bird; throw your{" "}
+						<TabLink tab="wonder-weapon" target="hellsretriever">
+							Hell's Retriever
+						</TabLink>{" "}
+						at it to grab it. Pick up the Kronorium that is in front of the location.
+					</span>
 				</li>
-				<li>Head back to the Warden's Ritual Chamber and give the skeleton in the chair the kronorium by interacting with him.</li>
+				<li>Head back to the Warden's Ritual Chamber and give the skeleton in the chair the Kronorium by interacting with him.</li>
 				<li>
 					<b>Challenges</b>
 				</li>
 				<ol>
 					<li>Enter Afterlife vision and look at the open book to see 3 numbers. Input these into the number pad in the Citadel Tunnels.</li>
-					<li>Look at where the lighthouse shines its beam and head there. looking though afterlife vision at the location will reveal a red portal. shield blast it to open it and begin the challenge.</li>
-					<li>Return to the kronorium after completing the challenge and get a new code. repeat 5 times. (once per challenge)</li>
+					<li>
+						Look at where the lighthouse shines its beam and head there. Looking through afterlife vision at the location will reveal a red portal.{" "}
+						<TabLink tab="buildables" target="shield">
+							Shield blast
+						</TabLink>{" "}
+						it to open it and begin the challenge.
+					</li>
+					<li>Return to the Kronorium after completing the challenge and get a new code. Repeat 5 times (once per challenge).</li>
 					<table>
 						<thead>
 							<tr>
@@ -246,8 +354,8 @@ function MainEE() {
 								<td>
 									<ol>
 										<li>
-											<span>Look around the map (in the water) for 3 bouys which will each give you a number (view code through afterlife).</span>
-											<span>add all 3 numbers together and type that number as morse code into Salys Port morse code thing. (3 seconds for dash, &lt;1 second for dot)</span>
+											<span>Look around the map (in the water) for 3 buoys which will each give you a number (view code through afterlife).</span>
+											<span>Add all 3 numbers together and type that number as morse code into Salty's Port morse code panel (3 seconds for dash, &lt;1 second for dot).</span>
 
 											<ul>
 												<li>Off the left edge of the platform at the top gondola</li>
@@ -256,19 +364,31 @@ function MainEE() {
 											</ul>
 										</li>
 										<li>
-											<span>Head to the infirmary and kill a zombie close to the exit to Cell Blocks then look for a ghost using afterlife, shield blast him and interact to start the escort</span>
-											<span>Fill the ghost with zombie souls to keep him moving as you escort him down to the red portal at Docks. (use the gondola)</span>
+											<span>
+												Head to the Infirmary and kill a zombie close to the exit to Cell Blocks, then look for a ghost using afterlife,{" "}
+												<TabLink tab="buildables" target="shield">
+													shield blast
+												</TabLink>{" "}
+												him, and interact to start the escort.
+											</span>
+											<span>Fill the ghost with zombie souls to keep him moving as you escort him down to the red portal at Docks (use the gondola).</span>
 										</li>
-										<li>Pick up the red orb on the ground</li>
+										<li>Pick up the red orb on the ground.</li>
 									</ol>
 								</td>
 							</tr>
 							<tr>
-								<td>Michigan Avenue (lighthouse beam will not be pointing anywwhere)</td>
+								<td>Michigan Avenue (lighthouse beam will not be pointing anywhere)</td>
 								<td>
 									<ol>
-										<li>Get a kill in the cafeteria to spawn a ghost. Use afterlife and shield blast him to start the escort. Protect him from zombie attacks as he heads to the portal (you are able to damage the ghost)</li>
-										<li>Grab the orb infront of the portal</li>
+										<li>
+											Get a kill in the Cafeteria to spawn a ghost. Use afterlife and{" "}
+											<TabLink tab="buildables" target="shield">
+												shield blast
+											</TabLink>{" "}
+											him to start the escort. Protect him from zombie attacks as he heads to the portal (you are able to damage the ghost).
+										</li>
+										<li>Grab the orb in front of the portal.</li>
 									</ol>
 								</td>
 							</tr>
@@ -277,9 +397,9 @@ function MainEE() {
 								<td>Showers (Banjo)</td>
 								<td>
 									<ol>
-										<li>A ghost will appear next to the portal holding a banjo, grab it to start the step.</li>
-										<li>Find the blue ring and get kills while standing inside it (will take damage when outside the ring or if you have the banjo for too long)</li>
-										<li>The ring will sometimes move locations, jsut move with it. When complete, you will hear a banjo noise. you can then return the banjo and collect the red ball.</li>
+										<li>A ghost will appear next to the portal holding a banjo; grab it to start the step.</li>
+										<li>Find the blue ring and get kills while standing inside it (will take damage when outside the ring or if you have the banjo for too long).</li>
+										<li>The ring will sometimes move locations; just move with it. When complete, you will hear a banjo noise. You can then return the banjo and collect the red ball.</li>
 									</ol>
 								</td>
 							</tr>
@@ -288,44 +408,86 @@ function MainEE() {
 								<td>Power House (Simon Says)</td>
 								<td>
 									<ol>
-										<li>Head down to Building 64 and interact with the sparking generator to begin simon says.</li>
-										<li>You will see lights flash on and off infront of panels. You must wait for the pattern to finish before repeating it. (from 1 panel to 5)</li>
+										<li>Head down to Building 64 and interact with the sparking generator to begin Simon Says.</li>
+										<li>You will see lights flash on and off in front of panels. You must wait for the pattern to finish before repeating it (from 1 panel to 5).</li>
 										<ImageContainer>
-											<img src="\images\guides\bo4\blood-of-the-dead\blood-of-the-dead-simonsays.png" alt="Simon Says Panel Locations" />
+											<img src="/images/guides/bo4/blood-of-the-dead/blood-of-the-dead-simonsays.png" alt="Simon Says Panel Locations" />
 										</ImageContainer>
-										<li>When finished, 3 panels lights will remain lit. Write down what their symbols are. Grab the punchcard on the shelf between 2 doorways.</li>
-										<li>Go to the second floor of spawn and place the punchcard into the machine in the corner. Several screens will start displaying the symbols, interact with the 3 from the generators and write down the new symbol they turned into.</li>
-										<li>Go back to the Power House and figure out which levers your symbols are attached to. Spirit blast the ghost when he is on his way to each of your symbols.</li>
-										<li>Grab the red orb infront of the last lever.</li>
+										<li>When finished, 3 panel lights will remain lit. Write down what their symbols are. Grab the punchcard on the shelf between 2 doorways.</li>
+										<li>Go to the second floor of spawn and place the punchcard into the machine in the corner. Several screens will start displaying the symbols; interact with the 3 from the generators and write down the new symbol they turned into.</li>
+										<li>
+											Go back to the Power House and figure out which levers your symbols are attached to.{" "}
+											<TabLink tab="buildables" target="shield">
+												Spirit blast
+											</TabLink>{" "}
+											the ghost when he is on his way to each of your symbols.
+										</li>
+										<li>Grab the red orb in front of the last lever.</li>
 									</ol>
 								</td>
 							</tr>
 							<tr>
-								<td>New Industries (ensure you have a full shield blast before starting)</td>
+								<td>
+									New Industries (ensure you have a full{" "}
+									<TabLink tab="buildables" target="shield">
+										shield blast
+									</TabLink>{" "}
+									before starting)
+								</td>
 								<td>
 									<ol>
-										<li>Head to D-Block and get a zombie kill. Enter afterlife to see the ghost. shoot him with a shield blast to activate him</li>
-										<li>Drain him with your shield key (no more lightning effect after 7 seconds) then repeat the process of shield blasting and draining 5 times total.</li>
-										<li>When the ghost has chenged posture and speed, head into the New Industries building and interact with the trap once the ghost gets close. If done correctly he will drop the red orb you need.</li>
+										<li>
+											Head to D-Block and get a zombie kill. Enter afterlife to see the ghost. Shoot him with a{" "}
+											<TabLink tab="buildables" target="shield">
+												shield blast
+											</TabLink>{" "}
+											to activate him.
+										</li>
+										<li>
+											Drain him with your shield key (no more lightning effect after 7 seconds), then repeat the process of{" "}
+											<TabLink tab="buildables" target="shield">
+												shield blasting
+											</TabLink>{" "}
+											and draining 5 times total.
+										</li>
+										<li>When the ghost has changed posture and speed, head into the New Industries building and interact with the trap once the ghost gets close. If done correctly, he will drop the red orb you need.</li>
 									</ol>
 								</td>
 							</tr>
 						</tbody>
 					</table>
-					<li>Once all challenges have been completed, head back to spawn and interact with the map once more to place the rest of the red orbs. (Now get ready for the boss fight (including a shield blast))</li>
-					<li>Once ready, head back into the Warden's Ritual Chamber and interact with the kronorium. (Cutscene)</li>
-					<li>Leave the cell and grab a shield (if you dont have one already) and grab the sack on the floor at the doorway to get your weapons back. Follow the bird and kill the Wardens and Dogs around the Prison.</li>
-					<li>When you reach the point where the Warden gets abducted, he will drop the final red orb which you must pick up and place on the map.</li>
+					<li>
+						Once all challenges have been completed, head back to spawn and interact with the map once more to place the rest of the red orbs. (Now get ready for the boss fight, including a{" "}
+						<TabLink tab="buildables" target="shield">
+							shield blast
+						</TabLink>
+						).
+					</li>
+					<li>Once ready, head back into the Warden's Ritual Chamber and interact with the Kronorium. (Cutscene)</li>
+					<li>
+						Leave the cell and grab a{" "}
+						<TabLink tab="buildables" target="shield">
+							shield
+						</TabLink>{" "}
+						(if you don't have one already) and grab the sack on the floor at the doorway to get your weapons back. Follow the bird and kill the Wardens and Dogs around the prison.
+					</li>
+					<li>When you reach the point where the Warden gets abducted, he will drop the final red orb, which you must pick up and place on the map.</li>
 					<li>Go up the now open staircase and interact with the broken lights to enter the boss fight.</li>
 				</ol>
 			</ol>
 
 			<h2>Boss Fight</h2>
 			<ul>
-				<li>Waves of zombies, dogs, and wardens will spawn</li>
-				<li>Max ammo and carpenter will spawn once everything has been killed</li>
-				<li>Once this is done, head to where the warden is and shoot the 3 glowing orbs around him until they dissapear then shield blast the glowing white thing above the center 2 times.</li>
-				<li>After repeating this several times, Richtofen will eventually need to enter the Dark Mechaninsm in the center of the arena</li>
+				<li>Waves of zombies, dogs, and Wardens will spawn.</li>
+				<li>Max Ammo and Carpenter will spawn once everything has been killed.</li>
+				<li>
+					Once this is done, head to where the Warden is and shoot the 3 glowing orbs around him until they disappear, then{" "}
+					<TabLink tab="buildables" target="shield">
+						shield blast
+					</TabLink>{" "}
+					the glowing white thing above the center 2 times.
+				</li>
+				<li>After repeating this several times, Richtofen will eventually need to enter the Dark Mechanism in the center of the arena.</li>
 				<li>After Richtofen has returned and killed everything, the Warden will finally attack the players. You must kill him.</li>
 			</ul>
 		</section>
@@ -342,11 +504,17 @@ function SideEE() {
 			<h2 id="power">Power</h2>
 			<p>
 				<span>There are 2 power switches on the map, each powering a specific section of the island.</span>
-				<span>The switches are located in the Power House and Building 64 (will spawn a Warden which drops the Warden's Key)</span>
+				<span>The switches are located in the Power House and Building 64 (will spawn a Warden which drops the Warden's Key).</span>
 			</p>
 
 			<h2 id="pap">PaP</h2>
-			<p>Shock the box ontop of the roof with a shield blast</p>
+			<p>
+				Shock the box on top of the roof with a{" "}
+				<TabLink tab="buildables" target="shield">
+					shield blast
+				</TabLink>
+				.
+			</p>
 
 			<h2 id="freemonkey">
 				Free Monkey Bombs -{" "}
@@ -355,16 +523,17 @@ function SideEE() {
 				</a>
 			</h2>
 			<p>
-				Can only be picked up once throughout the game. then monkeys must be found in the{" "}
+				Can only be picked up once throughout the game. Then monkeys must be found in the{" "}
 				<TabLink tab="weapons" target="mysterybox">
 					Mystery Box
 				</TabLink>
+				.
 			</p>
 			<ol>
-				<li>Use your Specialist Weapon until it has reached Level 2</li>
-				<li>Navigate to the statue Monkey Bomb located outside the map in C-D Street. Kill Zombies next to the statue using your Specialist Weapon to fill the monkey's hat with souls</li>
-				<li>Once enough souls have been collected the monkey's hat will glow red. Shoot the monkey which will cause it to levitate and disappear</li>
-				<li>Finally, navigate to Richtofen's Laboratory and obtain the Monkey Bombs via the walnut teleporter pad located on a table</li>
+				<li>Use your Specialist Weapon until it has reached Level 2.</li>
+				<li>Navigate to the statue Monkey Bomb located outside the map in C-D Street. Kill zombies next to the statue using your Specialist Weapon to fill the monkey's hat with souls.</li>
+				<li>Once enough souls have been collected, the monkey's hat will glow red. Shoot the monkey, which will cause it to levitate and disappear.</li>
+				<li>Finally, navigate to Richtofen's Laboratory and obtain the Monkey Bombs via the walnut teleporter pad located on a table.</li>
 			</ol>
 
 			<h2 id="shieldupgrade">
@@ -373,7 +542,17 @@ function SideEE() {
 					Video
 				</a>
 			</h2>
-			<p>The Shield can now withstand an extra 200 damage and holds an extra 2 Spirit Blasts (PER PERSON UPGRADE, if everyone throws their Hell's Retriever at the same time no matter where they are, they should also get the upgrade)</p>
+			<p>
+				The{" "}
+				<TabLink tab="buildables" target="shield">
+					Spectral Shield
+				</TabLink>{" "}
+				can now withstand an extra 200 damage and holds an extra 2 Spirit Blasts (PER PERSON UPGRADE; if everyone throws their{" "}
+				<TabLink tab="wonder-weapon" target="hellsretriever">
+					Hell's Retriever
+				</TabLink>{" "}
+				at the same time no matter where they are, they should also get the upgrade).
+			</p>
 			<ol>
 				<li>
 					Obtain the{" "}
@@ -390,10 +569,22 @@ function SideEE() {
 					<TabLink tab="weapons" target="mysterybox">
 						Mystery Box
 					</TabLink>{" "}
-					until a Lock appears
+					until a lock appears.
 				</li>
-				<li>Quickly equip the Spectral Shield and absorb energy from the lock using the Shield's Key attack until the keyhole is blue</li>
-				<li>Throw the Hell's Retriever at the lock to collect it. (Multiple players can throw the Retriever at it all at once to upgrade the shield)</li>
+				<li>
+					Quickly equip the{" "}
+					<TabLink tab="buildables" target="shield">
+						Spectral Shield
+					</TabLink>{" "}
+					and absorb energy from the lock using the Shield's Key attack until the keyhole is blue.
+				</li>
+				<li>
+					Throw the{" "}
+					<TabLink tab="wonder-weapon" target="hellsretriever">
+						Hell's Retriever
+					</TabLink>{" "}
+					at the lock to collect it (Multiple players can throw the Retriever at it all at once to upgrade the shield).
+				</li>
 			</ol>
 		</section>
 	);
@@ -418,10 +609,16 @@ function MusicEE() {
 					<TabLink tab="buildables" target="shield">
 						Spectral Shield
 					</TabLink>{" "}
-					and at least 1 Spirit Blast
+					and at least 1 Spirit Blast.
 				</li>
-				<li>Navigate to the Citadel Tunnels, Spirit Blast the number pad to activate it</li>
-				<li>By holding interact, input 115 into the number pad</li>
+				<li>
+					Navigate to the Citadel Tunnels;{" "}
+					<TabLink tab="buildables" target="shield">
+						Spirit Blast
+					</TabLink>{" "}
+					the number pad to activate it.
+				</li>
+				<li>By holding interact, input 115 into the number pad.</li>
 			</ol>
 
 			<h2>
@@ -431,7 +628,7 @@ function MusicEE() {
 				</a>
 			</h2>
 			<ol>
-				<li>Shoot the power switch to the Washing Machine in Showers area 3 times (after it turns off again)</li>
+				<li>Shoot the power switch to the Washing Machine in the Showers area 3 times (after it turns off again).</li>
 			</ol>
 		</section>
 	);
@@ -450,7 +647,7 @@ function WonderWeapons() {
 					Video
 				</a>
 			</h2>
-			<p>Can be obtained either from the box or by doing the following Free Blundergat EE</p>
+			<p>Can be obtained either from the box or by doing the following Free Blundergat EE:</p>
 			<ol>
 				<li>
 					Obtain the{" "}
@@ -459,16 +656,32 @@ function WonderWeapons() {
 					</TabLink>
 				</li>
 				<li>
-					Collect 5 Invisible Skulls (visible in afterlife) around the map by throwing the Hell's Retriever
+					Collect 5 Invisible Skulls (visible in afterlife) around the map by throwing the{" "}
+					<TabLink tab="wonder-weapon" target="hellsretriever">
+						Hell's Retriever
+					</TabLink>
+					:
 					<ul>
 						<li>Eagle Plaza on the pole to the left</li>
 						<li>C-D Street Cell inside the toilet</li>
 						<li>West Grounds in the middle area of the stairs</li>
 						<li>Docks on one of the far dock poles</li>
-						<li>Roof on box behind PaP Location</li>
+						<li>
+							Roof on box behind{" "}
+							<TabLink tab="side-ee" target="pap">
+								PaP
+							</TabLink>{" "}
+							location
+						</li>
 					</ul>
 				</li>
-				<li>Navigate to the Warden's Office and pick up the Blundergat sitting on the table</li>
+				<li>
+					Navigate to the Warden's Office and pick up the{" "}
+					<TabLink tab="wonder-weapon" target="blundergat">
+						Blundergat
+					</TabLink>{" "}
+					sitting on the table.
+				</li>
 			</ol>
 
 			<h2 id="acidgat">
@@ -488,15 +701,23 @@ function WonderWeapons() {
 						Warden's Key
 					</TabLink>
 				</li>
-				<li>Obtain the case piece located in the Transverse Tunnel near wallbuy on floor</li>
-				<li>Unlock the door and obtain the motor piece located in the Sally Port on the table</li>
-				<li>Unlock the cage and obtain the acid bottle piece located in the Infirmary cupboard</li>
+				<li>Obtain the case piece located in the Transverse Tunnel near the wallbuy on the floor.</li>
+				<li>Unlock the door and obtain the motor piece located in the Sally Port on the table.</li>
+				<li>Unlock the cage and obtain the acid bottle piece located in the Infirmary cupboard.</li>
 				<li>
 					Navigate to a{" "}
 					<TabLink tab="buildables" target="tables">
 						building table
 					</TabLink>{" "}
-					and craft the Acidgat Kit. Activate the kit to place the Blundergat within, after a few seconds the Acidgat can be obtained from the kit
+					and craft the Acidgat Kit. Activate the kit to place the{" "}
+					<TabLink tab="wonder-weapon" target="blundergat">
+						Blundergat
+					</TabLink>{" "}
+					within; after a few seconds the{" "}
+					<TabLink tab="wonder-weapon" target="acidgat">
+						Acidgat
+					</TabLink>{" "}
+					can be obtained from the kit.
 				</li>
 			</ol>
 
@@ -506,7 +727,13 @@ function WonderWeapons() {
 					Video
 				</a>
 			</h2>
-			<p>Once complete, anyone in the game can place their Blundergat into the machine and upgrade it</p>
+			<p>
+				Once complete, anyone in the game can place their{" "}
+				<TabLink tab="wonder-weapon" target="blundergat">
+					Blundergat
+				</TabLink>{" "}
+				into the machine and upgrade it:
+			</p>
 			<ul>
 				<li>
 					Obtain the{" "}
@@ -514,10 +741,28 @@ function WonderWeapons() {
 						Blundergat
 					</TabLink>
 				</li>
-				<li>Navigate to the Warden's House, place the Blundergat in the fireplace</li>
-				<li>While remaining inside of the Warden's House, kill Zombies which will then drop Essence, collect the Essence by walking over it. Once all 3 skulls above the fireplace are on fire, activate the skulls to deposit the collected Essence. Once complete the fire within the fireplace will turn blue</li>
 				<li>
-					Obtain the Tempered Blundergat from the fireplace. Without firing the Tempered Blundergat, quickly navigate to the flaming blue barrel in Eagle Plaza, stand near the barrel for a few seconds to transfer its fire to your Tempered Blundergat. Continue to do this for the rest of the Barrels.
+					Navigate to the Warden's House, place the{" "}
+					<TabLink tab="wonder-weapon" target="blundergat">
+						Blundergat
+					</TabLink>{" "}
+					in the fireplace.
+				</li>
+				<li>While remaining inside of the Warden's House, kill zombies, which will then drop Essence. Collect the Essence by walking over it. Once all 3 skulls above the fireplace are on fire, activate the skulls to deposit the collected Essence. Once complete, the fire within the fireplace will turn blue.</li>
+				<li>
+					Obtain the Tempered{" "}
+					<TabLink tab="wonder-weapon" target="blundergat">
+						Blundergat
+					</TabLink>{" "}
+					from the fireplace. Without firing the Tempered{" "}
+					<TabLink tab="wonder-weapon" target="blundergat">
+						Blundergat
+					</TabLink>
+					, quickly navigate to the flaming blue barrel in Eagle Plaza, stand near the barrel for a few seconds to transfer its fire to your Tempered{" "}
+					<TabLink tab="wonder-weapon" target="blundergat">
+						Blundergat
+					</TabLink>
+					. Continue to do this for the rest of the barrels:
 					<ul>
 						<li>Michigan Avenue</li>
 						<li>Cell Block Entrance</li>
@@ -525,7 +770,21 @@ function WonderWeapons() {
 						<li>West Grounds</li>
 					</ul>
 				</li>
-				<li>Quickly navigate to New Industries and place the Tempered Blundergat into the press. Spirits will spawn and begin to forge the Magmagat. The Magmagat is now obtainable via the press</li>
+				<li>
+					Quickly navigate to New Industries and place the Tempered{" "}
+					<TabLink tab="wonder-weapon" target="blundergat">
+						Blundergat
+					</TabLink>{" "}
+					into the press. Spirits will spawn and begin to forge the{" "}
+					<TabLink tab="wonder-weapon" target="magmagat">
+						Magmagat
+					</TabLink>
+					. The{" "}
+					<TabLink tab="wonder-weapon" target="magmagat">
+						Magmagat
+					</TabLink>{" "}
+					is now obtainable via the press.
+				</li>
 			</ul>
 
 			<h2 id="hellsretriever">
@@ -536,14 +795,20 @@ function WonderWeapons() {
 			</h2>
 			<ol>
 				<li>
-					Kill zombies around the all of the hellhounds on the walls around the map until they go away
+					Kill zombies around all of the hellhounds on the walls around the map until they go away:
 					<ul>
 						<li>New Industries</li>
 						<li>Cell Block 2nd Floor</li>
 						<li>Eagle Plaza</li>
 					</ul>
 				</li>
-				<li>Take the fast travel from the Warden's House to the Showers (or vice versa). During this travel the Hell's Retriever is located on a rock, obtain it by holding the activate button once the player is nearing it</li>
+				<li>
+					Take the fast travel from the Warden's House to the Showers (or vice versa). During this travel, the{" "}
+					<TabLink tab="wonder-weapon" target="hellsretriever">
+						Hell's Retriever
+					</TabLink>{" "}
+					is located on a rock; obtain it by holding the activate button once the player is nearing it.
+				</li>
 			</ol>
 
 			<h2 id="hellsredeemer">
@@ -563,15 +828,61 @@ function WonderWeapons() {
 						Spectral Shield
 					</TabLink>
 				</li>
-				<li>Navigate to the Recreation Yard and stand near to the flaming barrel. Kill Zombies using the Hell's Retriever, if the player is in the correct area of the Recreation Yard the Hell's Retriever will glow blue when being thrown. Once you have killed enough zombies with the blue tomahawk a howl can be heard and the Hell's Retriever will no longer glow blue</li>
 				<li>
-					Locate a blue hellhound mark around the map using the Spectral Shield vision. Throw the Hell's Retriever at the hellhound mark, if done correctly the mark will disappear and the Hell's Retriever will be taken out of the player's inventory.{" "}
+					Navigate to the Recreation Yard and stand near the flaming barrel. Kill zombies using the{" "}
+					<TabLink tab="wonder-weapon" target="hellsretriever">
+						Hell's Retriever
+					</TabLink>
+					; if the player is in the correct area of the Recreation Yard, the{" "}
+					<TabLink tab="wonder-weapon" target="hellsretriever">
+						Hell's Retriever
+					</TabLink>{" "}
+					will glow blue when being thrown. Once you have killed enough zombies with the blue tomahawk, a howl can be heard and the{" "}
+					<TabLink tab="wonder-weapon" target="hellsretriever">
+						Hell's Retriever
+					</TabLink>{" "}
+					will no longer glow blue.
+				</li>
+				<li>
+					Locate a blue hellhound mark around the map using the{" "}
+					<TabLink tab="buildables" target="shield">
+						Spectral Shield
+					</TabLink>{" "}
+					vision. Throw the{" "}
+					<TabLink tab="wonder-weapon" target="hellsretriever">
+						Hell's Retriever
+					</TabLink>{" "}
+					at the hellhound mark; if done correctly, the mark will disappear and the{" "}
+					<TabLink tab="wonder-weapon" target="hellsretriever">
+						Hell's Retriever
+					</TabLink>{" "}
+					will be taken out of the player's inventory.{" "}
 					<a href="https://imgur.com/a/ULt84ux" target="_blank" rel="noopener noreferrer">
 						Locations
 					</a>
 				</li>
-				<li>Progress until a Hellhound only round. Locate a ghost dog walking anywhere around the map as indicated by its paw prints, the dog is entirely visible when using the Spectral Shield's vision. Once the player is close to the ghost dog, Spirit Blast the dog using the Spectral Shield</li>
-				<li>Take the fast travel from the Warden's House to the Showers (or vice versa). During this travel the Hell's Redeemer is located on a rock, obtain it by holding the activate button once the player is nearing it</li>
+				<li>
+					Progress until a hellhound-only round. Locate a ghost dog walking anywhere around the map as indicated by its paw prints; the dog is entirely visible when using the{" "}
+					<TabLink tab="buildables" target="shield">
+						Spectral Shield
+					</TabLink>
+					's vision. Once the player is close to the ghost dog,{" "}
+					<TabLink tab="buildables" target="shield">
+						Spirit Blast
+					</TabLink>{" "}
+					the dog using the{" "}
+					<TabLink tab="buildables" target="shield">
+						Spectral Shield
+					</TabLink>
+					.
+				</li>
+				<li>
+					Take the fast travel from the Warden's House to the Showers (or vice versa). During this travel, the{" "}
+					<TabLink tab="wonder-weapon" target="hellsredeemer">
+						Hell's Redeemer
+					</TabLink>{" "}
+					is located on a rock; obtain it by holding the activate button once the player is nearing it.
+				</li>
 			</ol>
 
 			<h2 id="spoon">
@@ -587,10 +898,42 @@ function WonderWeapons() {
 						Spectral Shield
 					</TabLink>
 				</li>
-				<li>Navigate to the Warden‘s Office. Using the Spectral Shield's vision, locate and note the 3 numbers on the pillars</li>
-				<li>Navigate to the number pad in the Citadel Tunnels, activate the pad by Spirit Blasting with the Spectral Shield. Enter the previously-obtained numbers. If done correctly, the elevator will drop</li>
-				<li>Navigate to the voltmeter at the Docks, Spirit Blast it to activate the crane. Once the crane has positioned itself over the Docks, throw a Hell's Retriever at the skeleton within the net, cutting off its arm</li>
-				<li>The Spoon will fall and be available to equip on the crate below the crane</li>
+				<li>
+					Navigate to the Warden's Office. Using the{" "}
+					<TabLink tab="buildables" target="shield">
+						Spectral Shield
+					</TabLink>
+					's vision, locate and note the 3 numbers on the pillars.
+				</li>
+				<li>
+					Navigate to the number pad in the Citadel Tunnels; activate the pad by{" "}
+					<TabLink tab="buildables" target="shield">
+						Spirit Blasting
+					</TabLink>{" "}
+					with the{" "}
+					<TabLink tab="buildables" target="shield">
+						Spectral Shield
+					</TabLink>
+					. Enter the previously obtained numbers. If done correctly, the elevator will drop.
+				</li>
+				<li>
+					Navigate to the voltmeter at the Docks;{" "}
+					<TabLink tab="buildables" target="shield">
+						Spirit Blast
+					</TabLink>{" "}
+					it to activate the crane. Once the crane has positioned itself over the Docks, throw a{" "}
+					<TabLink tab="wonder-weapon" target="hellsretriever">
+						Hell's Retriever
+					</TabLink>{" "}
+					at the skeleton within the net, cutting off its arm.
+				</li>
+				<li>
+					The{" "}
+					<TabLink tab="wonder-weapon" target="spoon">
+						spoon
+					</TabLink>{" "}
+					will fall and be available to equip on the crate below the crane.
+				</li>
 			</ol>
 
 			<h2 id="goldspork">
@@ -600,11 +943,27 @@ function WonderWeapons() {
 				</a>
 			</h2>
 			<ol>
-				<li>Navigate to the bathtub located in the Infirmary. Next, place the Spoon in the tub by interacting with it</li>
-				<li>Navigate to the Roof, begin to kill Zombies using the Acidgat or Magmagat. Blood will begin to drip in the tub from the previous step</li>
-				<li>Once the tub has filled all the way, activate it to drain it</li>
 				<li>
-					Locate the water tower near the Catwalk, if all has been done correctly the water tower will be leaking blood. Shoot all of the yellow supports off the Water Tower in order to make the Tower fall down. Once the Water Tower collapses, throw the{" "}
+					Navigate to the bathtub located in the Infirmary. Next, place the{" "}
+					<TabLink tab="wonder-weapon" target="spoon">
+						spoon
+					</TabLink>{" "}
+					in the tub by interacting with it.
+				</li>
+				<li>
+					Navigate to the roof; begin to kill zombies using the{" "}
+					<TabLink tab="wonder-weapon" target="acidgat">
+						Acidgat
+					</TabLink>{" "}
+					or{" "}
+					<TabLink tab="wonder-weapon" target="magmagat">
+						Magmagat
+					</TabLink>
+					. Blood will begin to drip in the tub from the previous step.
+				</li>
+				<li>Once the tub has filled all the way, activate it to drain it.</li>
+				<li>
+					Locate the water tower near the Catwalk; if all has been done correctly, the water tower will be leaking blood. Shoot all of the yellow supports off the water tower in order to make the tower fall down. Once the water tower collapses, throw the{" "}
 					<TabLink tab="wonder-weapon" target="hellsretriever">
 						Hell's Retriever
 					</TabLink>{" "}
@@ -612,7 +971,11 @@ function WonderWeapons() {
 					<a href="https://imgur.com/ZL8M5tF" target="_blank" rel="noopener noreferrer">
 						branch
 					</a>{" "}
-					in front of the tower to collect and equip the Golden Spork
+					in front of the tower to collect and equip the{" "}
+					<TabLink tab="wonder-weapon" target="goldspork">
+						Golden Spork
+					</TabLink>
+					.
 				</li>
 			</ol>
 
@@ -624,27 +987,53 @@ function WonderWeapons() {
 				</a>
 			</h2>
 			<ol>
-				<li>Navigate near the tub of blood in New Industries and get ~100 melee kills nearby until the tub changes to a dark red colour. Once the colour changes, interact with the tub to place the golden spoon in the tub</li>
 				<li>
-					Next you will need to throw the Hell's Redeemer at 3 coloured rocks
+					Navigate near the tub of blood in New Industries and get ~100 melee kills nearby until the tub changes to a dark red colour. Once the colour changes, interact with the tub to place the{" "}
+					<TabLink tab="wonder-weapon" target="goldspork">
+						golden spoon
+					</TabLink>{" "}
+					in the tub.
+				</li>
+				<li>
+					Next you will need to throw the{" "}
+					<TabLink tab="wonder-weapon" target="hellsredeemer">
+						Hell's Redeemer
+					</TabLink>{" "}
+					at 3 coloured rocks:
 					<ul>
 						<li>Green - D-Block / MOTD original spawn - outside the barricade</li>
-						<li>Blue - Docks / Shield Blast the Electric Box - inside the net</li>
+						<li>
+							Blue - Docks /{" "}
+							<TabLink tab="buildables" target="shield">
+								Shield Blast
+							</TabLink>{" "}
+							the Electric Box - inside the net
+						</li>
 						<li>Red - Eagle Plaza / Next to the Warden's House - on the corner of this roof</li>
 					</ul>
 				</li>
 				<li>
-					Once all 3 have been collected place them at their corresponding traps and get 100 kills using the traps
+					Once all 3 have been collected, place them at their corresponding traps and get 100 kills using the traps:
 					<ul>
 						<li>Green - Acid Trap - Cafeteria</li>
 						<li>Blue - Fan Trap - Warden's Office</li>
 						<li>Red - Spin Trap - New Industries</li>
 					</ul>
 				</li>
-				<li>Once you've got 100 kills at each location the stones will become shiny gems and you can interact with them to pick them up</li>
-				<li>Use the Cafeteria Fast Travel towards New Industries and as soon as you arrive, turn around and throw your Hell's Redeemer in the location shown below. If done correctly, a golden nugget should be left on the floor behind you. Pick it up and take it to the forge to create the Golden Scalpel</li>
+				<li>Once you've got 100 kills at each location, the stones will become shiny gems and you can interact with them to pick them up.</li>
+				<li>
+					Use the Cafeteria fast travel towards New Industries and as soon as you arrive, turn around and throw your{" "}
+					<TabLink tab="wonder-weapon" target="hellsredeemer">
+						Hell's Redeemer
+					</TabLink>{" "}
+					in the location shown below. If done correctly, a golden nugget should be left on the floor behind you. Pick it up and take it to the forge to create the{" "}
+					<TabLink tab="wonder-weapon" target="goldscalpel">
+						Golden Scalpel
+					</TabLink>
+					.
+				</li>
 				<ImageContainer>
-					<img src="\images\guides\bo4\blood-of-the-dead\blood-of-the-dead-scalpel.png" alt="Golden Scalpel - Throw Here" />
+					<img src="/images/guides/bo4/blood-of-the-dead/blood-of-the-dead-scalpel.png" alt="Golden Scalpel - Throw Here" />
 				</ImageContainer>
 			</ol>
 
@@ -655,9 +1044,21 @@ function WonderWeapons() {
 				</a>
 			</h2>
 			<ol>
-				<li>Head to the New Industries and interact with the blood tub for the skeleton hand to take the Golden Scalpel</li>
-				<li>Take a Brutus (you can use code 666 to get one earlier, can only be used once per game) onto the Catwalk and melee kill him infront of the sign with a knife in it (can use dying wish + etherial razer to make him die faster). Step is done correctly when the prison number under the knfe on the sign has fallen.</li>
-				<li>Return to the tub and interact with it to recieve the Golden Spork-Knife</li>
+				<li>
+					Head to New Industries and interact with the blood tub for the skeleton hand to take the{" "}
+					<TabLink tab="wonder-weapon" target="goldscalpel">
+						Golden Scalpel
+					</TabLink>
+					.
+				</li>
+				<li>Take a Brutus (you can use code 666 to get one earlier; can only be used once per game) onto the Catwalk and melee kill him in front of the sign with a knife in it (can use Dying Wish + Ethereal Razor to make him die faster). The step is done correctly when the prison number under the knife on the sign has fallen.</li>
+				<li>
+					Return to the tub and interact with it to receive the{" "}
+					<TabLink tab="wonder-weapon" target="goldsporkknife">
+						Golden Spork-Knife
+					</TabLink>
+					.
+				</li>
 			</ol>
 		</section>
 	);
@@ -696,12 +1097,12 @@ function Buildables() {
 					<b>Door</b>
 					<ul>
 						<li>China Alley near stairs barrier</li>
-						<li>Citadel Tunnels near pile of sulls to the left after stairs</li>
+						<li>Citadel Tunnels near pile of skulls to the left after stairs</li>
 						<li>Citadel Tunnels behind wall on the way down (big spiral)</li>
 					</ul>
 				</li>
 				<li>
-					<b>Key</b> - Dropped by the first warden killed.
+					<b>Key</b> - Dropped by the first Warden killed.
 				</li>
 			</ul>
 		</section>
@@ -736,7 +1137,7 @@ function Weapons() {
 				<li id="hellfire">Hellfire - Player Choice</li>
 				<li>Overkill - Player Choice</li>
 				<li id="pathofsorrows">Path of Sorrows - Player Choice</li>
-				<li id="ragnarok">Ragnarock DG-5 - Player Choice</li>
+				<li id="ragnarok">Ragnarok DG-5 - Player Choice</li>
 			</ul>
 
 			<h3>Wall Weapons</h3>
@@ -883,7 +1284,7 @@ function Gauntlet() {
 					<tr>
 						<td>1</td>
 						<td>Sacred Ground</td>
-						<td>Do not allow any Zombies to enter Richtofen's lab.</td>
+						<td>Do not allow any zombies to enter Richtofen's lab.</td>
 					</tr>
 					<tr>
 						<td>2</td>
@@ -913,7 +1314,7 @@ function Gauntlet() {
 					<tr>
 						<td>7</td>
 						<td>Shut Your Trap</td>
-						<td>Kill Zombies with Traps only.</td>
+						<td>Kill zombies with traps only.</td>
 					</tr>
 					<tr>
 						<td>8</td>
@@ -923,7 +1324,13 @@ function Gauntlet() {
 					<tr>
 						<td>9</td>
 						<td>Helluva Appetite</td>
-						<td>At least one player must possess Hell's Retriever at the end of the round.</td>
+						<td>
+							At least one player must possess{" "}
+							<TabLink tab="wonder-weapon" target="hellsretriever">
+								Hell's Retriever
+							</TabLink>{" "}
+							at the end of the round.
+						</td>
 					</tr>
 					<tr>
 						<td>10</td>
@@ -938,7 +1345,13 @@ function Gauntlet() {
 					<tr>
 						<td>12</td>
 						<td>Brain Soup</td>
-						<td>Get at least 20 Spoon kills by round end. Unrelated weapons are locked out.</td>
+						<td>
+							Get at least 20{" "}
+							<TabLink tab="wonder-weapon" target="spoon">
+								Spoon
+							</TabLink>{" "}
+							kills by round end. Unrelated weapons are locked out.
+						</td>
 					</tr>
 					<tr>
 						<td>13</td>
@@ -953,7 +1366,7 @@ function Gauntlet() {
 					<tr>
 						<td>15</td>
 						<td>Power Through</td>
-						<td>Defend the Power House</td>
+						<td>Defend the Power House.</td>
 					</tr>
 					<tr>
 						<td>16</td>
@@ -963,17 +1376,29 @@ function Gauntlet() {
 					<tr>
 						<td>17</td>
 						<td>Oh My Gat!</td>
-						<td>Forge the Magmagat during the round.</td>
+						<td>
+							Forge the{" "}
+							<TabLink tab="wonder-weapon" target="magmagat">
+								Magmagat
+							</TabLink>{" "}
+							during the round.
+						</td>
 					</tr>
 					<tr>
 						<td>18</td>
 						<td>Sacrificial Packed</td>
-						<td>Sacrifice 2 weapons to the Pack-A-Punch Machine.</td>
+						<td>
+							Sacrifice 2 weapons to the{" "}
+							<TabLink tab="side-ee" target="pap">
+								Pack-A-Punch Machine
+							</TabLink>
+							.
+						</td>
 					</tr>
 					<tr>
 						<td>19</td>
 						<td>Japanese Horror</td>
-						<td>Survive the Terror.</td>
+						<td>Survive the terror.</td>
 					</tr>
 					<tr>
 						<td>20</td>
@@ -1008,7 +1433,7 @@ function Gauntlet() {
 					<tr>
 						<td>26</td>
 						<td>Mobster</td>
-						<td>Use the MI927 only.</td>
+						<td>Use the M1927 only.</td>
 					</tr>
 					<tr>
 						<td>27</td>
@@ -1023,7 +1448,7 @@ function Gauntlet() {
 					<tr>
 						<td>29</td>
 						<td>Who Let The Hounds Out?</td>
-						<td>Survive a Hellhound onslaught.</td>
+						<td>Survive a hellhound onslaught.</td>
 					</tr>
 					<tr>
 						<td>30</td>
@@ -1064,7 +1489,13 @@ function Extras() {
 	return (
 		<section className="tab-content">
 			<h2>Free Power-Ups</h2>
-			<p>There are voltmeters around the map that are next to prison cells containing a random power-up. When you Spirit Blast the voltmeter the prison cell will open and you can obtain the power-up</p>
+			<p>
+				There are voltmeters around the map that are next to prison cells containing a random power-up. When you{" "}
+				<TabLink tab="buildables" target="shield">
+					Spirit Blast
+				</TabLink>{" "}
+				the voltmeter, the prison cell will open and you can obtain the power-up:
+			</p>
 			<ul>
 				<li>Times Square</li>
 				<li>Michigan Avenue</li>
@@ -1075,7 +1506,13 @@ function Extras() {
 					Video
 				</a>
 			</h2>
-			<p>You are able to get a free full key charge once per round by going to one of the following power-boxes and interacting with them while holding out your shield. The box must be sparking.</p>
+			<p>
+				You are able to get a free full key charge once per round by going to one of the following power boxes and interacting with them while holding out your{" "}
+				<TabLink tab="buildables" target="shield">
+					shield
+				</TabLink>
+				. The box must be sparking.
+			</p>
 			<ul>
 				<li>
 					<a href="https://i.imgur.com/npT37RO.jpg" target="_blank" rel="noopener noreferrer">
@@ -1130,15 +1567,15 @@ function Extras() {
 			</ul>
 			<h2>Samuel Stuhlinger Quotes</h2>
 			<p>
-				<span>As Richtofen, interact with Samuel Stuhlingers Cryopod at the start of the game (furthest to the left).</span>
+				<span>As Richtofen, interact with Samuel Stuhlinger's cryopod at the start of the game (furthest to the left).</span>
 				<span>
-					Throughout the entire <TabLink tab="main-ee">Main EE</TabLink>, you will now hear Stuhlinger Quotes (only Richtofen will hear)
+					Throughout the entire <TabLink tab="main-ee">Main EE</TabLink>, you will now hear Stuhlinger quotes (only Richtofen will hear).
 				</span>
 			</p>
 			<h2>
 				Shadowman Jumpscare -{" "}
 				<a href="https://youtu.be/dXCTIfao15M?si=h5KXGxogLte3D1KJ&t=1073" target="_blank" rel="noopener noreferrer">
-					Video5
+					Video
 				</a>
 			</h2>
 			<p>
@@ -1154,17 +1591,17 @@ function Extras() {
 					Video
 				</a>
 			</h2>
-			<p>There are several of weasels Drawings which can be accessed through having/using spcieifc equipement</p>
+			<p>There are several of Weasel's drawings which can be accessed through having/using specific equipment:</p>
 			<ul>
 				<li>
 					Electric Burst perk and{" "}
 					<TabLink tab="wonder-weapon" target="spoon">
-						Spoon
+						spoon
 					</TabLink>{" "}
 					- Power House in box which needs to be knifed open (left of entrance)
 				</li>
 				<li>
-					<TabLink tab="wonder-weapon" target="goldenspork">
+					<TabLink tab="wonder-weapon" target="goldspork">
 						Golden Spork
 					</TabLink>{" "}
 					- Michigan Avenue if you knife the "deal with it" poster
@@ -1174,7 +1611,7 @@ function Extras() {
 					<TabLink tab="weapons" target="pathofsorrows">
 						Path of Sorrows
 					</TabLink>{" "}
-					- Library if yo udash into the corner of the room to the right of the MOG 12 wallbuy
+					- Library if you dash into the corner of the room to the right of the MOG 12 wallbuy
 				</li>
 				<li>
 					lvl 3{" "}
@@ -1187,7 +1624,7 @@ function Extras() {
 					<TabLink tab="weapons" target="ragnarok">
 						Ragnarok DG-5
 					</TabLink>{" "}
-					- Building 64 pulling them out infront of panel on left center of room
+					- Building 64 pulling them out in front of panel on left center of room
 				</li>
 			</ul>
 			<h2>
@@ -1196,13 +1633,13 @@ function Extras() {
 					Video
 				</a>
 			</h2>
-			<p>5 Warden Logs can be found around the map</p>
+			<p>5 Warden Logs can be found around the map:</p>
 			<ul>
 				<li>New Industries in the back corner by the red thing to the right of the wallbuy</li>
-				<li>Power House stright as you enter on the left pipe near the floor</li>
-				<li>Cafateria on the left laying sideways on a table</li>
-				<li>Infirmary in the corener of the room with the skeleton on the table</li>
-				<li>Showers ontop of a box on the wall to the left of the Washing Machine</li>
+				<li>Power House straight as you enter on the left pipe near the floor</li>
+				<li>Cafeteria on the left laying sideways on a table</li>
+				<li>Infirmary in the corner of the room with the skeleton on the table</li>
+				<li>Showers on top of a box on the wall to the left of the washing machine</li>
 			</ul>
 			<h2>
 				Maxis Logs -{" "}
@@ -1210,13 +1647,13 @@ function Extras() {
 					Video
 				</a>
 			</h2>
-			<p>5 Maxis Radios can be found around the map</p>
+			<p>5 Maxis Radios can be found around the map:</p>
 			<ul>
-				<li>Michigan avenue to the left of the power box at the dead end on the bottom shelf</li>
+				<li>Michigan Avenue to the left of the power box at the dead end on the bottom shelf</li>
 				<li>In the library on the bookshelf in the middle</li>
 				<li>In the Warden's House behind the chair</li>
 				<li>Citadel Tunnels at the bottom of the stairs on the left</li>
-				<li>At the Docks to the left of the box location infront of the boxes</li>
+				<li>At the Docks to the left of the box location in front of the boxes</li>
 			</ul>
 			<h2>Traps</h2>
 			<table>
@@ -1298,7 +1735,13 @@ function Extras() {
 				<tbody>
 					<tr>
 						<td>Brutus</td>
-						<td>The undead Warden will lock the Mystery Box and other intractables around the map so that you will have to spend points in order to unlock them.</td>
+						<td>
+							The undead Warden will lock the{" "}
+							<TabLink tab="weapons" target="mysterybox">
+								Mystery Box
+							</TabLink>{" "}
+							and other interactables around the map so that you will have to spend points in order to unlock them.
+						</td>
 						<td>
 							<a href="https://i.imgur.com/Krijchp.jpg" rel="nofollow noopener noreferrer" target="_blank">
 								Here
@@ -1331,7 +1774,7 @@ function Extras() {
 				<tbody>
 					<tr>
 						<td>Perkless in Prison</td>
-						<td>Complete the Main Quest on Blood of the Dead using zero perks</td>
+						<td>Complete the Main Quest on Blood of the Dead using zero perks.</td>
 					</tr>
 				</tbody>
 			</table>

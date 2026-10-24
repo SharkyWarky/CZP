@@ -1,5 +1,5 @@
-import { createFileRoute } from "@tanstack/react-router";
 /* ---- v2.1.0 ---- */
+import { createFileRoute } from "@tanstack/react-router";
 import { MapNavigationProvider, useMapNavigation } from "../../../context/MapNavigationContext";
 
 import MapTabs from "../../../components/MapTabs";
@@ -37,7 +37,15 @@ const achievementRows = [
 		id: "breaking-the-ice",
 		name: "Breaking the Ice",
 		description: "In Classified, shatter 115 zombies in a single game",
-		goal: "Easiest with the upgraded Winter's Howl (Freeze with Winter's Howl then shoot with gun)",
+		goal: (
+			<>
+				Easiest with the upgraded{" "}
+				<TabLink tab="wonder-weapon" target="coldwarremedy">
+					Winter's Howl
+				</TabLink>{" "}
+				(Freeze with Winter's Howl then shoot with gun)
+			</>
+		),
 	},
 	{
 		id: "shock-value",
@@ -49,7 +57,7 @@ const achievementRows = [
 				<TabLink tab="buildables" target="electrotrap">
 					Shock Trap
 				</TabLink>{" "}
-				and alternating which trap you kill with
+				and alternate which trap you kill with.
 			</>
 		),
 	},
@@ -65,7 +73,7 @@ const achievementRows = [
 						The Highest Office
 					</TabLink>
 				</span>
-				<span>Restart game until mystery box spawns in the mail office (can be completed on casual and with bots (not recommended))</span>
+				<span>Restart game until mystery box spawns in the mail office (can be completed on casual and with bots (not recommended)).</span>
 			</>
 		),
 	},
@@ -79,7 +87,7 @@ const achievementRows = [
 				<TabLink tab="extras" target="knockknock">
 					Knock Knock EE
 				</TabLink>{" "}
-				and kill the rest over time
+				and kill the rest over time.
 			</>
 		),
 	},
@@ -95,7 +103,7 @@ const achievementRows = [
 						Power Struggle
 					</TabLink>
 				</span>
-				<span>Restart game until mystery box spawns in the mail office (can be completed on casual and with bots (not recommended))</span>
+				<span>Restart game until mystery box spawns in the mail office (can be completed on casual and with bots (not recommended)).</span>
 			</>
 		),
 	},
@@ -103,13 +111,13 @@ const achievementRows = [
 		id: "crawl-for-help",
 		name: "Crawl for Help",
 		description: "In Classified, while in last stand use a teleporter and then get revived in a single game",
-		goal: "Can be done solo with a revive token",
+		goal: "Can be done solo with a revive token.",
 	},
 	{
 		id: "step-on-the-gas",
 		name: "Step on the Gas",
 		description: "In Classified, kill 50 zombies while affected by Nova 6 Crawler gas in a single game",
-		goal: "shoot a nova crawler to make it explode and get zombies to walk through it before killing them",
+		goal: "Shoot a nova crawler to make it explode and get zombies to walk through it before killing them.",
 	},
 	{
 		id: "pent-up-agon",
@@ -121,7 +129,7 @@ const achievementRows = [
 				<TabLink tab="extras" target="knockknock">
 					knock knock EE
 				</TabLink>
-				) to get set-up. End a round while in the elevator then don't leave until the achievement pops
+				) to get set-up. End a round while in the elevator then don't leave until the achievement pops.
 			</>
 		),
 	},
@@ -129,7 +137,7 @@ const achievementRows = [
 		id: "going-everywhere-fast",
 		name: "Going Everywhere Fast",
 		description: "In Classified, use a teleporter 7 times in less than a minute in a single game",
-		goal: "Open most of the map then run through every possible teleporter until the trophy pops",
+		goal: "Open most of the map then run through every possible teleporter until the trophy pops.",
 	},
 ];
 
@@ -148,24 +156,94 @@ function Overview() {
 		<section className="tab-content">
 			<h2>Classified</h2>
 			<p>Classified is a Zombies map that is included with the Black Ops Pass for Call of Duty: Black Ops 4. The fourth map featured in the game and the twenty-eighth map overall, it is a reimagining of the map "Five", which was previously featured in Call of Duty: Black Ops.</p>
-			<p>The map features the "Ultimis" crew - the original versions of"Tank" Dempsey, Nikolai Belinksi, Takeo Masaki and Edward Richtofen - as the four playable characters, replacing John F. Kennedy, Robert McNamara, Richard Nixon, and Fidel Castro. The map's story follows them as they investigate The Pentagon after being teleported there from Shangri-La via overloading a teleporter with the 31-79 JGb215</p>
-			<p>With the release of Operation Grand Heist, Classified can now be purchased as a standalone map without having to acquire the Black Ops Pass for $7.99 USD</p>
+			<p>The map features the "Ultimis" crew - the original versions of "Tank" Dempsey, Nikolai Belinski, Takeo Masaki, and Edward Richtofen - as the four playable characters, replacing John F. Kennedy, Robert McNamara, Richard Nixon, and Fidel Castro. The map's story follows them as they investigate The Pentagon after being teleported there from Shangri-La via overloading a teleporter with the 31-79 JGb215.</p>
+			<p>With the release of Operation Grand Heist, Classified can now be purchased as a standalone map without having to acquire the Black Ops Pass for $7.99 USD.</p>
 
 			<h2>Overview</h2>
-			<p>Being a reimagining of "Five", Classified's layout is mostly identical. However, like Blood of the Dead, the remake of Mob of the Dead, there are a few new rooms added to the map, including the Central Filing and Main Offices on the first floor, and the Server Room in the War Room. The Perk-a-Colas are replaced by the new perk system introduced in Black Ops 4. In addition to this, the steps taken to reach the Pack-a-Punch Machine have also changed. There are also several new Mystery Box locations as well, with the initial Mystery Box location being either in the Main Offices or on the upper level of the War Room.</p>
+			<p>
+				Being a reimagining of "Five", Classified's layout is mostly identical. However, like Blood of the Dead, the remake of Mob of the Dead, there are a few new rooms added to the map, including the Central Filing and Main Offices on the first floor, and the Server Room in the War Room. The Perk-a-Colas are replaced by the new perk system introduced in Black Ops 4. In addition to this, the steps taken to reach the{" "}
+				<TabLink tab="side-ee" target="pap">
+					Pack-a-Punch Machine
+				</TabLink>{" "}
+				have also changed. There are also several new{" "}
+				<TabLink tab="weapons" target="mysterybox">
+					Mystery Box
+				</TabLink>{" "}
+				locations as well, with the initial{" "}
+				<TabLink tab="weapons" target="mysterybox">
+					Mystery Box
+				</TabLink>{" "}
+				location being either in the Main Offices or on the upper level of the War Room.
+			</p>
 
 			<h2>Story</h2>
-			<p>In Classified's Intro Cutscene, the Ultimis crew is shown attempting to teleport from Shangri-La to Groom Lake in order to continue Richtofen's Grand Scheme. Just as they are about to leave, Tank fires the 31-79 JGb215, accidentally overloading the teleporter and sending them hurtling through space and time to the Pentagon in 1963. Ultimis, finding the Pentagon mostly abandoned, begin to loot the facility of its weapons and supplies, including the Winter's Howl. Samantha Maxis, still in control of the Zombies and trapped in the M.P.D on the moon, witnesses these events</p>
-			<p>Simultaneously, Anton Gersh and Yuri Zavoyski activate a Gersh Device for the first time trapping Gersch inside the Casimir Mechanism and allowing Samantha to corrupt Yuri and send him to the Pentagon. Upon arrival, Yuri initiates a Zombie outbreak but is prevented from participating himself by Samantha. The Zombies attack Ultimis</p>
-			<p>Ultimis endeavors to leave the Pentagon and arrive at Groom Lake, building the Teleporter Signal Amplifier in order to do so. Upon arriving, however, they discover a mostly abandoned Groom Lake with no known connection to the Moon. Samantha also speaks directly to Richtofen, discouraging him from continuing his quest and insuring him she will do everything in her power to make him fail</p>
-			<p>Through unknown means, Ultimis is able to re-link the Groom Lake teleporter with Griffin Station, and the events of Moon play out as they originally did. Some time after, Ultimis returns to Earth and travels to some point in time before it was destroyed. They are captured and imprisoned by the remains by American forces, but are rescued by "Primis". "Primis" Nikolai recruits them to fight in the Great War, and the two groups depart through a portal</p>
+			<p>
+				In Classified's Intro Cutscene, the Ultimis crew is shown attempting to teleport from Shangri-La to Groom Lake in order to continue Richtofen's Grand Scheme. Just as they are about to leave, Tank fires the 31-79 JGb215, accidentally overloading the teleporter and sending them hurtling through space and time to the Pentagon in 1963. Ultimis, finding the Pentagon mostly abandoned, begin to loot the facility of its weapons and supplies, including the{" "}
+				<TabLink tab="wonder-weapon" target="coldwarremedy">
+					Winter's Howl
+				</TabLink>
+				. Samantha Maxis, still in control of the Zombies and trapped in the M.P.D on the moon, witnesses these events.
+			</p>
+			<p>Simultaneously, Anton Gersh and Yuri Zavoyski activate a Gersh Device for the first time trapping Gersch inside the Casimir Mechanism and allowing Samantha to corrupt Yuri and send him to the Pentagon. Upon arrival, Yuri initiates a Zombie outbreak but is prevented from participating himself by Samantha. The Zombies attack Ultimis.</p>
+			<p>Ultimis endeavors to leave the Pentagon and arrive at Groom Lake, building the Teleporter Signal Amplifier in order to do so. Upon arriving, however, they discover a mostly abandoned Groom Lake with no known connection to the Moon. Samantha also speaks directly to Richtofen, discouraging him from continuing his quest and insuring him she will do everything in her power to make him fail.</p>
+			<p>Through unknown means, Ultimis is able to re-link the Groom Lake teleporter with Griffin Station, and the events of Moon play out as they originally did. Some time after, Ultimis returns to Earth and travels to some point in time before it was destroyed. They are captured and imprisoned by the remains by American forces, but are rescued by "Primis". "Primis" Nikolai recruits them to fight in the Great War, and the two groups depart through a portal.</p>
 
 			<h2>Gameplay</h2>
-			<p>As could be expected, the map plays much like "Five". The map is split into three floors, the Office Floor, War Room, and Laboratories. Initially, the player can only travel between levels using Elevators, which cost 500 points to use. After turning on the power, teleporters activate on all floors, allowing the map to be more quickly and easily traversed. The location the player will teleport to is random, but the player can at least control what level they go to by paying attention to the symbol floating in the teleporter. An Office Chair brings the player to the Offices, A Control Panel brings the player to the War Room, and A Flask brings the player to one of the teleporters in the labs</p>
-			<p>Once the power is on, 4 "DEFCON" switches can be flipped in the War Room to lower the Pentagons security and allow the player to teleport to new areas. Initially, activating DEFCON 5 will bring the player to the "Panic Room". The Panic room includes a piece of the Teleporter Signal Amplifier, and is initially free of Zombies for 30 seconds, providing players with a slight break. Once the Teleporter Signal Amplifier is built and in place, the War Room's central teleporter will bring players to Groom Lake, where they can use the Pack-a-Punch Machine</p>
-			<p>The map also introduces two new buildables; the Riot Shield and the Teleporter Signal Amplifier, the latter being used to access the Pack-a-Punch Machine. With this modified teleporter, players are able to use the Pack-a-Punch Machine found in Groom Lake, the same place featured in the map Moon. The Electro-Shock Defenses return as well, although the locations for the parts needed to repair them are in different locations, with one spawning in the Server Room and the other spawning in the Porcine Research lab. The Winter's Howl also returns, and is obtainable from the Mystery Box and through completing the Project Skadi quest</p>
-			<p>Unlike the original version, the Pentagon Thief is absent; he is instead replaced by Hellhounds. Like the original map, the Crawler Zombies return, and can now spawn on other levels of the map instead of just the Laboratories. The Bonfire Sale power-up also returns, and can be acquired by opening up areas of Groom Lake, which is achieved by surviving in said area every few rounds without leaving or going down</p>
-			<p>Unlike other maps in Black Ops 4, Classified does not have a main quest. Instead, the ending cutscene plays automatically once players complete round 150</p>
+			<p>
+				As could be expected, the map plays much like "Five". The map is split into three floors, the Office Floor, War Room, and Laboratories. Initially, the player can only travel between levels using Elevators, which cost 500 points to use. After turning on the{" "}
+				<TabLink tab="side-ee" target="power">
+					power
+				</TabLink>
+				, teleporters activate on all floors, allowing the map to be more quickly and easily traversed. The location the player will teleport to is random, but the player can at least control what level they go to by paying attention to the symbol floating in the teleporter. An Office Chair brings the player to the Offices, A Control Panel brings the player to the War Room, and A Flask brings the player to one of the teleporters in the labs.
+			</p>
+			<p>
+				Once the{" "}
+				<TabLink tab="side-ee" target="power">
+					power
+				</TabLink>{" "}
+				is on, 4 "DEFCON" switches can be flipped in the War Room to lower the Pentagon's security and allow the player to teleport to new areas. Initially, activating DEFCON 5 will bring the player to the{" "}
+				<TabLink tab="side-ee" target="panicroom">
+					Panic Room
+				</TabLink>
+				. The Panic room includes a piece of the Teleporter Signal Amplifier, and is initially free of Zombies for 30 seconds, providing players with a slight break. Once the Teleporter Signal Amplifier is built and in place, the War Room's central teleporter will bring players to Groom Lake, where they can use the{" "}
+				<TabLink tab="side-ee" target="pap">
+					Pack-a-Punch Machine
+				</TabLink>
+				.
+			</p>
+			<p>
+				The map also introduces two new buildables; the{" "}
+				<TabLink tab="buildables" target="shield">
+					Riot Shield
+				</TabLink>{" "}
+				and the Teleporter Signal Amplifier, the latter being used to access the{" "}
+				<TabLink tab="side-ee" target="pap">
+					Pack-a-Punch Machine
+				</TabLink>
+				. With this modified teleporter, players are able to use the{" "}
+				<TabLink tab="side-ee" target="pap">
+					Pack-a-Punch Machine
+				</TabLink>{" "}
+				found in Groom Lake, the same place featured in the map Moon. The{" "}
+				<TabLink tab="buildables" target="electrotrap">
+					Electro-Shock Defenses
+				</TabLink>{" "}
+				return as well, although the locations for the parts needed to repair them are in different locations, with one spawning in the Server Room and the other spawning in the Porcine Research lab. The{" "}
+				<TabLink tab="wonder-weapon" target="coldwarremedy">
+					Winter's Howl
+				</TabLink>{" "}
+				also returns, and is obtainable from the{" "}
+				<TabLink tab="weapons" target="mysterybox">
+					Mystery Box
+				</TabLink>{" "}
+				and through completing the{" "}
+				<TabLink tab="wonder-weapon" target="coldwarremedy">
+					Project Skadi
+				</TabLink>{" "}
+				quest.
+			</p>
+			<p>Unlike the original version, the Pentagon Thief is absent; he is instead replaced by Hellhounds. Like the original map, the Crawler Zombies return, and can now spawn on other levels of the map instead of just the Laboratories. The Bonfire Sale power-up also returns, and can be acquired by opening up areas of Groom Lake, which is achieved by surviving in said area every few rounds without leaving or going down.</p>
+			<p>Unlike other maps in Black Ops 4, Classified does not have a main quest. Instead, the ending cutscene plays automatically once players complete round 150.</p>
 		</section>
 	);
 }
@@ -200,7 +278,7 @@ function SideEE() {
 	return (
 		<section className="tab-content">
 			<h2 id="power">Power</h2>
-			<p>Go Down both elevators to the Labs and flip the switch in the middle room</p>
+			<p>Go down both elevators to the Labs and flip the switch in the middle room.</p>
 			<h2 id="pap">
 				PaP -{" "}
 				<a href="https://www.youtube.com/watch?v=yyiqYAC8kSc" target="_blank" rel="noopener noreferrer">
@@ -215,9 +293,9 @@ function SideEE() {
 						<li>On the right side of the knocked over desk in the middle of the room</li>
 						<li>Leaning against the desk on the left side of the brew machine</li>
 						<ImageContainer>
-							<img src="\images\guides\bo4\classified\classified-pap1under.png" alt="PaP 1 Under Desk" />
-							<img src="\images\guides\bo4\classified\classified-pap1over.png" alt="PaP 1 on flipped desk" />
-							<img src="\images\guides\bo4\classified\classified-pap1beside.png" alt="PaP 1 beside brew machine" />
+							<img src="/images/guides/bo4/classified/classified-pap1under.png" alt="PaP 1 Under Desk" />
+							<img src="/images/guides/bo4/classified/classified-pap1over.png" alt="PaP 1 on flipped desk" />
+							<img src="/images/guides/bo4/classified/classified-pap1beside.png" alt="PaP 1 beside brew machine" />
 						</ImageContainer>
 					</ul>
 				</li>
@@ -228,9 +306,9 @@ function SideEE() {
 						<li>Sitting on the chair in the Morgue Office</li>
 						<li>At the end of the metal table in the morgue</li>
 						<ImageContainer>
-							<img src="\images\guides\bo4\classified\classified-pap2corpse.png" alt="PaP 2 Corpse" />
-							<img src="\images\guides\bo4\classified\classified-pap2chair.png" alt="PaP 2 on Chair" />
-							<img src="\images\guides\bo4\classified\classified-pap2table.png" alt="PaP 2 end of metal table" />
+							<img src="/images/guides/bo4/classified/classified-pap2corpse.png" alt="PaP 2 Corpse" />
+							<img src="/images/guides/bo4/classified/classified-pap2chair.png" alt="PaP 2 on Chair" />
+							<img src="/images/guides/bo4/classified/classified-pap2table.png" alt="PaP 2 end of metal table" />
 						</ImageContainer>
 					</ul>
 				</li>
@@ -238,7 +316,7 @@ function SideEE() {
 					<b>Bigger Circle Thing</b>
 					<ol id="panicroom">
 						<li>
-							Activate all of the Defcons switches in any order
+							Activate all of the DEFCON switches in any order:
 							<ul>
 								<li>Left side wall of War Room Upper Level</li>
 								<li>War Room Upper Level on far side</li>
@@ -246,20 +324,36 @@ function SideEE() {
 								<li>On the wall in the server room</li>
 							</ul>
 						</li>
-						<li>Teleport to the Panic room through the teleporter in the center of the war room (glowing blue head) (After PaP is open, the Panic room can be accessed after reaching defcon 5 and going through the teleporter in the back of the server room)</li>
-						<li>Grab the part where the wall has opened (far end)</li>
+						<li>
+							Teleport to the{" "}
+							<TabLink tab="side-ee" target="panicroom">
+								Panic Room
+							</TabLink>{" "}
+							through the teleporter in the center of the war room (glowing blue head) (After PaP is open, the{" "}
+							<TabLink tab="side-ee" target="panicroom">
+								Panic Room
+							</TabLink>{" "}
+							can be accessed after reaching DEFCON 5 and going through the teleporter in the back of the server room).
+						</li>
+						<li>Grab the part where the wall has opened (far end).</li>
 					</ol>
 				</li>
 				<li>
-					Build at a Workbench (Knife the table to change what you want to craft)
+					Build at a Workbench (Knife the table to change what you want to craft):
 					<ul>
 						<li>Weapon Testing area in the first room on the left after exiting the elevator</li>
 						<li>Corner of central filing room at spawn</li>
 					</ul>
 				</li>
 				<li>
-					<span>Go back to the central teleporter and interact with it to place it</span>
-					<span>Behind you a new teleporter will be open to take you to PaP (must reach defcon 5 again to re-open)</span>
+					<span>Go back to the central teleporter and interact with it to place it.</span>
+					<span>
+						Behind you a new teleporter will be open to take you to{" "}
+						<TabLink tab="side-ee" target="pap">
+							PaP
+						</TabLink>{" "}
+						(must reach DEFCON 5 again to re-open).
+					</span>
 				</li>
 			</ol>
 
@@ -271,12 +365,30 @@ function SideEE() {
 					<TabLink tab="wonder-weapon" target="coldwarremedy">
 						Cold War Remedy
 					</TabLink>{" "}
-					(can be completed before cold war remedy and winter's howl will still spawn later)
+					(can be completed before{" "}
+					<TabLink tab="wonder-weapon" target="coldwarremedy">
+						Cold War Remedy
+					</TabLink>{" "}
+					and{" "}
+					<TabLink tab="wonder-weapon" target="coldwarremedy">
+						Winter's Howl
+					</TabLink>{" "}
+					will still spawn later).
 				</span>
 			</p>
 			<ul>
-				<li>Survive 3 full rounds in Groom Lake (PaP Area) and the debris on the left side of PaP will open revealing the Power-Ups</li>
-				<li>The Bonfire Sale will only spawn if the amount of hits taken is not more then the current round amount (ie. round 5 means no more then 5 hits)</li>
+				<li>
+					Survive 3 full rounds in Groom Lake (
+					<TabLink tab="side-ee" target="pap">
+						PaP
+					</TabLink>{" "}
+					Area) and the debris on the left side of{" "}
+					<TabLink tab="side-ee" target="pap">
+						PaP
+					</TabLink>{" "}
+					will open revealing the Power-Ups.
+				</li>
+				<li>The Bonfire Sale will only spawn if the amount of hits taken is not more than the current round amount (i.e. round 5 means no more than 5 hits).</li>
 			</ul>
 		</section>
 	);
@@ -296,18 +408,18 @@ function MusicEE() {
 				</a>
 			</h2>
 			<p>
-				<span>Plays Shockwave by Kevin Sherwood</span>
+				<span>Plays Shockwave by Kevin Sherwood.</span>
 				<span>Interact with 3 whiskey bottles around the map.</span>
 			</p>
 			<ul>
 				<li>Central Filing, in the center of the room, placed on top of a set of filing cabinets</li>
 				<li>War Room on the bottom floor, under one of the control panels</li>
 				<li>
-					Labs within the Porcine Research Lab, within a cabinet in the left most corner of the room
+					Labs within the Porcine Research Lab, within a cabinet in the leftmost corner of the room
 					<ImageContainer>
-						<img src="\images\guides\bo4\classified\classified-bottle1.webp" alt="Bottle 1" />
-						<img src="\images\guides\bo4\classified\classified-bottle2.webp" alt="Bottle 2" />
-						<img src="\images\guides\bo4\classified\classified-bottle3.webp" alt="Bottle 3" />
+						<img src="/images/guides/bo4/classified/classified-bottle1.webp" alt="Bottle 1" />
+						<img src="/images/guides/bo4/classified/classified-bottle2.webp" alt="Bottle 2" />
+						<img src="/images/guides/bo4/classified/classified-bottle3.webp" alt="Bottle 3" />
 					</ImageContainer>
 				</li>
 			</ul>
@@ -318,36 +430,36 @@ function MusicEE() {
 					Video
 				</a>
 			</h2>
-			<p>Interact with 5 terminals in the War Room Lower Level in the following Order</p>
+			<p>Interact with 5 terminals in the War Room Lower Level in the following order:</p>
 			<ol>
 				<li>
 					Under the yellow US sign
 					<ImageContainer>
-						<img src="\images\guides\bo4\classified\classified-terminal1.png" alt="Terminal 1" />
+						<img src="/images/guides/bo4/classified/classified-terminal1.png" alt="Terminal 1" />
 					</ImageContainer>
 				</li>
 				<li>
 					Across from the far back window
 					<ImageContainer>
-						<img src="\images\guides\bo4\classified\classified-terminal2.png" alt="Terminal 2" />
+						<img src="/images/guides/bo4/classified/classified-terminal2.png" alt="Terminal 2" />
 					</ImageContainer>
 				</li>
 				<li>
 					Farthest left terminal in the Server Room
 					<ImageContainer>
-						<img src="\images\guides\bo4\classified\classified-terminal3.png" alt="Terminal 3" />
+						<img src="/images/guides/bo4/classified/classified-terminal3.png" alt="Terminal 3" />
 					</ImageContainer>
 				</li>
 				<li>
-					In the main room under the defcon sign at end of stairs
+					In the main room under the DEFCON sign at the end of stairs
 					<ImageContainer>
-						<img src="\images\guides\bo4\classified\classified-terminal4.png" alt="Terminal 4" />
+						<img src="/images/guides/bo4/classified/classified-terminal4.png" alt="Terminal 4" />
 					</ImageContainer>
 				</li>
 				<li>
 					In the server room on the terminal in the middle
 					<ImageContainer>
-						<img src="\images\guides\bo4\classified\classified-terminal5.png" alt="Terminal 5" />
+						<img src="/images/guides/bo4/classified/classified-terminal5.png" alt="Terminal 5" />
 					</ImageContainer>
 				</li>
 			</ol>
@@ -370,59 +482,69 @@ function WonderWeapons() {
 			</h2>
 			<p>
 				<span>
-					Often considered the main EE of Classfiied since the <TabLink tab="main-ee">cutscene</TabLink> doesn't require any EE-esque steps
+					Often considered the main EE of Classified since the <TabLink tab="main-ee">cutscene</TabLink> doesn't require any EE-esque steps.
 				</span>
-				<span>Rewards: Free Winter's Howl, Max Ammo Power-Up, Bonfire Sale Power-Up</span>
+				<span>
+					Rewards: Free{" "}
+					<TabLink tab="wonder-weapon" target="coldwarremedy">
+						Winter's Howl
+					</TabLink>
+					, Max Ammo Power-Up, Bonfire Sale Power-Up
+				</span>
 			</p>
 			<ol>
 				<li>
 					Grab a gold key from the keybox by the cola perk machine in the war room
 					<ImageContainer>
-						<img src="\images\guides\bo4\classified\classified-key.png" alt="Cold War Remedy - Keybox" />
-						<img src="\images\guides\bo4\classified\classified-key1.png" alt="Cold War Remedy - Golden Key" />
+						<img src="/images/guides/bo4/classified/classified-key.png" alt="Cold War Remedy - Keybox" />
+						<img src="/images/guides/bo4/classified/classified-key1.png" alt="Cold War Remedy - Golden Key" />
 					</ImageContainer>
 				</li>
 				<li>
-					<span>Head to the middle desk in the Main Offices area and interact with the keyhole to unlock the drawer</span>
-					<span>Record the number and image/map within (Der Riese)</span>
+					<span>Head to the middle desk in the Main Offices area and interact with the keyhole to unlock the drawer.</span>
+					<span>Record the number and image/map within (Der Riese).</span>
 					<ImageContainer>
-						<img src="\images\guides\bo4\classified\classified-keyhole.png" alt="Cold War Remedy - Keyhole" />
+						<img src="/images/guides/bo4/classified/classified-keyhole.png" alt="Cold War Remedy - Keyhole" />
 					</ImageContainer>
 				</li>
 				<li>
 					<span>Go into the labs area and leave the power room from the left door to reach a window with a chrome thing through it.</span>
-					<span>Throw a grenade/acid grenade into or behind it. record number on picture to the left of the window (Shangri-La)</span>
+					<span>Throw a grenade/acid grenade into or behind it. Record number on picture to the left of the window (Shangri-La).</span>
 					<ImageContainer>
-						<img src="\images\guides\bo4\classified\classified-window.png" alt="Cold War Remedy - Chrome Window" />
-						<img src="\images\guides\bo4\classified\classified-chrome.png" alt="Cold War Remedy - Chrome Thing" />
+						<img src="/images/guides/bo4/classified/classified-window.png" alt="Cold War Remedy - Chrome Window" />
+						<img src="/images/guides/bo4/classified/classified-chrome.png" alt="Cold War Remedy - Chrome Thing" />
 					</ImageContainer>
 				</li>
 				<li>
-					Access the Panic room by activating the defcons in this specific order
+					Access the{" "}
+					<TabLink tab="side-ee" target="panicroom">
+						Panic Room
+					</TabLink>{" "}
+					by activating the DEFCONs in this specific order:
 					<ol>
 						<li>Upper level by giant screen</li>
 						<li>Server Room</li>
 						<li>To left of entrance elevator on upper level</li>
-						<li>below the previous on lower level</li>
+						<li>Below the previous on lower level</li>
 					</ol>
 				</li>
-				<li>Interact with the static tv on the left to move it back into the wall. record the number on the photo (Kino der Toten)</li>
+				<li>Interact with the static TV on the left to move it back into the wall. Record the number on the photo (Kino der Toten).</li>
 				<li>
 					Unlock{" "}
 					<TabLink tab="side-ee" target="pap">
 						PaP
 					</TabLink>{" "}
-					and PaP a weapon
+					and PaP a weapon.
 				</li>
 				<li>
 					Shoot the plaques in the deserted hallway in the order 1-3-2-4
 					<ImageContainer>
-						<img src="\images\guides\bo4\classified\classified-plaques.png" alt="Cold War Remedy - Plaques" />
+						<img src="/images/guides/bo4/classified/classified-plaques.png" alt="Cold War Remedy - Plaques" />
 					</ImageContainer>
 				</li>
-				<li>Record the number on the image that is in the now opened first plaque (Shi No Numa)</li>
+				<li>Record the number on the image that is in the now opened first plaque (Shi No Numa).</li>
 				<li>
-					Enter the codes into the machine by shooting the numbers in the center of the war room then interacting with the button in the following order
+					Enter the codes into the machine by shooting the numbers in the center of the war room then interacting with the button in the following order:
 					<ol>
 						<li>Shi No Numa</li>
 						<li>Der Riese</li>
@@ -432,13 +554,30 @@ function WonderWeapons() {
 				</li>
 				<li>
 					<span>
-						When screen says "Project Skadi Retrieved" head back to PaP and{" "}
+						When screen says "Project Skadi Retrieved" head back to{" "}
+						<TabLink tab="side-ee" target="pap">
+							PaP
+						</TabLink>{" "}
+						and{" "}
 						<TabLink tab="side-ee" target="gloomlakesurvival">
 							survive 3 full rounds
-						</TabLink>
+						</TabLink>{" "}
+						.
 					</span>
-					<span>Once Completed the area to the left of PaP will open</span>
-					<span>Grab the winter's Howl from the icy briefcase in the back of the new area</span>
+					<span>
+						Once completed the area to the left of{" "}
+						<TabLink tab="side-ee" target="pap">
+							PaP
+						</TabLink>{" "}
+						will open.
+					</span>
+					<span>
+						Grab the{" "}
+						<TabLink tab="wonder-weapon" target="coldwarremedy">
+							Winter's Howl
+						</TabLink>{" "}
+						from the icy briefcase in the back of the new area.
+					</span>
 				</li>
 			</ol>
 		</section>
@@ -466,9 +605,9 @@ function Buildables() {
 						<li>Leaning against the filing cabinets</li>
 						<li>Between the 2 windows on the far side</li>
 						<ImageContainer>
-							<img src="\images\guides\bo4\classified\classified-shield1.png" alt="Shield Part 1 - Metal Detector" />
-							<img src="\images\guides\bo4\classified\classified-shieldcabinet.png" alt="Shield Part 1 - Filing Cabinets" />
-							<img src="\images\guides\bo4\classified\classified-shield1window.png" alt="Shield Part 1 - Metal Detector" />
+							<img src="/images/guides/bo4/classified/classified-shield1.png" alt="Shield Part 1 - Metal Detector" />
+							<img src="/images/guides/bo4/classified/classified-shieldcabinet.png" alt="Shield Part 1 - Filing Cabinets" />
+							<img src="/images/guides/bo4/classified/classified-shield1window.png" alt="Shield Part 1 - Metal Detector" />
 						</ImageContainer>
 					</ul>
 				</li>
@@ -479,9 +618,9 @@ function Buildables() {
 						<li>Against the wall in the central teleporter area</li>
 						<li>Leaning on the side of the computer near the window at the back right</li>
 						<ImageContainer>
-							<img src="\images\guides\bo4\classified\classified-shield2stairs.png" alt="Shield Part 2 - under stairs" />
-							<img src="\images\guides\bo4\classified\classified-shield2wall.png" alt="Shield Part 2 - Teleporter wall" />
-							<img src="\images\guides\bo4\classified\classified-shield2computer.png" alt="Shield Part 2 - Computer" />
+							<img src="/images/guides/bo4/classified/classified-shield2stairs.png" alt="Shield Part 2 - under stairs" />
+							<img src="/images/guides/bo4/classified/classified-shield2wall.png" alt="Shield Part 2 - Teleporter wall" />
+							<img src="/images/guides/bo4/classified/classified-shield2computer.png" alt="Shield Part 2 - Computer" />
 						</ImageContainer>
 					</ul>
 				</li>
@@ -492,14 +631,14 @@ function Buildables() {
 						<li>Next to the crate near teleporter 3</li>
 						<li>Teleporter 2 against barrels</li>
 						<ImageContainer>
-							<img src="\images\guides\bo4\classified\classified-shield3boxes.png" alt="Shield Part 3 - Ontop of Boxes" />
-							<img src="\images\guides\bo4\classified\classified-shield3crate.png" alt="Shield Part 3 - teleporter 3" />
-							<img src="\images\guides\bo4\classified\classified-shield3barrels.png" alt="Shield Part 3 - Teleporter 2" />
+							<img src="/images/guides/bo4/classified/classified-shield3boxes.png" alt="Shield Part 3 - Ontop of Boxes" />
+							<img src="/images/guides/bo4/classified/classified-shield3crate.png" alt="Shield Part 3 - teleporter 3" />
+							<img src="/images/guides/bo4/classified/classified-shield3barrels.png" alt="Shield Part 3 - Teleporter 2" />
 						</ImageContainer>
 					</ul>
 				</li>
 				<li>
-					Build at a Workbench (Knife the table to change what you want to craft)
+					Build at a Workbench (Knife the table to change what you want to craft):
 					<ul>
 						<li>Weapon Testing area in the first room on the left after exiting the elevator</li>
 						<li>Corner of central filing room at spawn</li>
@@ -508,7 +647,7 @@ function Buildables() {
 			</ul>
 
 			<h2 id="electrotrap">Electro-Shock Defenses</h2>
-			<p>Each part can be used to construct either the Deserted Hallway or Side Passage Electro-Shock Trap</p>
+			<p>Each part can be used to construct either the Deserted Hallway or Side Passage Electro-Shock Trap.</p>
 			<ul>
 				<li>
 					Part 1 - Server Room
@@ -517,9 +656,9 @@ function Buildables() {
 						<li>Between a small console and server wall near door</li>
 						<li>On a small Cart under a tipped over server box</li>
 						<ImageContainer>
-							<img src="\images\guides\bo4\classified\classified-box1.webp" alt="Box Part - Main Console" />
-							<img src="\images\guides\bo4\classified\classified-box2.webp" alt="Box Part - Near Door" />
-							<img src="\images\guides\bo4\classified\classified-box3.webp" alt="Box Part - Trolley" />
+							<img src="/images/guides/bo4/classified/classified-box1.webp" alt="Box Part - Main Console" />
+							<img src="/images/guides/bo4/classified/classified-box2.webp" alt="Box Part - Near Door" />
+							<img src="/images/guides/bo4/classified/classified-box3.webp" alt="Box Part - Trolley" />
 						</ImageContainer>
 					</ul>
 				</li>
@@ -530,9 +669,9 @@ function Buildables() {
 						<li>On the bottom of the table near the sink and wallbuy</li>
 						<li>Inside the cage in the corner</li>
 						<ImageContainer>
-							<img src="\images\guides\bo4\classified\classified-box4.webp" alt="Box Part - bottom shelf cupboard" />
-							<img src="\images\guides\bo4\classified\classified-box5.webp" alt="Box Part - under table near wallbuy" />
-							<img src="\images\guides\bo4\classified\classified-box6.webp" alt="Box Part - in corner" />
+							<img src="/images/guides/bo4/classified/classified-box4.webp" alt="Box Part - bottom shelf cupboard" />
+							<img src="/images/guides/bo4/classified/classified-box5.webp" alt="Box Part - under table near wallbuy" />
+							<img src="/images/guides/bo4/classified/classified-box6.webp" alt="Box Part - in corner" />
 						</ImageContainer>
 					</ul>
 				</li>
@@ -636,7 +775,7 @@ function Weapons() {
 				<li>War Room Lower Level</li>
 				<li>Server Room</li>
 				<li>Morgue</li>
-				<li>Procine Research</li>
+				<li>Porcine Research</li>
 				<li>Weapon Testing</li>
 			</ul>
 			<h4>Box Weapons</h4>
@@ -688,7 +827,7 @@ function Weapons() {
 				<li>
 					<TabLink tab="wonder-weapon" target="coldwarremedy">
 						Winter's Howl
-					</TabLink>
+					</TabLink>{" "}
 				</li>
 				<li>Monkey Bomb</li>
 			</ul>
@@ -932,13 +1071,13 @@ function Extras() {
 					Video
 				</a>
 			</h2>
-			<p>Jumpscares the player by showing Primis Richtofen and playing the most annoying screeching noise</p>
+			<p>Jumpscares the player by showing Primis Richtofen and playing the most annoying screeching noise.</p>
 			<ul>
 				<li>
-					Aim at the light on a building in the left hand side of Groom Lake with a sniper rifle
+					Aim at the light on a building in the left-hand side of Groom Lake with a sniper rifle
 					<ImageContainer>
-						<img src="\images\guides\bo4\classified\classified-jumpscare.png" alt="Jumpscare Location" />
-						<img src="\images\guides\bo4\classified\classified-jumpscarerich.png" alt="Jumpscare Image" />
+						<img src="/images/guides/bo4/classified/classified-jumpscare.png" alt="Jumpscare Location" />
+						<img src="/images/guides/bo4/classified/classified-jumpscarerich.png" alt="Jumpscare Image" />
 					</ImageContainer>
 				</li>
 			</ul>
@@ -952,7 +1091,7 @@ function Extras() {
 				<li>
 					Interact with the door in the Main Offices after the dialogue ends several times until Samantha gets mad and spawns ~30 nova crawlers
 					<ImageContainer>
-						<img src="\images\guides\bo4\classified\classified-knockknock.png" alt="Knock Knock Door" />
+						<img src="/images/guides/bo4/classified/classified-knockknock.png" alt="Knock Knock Door" />
 					</ImageContainer>
 				</li>
 			</ol>
@@ -972,19 +1111,19 @@ function Extras() {
 					and purchase the{" "}
 					<TabLink tab="weapons" target="bowieknife">
 						Bowie knife
-					</TabLink>
+					</TabLink>{" "}
 				</li>
 				<li>
 					Return to the office level and melee 5 portraits to make them straight
 					<ImageContainer>
-						<img src="\images\guides\bo4\classified\classified-portrait1.png" alt="Portrait 1" />
-						<img src="\images\guides\bo4\classified\classified-portrait2.png" alt="Portrait 2" />
-						<img src="\images\guides\bo4\classified\classified-portrait3.png" alt="Portrait 3" />
-						<img src="\images\guides\bo4\classified\classified-portrait4.png" alt="Portrait 4" />
-						<img src="\images\guides\bo4\classified\classified-portrait5.png" alt="Portrait 5" />
+						<img src="/images/guides/bo4/classified/classified-portrait1.png" alt="Portrait 1" />
+						<img src="/images/guides/bo4/classified/classified-portrait2.png" alt="Portrait 2" />
+						<img src="/images/guides/bo4/classified/classified-portrait3.png" alt="Portrait 3" />
+						<img src="/images/guides/bo4/classified/classified-portrait4.png" alt="Portrait 4" />
+						<img src="/images/guides/bo4/classified/classified-portrait5.png" alt="Portrait 5" />
 					</ImageContainer>
 				</li>
-				<li>Activate Defcon 5, in the panic room interact with the blank portrait</li>
+				<li>Activate DEFCON 5; in the panic room interact with the blank portrait.</li>
 			</ol>
 			<h2>
 				Samantha Nursery Rhyme -{" "}
@@ -992,40 +1131,40 @@ function Extras() {
 					Video
 				</a>
 			</h2>
-			<p>Standing in a specific corner in the Morgue for roughly a minute will make Samantha recite a Nursery Rhyme</p>
+			<p>Standing in a specific corner in the Morgue for roughly a minute will make Samantha recite a nursery rhyme.</p>
 			<ImageContainer>
-				<img src="\images\guides\bo4\classified\classified-corner.png" alt="Samantha Nursery Rhyme Corner" />
+				<img src="/images/guides/bo4/classified/classified-corner.png" alt="Samantha Nursery Rhyme Corner" />
 			</ImageContainer>
 			<h2>
-				Samanthas Wisps -{" "}
+				Samantha's Wisps -{" "}
 				<a href="https://youtu.be/31E8kCaeohU?si=NmbuiXlZvPOUf8zY&t=1578" target="_blank" rel="noopener noreferrer">
 					Video
 				</a>
 			</h2>
-			<p>Each character can find a yellow wisp which can be shot to get a samantha dialogue the character</p>
+			<p>Each character can find a yellow wisp which can be shot to get a Samantha dialogue for the character.</p>
 			<ul>
 				<li>
-					Richtofen - Porcine Research (through window beside the courtain)
+					Richtofen - Porcine Research (through window beside the curtain)
 					<ImageContainer>
-						<img src="\images\guides\bo4\classified\classified-wisprichtofen.png" alt="Richtofen - Porcine Research" />
+						<img src="/images/guides/bo4/classified/classified-wisprichtofen.png" alt="Richtofen - Porcine Research" />
 					</ImageContainer>
 				</li>
 				<li>
-					Dempsey - Weapon Testing (through window beside the courtain)
+					Dempsey - Weapon Testing (through window beside the curtain)
 					<ImageContainer>
-						<img src="\images\guides\bo4\classified\classified-wispdempsey.png" alt="Dempsey - Weapon Testing" />
+						<img src="/images/guides/bo4/classified/classified-wispdempsey.png" alt="Dempsey - Weapon Testing" />
 					</ImageContainer>
 				</li>
 				<li>
 					Takeo - South Laboratories (through window near teleporter 3)
 					<ImageContainer>
-						<img src="\images\guides\bo4\classified\classified-wisptakeo.png" alt="Takeo - South Laboratories" />
+						<img src="/images/guides/bo4/classified/classified-wisptakeo.png" alt="Takeo - South Laboratories" />
 					</ImageContainer>
 				</li>
 				<li>
 					Nikolai - Morgue (in the barrel holder in the office)
 					<ImageContainer>
-						<img src="\images\guides\bo4\classified\classified-wispnikolai.png" alt="Nikolai - Morgue" />
+						<img src="/images/guides/bo4/classified/classified-wispnikolai.png" alt="Nikolai - Morgue" />
 					</ImageContainer>
 				</li>
 			</ul>
@@ -1035,7 +1174,7 @@ function Extras() {
 					Video
 				</a>
 			</h2>
-			<p>Activate 3 Red Phones around the map by shooting them with a Kill-O-Watt gun (depending on which phone was shot last determines the audio log played. can be done once per game)</p>
+			<p>Activate 3 Red Phones around the map by shooting them with a Kill-O-Watt gun (depending on which phone was shot last determines the audio log played. Can be done once per game).</p>
 			<ul>
 				<li>Side Passage on the table at the end of the hall (by FDR Plaque) (Stuhlinger)</li>
 				<li>
@@ -1046,15 +1185,15 @@ function Extras() {
 					on the table to your immediate left (Samantha)
 				</li>
 				<li>
-					infront of the{" "}
+					In front of the{" "}
 					<TabLink tab="side-ee" target="power">
 						power switch
 					</TabLink>{" "}
-					on the table with blue-print (Maxis)
+					on the table with blueprint (Maxis)
 					<ImageContainer>
-						<img src="\images\guides\bo4\classified\classified-phone1.webp" alt="Stuhlinger" />
-						<img src="\images\guides\bo4\classified\classified-phone2.webp" alt="Samantha" />
-						<img src="\images\guides\bo4\classified\classified-phone3.webp" alt="Maxis" />
+						<img src="/images/guides/bo4/classified/classified-phone1.webp" alt="Stuhlinger" />
+						<img src="/images/guides/bo4/classified/classified-phone2.webp" alt="Samantha" />
+						<img src="/images/guides/bo4/classified/classified-phone3.webp" alt="Maxis" />
 					</ImageContainer>
 				</li>
 			</ul>
@@ -1064,36 +1203,36 @@ function Extras() {
 					Video
 				</a>
 			</h2>
-			<p>Five Film Reels can be found around the map and played on the Morgue projector individually</p>
+			<p>Five Film Reels can be found around the map and played on the Morgue projector individually.</p>
 			<ul>
 				<li>
 					Central filing on the desk
 					<ImageContainer>
-						<img src="\images\guides\bo4\classified\classified-reel1.png" alt="Film Reel 1 - Central Filing" />
+						<img src="/images/guides/bo4/classified/classified-reel1.png" alt="Film Reel 1 - Central Filing" />
 					</ImageContainer>
 				</li>
 				<li>
 					War Room Lower Level on the computer to the right of the teleporter
 					<ImageContainer>
-						<img src="\images\guides\bo4\classified\classified-reel2.png" alt="Film Reel 2 - War Room: Lower Level" />
+						<img src="/images/guides/bo4/classified/classified-reel2.png" alt="Film Reel 2 - War Room: Lower Level" />
 					</ImageContainer>
 				</li>
 				<li>
-					Server Room on the shelf to the left of the defcon sign
+					Server Room on the shelf to the left of the DEFCON sign
 					<ImageContainer>
-						<img src="\images\guides\bo4\classified\classified-reel3.png" alt="Film Reel 3 - Server Room" />
+						<img src="/images/guides/bo4/classified/classified-reel3.png" alt="Film Reel 3 - Server Room" />
 					</ImageContainer>
 				</li>
 				<li>
 					Porcine Research on the edge of the sink
 					<ImageContainer>
-						<img src="\images\guides\bo4\classified\classified-reel4.png" alt="Film Reel 4 - Porcine Research" />
+						<img src="/images/guides/bo4/classified/classified-reel4.png" alt="Film Reel 4 - Porcine Research" />
 					</ImageContainer>
 				</li>
 				<li>
 					Morgue on the table next to the sink
 					<ImageContainer>
-						<img src="\images\guides\bo4\classified\classified-reel5.png" alt="Film Reel 5 - Morgue" />
+						<img src="/images/guides/bo4/classified/classified-reel5.png" alt="Film Reel 5 - Morgue" />
 					</ImageContainer>
 				</li>
 			</ul>
@@ -1105,59 +1244,59 @@ function Extras() {
 			</h2>
 			<p>
 				<span>There are 7 punch cards around the map that can be picked up.</span>
-				<span>To play the tapes, you need the battery in weapon testing on the shelf</span>
+				<span>To play the tapes, you need the battery in weapon testing on the shelf.</span>
 				<span>You can insert the battery into a server in the Server Room and shocking it with Kill-O-Watt to activate it. Punch cards can now be inserted to play.</span>
-				<span>AFTER completing the punch cards, a grenade can be thrown at hangar 4 to get additional dialogue</span>
+				<span>AFTER completing the punch cards, a grenade can be thrown at hangar 4 to get additional dialogue.</span>
 			</p>
 			<ImageContainer>
-				<img src="\images\guides\bo4\classified\classified-battery.webp" alt="Battery Location" />
-				<img src="\images\guides\bo4\classified\classified-server.webp" alt="Server Location" />
+				<img src="/images/guides/bo4/classified/classified-battery.webp" alt="Battery Location" />
+				<img src="/images/guides/bo4/classified/classified-server.webp" alt="Server Location" />
 			</ImageContainer>
 			<ul>
 				<li>
 					Central Filing
 					<ImageContainer>
-						<img src="\images\guides\bo4\classified\classified-card1.webp" alt="Punch Card 1 - Central Filing" />
+						<img src="/images/guides/bo4/classified/classified-card1.webp" alt="Punch Card 1 - Central Filing" />
 					</ImageContainer>
 				</li>
 				<li>
 					Server Room
 					<ImageContainer>
-						<img src="\images\guides\bo4\classified\classified-card2.webp" alt="Punch Card 2 - Server Room" />
+						<img src="/images/guides/bo4/classified/classified-card2.webp" alt="Punch Card 2 - Server Room" />
 					</ImageContainer>
 				</li>
 				<li>
 					<TabLink tab="side-ee" target="panicroom">
 						Panic Room
-					</TabLink>
+					</TabLink>{" "}
 					<ImageContainer>
-						<img src="\images\guides\bo4\classified\classified-card3.webp" alt="Punch Card 3 - Panic Room" />
+						<img src="/images/guides/bo4/classified/classified-card3.webp" alt="Punch Card 3 - Panic Room" />
 					</ImageContainer>
 				</li>
 				<li>
 					Weapon Testing
 					<ImageContainer>
-						<img src="\images\guides\bo4\classified\classified-card4.webp" alt="Punch Card 4 - Weapon Testing" />
+						<img src="/images/guides/bo4/classified/classified-card4.webp" alt="Punch Card 4 - Weapon Testing" />
 					</ImageContainer>
 				</li>
 				<li>
 					War Room: Upper Level
 					<ImageContainer>
-						<img src="\images\guides\bo4\classified\classified-card5.webp" alt="Punch Card 5 - War Room: Upper Level" />
+						<img src="/images/guides/bo4/classified/classified-card5.webp" alt="Punch Card 5 - War Room: Upper Level" />
 					</ImageContainer>
 				</li>
 				<li>
 					Main Office
 					<ImageContainer>
-						<img src="\images\guides\bo4\classified\classified-card6.webp" alt="Punch Card 6 - Main Offices" />
+						<img src="/images/guides/bo4/classified/classified-card6.webp" alt="Punch Card 6 - Main Offices" />
 					</ImageContainer>
 				</li>
 				<li>
 					<TabLink tab="side-ee" target="pap">
 						Groom Lake (PaP)
-					</TabLink>
+					</TabLink>{" "}
 					<ImageContainer>
-						<img src="\images\guides\bo4\classified\classified-card7.webp" alt="Punch Card 7 - Groom Lake (PaP)" />
+						<img src="/images/guides/bo4/classified/classified-card7.webp" alt="Punch Card 7 - Groom Lake (PaP)" />
 					</ImageContainer>
 				</li>
 			</ul>
@@ -1167,38 +1306,38 @@ function Extras() {
 					Video
 				</a>
 			</h2>
-			<p>There are 5 radios around the map which can be interacted with to play dialogue</p>
+			<p>There are 5 radios around the map which can be interacted with to play dialogue.</p>
 			<ul>
 				<li>
 					Central Filing
 					<ImageContainer>
-						<img src="\images\guides\bo4\classified\classified-radio1.png" alt="Audio Reel 1 - Central Filing" />
+						<img src="/images/guides/bo4/classified/classified-radio1.png" alt="Audio Reel 1 - Central Filing" />
 					</ImageContainer>
 				</li>
 				<li>
 					Main Offices
 					<ImageContainer>
-						<img src="\images\guides\bo4\classified\classified-radio2.png" alt="Audio Reel 2 - Main Offices" />
+						<img src="/images/guides/bo4/classified/classified-radio2.png" alt="Audio Reel 2 - Main Offices" />
 					</ImageContainer>
 				</li>
 				<li>
 					War Room: Upper Level
 					<ImageContainer>
-						<img src="\images\guides\bo4\classified\classified-radio3.png" alt="Audio Reel 3 - War Room: Upper Level" />
+						<img src="/images/guides/bo4/classified/classified-radio3.png" alt="Audio Reel 3 - War Room: Upper Level" />
 					</ImageContainer>
 				</li>
 				<li>
 					Server Room
 					<ImageContainer>
-						<img src="\images\guides\bo4\classified\classified-radio4.png" alt="Audio Reel 4 - Server Room" />
+						<img src="/images/guides/bo4/classified/classified-radio4.png" alt="Audio Reel 4 - Server Room" />
 					</ImageContainer>
 				</li>
 				<li>
 					<TabLink tab="side-ee" target="pap">
 						Groom Lake (PaP)
-					</TabLink>
+					</TabLink>{" "}
 					<ImageContainer>
-						<img src="\images\guides\bo4\classified\classified-radio5.png" alt="Audio Reel 5 - Groom Lake (PaP)" />
+						<img src="/images/guides/bo4/classified/classified-radio5.png" alt="Audio Reel 5 - Groom Lake (PaP)" />
 					</ImageContainer>
 				</li>
 			</ul>
@@ -1237,7 +1376,7 @@ function Extras() {
 						<td>
 							<a href="https://i.imgur.com/FxWRK7H.jpg" rel="nofollow noopener noreferrer" target="_blank">
 								Here
-							</a>
+							</a>{" "}
 						</td>
 					</tr>
 					<tr>
@@ -1246,7 +1385,7 @@ function Extras() {
 						<td>
 							<a href="https://i.imgur.com/UDLmktJ.jpg" rel="nofollow noopener noreferrer" target="_blank">
 								Here
-							</a>
+							</a>{" "}
 						</td>
 					</tr>
 				</tbody>

@@ -1,5 +1,5 @@
-import { createFileRoute } from "@tanstack/react-router";
 /* ---- v2.1.0 ---- */
+import { createFileRoute } from "@tanstack/react-router";
 import { MapNavigationProvider, useMapNavigation } from "../../../context/MapNavigationContext";
 
 import MapTabs from "../../../components/MapTabs";
@@ -152,13 +152,41 @@ function Overview() {
 	return (
 		<section className="tab-content">
 			<h2>Ancient Evil</h2>
-			<p>Ancient Evil is the sixth Zombies map featured in Call of Duty: Black Ops 4, and the thirtieth map overall. Chronologically, it is the fourthand final map in the Chaos story. The map was released on March 26th, 2019 on PlayStation 4, and was released on April 2nd, 2019 for Xbox One and PC.</p>
+			<p>Ancient Evil is the sixth Zombies map featured in Call of Duty: Black Ops 4, and the thirtieth map overall. Chronologically, it is the fourth and final map in the Chaos story. The map was released on March 26th, 2019 on PlayStation 4, and was released on April 2nd, 2019 for Xbox One and PC.</p>
 			<p>The map takes place in Delphi, Greece, and serves as the finale to the Chaos storyline in Call of Duty: Black Ops 4. It features the return of the "Chaos" crew featured in Voyage of Despair and IX.</p>
 			<h2>Overview</h2>
-			<p>Ancient Evil is set in the underground city of Delphi, Greece; the Delphi aboveground is a red herring, a decoy according to Shaw in order to hide the real city's presence from its enemies. A Sentinel Artifact has already been activated within the city, and the trial contained within it has been going on for thousands of years, leaving the ancient city frozen in time and littered withthe undead.</p>
-			<p>The map is divided into two major parts; the first part is set within the city of Delphi itself, featuring many temples and monuments dedicated to Greek legends. The map's Sentinel Artifact is located in the Amphitheater, and will allow access to the lower parts of the city after it is activated. The player can also ride Pegasus, a mystical horse that will initially transport players to the other half of the map. However, in order to ride Pegasus, the player must first locate the Golden Bridle, which can be found somewhere within the city.</p>
-			<p>When all of the players board Pegasus at the Spartan Monument area of the map, Pegasus will fly the players to the "Dark Side" part of the map. There, the players will be trapped in this area until the Pack-a-Punch Machine at the Center of the World area is unlocked, which can be achieved by unlocking the two eagle cages witha Special Weapon and later defending the Center of the World area while the eagles reveal the Pack-a-Punch Machine. This Dark Side area features four key areas; the River of Sorrows, where players enter the area from withPegasus, the Cliff Ruins, where the Pegasus Strike can be crafted, the Python Pass, an area located inside a massive dead snake, and the Center of the World, where the Pack-a-Punch Machine is located. Once Pack-a-Punch is unlocked, a few portals will spawn at certain areas, allowing for fast travel between the two halves of the map.</p>
-			<p>The map features two new enemies; the Gegenees and Spartoi. Returning from Voyage of Despair and IX, the Blightfathers appear as well.</p>
+			<p>
+				Ancient Evil is set in the underground city of Delphi, Greece; the Delphi aboveground is a red herring, a decoy according to Shaw in order to hide the real city's presence from its enemies. A{" "}
+				<TabLink tab="side-ee" target="power">
+					Sentinel Artifact
+				</TabLink>{" "}
+				has already been activated within the city, and the trial contained within it has been going on for thousands of years, leaving the ancient city frozen in time and littered with the undead.
+			</p>
+			<p>
+				The map is divided into two major parts; the first part is set within the city of Delphi itself, featuring many temples and monuments dedicated to Greek legends. The map's Sentinel Artifact is located in the Amphitheater, and will allow access to the lower parts of the city after it is activated. The player can also ride Pegasus, a mystical horse that will initially transport players to the other half of the map. However, in order to ride Pegasus, the player must first locate the{" "}
+				<TabLink tab="side-ee" target="bridle">
+					Golden Bridle
+				</TabLink>
+				, which can be found somewhere within the city.
+			</p>
+			<p>
+				When all of the players board Pegasus at the Spartan Monument area of the map, Pegasus will fly the players to the "Dark Side" part of the map. There, the players will be trapped in this area until the{" "}
+				<TabLink tab="side-ee" target="pap">
+					Pack-a-Punch Machine
+				</TabLink>{" "}
+				at the Center of the World area is unlocked, which can be achieved by unlocking the two eagle cages with a Special Weapon and later defending the Center of the World area while the eagles reveal the Pack-a-Punch Machine. This Dark Side area features four key areas; the River of Sorrows, where players enter the area from with Pegasus, the Cliff Ruins, where the{" "}
+				<TabLink tab="buildables" target="pegasusstrike">
+					Pegasus Strike
+				</TabLink>{" "}
+				can be crafted, the Python Pass, an area located inside a massive dead snake, and the Center of the World, where the Pack-a-Punch Machine is located. Once Pack-a-Punch is unlocked, a few portals will spawn at certain areas, allowing for fast travel between the two halves of the map.
+			</p>
+			<p>
+				The map features two new enemies; the{" "}
+				<TabLink tab="extras" target="gegenees">
+					Gegenees
+				</TabLink>{" "}
+				and Spartoi. Returning from Voyage of Despair and IX, the Blightfathers appear as well.
+			</p>
 		</section>
 	);
 }
@@ -235,7 +263,7 @@ function MainEE() {
 			<h2>Recommended Setup</h2>
 			<ul>
 				<li>
-					<b>Elixers</b>
+					<b>Elixirs</b>
 					<ul>
 						<li>Anywhere but Here</li>
 						<li>Equip Mint</li>
@@ -265,14 +293,24 @@ function MainEE() {
 			</h2>
 			<ol>
 				<li>
-					Light your Shield's Spear on fire in the Eternal Flame by meleeing it and light 3 oil trails on fire
+					Light your Shield's Spear on fire in the{" "}
+					<TabLink tab="extras" target="eternalflame">
+						Eternal Flame
+					</TabLink>{" "}
+					by meleeing it and light 3 oil trails on fire
 					<ul>
 						<li>On rock in Upper Road beside some statues</li>
 						<li>On the wall near zombie spawn in Intersection of Treasuries</li>
 						<li>On half wall near middle stairs statue in Spartan Monument</li>
 					</ul>
 				</li>
-				<li>With Redeemed hand of Charon, head to where pegasus picked you up and shoot a charged shot at your feet. Lookign at the statues around you, shoot the ones with glowing blue eyes (must be done with 4 statues). Can be done using multiple charged shots</li>
+				<li>
+					With{" "}
+					<TabLink tab="wonder-weapon" target="charon">
+						Redeemed Hand of Charon
+					</TabLink>
+					, head to where Pegasus picked you up and shoot a charged shot at your feet. Looking at the statues around you, shoot the ones with glowing blue eyes (must be done with 4 statues). Can be done using multiple charged shots
+				</li>
 				<li>
 					Shoot and destroy 3 glowing walls using a gun or shield spear
 					<ul>
@@ -281,34 +319,77 @@ function MainEE() {
 						<li>To the right of you when exiting the same area above</li>
 					</ul>
 				</li>
-				<li>Look into the wall and shoot your spear at it as the smaller cog is touching the larger one (smaller gear will stop when successful</li>
+				<li>Look into the wall and shoot your spear at it as the smaller cog is touching the larger one (smaller gear will stop when successful)</li>
 				<li>Throw a spear into a cog in the far back area of the Stoa of Athenians when all the statues are facing inwards</li>
 				<li>
-					Grab the Hand of Gaia and shoot a series of roots with a single shot from the hand (1-2-3)
+					Grab the{" "}
+					<TabLink tab="wonder-weapon" target="gaia">
+						Hand of Gaia
+					</TabLink>{" "}
+					and shoot a series of roots with a single shot from the hand (1-2-3)
 					<ol>
-						<li>Off the left side of the stairs leading down into OFfering of the Attalids on the far wall (aim directly at it and shoot)</li>
-						<li>While still on the stairs you should move around until you see 2 green flashed from beside the Danu perk statue, then fire a shot around the danu perk statue and it should hit both green flashes</li>
+						<li>Off the left side of the stairs leading down into Offering of the Attalids on the far wall (aim directly at it and shoot)</li>
+						<li>While still on the stairs you should move around until you see 2 green flashes from beside the Danu perk statue, then fire a shot around the Danu perk statue and it should hit both green flashes</li>
 						<li>Position yourself down on the ground in the same room around the pillar until you see the 3 green flashes. Fire at the top set of roots and it should hit them all.</li>
 					</ol>
 				</li>
-				<li>When the mini boss spawn, bring him over to the Intersection of Treasuries and get him to shield blast the left most red crystal with the Ra Perk Ank in it</li>
+				<li>When the mini boss spawns, bring him over to the Intersection of Treasuries and get him to shield blast the left most red crystal with the Ra Perk Ankh in it</li>
 				<li>Kill him using your specialist and pick up his spear, then pick up the piece that now dropped.</li>
 				<li>Return to the Offering of the Attalids area and interact with the center hole in the golden circles on the floor to place the spear.</li>
 				<li>Kill an electric zombie over the sun dial. One symbol in the clock should be blue and you'll see an electric line on the dial. You must count the gold slates between the hole and the line and time it so when you stop the dial, the blue is under that electric line. Interact with the spear to stop the rotating. (repeat 2 more times with the other 2 rings. wait for screen to stop shaking before doing another. Speed and windows will change but the location will not change between rings.)</li>
-				<li>Grab the Redeemed Hand of Hemera (should also get maxed out MOG 12, pegasus strikes, specalist, full shield, all perks, max ammo)</li>
+				<li>
+					Grab the{" "}
+					<TabLink tab="wonder-weapon" target="hemera">
+						Redeemed Hand of Hemera
+					</TabLink>{" "}
+					(should also get maxed out{" "}
+					<TabLink tab="weapons" target="mog">
+						MOG 12
+					</TabLink>
+					,{" "}
+					<TabLink tab="buildables" target="pegasusstrike">
+						Pegasus strikes
+					</TabLink>
+					, specialist, full shield, all perks, max ammo)
+				</li>
 				<li>Return the part you got earlier to the Ra Perk Statue and interact with it to give the statue the Hand of Hemera. You now need to defend the beam of light from skeletons with shields until the wall breaks. (if the light is blocked for too long, the beam will stop and you will need to grab the Hand and place it back down again to restart)</li>
 				<li>Grab the part from within the now broken wall and return it to the Ra Perk Statue.</li>
-				<li>Grab your prefered Hand gauntlet and head to the Amphitheater and stand on the blue light. Everytime a light shines, you need to run and stand in it and kill the zombies that spawn with a single activation of your weapon (you can walk around after initially entering the light) When your screen turns grey, return to the blue symbol and do it again. The process needs to be repeated 3 times (for 3 acts)</li>
+				<li>Grab your preferred Hand gauntlet and head to the Amphitheater and stand on the blue light. Every time a light shines, you need to run and stand in it and kill the zombies that spawn with a single activation of your weapon (you can walk around after initially entering the light) When your screen turns grey, return to the blue symbol and do it again. The process needs to be repeated 3 times (for 3 acts)</li>
 				<li>
 					Head to the River of Sorrows via Fast Travel and you'll find a door with symbols on it to your right. You need to shoot 6 symbols on it in the correct order using a PaP'd weapon (order and positions will never change)
 					<ImageContainer>
 						<img src="/images/guides/bo4/ancient-evil/symbols.webp" alt="Symbol Order" />
 					</ImageContainer>
 				</li>
-				<li>Interact with the door and place a Pegasus Strike down on the blue symbol behind you. Fire a Charged attack with the Redeemed Hand of Ouranos at the crossbow to turn it</li>
-				<li>Ignite your spear in the Eternal Flame at spawn and walk through the venom trap in Python Pass with your shield in yoru hand. (spears fire should turn green)</li>
+				<li>
+					Interact with the door and place a{" "}
+					<TabLink tab="buildables" target="pegasusstrike">
+						Pegasus Strike
+					</TabLink>{" "}
+					down on the blue symbol behind you. Fire a charged attack with the{" "}
+					<TabLink tab="wonder-weapon" target="ouranos">
+						Redeemed Hand of Ouranos
+					</TabLink>{" "}
+					at the crossbow to turn it
+				</li>
+				<li>
+					Ignite your spear in the{" "}
+					<TabLink tab="extras" target="eternalflame">
+						Eternal Flame
+					</TabLink>{" "}
+					at spawn and walk through the venom trap in Python Pass with your{" "}
+					<TabLink tab="buildables" target="shield">
+						shield
+					</TabLink>{" "}
+					in your hand. (spear's fire should turn green)
+				</li>
 				<li>Melee the crossbow at the top of the stairs to fire the bolt.</li>
-				<li>You can now enter the BOSS FIGHT via the new golden portal behind PAP</li>
+				<li>
+					You can now enter the BOSS FIGHT via the new golden portal behind{" "}
+					<TabLink tab="side-ee" target="pap">
+						PaP
+					</TabLink>
+				</li>
 			</ol>
 
 			<h2>Boss Fight</h2>
@@ -316,16 +397,16 @@ function MainEE() {
 				<b>Pegasus Stage</b>
 			</p>
 			<ul>
-				<li>Damage pegasus while he's flying over you. Once he lands, use your specialist to deal damage.</li>
-				<li>When pegasus gets back up, leave the island quickly and continue to shoot him. (you must down him 3 times) After the first time, an island will be destroyed, stopping you from being able to travel to it.</li>
+				<li>Damage Pegasus while he's flying over you. Once he lands, use your specialist to deal damage.</li>
+				<li>When Pegasus gets back up, leave the island quickly and continue to shoot him. (you must down him 3 times) After the first time, an island will be destroyed, stopping you from being able to travel to it.</li>
 				<li>If you step into the fire from the spears, it will damage you quite a bit but also regenerate your specialist quicker.</li>
-				<li>After this phase ends, an island will be destroyed, making it inaccessable.</li>
+				<li>After this phase ends, an island will be destroyed, making it inaccessible.</li>
 			</ul>
 			<p>
 				<b>Perseus Stage</b>
 			</p>
 			<ul>
-				<li>When Perseus teleports onto the island, damage him. Other then that, survive the waves of zombies.</li>
+				<li>When Perseus teleports onto the island, damage him. Other than that, survive the waves of zombies.</li>
 				<li>After shooting his glowing weak spots, he'll keel over and you need to damage him using your specialist.</li>
 				<li>Once he's dead, pick up the key to finish the EE.</li>
 			</ul>
@@ -354,15 +435,21 @@ function SideEE() {
 				<li id="bridle">
 					Obtain the Golden Bridle (will spawn mini boss)
 					<ul>
-						<li>On white pedastol on left of Intersection of Treasuries</li>
+						<li>On white pedestal on left of Intersection of Treasuries</li>
 						<li>Middle of Stoa of the Athenians near white gem</li>
 					</ul>
 				</li>
-				<li>Interact with the circle under pegasus in the Spartan Monument (all players must be in the circle to be teleported)</li>
+				<li>Interact with the circle under Pegasus in the Spartan Monument (all players must be in the circle to be teleported)</li>
 				<li>Go along the left side and attack the cage using your specialist melee</li>
 				<li>Keep going all the way around until you find another cage hanging on the roof. Shoot the chain to make it fall then melee with specialist.</li>
-				<li>Follow the eagle back to where they circle. Several skeleton will spawn that you need to kill.</li>
-				<li>Once complete, PaP will appear where the large red crystal was in the center of that area.</li>
+				<li>Follow the eagle back to where they circle. Several skeletons will spawn that you need to kill.</li>
+				<li>
+					Once complete,{" "}
+					<TabLink tab="side-ee" target="pap">
+						PaP
+					</TabLink>{" "}
+					will appear where the large red crystal was in the center of that area.
+				</li>
 			</ol>
 		</section>
 	);
@@ -383,10 +470,10 @@ function MusicEE() {
 			</h2>
 			<p>Find and shoot 4 coins</p>
 			<ul>
-				<li>Back fo zombie spawn to the left of the workbench in Marketplace</li>
+				<li>Back of zombie spawn to the left of the workbench in Marketplace</li>
 				<li>On railing through broken wall in Spartan Monument with golden statue in middle stairs area</li>
-				<li>To left of statue on the right in River of Sorrow after riding pegasus</li>
-				<li>under table on right side of forge room in Cliff Ruins</li>
+				<li>To left of statue on the right in River of Sorrow after riding Pegasus</li>
+				<li>Under table on right side of forge room in Cliff Ruins</li>
 			</ul>
 		</section>
 	);
@@ -412,35 +499,35 @@ function WonderWeapons() {
 			<ul>
 				<li>Chaos of Treasures - On the red crystal when entering Intersection of Treasuries from Gymnasium Bathhouse (knife the cracked part)</li>
 				<li>Near the Purple Blossoms - On the floor in Intersection of Treasuries at bottom of stairs</li>
-				<li>Barque of Gold - in the Stoa of the Athenians pot at the end of the boat (knife the pot)</li>
-				<li>The Shieldbearer's Fountain - next to the shield beside the Stoa of the Athenians giant fountain</li>
-				<li>General's Column - at base of column when heading down to Spartan Monument from fountain</li>
+				<li>Barque of Gold - In the Stoa of the Athenians pot at the end of the boat (knife the pot)</li>
+				<li>The Shieldbearer's Fountain - Next to the shield beside the Stoa of the Athenians giant fountain</li>
+				<li>General's Column - At base of column when heading down to Spartan Monument from fountain</li>
 				<li>Fallen Statesman - On left side by fallen statue in Spartan Monument when coming down from column</li>
-				<li>Beneath the Watchful Gaze of Seus - On the ground across from the Zues perk statue in Spartan Monument (where pegasus picks you up))</li>
+				<li>Beneath the Watchful Gaze of Zeus - On the ground across from the Zeus perk statue in Spartan Monument (where Pegasus picks you up)</li>
 				<li>Golden Taurus - On the ground leaning against the pillar with the bull statue</li>
 				<li>Where the Arrow Splits - In the pile of rocks beneath the giant arrow in Intersection of Treasuries (knife the pile of rocks)</li>
 				<b>
-					THE FOLLORING LOCATIONS ARE AFTER RIDING{" "}
+					THE FOLLOWING LOCATIONS ARE AFTER RIDING{" "}
 					<TabLink tab="side-ee" target="bridle">
 						PEGASUS
 					</TabLink>
 				</b>
-				<li>Where Sorrows Flow Beneath - Down the stairs below 2 sticks leaning on marble torch after riding pegasus</li>
-				<li>Sorrow Washes Over - Down to the left of the odin perk (knife the pile of dirt)</li>
-				<li>Wheel of Water - In the Cliff RUins forge room to the left of the big fire by the wheel of water</li>
-				<li>(workbench clue) - In Cliff Ruins forge room ontop of table to the right of fire</li>
-				<li>Where the Serpent Snared the Eagle - On the ground ot the left of the caged eagle in Cliff Ruins</li>
+				<li>Where Sorrows Flow Beneath - Down the stairs below 2 sticks leaning on marble torch after riding Pegasus</li>
+				<li>Sorrow Washes Over - Down to the left of the Odin perk (knife the pile of dirt)</li>
+				<li>Wheel of Water - In the Cliff Ruins forge room to the left of the big fire by the wheel of water</li>
+				<li>(workbench clue) - In Cliff Ruins forge room on top of table to the right of fire</li>
+				<li>Where the Serpent Snared the Eagle - On the ground to the left of the caged eagle in Cliff Ruins</li>
 				<li>Broken Bridge - On right side of broken bridge connecting Cliff Ruins and Center of the World</li>
-				<li>The Shrine of Wind and Sky - To the left of the Ouranos alter in the Center of the World</li>
-				<li>Top of the CEnter of the World - next to the fast travel at the top of the Center of the World</li>
-				<li>Chaos Venom - Ontop of a red crystal just before entering Python Pass from Center of the World</li>
+				<li>The Shrine of Wind and Sky - To the left of the Ouranos altar in the Center of the World</li>
+				<li>Top of the Center of the World - Next to the fast travel at the top of the Center of the World</li>
+				<li>Chaos Venom - On top of a red crystal just before entering Python Pass from Center of the World</li>
 				<li>
-					Where the Mighty Titan Points - red crystal to the left of the{" "}
+					Where the Mighty Titan Points - Red crystal to the left of the{" "}
 					<TabLink tab="weapons" target="titan">
 						Titan Wallbuy
 					</TabLink>
 				</li>
-				<li>The Steps of Flesh and Bone - To the left of the charon altarjust before entering River of Sorrows from Python Pass infront of white pyre</li>
+				<li>The Steps of Flesh and Bone - To the left of the Charon altar just before entering River of Sorrows from Python Pass in front of white pyre</li>
 			</ul>
 
 			<h2 id="ouranos">
@@ -461,21 +548,33 @@ function WonderWeapons() {
 						Pegasus
 					</TabLink>
 				</li>
-				<li>Find the Ouranos shrine infront of PaP and give your hand to the statue (will start a lockdown)</li>
+				<li>
+					Find the Ouranos shrine in front of{" "}
+					<TabLink tab="side-ee" target="pap">
+						PaP
+					</TabLink>{" "}
+					and give your hand to the statue (will start a lockdown)
+				</li>
 				<li>Kill 10 glowing blue zombies while inside the circle</li>
 				<li>Pick up the hand from the shrine.</li>
 			</ol>
 			<ol>
 				<b>Redeemed Hand of Ouranos</b>
 				<li>
-					Use the Fallen Hand to launch 3 zombies into giant arrows feathers. a glowing feather will fly out that you need to shoot atleast twice to land near the shrine (where you did the lockdown)
+					Use the Fallen Hand to launch 3 zombies into giant arrows' feathers. A glowing feather will fly out that you need to shoot at least twice to land near the shrine (where you did the lockdown)
 					<ul>
-						<li>Left of PaP in Center of the World</li>
+						<li>
+							Left of{" "}
+							<TabLink tab="side-ee" target="pap">
+								PaP
+							</TabLink>{" "}
+							in Center of the World
+						</li>
 						<li>By Charon shrine in Python Pass (near the entrance from River of Sorrows)</li>
 						<li>When entering Cliff Ruins from River of Sorrows near the mystery box</li>
 					</ul>
 				</li>
-				<li>A portal should now spawn at the shrine which you need to enter. You must use the Redeemed hand against the wave of zombies (you have unlimited ammo)</li>
+				<li>A portal should now spawn at the shrine which you need to enter. You must use the Redeemed Hand against the wave of zombies (you have unlimited ammo)</li>
 			</ol>
 
 			<h2 id="gaia">
@@ -499,14 +598,14 @@ function WonderWeapons() {
 			<ol>
 				<b>Redeemed Hand of Gaia</b>
 				<li>
-					Shoot 3 glowing stones in 3 glowing plants using the hand. Grabbing the small plant that spawns and returning it to the shrine.
+					Shoot 3 glowing stones in 3 glowing plants using the hand. Grab the small plant that spawns and return it to the shrine.
 					<ul>
-						<li>On the temple Terrace right outside spawn</li>
+						<li>On the Temple Terrace right outside spawn</li>
 						<li>To the left of the boat area in the Stoa of the Athenians</li>
 						<li>To the left of the wallbuy in the Intersection of Treasuries by the arrow</li>
 					</ul>
 				</li>
-				<li>A portal should now spawn at the shrine which you need to enter. You must use the Redeemed hand against the wave of zombies (you have unlimited ammo)</li>
+				<li>A portal should now spawn at the shrine which you need to enter. You must use the Redeemed Hand against the wave of zombies (you have unlimited ammo)</li>
 			</ol>
 
 			<h2 id="hemera">
@@ -535,12 +634,12 @@ function WonderWeapons() {
 					<span>The orbs are timed so they need to be returned quickly. If you fail, you can shoot the hand at the mirror again to get another orb.</span>
 
 					<ol>
-						<li>on one of the pillars on spawn building, visible from Gymnasium Bathhouse. Appears in bowl on the stairs</li>
-						<li>on the far bridge visible from Upper Road bridge. Orb in bowl on the end of the bridge</li>
+						<li>On one of the pillars on spawn building, visible from Gymnasium Bathhouse. Appears in bowl on the stairs</li>
+						<li>On the far bridge visible from Upper Road bridge. Orb in bowl on the end of the bridge</li>
 						<li>On a spawn building pillar visible from the Temple Terrace area on the left side. Bowl directly below the mirror</li>
 					</ol>
 				</li>
-				<li>A portal should now spawn at the shrine which you need to enter. You must use the Redeemed hand against the wave of zombies (you have unlimited ammo)</li>
+				<li>A portal should now spawn at the shrine which you need to enter. You must use the Redeemed Hand against the wave of zombies (you have unlimited ammo)</li>
 			</ol>
 
 			<h2 id="charon">
@@ -567,20 +666,26 @@ function WonderWeapons() {
 			</ol>
 			<ol>
 				<b>Redeemed Hand of Charon</b>
-				<li>Get kills with the Fallen hand while in the River of Sorrow. When given the option, drink from the River.</li>
+				<li>Get kills with the Fallen Hand while in the River of Sorrow. When given the option, drink from the River.</li>
 				<li>
-					<span>You now need to find and collect 3 highligthed coins (There will be several dud coins which cannot be picked up, you need the 3 actual ones which will have a hold to pick up prompt and make a noise when picked up)</span>
-					<span>The best strategy is to jsut walk around the entire PaP and surrounding area looking on the floor and walls for coins until all 3 have been found.</span>
+					<span>You now need to find and collect 3 highlighted coins (There will be several dud coins which cannot be picked up, you need the 3 actual ones which will have a hold to pick up prompt and make a noise when picked up)</span>
+					<span>
+						The best strategy is to just walk around the entire{" "}
+						<TabLink tab="side-ee" target="pap">
+							PaP
+						</TabLink>{" "}
+						and surrounding area looking on the floor and walls for coins until all 3 have been found.
+					</span>
 					<span>WARNING: You will not regenerate health while in this vision.</span>
 				</li>
 				<li>Once all 3 coins have been found, interact with the shrine.</li>
-				<li>A portal should now spawn at the shrine which you need to enter. You must use the Redeemed hand against the wave of zombies (you have unlimited ammo)</li>
+				<li>A portal should now spawn at the shrine which you need to enter. You must use the Redeemed Hand against the wave of zombies (you have unlimited ammo)</li>
 			</ol>
 
 			<h2 id="exalted">
 				Exalted Hands Upgrade -{" "}
 				<a href="https://www.youtube.com/watch?v=_JzVJ7HUR6w" target="_blank" rel="noopener noreferrer">
-					Video (sightly inaccurate)
+					Video (slightly inaccurate)
 				</a>
 			</h2>
 			<p>
@@ -597,25 +702,75 @@ function WonderWeapons() {
 				</span>
 			</p>
 			<ol>
-				<li>Knife the Eternal Flame using your shields spear to light it on fire</li>
+				<li>
+					Knife the{" "}
+					<TabLink tab="extras" target="eternalflame">
+						Eternal Flame
+					</TabLink>{" "}
+					using your shield's spear to light it on fire
+				</li>
 				<li>Take a left out of the temple (when facing the flame) and shoot your spear slightly above the bowl way high up on a pillar. It should light on fire.</li>
 				<li>
 					Kill a certain catalyst in each circle for each hand (must do all even if hands are locked)
 					<ul>
-						<li>Fire - Gaia</li>
-						<li>Electric - Hemera</li>
-						<li>Poison - Charon</li>
-						<li>Water - Ouranos</li>
+						<li>
+							Fire -{" "}
+							<TabLink tab="wonder-weapon" target="gaia">
+								Gaia
+							</TabLink>
+						</li>
+						<li>
+							Electric -{" "}
+							<TabLink tab="wonder-weapon" target="hemera">
+								Hemera
+							</TabLink>
+						</li>
+						<li>
+							Poison -{" "}
+							<TabLink tab="wonder-weapon" target="charon">
+								Charon
+							</TabLink>
+						</li>
+						<li>
+							Water -{" "}
+							<TabLink tab="wonder-weapon" target="ouranos">
+								Ouranos
+							</TabLink>
+						</li>
 					</ul>
 				</li>
 				<li>After the circle has been charged, get 10 kills to fill each soul box (will stop accepting souls when complete)</li>
 				<li>
-					Head to PaP and interact with the machine to re-do the trials (You will not be given unlimited ammo but may use other weapons. you will be given time to get ready between each trial)
+					Head to{" "}
+					<TabLink tab="side-ee" target="pap">
+						PaP
+					</TabLink>{" "}
+					and interact with the machine to re-do the trials (You will not be given unlimited ammo but may use other weapons. You will be given time to get ready between each trial)
 					<ul>
-						<li>Gaia - All Catalyst Zombies</li>
-						<li>Ouranos - All Skeletons</li>
-						<li>Hemera - 3 Mini Bosses</li>
-						<li>Charon - 3 Blightfathers</li>
+						<li>
+							<TabLink tab="wonder-weapon" target="gaia">
+								Gaia
+							</TabLink>{" "}
+							- All Catalyst Zombies
+						</li>
+						<li>
+							<TabLink tab="wonder-weapon" target="ouranos">
+								Ouranos
+							</TabLink>{" "}
+							- All Skeletons
+						</li>
+						<li>
+							<TabLink tab="wonder-weapon" target="hemera">
+								Hemera
+							</TabLink>{" "}
+							- 3 Mini Bosses
+						</li>
+						<li>
+							<TabLink tab="wonder-weapon" target="charon">
+								Charon
+							</TabLink>{" "}
+							- 3 Blightfathers
+						</li>
 					</ul>
 				</li>
 				<li>You can now PaP the hands to upgrade them.</li>
@@ -646,7 +801,7 @@ function Buildables() {
 			<p>
 				Requires{" "}
 				<TabLink tab="side-ee" target="power">
-					sentinel artifact
+					Sentinel Artifact
 				</TabLink>{" "}
 				(Build at Marketplace)
 			</p>
@@ -664,7 +819,7 @@ function Buildables() {
 					<ul>
 						<li>Leaning up against column near boat at Stoa of Athenians</li>
 						<li>Intersection of Treasuries just past the cart</li>
-						<li>Across form the Auger Wallbuy in Intersections of Treasuries at the base of the statue</li>
+						<li>Across from the Auger Wallbuy in Intersections of Treasuries at the base of the statue</li>
 					</ul>
 				</li>
 				<li>
@@ -684,7 +839,7 @@ function Buildables() {
 			<p>
 				Requires{" "}
 				<TabLink tab="side-ee" target="bridle">
-					riding pegasus
+					riding Pegasus
 				</TabLink>{" "}
 				(Build on rock in Cliff Ruins blacksmith area)
 			</p>
@@ -692,7 +847,7 @@ function Buildables() {
 				<li>
 					Sharp Thing - River of Sorrow
 					<ul>
-						<li>In rock on the left after riding pegasus</li>
+						<li>In rock on the left after riding Pegasus</li>
 						<li>Backwards and to the left on a square rock near a door</li>
 						<li>To right of Odin perk in goblet of fire</li>
 					</ul>
@@ -708,7 +863,7 @@ function Buildables() {
 				<li>
 					Anvil - Cliff Ruins
 					<ul>
-						<li>Behind pillar when going left after pegasus drops you off (by box location)</li>
+						<li>Behind pillar when going left after Pegasus drops you off (by box location)</li>
 						<li>On left side rock when entering Cliff Ruin blacksmith area</li>
 						<li>On piece of stone across from the bird cage past the blacksmith area</li>
 					</ul>
@@ -779,7 +934,7 @@ function Weapons() {
 					<b>GKS</b> - Monument of Craterus (1300p)
 				</li>
 				<li id="m1897">
-					<b>M1897 Terbuchet</b> - Gymnasium Bathhouse (1400p)
+					<b>M1897 Trebuchet</b> - Gymnasium Bathhouse (1400p)
 				</li>
 				<li>
 					<b>Maddox RFB</b> - Stoa of Athenians (1400p)
@@ -908,7 +1063,13 @@ function Gauntlet() {
 					<tr>
 						<td>4</td>
 						<td>That's the Spear It</td>
-						<td>Get Required Number of Kills withthe Apollo's Will Spear Throw.</td>
+						<td>
+							Get Required Number of Kills with the{" "}
+							<TabLink tab="buildables" target="shield">
+								Apollo's Will
+							</TabLink>{" "}
+							Spear Throw.
+						</td>
 					</tr>
 					<tr>
 						<td>5</td>
@@ -923,7 +1084,7 @@ function Gauntlet() {
 					<tr>
 						<td>7</td>
 						<td>Loaded</td>
-						<td>End the Round withGuns and Equipment at Full Ammo.</td>
+						<td>End the Round with Guns and Equipment at Full Ammo.</td>
 					</tr>
 					<tr>
 						<td>8</td>
@@ -1028,12 +1189,12 @@ function Gauntlet() {
 					<tr>
 						<td>28</td>
 						<td>Farewell to Arms</td>
-						<td>Kill Zombies with10 Different Weapons or Equipment.</td>
+						<td>Kill Zombies with 10 Different Weapons or Equipment.</td>
 					</tr>
 					<tr>
 						<td>29</td>
 						<td>Dinner and a Play</td>
-						<td>Go to the Amphitheater witha Redeemed or Exalted Hand and Act in the Play.</td>
+						<td>Go to the Amphitheater with a Redeemed or Exalted Hand and Act in the Play.</td>
 					</tr>
 					<tr>
 						<td>30</td>
@@ -1083,9 +1244,9 @@ function Extras() {
 			<ul>
 				<li>Apollo on chariot on left wall in spawn building</li>
 				<li>Several People art on right wall in spawn</li>
-				<li>broken wall art bellow giant lion statue</li>
+				<li>broken wall art below giant lion statue</li>
 				<li>
-					pegasis and gryphin wall art before entering Amphitheater with{" "}
+					pegasus and gryphon wall art before entering Amphitheater with{" "}
 					<TabLink tab="side-ee" target="power">
 						Sentinel Artifact
 					</TabLink>
@@ -1098,14 +1259,14 @@ function Extras() {
 				<li>Golden chest on Intersection of Treasuries near a large red crystal</li>
 				<li>Bull statue at Spartan Monument</li>
 				<li>Small Vase in Spartan Monument in corner near pyre</li>
-				<li>Statue in River of Sorrow (on the right after riding pegasus)</li>
-				<li>Golden apple at base of large golden statue after riding pegasus on the right</li>
+				<li>Statue in River of Sorrow (on the right after riding Pegasus)</li>
+				<li>Golden apple at base of large golden statue after riding Pegasus on the right</li>
 				<li>Blue Fire pit in the Cliff Ruins blacksmith</li>
 				<li>Golden box near torch in Cliff Ruins (on right when first entering blacksmith area)</li>
 				<li>Wall art in cliff ruins before encountering the bird cage (mosaic)</li>
 				<li>Small Vase when first entering Cliff Ruins on the left</li>
 				<li>Large golden arrow in Python Pass</li>
-				<li>Tiny scales when leaving Python Pass on the snake on the right nessled between red crystal and rock</li>
+				<li>Tiny scales when leaving Python Pass on the snake on the right nestled between red crystal and rock</li>
 			</ul>
 			<h2>
 				Scrolls -{" "}
@@ -1126,16 +1287,21 @@ function Extras() {
 					</TabLink>{" "}
 					machine in nearby pile of rocks in center
 				</li>
-				<li>On left side beside a bowl in River of Sorrows (after riding pegasus)</li>
-				<li>on the ground on the bridge path before PaP on the right side.</li>
-				<li>In Python Pass on floor when entering from the back entrance accross from glowign mushrooms</li>
+				<li>On left side beside a bowl in River of Sorrows (after riding Pegasus)</li>
+				<li>On the ground on the bridge path before PaP on the right side.</li>
+				<li>In Python Pass on floor when entering from the back entrance across from glowing mushrooms</li>
 			</ul>
 			<h2 id="tributes">Tributes</h2>
 			<p>Inside Apollo's Temple and the Cliff Side: Forge there are bowls that can be interacted with to give points and start a Tribute Challenge. Doing these challenges will build up a reward you can pick up, rewards can rank from Common to Epic rarity. By doing more and more challenges you can build your way up to an Epic Reward. List of possible Tribute Challenges:</p>
 			<ul>
 				<li>Hold Position in a certain Location</li>
 				<li>Kill Zombies in a certain Location</li>
-				<li>Kill Zombies with Apollo's Will</li>
+				<li>
+					Kill Zombies with{" "}
+					<TabLink tab="buildables" target="shield">
+						Apollo's Will
+					</TabLink>
+				</li>
 				<li>Kill Zombies with Head Shots</li>
 				<li>Take Damage and Recover Health</li>
 				<li>Kill Zombies with Special Weapons</li>
@@ -1166,7 +1332,13 @@ function Extras() {
 					</tr>
 					<tr>
 						<td>Epic</td>
-						<td>Free Extra Perk, Self Revive, Pegasus Strike, PAP'd Swat RFT, PAP'd Daemon 3XB, PAP'd SDM</td>
+						<td>
+							Free Extra Perk, Self Revive,{" "}
+							<TabLink tab="buildables" target="pegasusstrike">
+								Pegasus Strike
+							</TabLink>
+							, PAP'd Swat RFT, PAP'd Daemon 3XB, PAP'd SDM
+						</td>
 					</tr>
 				</tbody>
 			</table>
@@ -1226,13 +1398,13 @@ function Extras() {
 				<tbody>
 					<tr>
 						<td>Venom Trap</td>
-						<td>Melts the undead horde withthe snake titan's venom.</td>
+						<td>Melts the undead horde with the snake titan's venom.</td>
 						<td>Python Pass</td>
 						<td>1000 Points</td>
 					</tr>
 					<tr>
 						<td>Boiling Pool</td>
-						<td>Boils the player and the undead withscalding hot water.</td>
+						<td>Boils the player and the undead with scalding hot water.</td>
 						<td>Gymnasium Bathhouse</td>
 						<td>1000 Points</td>
 					</tr>
@@ -1250,12 +1422,18 @@ function Extras() {
 				<tbody>
 					<tr>
 						<td id="gegenees">Gegenees</td>
-						<td>The Gegenees can throw spears and shield blast players. It's easily defeated by throwing spears at its head.</td>
+						<td>
+							The{" "}
+							<TabLink tab="extras" target="gegenees">
+								Gegenees
+							</TabLink>{" "}
+							can throw spears and shield blast players. It's easily defeated by throwing spears at its head.
+						</td>
 						<td>(Big Guy)</td>
 					</tr>
 					<tr>
 						<td>Spartoi</td>
-						<td>Skeleton warriors that use shields and spears to heigthen their defense and offense. They can only be killed by headshot, otherwise they will reform after being destroyed.</td>
+						<td>Skeleton warriors that use shields and spears to heighten their defense and offense. They can only be killed by headshot, otherwise they will reform after being destroyed.</td>
 						<td>
 							<a href="https://i.imgur.com/TPYohAA.png" rel="nofollow noopener noreferrer" target="_blank">
 								Here
@@ -1274,7 +1452,7 @@ function Extras() {
 					</tr>
 					<tr>
 						<td>Electric Catalyst</td>
-						<td>Charges up and can unleash a blinding scream that can impair a players vision.</td>
+						<td>Charges up and can unleash a blinding scream that can impair a player's vision.</td>
 						<td></td>
 					</tr>
 					<tr>
@@ -1284,7 +1462,7 @@ function Extras() {
 					</tr>
 					<tr>
 						<td>Blightfather</td>
-						<td>The Blightfather can spit acid and lock wall buys withhis acid. Can also grab onto players withits massive tongue. Its weak spot is the bulbs on its back.</td>
+						<td>The Blightfather can spit acid and lock wall buys with his acid. Can also grab onto players with its massive tongue. Its weak spot is the bulbs on its back.</td>
 						<td>
 							<a href="https://i.imgur.com/D8JZ4TP.jpg" rel="nofollow noopener noreferrer" target="_blank">
 								Here

@@ -38,7 +38,10 @@ const achievementRows = [
 		name: "Rock On!",
 		description: (
 			<>
-				Craft a <TabLink tab="wonder-weapon">weapon of rock</TabLink>
+				Craft a{" "}
+				<TabLink tab="wonder-weapon" target="wonder-weapons-header">
+					weapon of rock
+				</TabLink>
 			</>
 		),
 		goal: "Create one of the 4 wonder weapons",
@@ -96,7 +99,7 @@ const achievementRows = [
 	{
 		id: "sticker-collector",
 		name: "Sticker Collector",
-		description: "Find all of the quest items and compelete the sticker pack",
+		description: "Find all of the quest items and complete the sticker pack",
 		goal: (
 			<>
 				Requires the{" "}
@@ -111,7 +114,10 @@ const achievementRows = [
 				<TabLink tab="buildables" target="seticom">
 					Seticom
 				</TabLink>
-				, and <TabLink tab="wonder-weapon">all 4 Wonder Weapons</TabLink>
+				, and{" "}
+				<TabLink tab="wonder-weapon" target="wonder-weapons-header">
+					all 4 Wonder Weapons
+				</TabLink>
 			</>
 		),
 	},
@@ -133,7 +139,7 @@ const achievementRows = [
 		),
 		goal: (
 			<>
-				Compelete their respective <TabLink tab="music-ee">music EE's</TabLink>
+				Complete their respective <TabLink tab="music-ee">music EE's</TabLink>
 			</>
 		),
 	},
@@ -153,7 +159,7 @@ const achievementRows = [
 				<br />
 				<span>Polar Peak: Roller Coaster (hit one target atleast)</span>
 				<br />
-				<span>Keplar: Octanian Hunter (Target game to next to entrance)</span>
+				<span>Kepler: Octanian Hunter (Target game to next to entrance)</span>
 			</>
 		),
 	},
@@ -176,36 +182,251 @@ function Overview() {
 			<p>Zombies in Spaceland is the first Zombies map featured in Call of Duty: Infinite Warfare, launching with the rest of the game on November 4 for the Playstation 4, Xbox One, and PC. It features a brand new cast of four aspiring actors who audition for a role in eccentric filmmaker Willard Wyler's newest film, the titular Zombies in Spaceland. However, Wyler commits a ritual that sucks the four actors into the film, causing them to be the stars of Zombies in Spaceland.</p>
 			<h2>Overview</h2>
 			<p>Zombies in Spaceland is set entirely in the "Spaceland" amusement park, allowing players to ride rides, play games, and explore the behind the scenes aspects of a theme park all while surviving against the Zombie horde. The map features brand new mechanics such as arcade machines like the Ghosts N Skulls and David Hasselhoff as the park's DJ.</p>
-			<p>The map contains many classic elements of the Treyarch Zombies mode, although most features have been retooled or at least given a new look to better fit Infinite Warfare's aesthetic. Gameplay basics such as zombies, rounds, points, and difficulty increases as the game goes on are all present. Power-Ups, Perks, and the Pack-a-Punch Machine all return. The Mystery Box is also present, but now known as the Magic Wheel.</p>
-			<p>Perks are now Candy Perks, and are mostly equivalent or slightly modified from the Perk-a-Cola of previous games. Zombies in Spaceland does introduce a completely new perk, Trail Blazers. Similarly, the selection of Power-Ups is nearly equivalent to past games, with the addition of the Infinite Ammo and Infinite Grenades power-ups.</p>
-			<p>Buildables also return in Zombies in Spaceland. The buildables in this map include N31L the robot, the Seti-Com, and the four Weapons of Rock Wonder Weapons; the Shredder, the Head Cutter, the Dischord, and the Face Melter.</p>
+			<p>
+				The map contains many classic elements of the Treyarch Zombies mode, although most features have been retooled or at least given a new look to better fit Infinite Warfare's aesthetic. Gameplay basics such as rounds, points, and difficulty increases as the game goes on are all present. Power-Ups, Perks, and the{" "}
+				<TabLink tab="side-ee" target="pap">
+					Pack-a-Punch Machine
+				</TabLink>{" "}
+				all return. The Mystery Box is also present, but now known as the{" "}
+				<TabLink tab="weapons" target="magic-wheel">
+					Magic Wheel
+				</TabLink>
+				.
+			</p>
+			<p>
+				Perks are now <TabLink tab="perks">Candy Perks</TabLink>, and are mostly equivalent or slightly modified from the Perk-a-Cola of previous games. Zombies in Spaceland does introduce a completely new perk,{" "}
+				<TabLink tab="perks" target="trail-blazers">
+					Trail Blazers
+				</TabLink>
+				. Similarly, the selection of Power-Ups is nearly equivalent to past games, with the addition of the Infinite Ammo and Infinite Grenades power-ups.
+			</p>
+			<p>
+				Buildables also return in Zombies in Spaceland. The buildables in this map include{" "}
+				<TabLink tab="buildables" target="N31L">
+					N31L the robot
+				</TabLink>
+				, the{" "}
+				<TabLink tab="buildables" target="seticom">
+					Seti-Com
+				</TabLink>
+				, and the four Weapons of Rock{" "}
+				<TabLink tab="wonder-weapon" target="wonder-weapons-header">
+					Wonder Weapons
+				</TabLink>
+				; the{" "}
+				<TabLink tab="wonder-weapon" target="shredder">
+					Shredder
+				</TabLink>
+				, the{" "}
+				<TabLink tab="wonder-weapon" target="head-cutter">
+					Head Cutter
+				</TabLink>
+				, the{" "}
+				<TabLink tab="wonder-weapon" target="dischord">
+					Dischord
+				</TabLink>
+				, and the{" "}
+				<TabLink tab="wonder-weapon" target="face-melter">
+					Face Melter
+				</TabLink>
+				.
+			</p>
 			<br />
-			<p>In addition to the Weapons of Rock, the map contains two more Wonder Weapons. The Forge Freeze, which can be obtained as a prize from the arcade, and the Arcane Core attachment which gives regular projectile weapons Wonder Weapon like powers and effects.</p>
+			<p>
+				In addition to the Weapons of Rock, the map contains two more Wonder Weapons. The Forge Freeze, which can be obtained as a prize from the arcade, and the{" "}
+				<TabLink tab="side-ee" target="arcane-cores">
+					Arcane Core
+				</TabLink>{" "}
+				attachment which gives regular projectile weapons Wonder Weapon like powers and effects.
+			</p>
 			<p>While players do fight standard Zombies, Zombies in Spaceland introduces two other primary enemies; the special round Clown Zombie and the elite Brute.</p>
 			<p>Being that Zombies in Spaceland is the first map in the Infinite Warfare zombies series, it also introduces many new items and gameplay staples of this iteration of the mode. The Armageddon, the Cryo Grenade, Rewind, Transponder, Portal Generator, Black Hole Grenade, Plasma Grenade, Cluster Grenade, C4, Concussion Grenade, Bio Spike and Gas Grenade throwables are all introduced. The map brings the new Souvenir Coin Machine for you to build traps that can help you deal with the horde. The map also includes the Arcade and the Lost and Found mechanics. Unique to this map, players may find Shades, allowing them to see hidden targets around the map.</p>
-			<p>The maps Easter Egg directly pits players against a hostile faction of Alien (Infinite Warfare), in order to obtain a piece of the Soul Key and allow the actors to escape the film.</p>
+			<p>
+				The maps Easter Egg directly pits players against a hostile faction of Alien (Infinite Warfare), in order to obtain a piece of the <TabLink tab="main-ee">Soul Key</TabLink> and allow the actors to escape the film.
+			</p>
 
 			<h2>Layout</h2>
 			<p>Zombies in Spaceland is a large map, with more open lanes. The map is split into five different sections:</p>
 			<h3>Entrance/Junction</h3>
-			<p>The players spawn at the entrance of Spaceland, where a power switch can be located at the back room to their left, which powers up the area of the entrance and the Junction area. Players can purchase the Hailstorm or the M1 at the entrance for 500 points per weapon, or buy Up 'N Atoms (500 on solo up to three times, 1500 in co-op).</p>
-			<p>A barricade stands between the entrance and the Junction area. Here, the players can find a Souvenir Token machine, N31L the Robot, a Fortune Teller, as well as a possible spawn location for a Seti-Com part. The Banshee and Oni are also available for purchase.In the center is the main Portal, where after the other four Portals have been traversed, will open the entrance to the Pack-a-Punch projector machine. While inside the Pack-a-Punch room, players have 30 seconds to upgrade their weapons, activate the Trap UFOs, or complete the crystal cabinet inside in order to build the Exquisite Core. After accessing the room, it will become unavailable for some time. From the Junction, the players can choose to go to one of the three areas by donating and opening barriers to: Journey into Space, Polar peak, or Kepler System.</p>
+			<p>
+				The players spawn at the entrance of Spaceland, where a{" "}
+				<TabLink tab="side-ee" target="power">
+					power switch
+				</TabLink>{" "}
+				can be located at the back room to their left, which powers up the area of the entrance and the Junction area. Players can purchase the Hailstorm or the M1 at the entrance for 500 points per weapon, or buy{" "}
+				<TabLink tab="perks" target="upnatoms">
+					Up 'N Atoms
+				</TabLink>{" "}
+				(500 on solo up to three times, 1500 in co-op).
+			</p>
+			<p>
+				A barricade stands between the entrance and the Junction area. Here, the players can find a Souvenir Token machine,{" "}
+				<TabLink tab="buildables" target="N31L">
+					N31L the Robot
+				</TabLink>
+				, a Fortune Teller, as well as a possible spawn location for a Seti-Com part. The Banshee and Oni are also available for purchase. In the center is the main{" "}
+				<TabLink tab="side-ee" target="pap">
+					Portal
+				</TabLink>
+				, where after the other four Portals have been traversed, will open the entrance to the Pack-a-Punch projector machine. While inside the Pack-a-Punch room, players have 30 seconds to upgrade their weapons, activate the Trap UFOs, or complete the crystal cabinet inside in order to build the{" "}
+				<TabLink tab="side-ee" target="x-quisite">
+					Exquisite Core
+				</TabLink>
+				. After accessing the room, it will become unavailable for some time. From the Junction, the players can choose to go to one of the three areas by donating and opening barriers to: Journey into Space, Polar peak, or Kepler System.
+			</p>
 
 			<h3>Journey into Space</h3>
 			<p>
-				Journey into Space, going left from the Junction, is comprised of three separate areas (four if the Astrocade is counted). The first area is immediately beyond its corresponding junction door and contains an Erad wall-buy, a Magic Wheel, a trap, a DJ spawn location, a souvenir station, a path to the Astrocade, a door to the Underground and another door to the second area. Here players can also find the board to place parts for the Face Melter quest buildable weapon. The second area contains a Volk wall-buy, another Magic Wheel, another trap, a Fortune Teller, a Teleport Portal, the Tuff Nuff perk and a door. This door leads to the third area which contains a continually-active trap in the form of Dodgems carts (which are permanently active or disabled depending on whether the power is on or not), the Blue Bolts perk, a Karma-45 wall-buy, a second entrance to the Astrocade and another entrance to the Underground. Between the Dodgems cart trap and the Astrocade entrance
-				is another Magic Wheel.
+				Journey into Space, going left from the Junction, is comprised of three separate areas (four if the Astrocade is counted). The first area is immediately beyond its corresponding junction door and contains an Erad wall-buy, a{" "}
+				<TabLink tab="weapons" target="magic-wheel">
+					Magic Wheel
+				</TabLink>
+				, a trap, a DJ spawn location, a souvenir station, a path to the Astrocade, a door to the Underground and another door to the second area. Here players can also find the board to place parts for the{" "}
+				<TabLink tab="wonder-weapon" target="face-melter">
+					Face Melter
+				</TabLink>{" "}
+				quest buildable weapon. The second area contains a{" "}
+				<TabLink tab="weapons" target="volk">
+					Volk wall-buy
+				</TabLink>
+				, another{" "}
+				<TabLink tab="weapons" target="magic-wheel">
+					Magic Wheel
+				</TabLink>
+				, another trap, a Fortune Teller, a Teleport{" "}
+				<TabLink tab="side-ee" target="pap">
+					Portal
+				</TabLink>
+				, the{" "}
+				<TabLink tab="perks" target="tuff-nuff">
+					Tuff Nuff
+				</TabLink>{" "}
+				perk and a door. This door leads to the third area which contains a continually-active trap in the form of Dodgems carts (which are permanently active or disabled depending on whether the power is on or not), the{" "}
+				<TabLink tab="perks" target="blue-bolts">
+					Blue Bolts
+				</TabLink>{" "}
+				perk, a{" "}
+				<TabLink tab="weapons" target="karma-45">
+					Karma-45 wall-buy
+				</TabLink>
+				, a second entrance to the Astrocade and another entrance to the Underground. Between the Dodgems cart trap and the Astrocade entrance is another{" "}
+				<TabLink tab="weapons" target="magic-wheel">
+					Magic Wheel
+				</TabLink>
+				.
 			</p>
 			<h3>Polar Peaks</h3>
-			<p>Polar Peaks is straight ahead from the Junction. Up the long tunnel players will first see an RPR EVO wall buy and a trap. To the right is a portal, a door which to the left are the spaceship fountains or down straight to a door to the underground. Here players can also find the board to place parts for the Head Cutter quest buildable weapon. Up the stairs either direction are two Magic Wheels, an HVR and Volk wall buy, Quickies, a door down towards the Astrocade, and the Triton roller coaster game ride.</p>
+			<p>
+				Polar Peaks is straight ahead from the Junction. Up the long tunnel players will first see an{" "}
+				<TabLink tab="weapons" target="rpr-evo">
+					RPR EVO wall buy
+				</TabLink>{" "}
+				and a trap. To the right is a{" "}
+				<TabLink tab="side-ee" target="pap">
+					portal
+				</TabLink>
+				, a door which to the left are the spaceship fountains or down straight to a door to the underground. Here players can also find the board to place parts for the{" "}
+				<TabLink tab="wonder-weapon" target="head-cutter">
+					Head Cutter
+				</TabLink>{" "}
+				quest buildable weapon. Up the stairs either direction are two{" "}
+				<TabLink tab="weapons" target="magic-wheel">
+					Magic Wheels
+				</TabLink>
+				, an{" "}
+				<TabLink tab="weapons" target="hvr">
+					HVR
+				</TabLink>{" "}
+				and{" "}
+				<TabLink tab="weapons" target="volk">
+					Volk wall buy
+				</TabLink>
+				,{" "}
+				<TabLink tab="perks" target="quickies">
+					Quickies
+				</TabLink>
+				, a door down towards the Astrocade, and the Triton roller coaster game ride.
+			</p>
 			<h3>Kepler System</h3>
-			<p>To the right of the Junction is the Kepler System part of the park. To the left past the barricade is a souvenir machine, a portal, and up the left stairs is a Magic Wheel and another barricade going down towards Triton Mountain or the spaceship fountains. To the right is the Octonian Hunter shooting game. A permanent trap is in the form of a tick-tocking crocodile mouth which crushes anything under its jaws after 3 seconds of a player stepping in its mouth, which can also down a player even with Tuff Nuffs. Past that are an Erad and HVR wall buy, a trap, a Fortune Teller, a Magic Wheel, Bomb Stoppers, and Slappy Taffy.</p>
+			<p>
+				To the right of the Junction is the Kepler System part of the park. To the left past the barricade is a souvenir machine, a{" "}
+				<TabLink tab="side-ee" target="pap">
+					portal
+				</TabLink>
+				, and up the left stairs is a{" "}
+				<TabLink tab="weapons" target="magic-wheel">
+					Magic Wheel
+				</TabLink>{" "}
+				and another barricade going down towards Triton Mountain or the spaceship fountains. To the right is the Octonian Hunter shooting game. A permanent trap is in the form of a tick-tocking crocodile mouth which crushes anything under its jaws after 3 seconds of a player stepping in its mouth, which can also down a player even with{" "}
+				<TabLink tab="perks" target="tuff-nuff">
+					Tuff Nuffs
+				</TabLink>
+				. Past that are an{" "}
+				<TabLink tab="weapons" target="erad">
+					Erad
+				</TabLink>{" "}
+				and{" "}
+				<TabLink tab="weapons" target="hvr">
+					HVR wall buy
+				</TabLink>
+				, a trap, a Fortune Teller, a{" "}
+				<TabLink tab="weapons" target="magic-wheel">
+					Magic Wheel
+				</TabLink>
+				,{" "}
+				<TabLink tab="perks" target="bombstoppers">
+					Bomb Stoppers
+				</TabLink>
+				, and{" "}
+				<TabLink tab="perks" target="slappy-taffy">
+					Slappy Taffy
+				</TabLink>
+				.
+			</p>
 			<h3>Spaceship Fountains</h3>
-			<p>The Spaceship Fountains is a circle of water spouts that fire upward once the power is turned on, shooting the player up into the air, and killing Zombies that get caught in it. The only way to get here is by a path either from Polar Peaks or an Underground door and over a tiny bridge past a DJ location. Here players can buy Bang Bangs. One of the fountains is tilted and shoots at an angle, and when standing on it, will catapult the player over into the Kepler System. Past this area is another small bridge that leads to a Magic Wheel, and next to that is a slide that goes back down to the Junction area and next to the Polar Peak entrance.</p>
+			<p>
+				The Spaceship Fountains is a circle of water spouts that fire upward once the power is turned on, shooting the player up into the air, and killing Zombies that get caught in it. The only way to get here is by a path either from Polar Peaks or an Underground door and over a tiny bridge past a DJ location. Here players can buy{" "}
+				<TabLink tab="perks" target="bang-bangs">
+					Bang Bangs
+				</TabLink>
+				. One of the fountains is tilted and shoots at an angle, and when standing on it, will catapult the player over into the Kepler System. Past this area is another small bridge that leads to a{" "}
+				<TabLink tab="weapons" target="magic-wheel">
+					Magic Wheel
+				</TabLink>
+				, and next to that is a slide that goes back down to the Junction area and next to the Polar Peak entrance.
+			</p>
 			<h3>Underground</h3>
-			<p>The Underground has three entrances and acts as an underground tunnel system between the Astrocade, Journey into Space and Kepler System. The Kepler system entrance is located between Polar Peak and Kepler System, while the other two entrances are both located near Journey into Space and the Astrocade. The first Underground entrance located between Journey into Space and Astrocade is located just beyond the path to the Astrocade at the main junction door and this entrance leads to approximately halfway between Kepler System and the other entrance in the Underground. The Underground contains a Banshee wall-buy and an HVR wall-buy, as well as the Racin' Stripes perk. Here players can also find the board to place parts for the Shredder quest buildable weapon.</p>
+			<p>
+				The Underground has three entrances and acts as an underground tunnel system between the Astrocade, Journey into Space and Kepler System. The Kepler system entrance is located between Polar Peak and Kepler System, while the other two entrances are both located near Journey into Space and the Astrocade. The first Underground entrance located between Journey into Space and Astrocade is located just beyond the path to the Astrocade at the main junction door and this entrance leads to approximately halfway between Kepler System and the other entrance in the Underground. The Underground contains a Banshee wall-buy and an{" "}
+				<TabLink tab="weapons" target="hvr">
+					HVR wall-buy
+				</TabLink>
+				, as well as the{" "}
+				<TabLink tab="perks" target="racin-stripes">
+					Racin' Stripes
+				</TabLink>{" "}
+				perk. Here players can also find the board to place parts for the{" "}
+				<TabLink tab="wonder-weapon" target="shredder">
+					Shredder
+				</TabLink>{" "}
+				quest buildable weapon.
+			</p>
 			<h3>Astrocade</h3>
-			<p>The Astrocade has three entrances (one that leads to Journey into Space, another that leads to Polar Peak and a third that leads to the main junction) and contains the Disco trap, multiple arcade machines (some of which are playable and reward tickets), a Teleport Portal and an NV4 wall-buy. In the back corner is a prize booth where players can exchange tickets for ammo refill, grenade refill, Cryo grenades, or the Forge Freeze. The Golden Teeth can be purchased for 300 tickets in order to open the cabinet inside the crocodile trap in the Kepler System. Here players can also find the board to place parts for the Dischord quest buildable weapon</p>
+			<p>
+				The Astrocade has three entrances (one that leads to Journey into Space, another that leads to Polar Peak and a third that leads to the main junction) and contains the Disco trap, multiple arcade machines (some of which are playable and reward tickets), a Teleport{" "}
+				<TabLink tab="side-ee" target="pap">
+					Portal
+				</TabLink>{" "}
+				and an{" "}
+				<TabLink tab="weapons" target="nv4">
+					NV4 wall-buy
+				</TabLink>
+				. In the back corner is a prize booth where players can exchange tickets for ammo refill, grenade refill, Cryo grenades, or the Forge Freeze. The Golden Teeth can be purchased for 300 tickets in order to open the cabinet inside the crocodile trap in the Kepler System. Here players can also find the board to place parts for the{" "}
+				<TabLink tab="wonder-weapon" target="dischord">
+					Dischord
+				</TabLink>{" "}
+				quest buildable weapon.
+			</p>
 			<h3>Triton Rollercoaster</h3>
 			<p>Players can ride the roller coaster that also serves as a shooting game. Throughout the ride, players have to shoot targets to earn tickets, disable lasers and open doors. Zombie Clowns will also appear on the tracks, and players must shoot them or else take lots of explosive damage and get downed in the middle of the ride.</p>
 		</section>
@@ -246,11 +467,31 @@ function MainEE() {
 					<TabLink tab="perks">Perks</TabLink>
 				</li>
 				<ul>
-					<li>Racing Stripes</li>
-					<li>Up N' Atoms</li>
-					<li>Tuff 'Nuff</li>
-					<li>Bombstoppers</li>
-					<li>Mule Munchies</li>
+					<li>
+						<TabLink tab="perks" target="racin-stripes">
+							Racing Stripes
+						</TabLink>
+					</li>
+					<li>
+						<TabLink tab="perks" target="upnatoms">
+							Up N' Atoms
+						</TabLink>
+					</li>
+					<li>
+						<TabLink tab="perks" target="tuff-nuff">
+							Tuff 'Nuff
+						</TabLink>
+					</li>
+					<li>
+						<TabLink tab="perks" target="bombstoppers">
+							Bombstoppers
+						</TabLink>
+					</li>
+					<li>
+						<TabLink tab="perks" target="mule-munchies">
+							Mule Munchies
+						</TabLink>
+					</li>
 				</ul>
 				<li>Loadout</li>
 				<ul>
@@ -266,7 +507,9 @@ function MainEE() {
 					</li>
 					<li>Starting Pistol PaP</li>
 					<li>
-						<TabLink tab="wonder-weapon">Any Wonderweapon</TabLink>
+						<TabLink tab="wonder-weapon" target="wonder-weapons-header">
+							Any Wonderweapon
+						</TabLink>
 					</li>
 				</ul>
 			</ul>
@@ -323,13 +566,31 @@ function SideEE() {
 				<li>In spawn, to the right of Lost and Found in the small room.</li>
 				<li>In Journey Into Space in the hallway between Rover Rampage(Bumper Cars) and the Star Mission trap</li>
 				<li>In Kepler at the Moonlight Cafe</li>
-				<li>In Polar Peak opposite the Quickies perk, near the entrance roller coaster ride</li>
-				<li>In the Astrocade directly next to the Portal on the bottom floor</li>
+				<li>
+					In Polar Peak opposite the{" "}
+					<TabLink tab="perks" target="quickies">
+						Quickies
+					</TabLink>{" "}
+					perk, near the entrance roller coaster ride
+				</li>
+				<li>
+					In the Astrocade directly next to the{" "}
+					<TabLink tab="side-ee" target="pap">
+						Portal
+					</TabLink>{" "}
+					on the bottom floor
+				</li>
 			</ol>
 			<h2 id="pap">PaP</h2>
 			<p>Activate and go through all the portals in each area of the map (requires power on per section)</p>
 			<ol>
-				<li>In Journey Into Space behind the Cosmic Tunes booth. The Volk Assault Rifle wallbuy is also near by</li>
+				<li>
+					In Journey Into Space behind the Cosmic Tunes booth. The{" "}
+					<TabLink tab="weapons" target="volk">
+						Volk Assault Rifle wallbuy
+					</TabLink>{" "}
+					is also near by
+				</li>
 				<li>In Kepler down the stairs from the Power Switch in Moonlight Cafe</li>
 				<li>In Polar Peak in a corner in the Gift Shop</li>
 				<li>Astrocade directly next to the Power Switch</li>
@@ -432,11 +693,22 @@ function SideEE() {
 				<li>
 					Interact with N31L, wait for Hasselhoff to leave, then grab the auxiliary battery and return it to N31L
 					<ul>
-						<li>On top of a trash can to the left of the RPR Evo wallbuy in Polar Peak</li>
+						<li>
+							On top of a trash can to the left of the{" "}
+							<TabLink tab="weapons" target="rpr-evo">
+								RPR Evo wallbuy
+							</TabLink>{" "}
+							in Polar Peak
+						</li>
 						<li>On the gift shop counter in Polar Peak</li>
 						<li>In a shoe shelf inside the roller coaster room in the upstairs area of Polar Peak</li>
 						<li>On a yellow cart directly in front of the Chromosphere</li>
-						<li>On top of a trash can in the area above Bombstoppers</li>
+						<li>
+							On top of a trash can in the area above{" "}
+							<TabLink tab="perks" target="bombstoppers">
+								Bombstoppers
+							</TabLink>
+						</li>
 						<li>On a yellow bench between the Alligator Head and the DJ's booth in Kepler System</li>
 					</ul>
 				</li>
@@ -591,14 +863,35 @@ function MusicEE() {
 			<h2 id="mw1">MW1 Theme - The Spaceland Mix</h2>
 			<p>Shoot 3 polaroid pictures of a teddy brear in various "Employee of the Month" calendars.</p>
 			<ul>
-				<li>Inside the room containing Racin' Stripes in the underground section</li>
+				<li>
+					Inside the room containing{" "}
+					<TabLink tab="perks" target="racin-stripes">
+						Racin' Stripes
+					</TabLink>{" "}
+					in the underground section
+				</li>
 				<li>Inside the barrier by Cryptid Attack inside the Astrocade</li>
 				<li>On the wall in a small office in the underground section</li>
 				<li>Across from the Shredder assembly station in the underground section</li>
-				<li>Inside the barrier to the left of the Karma-45</li>
+				<li>
+					Inside the barrier to the left of the{" "}
+					<TabLink tab="weapons" target="karma-45">
+						Karma-45
+					</TabLink>
+				</li>
 				<li>Behind the control booth to the right of the entance to the Triton Rollercoaster in Polar Peaks</li>
 				<li>On the wall in the barrier at the top of the Hyper Slopes</li>
-				<li>Inside a dark lighted barrier near the Magic Wheel location by Bombstoppers in the Kepler System</li>
+				<li>
+					Inside a dark lighted barrier near the{" "}
+					<TabLink tab="weapons" target="magic-wheel">
+						Magic Wheel
+					</TabLink>{" "}
+					location by{" "}
+					<TabLink tab="perks" target="bombstoppers">
+						Bombstoppers
+					</TabLink>{" "}
+					in the Kepler System
+				</li>
 			</ul>
 			<h2 id="mw2">MW2 Theme - Radical 80s Mix</h2>
 			<p>Find 5 teddy bears around the map. (~54 Locations)</p>
@@ -624,17 +917,41 @@ function MusicEE() {
 						<li>To the left of the astronaut cutout in the first room coming from Journey into Space.</li>
 						<li>Between two arcade machines past a shutter on the path to the Astrocade.</li>
 						<li>In the rafters heading from the break room towards the Astrocade.</li>
-						<li>Behind a nearly closed garage door next to the Shredder assembly station.</li>
+						<li>
+							Behind a nearly closed garage door next to the{" "}
+							<TabLink tab="wonder-weapon" target="shredder">
+								Shredder
+							</TabLink>{" "}
+							assembly station.
+						</li>
 						<li>On the ladder to the left of the "Weapons of the Future" stand.</li>
 						<li>Face down behind a pile of debris next to the "Employees Only" office.</li>
 						<li>On a chair next to the "Employees Only" Office.</li>
 						<li>In the "Employees Only" office on the chair nearest the door.</li>
 						<li>In the "Employees Only" office, underneath the desk in the back.</li>
-						<li>Sitting on the shelf behind the Shredder cutout.</li>
-						<li>Sitting against the filing cabinet to the left of the Shredder cutout.</li>
+						<li>
+							Sitting on the shelf behind the{" "}
+							<TabLink tab="wonder-weapon" target="shredder">
+								Shredder
+							</TabLink>{" "}
+							cutout.
+						</li>
+						<li>
+							Sitting against the filing cabinet to the left of the{" "}
+							<TabLink tab="wonder-weapon" target="shredder">
+								Shredder
+							</TabLink>{" "}
+							cutout.
+						</li>
 						<li>In a door on the staircase connecting Journey into Space to the underground section.</li>
 						<li>On one of the chairs on the left in the first room coming from Journey into Space.</li>
-						<li>Underneath the Racin' Stripes machine.</li>
+						<li>
+							Underneath the{" "}
+							<TabLink tab="perks" target="racin-stripes">
+								Racin' Stripes
+							</TabLink>{" "}
+							machine.
+						</li>
 						<li>Next to a Yeti foot behind the prize stand.</li>
 						<li>Inside the Janitor's Closet.</li>
 						<li>In bathroom door going towards Fountain area between Polar Peaks and the Kepler System.</li>
@@ -643,11 +960,35 @@ function MusicEE() {
 				<li>
 					<b>Journey into Space</b>
 					<ul>
-						<li>Sitting inside the Moon Shakes concession stand by Tuff 'Nuff.</li>
+						<li>
+							Sitting inside the Moon Shakes concession stand by{" "}
+							<TabLink tab="perks" target="tuff-nuff">
+								Tuff 'Nuff
+							</TabLink>
+							.
+						</li>
 						<li>On the balcony above the Moon Shakes concession stand.</li>
-						<li>Inside either of the rooms on the wall between the Moon Shakes concession stand and Tuff 'Nuff.</li>
-						<li>In between the astronaut's legs across from the Magic Wheel by Roller Rampage.</li>
-						<li>On the ledge to the upper left of Blue Bolts.</li>
+						<li>
+							Inside either of the rooms on the wall between the Moon Shakes concession stand and{" "}
+							<TabLink tab="perks" target="tuff-nuff">
+								Tuff 'Nuff
+							</TabLink>
+							.
+						</li>
+						<li>
+							In between the astronaut's legs across from the{" "}
+							<TabLink tab="weapons" target="magic-wheel">
+								Magic Wheel
+							</TabLink>{" "}
+							by Roller Rampage.
+						</li>
+						<li>
+							On the ledge to the upper left of{" "}
+							<TabLink tab="perks" target="blue-bolts">
+								Blue Bolts
+							</TabLink>
+							.
+						</li>
 						<li>In Roller Rampage, just to the left of the entrance from the rocket trap.</li>
 						<li>Behind one of the bumper cars, just to the left of the entrance from the rocket trap.</li>
 						<li>Inside a barrier near Escape Velocity.</li>
@@ -671,9 +1012,27 @@ function MusicEE() {
 						<li>To the left of the Yeti in the entrance tunnel from the Cosmic Way.</li>
 						<li>In the entrance tunnel sitting on top of the toolbox between Work Pod 01 and 02.</li>
 						<li>In the first barricade just past the entrance tunnel to the right.</li>
-						<li>Just to the right of the portal, sitting next to some cookies.</li>
-						<li>On the ledge to the upper left of the portal.</li>
-						<li>In the barricade of the portal room peeking around the corner in the back right.</li>
+						<li>
+							Just to the right of the{" "}
+							<TabLink tab="side-ee" target="pap">
+								portal
+							</TabLink>
+							, sitting next to some cookies.
+						</li>
+						<li>
+							On the ledge to the upper left of the{" "}
+							<TabLink tab="side-ee" target="pap">
+								portal
+							</TabLink>
+							.
+						</li>
+						<li>
+							In the barricade of the{" "}
+							<TabLink tab="side-ee" target="pap">
+								portal
+							</TabLink>{" "}
+							room peeking around the corner in the back right.
+						</li>
 						<li>Upstairs sitting in the chair behind the desk next to the rollercoaster.</li>
 						<li>Behind the barricade upstairs in the room with the rollercoaster.</li>
 						<li>Upstairs in the rollercoaster room between the red vending machine and the trash can.</li>
@@ -709,14 +1068,14 @@ function MusicEE() {
 function WonderWeapons() {
 	return (
 		<section className="tab-content">
-			<h2>Prerequisites For All</h2>
+			<h2 id="wonder-weapons-header">Prerequisites For All</h2>
 			<ul>
 				<li>Golden Teeth (300 tickets in Astrocade)</li>
 				<li>Break monsters teeth by getting a brute to get crushed by them</li>
 				<li>Replace broken teeth with the golden ones</li>
 			</ul>
 
-			<h2>
+			<h2 id="head-cutter">
 				Head Cutter -{" "}
 				<a href="https://www.youtube.com/watch?v=7eQnW6eyIbE" target="_blank" rel="noopener noreferrer">
 					Video
@@ -746,7 +1105,7 @@ function WonderWeapons() {
 				<li>Build in polar peak gift shop.</li>
 			</ul>
 
-			<h2>
+			<h2 id="dischord">
 				Dischord -{" "}
 				<a href="https://www.youtube.com/watch?v=5CFG-bFqaQ4" target="_blank" rel="noopener noreferrer">
 					Video
@@ -811,7 +1170,7 @@ function WonderWeapons() {
 				<li>Build in the Astrocade</li>
 			</ul>
 
-			<h2>
+			<h2 id="shredder">
 				Shredder -{" "}
 				<a href="https://www.youtube.com/watch?v=5VOSm2QiXrg" target="_blank" rel="noopener noreferrer">
 					Video
@@ -839,7 +1198,7 @@ function WonderWeapons() {
 				<li>Build in underground section</li>
 			</ul>
 
-			<h2>
+			<h2 id="face-melter">
 				Face Melter -{" "}
 				<a href="https://www.youtube.com/watch?v=9T8iZhlXGZ0" target="_blank" rel="noopener noreferrer">
 					Video
@@ -920,11 +1279,22 @@ function Buildables() {
 				<li>
 					<b>Auxiliary Battery</b>
 					<ul>
-						<li>On top of a trash can to the left of the RPR Evo wallbuy in Polar Peak</li>
+						<li>
+							On top of a trash can to the left of the{" "}
+							<TabLink tab="weapons" target="rpr-evo">
+								RPR Evo wallbuy
+							</TabLink>{" "}
+							in Polar Peak
+						</li>
 						<li>On the gift shop counter in Polar Peak</li>
 						<li>In a shoe shelf inside the roller coaster room in the upstairs area of Polar Peak</li>
 						<li>On a yellow cart directly in front of the Chromosphere</li>
-						<li>On top of a trash can in the area above Bombstoppers</li>
+						<li>
+							On top of a trash can in the area above{" "}
+							<TabLink tab="perks" target="bombstoppers">
+								Bombstoppers
+							</TabLink>
+						</li>
 						<li>On a yellow bench between the Alligator Head and the DJ's booth in Kepler System</li>
 					</ul>
 				</li>
@@ -966,26 +1336,26 @@ function Weapons() {
 				<li>
 					<b>Banshee</b> - next to N31L in PaP portal area or underground tunnel (750p)
 				</li>
-				<li>
+				<li id="karma-45">
 					<b>Karma-45</b> - just outside bumper cars (1250p)
 				</li>
 				<li id="erad">
 					<b>Erad</b> - Journey into Space next to Escape Velocity trap (1250p)
 				</li>
-				<li>
+				<li id="rpr-evo">
 					<b>RPR Evo</b> - Polar Peak next to steel dragon trap in upper hallway(1250p)
 				</li>
-				<li>
+				<li id="hvr">
 					<b>HVR</b> - underground tunnel on a tool bench (1250p)
 				</li>
-				<li>
+				<li id="nv4">
 					<b>NV4</b> - in astrocade neat the power switch (1500p)
 				</li>
-				<li>
+				<li id="volk">
 					<b>Volk</b> - Journey into Space near portal or Polar Peak near the giftshop/roller coaster entrance area (1500p)
 				</li>
 			</ul>
-			<h3>Magic Wheel</h3>
+			<h3 id="magic-wheel">Magic Wheel</h3>
 			<h4>Locations</h4>
 			<ul>
 				<li>Journey Into Space</li>
@@ -1002,7 +1372,13 @@ function Weapons() {
 				</ul>
 				<li>Astrocade</li>
 				<ul>
-					<li>Located on the top ledge of the Arcade, near a Portal.</li>
+					<li>
+						Located on the top ledge of the Arcade, near a{" "}
+						<TabLink tab="side-ee" target="pap">
+							Portal
+						</TabLink>
+						.
+					</li>
 					<li>Located on the catwalk that joins the Arcade to the Roller Coaster. (Possible Initial)</li>
 				</ul>
 				<li>Polar Peak</li>
@@ -1022,7 +1398,13 @@ function Weapons() {
 				<li>Keplar System</li>
 				<ul>
 					<li>Located on the top of the slide.</li>
-					<li>Located in front of the Moonlight Cafe area, next to a Power Switch and a Souvenir Coin Machine. (Possible Initial)</li>
+					<li>
+						Located in front of the Moonlight Cafe area, next to a{" "}
+						<TabLink tab="side-ee" target="power">
+							Power Switch
+						</TabLink>{" "}
+						and a Souvenir Coin Machine. (Possible Initial)
+					</li>
 					<li>
 						Located above the{" "}
 						<TabLink tab="perks" target="bombstoppers">
@@ -1074,10 +1456,26 @@ function Weapons() {
 			</ul>
 			<h3>Buildable</h3>
 			<ul>
-				<li>Dischord</li>
-				<li>Face Melter</li>
-				<li>Head Cutter</li>
-				<li>Shredder</li>
+				<li>
+					<TabLink tab="wonder-weapon" target="dischord">
+						Dischord
+					</TabLink>
+				</li>
+				<li>
+					<TabLink tab="wonder-weapon" target="face-melter">
+						Face Melter
+					</TabLink>
+				</li>
+				<li>
+					<TabLink tab="wonder-weapon" target="head-cutter">
+						Head Cutter
+					</TabLink>
+				</li>
+				<li>
+					<TabLink tab="wonder-weapon" target="shredder">
+						Shredder
+					</TabLink>
+				</li>
 			</ul>
 			<h3>Other</h3>
 			<ul>
@@ -1143,23 +1541,23 @@ function Perks() {
 		<section className="tab-content">
 			<h3 id="upnatoms">Up 'N Atoms (500p solo, 1500p coop)</h3>
 			<p>Found right inside the spawn room next to the weapon wall-buy</p>
-			<h3>Mule Munchies (2000p)</h3>
+			<h3 id="mule-munchies">Mule Munchies (2000p)</h3>
 			<p>Located in Journey into Space by the Luna Terrace sign</p>
-			<h3>Tuff 'Nuff (2500p)</h3>
+			<h3 id="tuff-nuff">Tuff 'Nuff (2500p)</h3>
 			<p>Found near the Star Mission area in Journey into Space</p>
-			<h3>Blue Bolts (1500p)</h3>
+			<h3 id="blue-bolts">Blue Bolts (1500p)</h3>
 			<p>Situated near the bumper cars leading into the Astrocade</p>
-			<h3>Slappy Taffy (2000p)</h3>
+			<h3 id="slappy-taffy">Slappy Taffy (2000p)</h3>
 			<p>near the Kepler System / Moonlight Cafe area</p>
 			<h3 id="bombstoppers">Bombstoppers (2000p)</h3>
 			<p>near the Kepler System / Moonlight Cafe area</p>
 			<h3 id="quickies">Quickies (3000p)</h3>
 			<p>Positioned on the upper levels and ramps of Polar Peak</p>
-			<h3>Trail Blazers (1500p)</h3>
+			<h3 id="trail-blazers">Trail Blazers (1500p)</h3>
 			<p>Positioned on the upper levels and ramps of Polar Peak</p>
-			<h3>Bang Bangs (2000p)</h3>
+			<h3 id="bang-bangs">Bang Bangs (2000p)</h3>
 			<p>Found out near the Hyper Slopes fountain in Polar Peaks</p>
-			<h3>Racin' Stripes (2000p)</h3>
+			<h3 id="racin-stripes">Racin' Stripes (2000p)</h3>
 			<p>Located in the underground employee pathways beneath Polar Peak</p>
 		</section>
 	);
@@ -1177,16 +1575,27 @@ function Extras() {
 			<h2>Ghost 'N Skulls</h2>
 			<p>Rewards: 1000xp, and perma perkaholic (except Up 'N Atoms when in Solo)</p>
 			<p>
-				<b>Requires:</b> <TabLink tab="main-ee">Main EE</TabLink> Compeleted
+				<b>Requires:</b> <TabLink tab="main-ee">Main EE</TabLink> Completed
 			</p>
 			<ol>
 				<li>Find 6 skulls by doing various Things</li>
 				<ol>
-					<li>Pop all balloons next to Up 'N Atoms</li>
+					<li>
+						Pop all balloons next to{" "}
+						<TabLink tab="perks" target="upnatoms">
+							Up 'N Atoms
+						</TabLink>
+					</li>
 					<li>Find skulls on various letters around the map (ADS on it to collect)</li>
 					<b>"G"</b>
 					<ul>
-						<li>The G on the "Galaxy Journey" Sign above where Mule Munchies is</li>
+						<li>
+							The G on the "Galaxy Journey" Sign above where{" "}
+							<TabLink tab="perks" target="mule-munchies">
+								Mule Munchies
+							</TabLink>{" "}
+							is
+						</li>
 						<li>The G on the "Rover Rampage" (Bumper Cars area) sign</li>
 					</ul>
 					<b>"H"</b>
@@ -1201,7 +1610,12 @@ function Extras() {
 					</ul>
 					<b>"S"</b>
 					<ul>
-						<li>The S on the "Star Mission" Sign near Tuff Nuff</li>
+						<li>
+							The S on the "Star Mission" Sign near{" "}
+							<TabLink tab="perks" target="tuff-nuff">
+								Tuff Nuff
+							</TabLink>
+						</li>
 						<li>The S on the "Astrocade" Sign above the Souvenir machine</li>
 					</ul>
 					<b>"T"</b>
@@ -1248,7 +1662,21 @@ function Extras() {
 			</p>
 			<h2>Lobby Music</h2>
 			<p>
-				<span>Unlocks Up N' Atoms, Racing Stripes, and Slappy Taffy Lobby Music</span>
+				<span>
+					Unlocks{" "}
+					<TabLink tab="perks" target="upnatoms">
+						Up N' Atoms
+					</TabLink>
+					,{" "}
+					<TabLink tab="perks" target="racin-stripes">
+						Racing Stripes
+					</TabLink>
+					, and{" "}
+					<TabLink tab="perks" target="slappy-taffy">
+						Slappy Taffy
+					</TabLink>{" "}
+					Lobby Music
+				</span>
 				<span>
 					<b>REQUIRES: Director's Cut (Super EE Complete)</b>
 				</span>
