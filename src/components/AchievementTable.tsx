@@ -12,11 +12,11 @@ type AchievementRow = {
 
 type AchievementTableProps = {
 	mapId: string;
-	headers: string[];
+	headers?: string[];
 	rows: AchievementRow[];
 };
 
-export default function AchievementTable({ mapId, headers, rows }: AchievementTableProps) {
+export default function AchievementTable({ mapId, headers = ["Name", "Description", "Goal"], rows }: AchievementTableProps) {
 	const [progress, setProgress] = useAtom(achievementProgressAtom);
 
 	const completed = progress[mapId] ?? [];
@@ -40,9 +40,9 @@ export default function AchievementTable({ mapId, headers, rows }: AchievementTa
 					<th className="achievement-checkbox-cell">
 						<span className="sr-only">Completed</span>
 					</th>
-					<th>Name</th>
-					<th>Description</th>
-					<th>Goal</th>
+					{headers.map((header, index) => (
+						<th key={index}>{header}</th>
+					))}
 				</tr>
 			</thead>
 
@@ -64,7 +64,7 @@ export default function AchievementTable({ mapId, headers, rows }: AchievementTa
 								toggleAchievement(row.id);
 							}}>
 							<td className="achievement-checkbox-cell">
-								<input type="checkbox" checked={isCompleted} onClick={(event) => event.stopPropagation()} onChange={() => toggleAchievement(row.id)} aria-label={`Mark ${row.name} ${isCompleted ? "incomplete" : "complete"}`} />
+								<input type="checkbox" checked={isCompleted} onClick={(event) => event.stopPropagation()} onChange={() => toggleAchievement(row.id)} aria-label={`Mark achievement ${isCompleted ? "incomplete" : "complete"}`} />
 							</td>
 							<td>{row.name}</td>
 							<td>{row.description}</td>
