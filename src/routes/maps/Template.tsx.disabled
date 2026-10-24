@@ -399,11 +399,9 @@ function Extras() {
 				</tbody>
 			</table>
 
-			{/* * ADD/REMOVE: Achievements if applicable */}
-
 			<h2>Achievements</h2>
             {/* * CHANGE: game/map */}
-			<AchievementTable mapId="game/map" headers={["Achievement", "Requirement"]} rows={achievementRows} />
+			<AchievementTable mapId="game/map" rows={achievementRows} />
 		</section>
 	);
 }

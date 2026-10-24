@@ -37,6 +37,7 @@ import { Route as MapsBo4DeadOfTheNightRouteImport } from './routes/maps/bo4/dea
 import { Route as MapsBo4IxRouteImport } from './routes/maps/bo4/ix'
 import { Route as MapsBo4TagDerTotenRouteImport } from './routes/maps/bo4/tag-der-toten'
 import { Route as MapsBo4VoyageOfDespairRouteImport } from './routes/maps/bo4/voyage-of-despair'
+import { Route as MapsInfiniteWarfareRaveInTheRedwoodsRouteImport } from './routes/maps/infinite-warfare/rave-in-the-redwoods'
 import { Route as MapsInfiniteWarfareZombiesInSpacelandRouteImport } from './routes/maps/infinite-warfare/zombies-in-spaceland'
 
 const IndexRoute = IndexRouteImport.update({
@@ -179,6 +180,12 @@ const MapsBo4VoyageOfDespairRoute = MapsBo4VoyageOfDespairRouteImport.update({
   path: '/maps/bo4/voyage-of-despair',
   getParentRoute: () => rootRouteImport,
 } as any)
+const MapsInfiniteWarfareRaveInTheRedwoodsRoute =
+  MapsInfiniteWarfareRaveInTheRedwoodsRouteImport.update({
+    id: '/maps/infinite-warfare/rave-in-the-redwoods',
+    path: '/maps/infinite-warfare/rave-in-the-redwoods',
+    getParentRoute: () => rootRouteImport,
+  } as any)
 const MapsInfiniteWarfareZombiesInSpacelandRoute =
   MapsInfiniteWarfareZombiesInSpacelandRouteImport.update({
     id: '/maps/infinite-warfare/zombies-in-spaceland',
@@ -215,6 +222,7 @@ export interface FileRoutesByFullPath {
   '/maps/bo4/ix': typeof MapsBo4IxRoute
   '/maps/bo4/tag-der-toten': typeof MapsBo4TagDerTotenRoute
   '/maps/bo4/voyage-of-despair': typeof MapsBo4VoyageOfDespairRoute
+  '/maps/infinite-warfare/rave-in-the-redwoods': typeof MapsInfiniteWarfareRaveInTheRedwoodsRoute
   '/maps/infinite-warfare/zombies-in-spaceland': typeof MapsInfiniteWarfareZombiesInSpacelandRoute
 }
 export interface FileRoutesByTo {
@@ -246,6 +254,7 @@ export interface FileRoutesByTo {
   '/maps/bo4/ix': typeof MapsBo4IxRoute
   '/maps/bo4/tag-der-toten': typeof MapsBo4TagDerTotenRoute
   '/maps/bo4/voyage-of-despair': typeof MapsBo4VoyageOfDespairRoute
+  '/maps/infinite-warfare/rave-in-the-redwoods': typeof MapsInfiniteWarfareRaveInTheRedwoodsRoute
   '/maps/infinite-warfare/zombies-in-spaceland': typeof MapsInfiniteWarfareZombiesInSpacelandRoute
 }
 export interface FileRoutesById {
@@ -278,6 +287,7 @@ export interface FileRoutesById {
   '/maps/bo4/ix': typeof MapsBo4IxRoute
   '/maps/bo4/tag-der-toten': typeof MapsBo4TagDerTotenRoute
   '/maps/bo4/voyage-of-despair': typeof MapsBo4VoyageOfDespairRoute
+  '/maps/infinite-warfare/rave-in-the-redwoods': typeof MapsInfiniteWarfareRaveInTheRedwoodsRoute
   '/maps/infinite-warfare/zombies-in-spaceland': typeof MapsInfiniteWarfareZombiesInSpacelandRoute
 }
 export interface FileRouteTypes {
@@ -311,6 +321,7 @@ export interface FileRouteTypes {
     | '/maps/bo4/ix'
     | '/maps/bo4/tag-der-toten'
     | '/maps/bo4/voyage-of-despair'
+    | '/maps/infinite-warfare/rave-in-the-redwoods'
     | '/maps/infinite-warfare/zombies-in-spaceland'
   fileRoutesByTo: FileRoutesByTo
   to:
@@ -342,6 +353,7 @@ export interface FileRouteTypes {
     | '/maps/bo4/ix'
     | '/maps/bo4/tag-der-toten'
     | '/maps/bo4/voyage-of-despair'
+    | '/maps/infinite-warfare/rave-in-the-redwoods'
     | '/maps/infinite-warfare/zombies-in-spaceland'
   id:
     | '__root__'
@@ -373,6 +385,7 @@ export interface FileRouteTypes {
     | '/maps/bo4/ix'
     | '/maps/bo4/tag-der-toten'
     | '/maps/bo4/voyage-of-despair'
+    | '/maps/infinite-warfare/rave-in-the-redwoods'
     | '/maps/infinite-warfare/zombies-in-spaceland'
   fileRoutesById: FileRoutesById
 }
@@ -405,6 +418,7 @@ export interface RootRouteChildren {
   MapsBo4IxRoute: typeof MapsBo4IxRoute
   MapsBo4TagDerTotenRoute: typeof MapsBo4TagDerTotenRoute
   MapsBo4VoyageOfDespairRoute: typeof MapsBo4VoyageOfDespairRoute
+  MapsInfiniteWarfareRaveInTheRedwoodsRoute: typeof MapsInfiniteWarfareRaveInTheRedwoodsRoute
   MapsInfiniteWarfareZombiesInSpacelandRoute: typeof MapsInfiniteWarfareZombiesInSpacelandRoute
 }
 
@@ -606,6 +620,13 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof MapsBo4VoyageOfDespairRouteImport
       parentRoute: typeof rootRouteImport
     }
+    '/maps/infinite-warfare/rave-in-the-redwoods': {
+      id: '/maps/infinite-warfare/rave-in-the-redwoods'
+      path: '/maps/infinite-warfare/rave-in-the-redwoods'
+      fullPath: '/maps/infinite-warfare/rave-in-the-redwoods'
+      preLoaderRoute: typeof MapsInfiniteWarfareRaveInTheRedwoodsRouteImport
+      parentRoute: typeof rootRouteImport
+    }
     '/maps/infinite-warfare/zombies-in-spaceland': {
       id: '/maps/infinite-warfare/zombies-in-spaceland'
       path: '/maps/infinite-warfare/zombies-in-spaceland'
@@ -645,6 +666,8 @@ const rootRouteChildren: RootRouteChildren = {
   MapsBo4IxRoute: MapsBo4IxRoute,
   MapsBo4TagDerTotenRoute: MapsBo4TagDerTotenRoute,
   MapsBo4VoyageOfDespairRoute: MapsBo4VoyageOfDespairRoute,
+  MapsInfiniteWarfareRaveInTheRedwoodsRoute:
+    MapsInfiniteWarfareRaveInTheRedwoodsRoute,
   MapsInfiniteWarfareZombiesInSpacelandRoute:
     MapsInfiniteWarfareZombiesInSpacelandRoute,
 }

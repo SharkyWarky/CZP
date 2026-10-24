@@ -34,6 +34,7 @@ There will likely be some typos throughout the project, as much of the informati
 ### Infinite Warfare
 
 - Zombies in Spaceland
+- Rave in the Redwoods
 
 ## How to Help
 
