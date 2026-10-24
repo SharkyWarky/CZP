@@ -16,6 +16,42 @@
 	--color-emerald-700: var(--muted);
 }
 
+/* Completed achievements */
+.info-box .achievement-row.completed td:not(.achievement-checkbox-cell) {
+	text-decoration: line-through;
+	color: var(--palette-accent);
+	opacity: 0.65;
+}
+
+/* Highlight the completed row */
+.info-box .achievement-row.completed {
+	background-color: rgba(var(--palette-accent-rgb), 0.1);
+}
+
+/* Keep the checkbox visible and themed */
+.info-box .achievement-checkbox-cell input[type="checkbox"] {
+	accent-color: var(--palette-accent);
+}
+
+.achievement-table {
+	width: 100%;
+	table-layout: auto;
+}
+
+.achievement-table th.achievement-checkbox-cell,
+.achievement-table td.achievement-checkbox-cell {
+	width: 1%;
+	white-space: nowrap;
+	padding: 0.25rem;
+}
+
+.achievement-table .achievement-checkbox-cell input[type="checkbox"] {
+	display: block;
+	margin: 0 auto;
+	margin-left: 5px;
+	accent-color: var(--palette-accent);
+}
+
 @layer base {
 	body {
 		@apply min-h-screen bg-[#121614] font-[Arial,sans-serif] text-[#e8eee9];

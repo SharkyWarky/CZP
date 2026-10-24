@@ -11,12 +11,136 @@ import VideoPlayer from "../../../components/VideoPlayer";
 
 import { mapModules } from "../../../data/mapModules";
 
-// ============================================================
-// 🔴 MAP TABS
-// ============================================================
+import AchievementTable from "../../../components/AchievementTable";
 
-// 🔴 REMOVE: Tabs that do not apply to this map.
-// 🔴 ADD: Any applicable tabs not currently included.
+const achievementRows = [
+	{
+		id: "greek-tragedy",
+		name: "Greek Tragedy",
+		description: "In Ancient Evil, finish what was started",
+		goal: (
+			<>
+				<TabLink tab="main-ee">Complete the Main Quest</TabLink>
+			</>
+		),
+	},
+	{
+		id: "devoted-follower",
+		name: "Devoted Follower",
+		description: "In Ancient Evil, survive the first 20 rounds without leaving the interior of the Temple of Apollo",
+		goal: "Complete the first 20 rounds staying inside Apollo's Temple without leaving it. You can use bots and they can leave the Temple but make sure you do not. Use Wraith Fire grenades and a strong Specialist Weapon in order to make this easier.",
+	},
+	{
+		id: "a-worthy-tribute",
+		name: "A Worthy Tribute",
+		description: "In Ancient Evil, fully reignite the Eternal Flame by round 15",
+		goal: (
+			<>
+				<TabLink tab="extras" target="eternalflame">
+					Light the flame
+				</TabLink>{" "}
+				inside of Apollo's Temple blue before round 15. How to do so is stated earlier in this guide{" "}
+				<TabLink tab="extras" target="eternalflame">
+					here
+				</TabLink>
+				.
+			</>
+		),
+	},
+	{
+		id: "move-mountains",
+		name: "Move Mountains",
+		description: (
+			<>
+				In Ancient Evil, impale 8 zombies with one charged attack from the{" "}
+				<TabLink tab="wonder-weapon" target="gaia">
+					Hand of Gaia
+				</TabLink>
+			</>
+		),
+		goal: "Train up a horde of zombies in a large area such as the Amphitheater. Then charge up the Redeemed/Exalted Hand of Gaia and fire it at the horde.",
+	},
+	{
+		id: "no-obol",
+		name: "No Obol",
+		description: (
+			<>
+				In Ancient Evil, drag 15 zombies to the underworld with one charged attack from the{" "}
+				<TabLink tab="wonder-weapon" target="charon">
+					Hand of Charon
+				</TabLink>
+			</>
+		),
+		goal: "Train up a horde of zombies in a large area such as the Amphitheater. Then charge up the Redeemed/Exalted Hand of Charon and fire it at the ground near the horde.",
+	},
+	{
+		id: "too-close-to-the-sun",
+		name: "Too Close to the Sun",
+		description: (
+			<>
+				In Ancient Evil, incinerate 20 zombies with one channel attack from the{" "}
+				<TabLink tab="wonder-weapon" target="hemera">
+					Hand of Hemera
+				</TabLink>
+			</>
+		),
+		goal: "Train up a horde of zombies in a large area such as the Amphitheater. Then charge up the Redeemed/Exalted Hand of Hemera and kill all of the zombies in the horde with the light beam. Make sure you do not stop firing the beam until all of the zombies in the horde are dead.",
+	},
+	{
+		id: "a-mighty-wind",
+		name: "A Mighty Wind",
+		description: (
+			<>
+				In Ancient Evil, fling 20 zombies with one channel attack from the{" "}
+				<TabLink tab="wonder-weapon" target="ouranos">
+					Hand of Ouranos
+				</TabLink>
+			</>
+		),
+		goal: "Train up a horde of zombies in a large area such as the Amphitheater. Then charge up the Redeemed/Exalted Hand of Ouranos and kill all of the zombies in the horde with the wind blast. Make sure you do not stop firing the wind blast until all of the zombies in the horde are dead.",
+	},
+	{
+		id: "fly-like-an-eagle",
+		name: "Fly Like an Eagle",
+		description: "In Ancient Evil, free the Eagles without switching weapons",
+		goal: "After dropping the cage with the eagle in it in the Python Pass make sure the doors to the cage in the Cliff Side are open. Use the beam from the Scepter of Ra or shot of Viper &amp; Dragon to shoot open one of the eagle cages and then quickly run over to the other cage and shoot that one open. Make sure this is done without losing your Specialist Weapon (Stamin-Up can be used to make this easier).",
+	},
+	{
+		id: "the-best-offense-is-a-good-defense",
+		name: "The Best Offense is a Good Defense",
+		description: (
+			<>
+				In Ancient Evil, kill a{" "}
+				<TabLink tab="extras" target="gegenees">
+					Gegenees
+				</TabLink>{" "}
+				using only{" "}
+				<TabLink tab="buildables" target="shield">
+					Apollo's Will
+				</TabLink>
+			</>
+		),
+		goal: "Kill a Gegenees by only using the spear of your Apollo's Will. This can be easily done by just throwing the spears at the Gegenee's head.",
+	},
+	{
+		id: "four-old-gods",
+		name: "Four Old Gods",
+		description: "In Ancient Evil, complete all the Primordial God Trials",
+		goal: (
+			<>
+				Complete the 4 challenges at the end of the quest to get{" "}
+				<TabLink tab="wonder-weapon" target="exalted">
+					Exalted
+				</TabLink>{" "}
+				Hands.
+			</>
+		),
+	},
+];
+
+// ============================================================
+// MAP TABS
+// ============================================================
 
 const tabs = [mapModules.overview, mapModules.mainEE, mapModules.sideEE, mapModules.musicEE, mapModules.wonderWeapon, mapModules.buildables, mapModules.weapons, mapModules.gauntlet, mapModules.perks, mapModules.extras, mapModules.credits];
 
@@ -1221,113 +1345,7 @@ function Extras() {
 			</table>
 
 			<h2>Achievements</h2>
-			<table>
-				<thead>
-					<tr>
-						<th scope="col">Name</th>
-						<th scope="col">Description</th>
-						<th scope="col">How to Obtain</th>
-					</tr>
-				</thead>
-				<tbody>
-					<tr>
-						<td>Greek Tragedy</td>
-						<td>In Ancient Evil, finish what was started</td>
-						<td>
-							<TabLink tab="main-ee">Complete the Main Quest</TabLink>
-						</td>
-					</tr>
-					<tr>
-						<td>Devoted Follower</td>
-						<td>In Ancient Evil, survive the first 20 rounds without leaving the interior of the Temple of Apollo</td>
-						<td>Complete the first 20 rounds staying inside Apollo's Temple without leaving it. You can use bots and they can leave the Temple but make sure you do not. Use Wraith Fire grenades and a strong Specialist Weapon in order to make this easier.</td>
-					</tr>
-					<tr>
-						<td>A Worthy Tribute</td>
-						<td>In Ancient Evil, fully reignite the Eternal Flame by round 15</td>
-						<td>
-							<TabLink tab="extras" target="eternalflame">
-								Light the flame
-							</TabLink>{" "}
-							inside of Apollo's Temple blue before round 15. How to do so is stated earlier in this guide{" "}
-							<TabLink tab="extras" target="eternalflame">
-								here
-							</TabLink>
-							.
-						</td>
-					</tr>
-					<tr>
-						<td>Move Mountains</td>
-						<td>
-							In Ancient Evil, impale 8 zombies with one charged attack from the{" "}
-							<TabLink tab="wonder-weapon" target="gaia">
-								Hand of Gaia
-							</TabLink>
-						</td>
-						<td>Train up a horde of zombies in a large area such as the Amphitheater. Then charge up the Redeemed/Exalted Hand of Gaia and fire it at the horde.</td>
-					</tr>
-					<tr>
-						<td>No Obol</td>
-						<td>
-							In Ancient Evil, drag 15 zombies to the underworld with one charged attack from the{" "}
-							<TabLink tab="wonder-weapon" target="charon">
-								Hand of Charon
-							</TabLink>
-						</td>
-						<td>Train up a horde of zombies in a large area such as the Amphitheater. Then charge up the Redeemed/Exalted Hand of Charon and fire it at the ground near the horde.</td>
-					</tr>
-					<tr>
-						<td>Too Close to the Sun</td>
-						<td>
-							In Ancient Evil, incinerate 20 zombies with one channel attack from the{" "}
-							<TabLink tab="wonder-weapon" target="hemera">
-								Hand of Hemera
-							</TabLink>
-						</td>
-						<td>Train up a horde of zombies in a large area such as the Amphitheater. Then charge up the Redeemed/Exalted Hand of Hemera and kill all of the zombies in the horde with the light beam. Make sure you do not stop firing the beam until all of the zombies in the horde are dead.</td>
-					</tr>
-					<tr>
-						<td>A Mighty Wind</td>
-						<td>
-							In Ancient Evil, fling 20 zombies with one channel attack from the{" "}
-							<TabLink tab="wonder-weapon" target="ouranos">
-								Hand of Ouranos
-							</TabLink>
-						</td>
-						<td>Train up a horde of zombies in a large area such as the Amphitheater. Then charge up the Redeemed/Exalted Hand of Ouranos and kill all of the zombies in the horde with the wind blast. Make sure you do not stop firing the wind blast until all of the zombies in the horde are dead.</td>
-					</tr>
-					<tr>
-						<td>Fly Like an Eagle</td>
-						<td>In Ancient Evil, free the Eagles without switching weapons</td>
-						<td>After dropping the cage with the eagle in it in the Python Pass make sure the doors to the cage in the Cliff Side are open. Use the beam from the Scepter of Ra or shot of Viper &amp; Dragon to shoot open one of the eagle cages and then quickly run over to the other cage and shoot that one open. Make sure this is done without losing your Specialist Weapon (Stamin-Up can be used to make this easier).</td>
-					</tr>
-					<tr>
-						<td>The Best Offense is a Good Defense</td>
-						<td>
-							In Ancient Evil, kill a{" "}
-							<TabLink tab="extras" target="gegenees">
-								Gegenees
-							</TabLink>{" "}
-							using only{" "}
-							<TabLink tab="buildables" target="shield">
-								Apollo's Will
-							</TabLink>
-						</td>
-						<td>Kill a Gegenees by only using the spear of your Apollo's Will. This can be easily done by just throwing the spears at the Gegenee's head.</td>
-					</tr>
-					<tr>
-						<td>Four Old Gods</td>
-						<td>In Ancient Evil, complete all the Primordial God Trials</td>
-						<td>
-							Complete the 4 challenges at the end of the quest to get{" "}
-							<TabLink tab="wonder-weapon" target="exalted">
-								Exalted
-							</TabLink>{" "}
-							Hands.
-						</td>
-					</tr>
-				</tbody>
-			</table>
+			<AchievementTable mapId="bo4/ancient-evil" headers={["Achievement", "Requirement"]} rows={achievementRows} />
 		</section>
 	);
 }

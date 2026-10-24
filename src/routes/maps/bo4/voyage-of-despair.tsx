@@ -11,12 +11,86 @@ import VideoPlayer from "../../../components/VideoPlayer";
 
 import { mapModules } from "../../../data/mapModules";
 
-// ============================================================
-// 🔴 MAP TABS
-// ============================================================
+import AchievementTable from "../../../components/AchievementTable";
 
-// 🔴 REMOVE: Tabs that do not apply to this map.
-// 🔴 ADD: Any applicable tabs not currently included.
+const achievementRows = [
+	{
+		id: "abandon-ship",
+		name: "Abandon Ship",
+		description: "In Voyage of Despair, complete the Trial",
+		goal: (
+			<>
+				Complete the <TabLink tab="main-ee">Main Quest</TabLink>
+			</>
+		),
+	},
+	{
+		id: "off-the-deep-end",
+		name: "Off the Deep End",
+		description: "In Voyage of Despair, survive to round 20 without draining the water",
+		goal: "Get to Round 20 without draining the water in the Engine Room or Cargo Hold",
+	},
+	{
+		id: "a-little-pack-here-a-little-punch-there",
+		name: "A Little Pack Here, a Little Punch There",
+		description: "In Voyage of Despair, use the Pack-a-Punch at every possible location in a single game",
+		goal: "Pack-a-Punch a weapon at least 1 weapon at each of the 4 locations Pack-a-Punch can be in a single match",
+	},
+	{
+		id: "rock-paper-plasma",
+		name: "Rock, Paper, Plasma",
+		description: "Horde up a group of zombies around a Fire Catalyst or Electric Catalyst and make it explode by shooting it. It should kill a good number of zombies. Do this until you successfully get the explosion to kill 9 zombies in total",
+		goal: "In Voyage of Despair, kill 9 zombies via Catalytic Detonations in a single game",
+	},
+	{
+		id: "i-know-a-shortcut",
+		name: "I Know a Shortcut",
+		description: "In Voyage of Despair, take every fast travel path in a single game",
+		goal: (
+			<>
+				Take each of the{" "}
+				<TabLink tab="extras" target="fasttravel">
+					8 Fast Travels
+				</TabLink>{" "}
+				at least 1 time in a single game
+			</>
+		),
+	},
+	{
+		id: "stoking-the-flames",
+		name: "Stoking the Flames",
+		description: "In Voyage of Despair, kill 3 Stokers via weak point in a single round",
+		goal: "Kill 3 Stoker zombies by using a bullet weapon and shooting it in its large orange glowing weak spot. This is most easily achieved in the step of the Main Quest where you are doing the Fire Catalyst outlet trial",
+	},
+	{
+		id: "stowaway",
+		name: "Stowaway",
+		description: "In Voyage of Despair, spend 5 consecutive rounds in the Cargo Hold",
+		goal: "Pass 5 full rounds without leaving the Cargo Hold area in a single match",
+	},
+	{
+		id: "swimming-with-the-fishes",
+		name: "Swimming with the Fishes",
+		description: "In Voyage of Despair, kill 50 zombies that are underwater in a single game",
+		goal: "Kill 50 zombies in the Cargo Hold or Engine Room underwater without draining the water",
+	},
+	{
+		id: "kraken-unfettered",
+		name: "Kraken Unfettered",
+		description: "In Voyage of Despair, kill 9 enemies with a single shot of the Kraken",
+		goal: "Use the regular Pack-a-Punched Kraken or Plasmastic Kraken and kill 9 zombies within 1 shot",
+	},
+	{
+		id: "trialing-experience",
+		name: "Trialing Experience",
+		description: "In Voyage of Despair, acquire the Sentinel Artifact",
+		goal: "Head to the Poop Deck and activate the Sentinel Artifact",
+	},
+];
+
+// ============================================================
+// MAP TABS
+// ============================================================
 
 const tabs = [mapModules.overview, mapModules.mainEE, mapModules.sideEE, mapModules.musicEE, mapModules.wonderWeapon, mapModules.buildables, mapModules.weapons, mapModules.gauntlet, mapModules.perks, mapModules.extras, mapModules.credits];
 
@@ -1508,75 +1582,7 @@ function Extras() {
 			</table>
 
 			<h2>Achievements</h2>
-			<table>
-				<thead>
-					<tr>
-						<th scope="col">Name</th>
-						<th scope="col">Description</th>
-						<th scope="col">Goal</th>
-					</tr>
-				</thead>
-				<tbody>
-					<tr>
-						<td>Abandon Ship</td>
-						<td>In Voyage of Despair, complete the Trial</td>
-						<td>
-							Complete the <TabLink tab="main-ee">Main Quest</TabLink>
-						</td>
-					</tr>
-					<tr>
-						<td>Off the Deep End</td>
-						<td>In Voyage of Despair, survive to round 20 without draining the water</td>
-						<td>Get to Round 20 without draining the water in the Engine Room or Cargo Hold</td>
-					</tr>
-					<tr>
-						<td>A Little Pack Here, a Little Punch There</td>
-						<td>In Voyage of Despair, use the Pack-a-Punch at every possible location in a single game</td>
-						<td>Pack-a-Punch a weapon at least 1 weapon at each of the 4 locations Pack-a-Punch can be in a single match</td>
-					</tr>
-					<tr>
-						<td>Rock, Paper, Plasma</td>
-						<td>Horde up a group of zombies around a Fire Catalyst or Electric Catalyst and make it explode by shooting it. It should kill a good number of zombies. Do this until you successfully get the explosion to kill 9 zombies in total</td>
-						<td>In Voyage of Despair, kill 9 zombies via Catalytic Detonations in a single game</td>
-					</tr>
-					<tr>
-						<td>I Know a Shortcut</td>
-						<td>In Voyage of Despair, take every fast travel path in a single game</td>
-						<td>
-							Take each of the{" "}
-							<TabLink tab="extras" target="fasttravel">
-								8 Fast Travels
-							</TabLink>{" "}
-							at least 1 time in a single game
-						</td>
-					</tr>
-					<tr>
-						<td>Stoking the Flames</td>
-						<td>In Voyage of Despair, kill 3 Stokers via weak point in a single round</td>
-						<td>Kill 3 Stoker zombies by using a bullet weapon and shooting it in its large orange glowing weak spot. This is most easily achieved in the step of the Main Quest where you are doing the Fire Catalyst outlet trial</td>
-					</tr>
-					<tr>
-						<td>Stowaway</td>
-						<td>In Voyage of Despair, spend 5 consecutive rounds in the Cargo Hold</td>
-						<td>Pass 5 full rounds without leaving the Cargo Hold area in a single match</td>
-					</tr>
-					<tr>
-						<td>Swimming with the Fishes</td>
-						<td>In Voyage of Despair, kill 50 zombies that are underwater in a single game</td>
-						<td>Kill 50 zombies in the Cargo Hold or Engine Room underwater without draining the water</td>
-					</tr>
-					<tr>
-						<td>Kraken Unfettered</td>
-						<td>In Voyage of Despair, kill 9 enemies with a single shot of the Kraken</td>
-						<td>Use the regular Pack-a-Punched Kraken or Plasmastic Kraken and kill 9 zombies within 1 shot</td>
-					</tr>
-					<tr>
-						<td>Trialing Experience</td>
-						<td>In Voyage of Despair, acquire the Sentinel Artifact</td>
-						<td>Head to the Poop Deck and activate the Sentinel Artifact</td>
-					</tr>
-				</tbody>
-			</table>
+			<AchievementTable mapId="bo4/voyage-of-despair" headers={["Achievement", "Requirement"]} rows={achievementRows} />
 
 			<h2>Dark Ops Challenges</h2>
 			<table>

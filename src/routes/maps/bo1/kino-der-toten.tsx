@@ -287,10 +287,10 @@ function Extras() {
 			<table>
 				<thead>
 					<tr>
-						<th>Type</th>
-						<th>Ability</th>
-						<th>Location</th>
-						<th>Cost</th>
+						<th scope="col">Type</th>
+						<th scope="col">Ability</th>
+						<th scope="col">Location</th>
+						<th scope="col">Cost</th>
 					</tr>
 				</thead>
 				<tbody>
@@ -343,11 +343,11 @@ function Extras() {
 			<table>
 				<thead>
 					<tr>
-						<th>Type</th>
-						<th>From</th>
-						<th>To</th>
-						<th>Final</th>
-						<th>Cost</th>
+						<th scope="col">Type</th>
+						<th scope="col">From</th>
+						<th scope="col">To</th>
+						<th scope="col">Final</th>
+						<th scope="col">Cost</th>
 					</tr>
 				</thead>
 				<tbody>
@@ -368,9 +368,9 @@ function Extras() {
 			<table>
 				<thead>
 					<tr>
-						<th>Zombie Type</th>
-						<th>Ability</th>
-						<th>Health</th>
+						<th scope="col">Zombie Type</th>
+						<th scope="col">Ability</th>
+						<th scope="col">Health</th>
 					</tr>
 				</thead>
 				<tbody>

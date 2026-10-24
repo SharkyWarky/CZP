@@ -11,12 +11,74 @@ import VideoPlayer from "../../../components/VideoPlayer";
 
 import { mapModules } from "../../../data/mapModules";
 
-// ============================================================
-// 🔴 MAP TABS
-// ============================================================
+import AchievementTable from "../../../components/AchievementTable";
 
-// 🔴 REMOVE: Tabs that do not apply to this map.
-// 🔴 ADD: Any applicable tabs not currently included.
+const achievementRows = [
+	{
+		id: "electromagnetic-awakening-party",
+		name: "Electromagnetic Awakening Party",
+		description: "In Alpha Omega, begin Nikolai's Grand Scheme",
+		goal: "",
+	},
+	{
+		id: "checkpoint-zulu",
+		name: "Checkpoint Zulu",
+		description: "In Alpha Omega, survive the first 20 rounds without leaving Security Checkpoint",
+		goal: "",
+	},
+	{
+		id: "ray-gun-bonanza",
+		name: "Ray Gun Bonanza",
+		description: "In Alpha Omega, construct all Ray Guns in a single match",
+		goal: "",
+	},
+	{
+		id: "entrapment-entrepeneur",
+		name: "Entrapment Entrepeneur",
+		description: "In Alpha Omega, kill 11 zombies with 5 different traps",
+		goal: "",
+	},
+	{
+		id: "nuketown-hustle",
+		name: "Nuketown Hustle",
+		description: "In Alpha Omega, unlock the Pack-a-Punch machine by round 5",
+		goal: "",
+	},
+	{
+		id: "galvanizer",
+		name: "Galvanizer",
+		description: "In Alpha Omega, kill 115 zombies with Galvaknuckles in a single match",
+		goal: "",
+	},
+	{
+		id: "chug-chug-chug-chug",
+		name: "Chug! Chug! Chug! Chug!",
+		description: "In Alpha Omega, buy all four perks in any order in 35 seconds or less",
+		goal: "",
+	},
+	{
+		id: "ray-gnarok",
+		name: "Ray-gnarok",
+		description: "In Alpha Omega, stun 10 zombies at once with the Ray Gun Mk. II-V",
+		goal: "",
+	},
+	{
+		id: "experimental-prototype",
+		name: "Experimental Prototype",
+		description: "In Alpha Omega, construct a Ray Gun",
+		goal: "",
+	},
+	{
+		id: "its-a-toss-up",
+		name: "It's a Toss-Up",
+		description: "In Alpha Omega, kill 15 Jolting Jacks on rooftops with grenades in a single match",
+		goal: "",
+	},
+];
+
+// ============================================================
+// MAP TABS
+// ============================================================
 
 const tabs = [mapModules.overview, mapModules.mainEE, mapModules.sideEE, mapModules.musicEE, mapModules.wonderWeapon, mapModules.buildables, mapModules.weapons, mapModules.gauntlet, mapModules.perks, mapModules.extras, mapModules.credits];
 
@@ -1363,57 +1425,7 @@ function Extras() {
 					Video
 				</a>
 			</h2>
-			<table>
-				<thead>
-					<tr>
-						<th scope="col">Name</th>
-						<th scope="col">Description</th>
-						<th scope="col">Goal</th>
-					</tr>
-				</thead>
-				<tbody>
-					<tr>
-						<td>Electromagnetic Awakening Party</td>
-						<td>In Alpha Omega, begin Nikolai's Grand Scheme</td>
-					</tr>
-					<tr>
-						<td>Checkpoint Zulu</td>
-						<td>In Alpha Omega, survive the first 20 rounds without leaving Security Checkpoint</td>
-					</tr>
-					<tr>
-						<td>Ray Gun Bonanza</td>
-						<td>In Alpha Omega, construct all Ray Guns in a single match</td>
-					</tr>
-					<tr>
-						<td>Entrapment Entrepeneur</td>
-						<td>In Alpha Omega, kill 11 zombies with 5 different traps</td>
-					</tr>
-					<tr>
-						<td>Nuketown Hustle</td>
-						<td>In Alpha Omega, unlock the Pack-a-Punch machine by round 5</td>
-					</tr>
-					<tr>
-						<td>Galvanizer</td>
-						<td>In Alpha Omega, kill 115 zombies with Galvaknuckles in a single match</td>
-					</tr>
-					<tr>
-						<td>Chug! Chug! Chug! Chug!</td>
-						<td>In Alpha Omega, buy all four perks in any order in 35 seconds or less</td>
-					</tr>
-					<tr>
-						<td>Ray-gnarok</td>
-						<td>In Alpha Omega, stun 10 zombies at once with the Ray Gun Mk. II-V</td>
-					</tr>
-					<tr>
-						<td>Experimental Prototype</td>
-						<td>In Alpha Omega, construct a Ray Gun</td>
-					</tr>
-					<tr>
-						<td>It's a Toss-Up</td>
-						<td>In Alpha Omega, kill 15 Jolting Jacks on rooftops with grenades in a single match</td>
-					</tr>
-				</tbody>
-			</table>
+			<AchievementTable mapId="bo4/alpha-omega" headers={["Achievement", "Requirement"]} rows={achievementRows} />
 		</section>
 	);
 }

@@ -11,12 +11,164 @@ import VideoPlayer from "../../../components/VideoPlayer";
 
 import { mapModules } from "../../../data/mapModules";
 
-// ============================================================
-// 🔴 MAP TABS
-// ============================================================
+import AchievementTable from "../../../components/AchievementTable";
 
-// 🔴 REMOVE: Tabs that do not apply to this map.
-// 🔴 ADD: Any applicable tabs not currently included.
+const achievementRows = [
+	{
+		id: "salvation-lies-above",
+		name: "Salvation Lies Above",
+		description: "In Tag der Toten, Ascend from Darkness",
+		goal: (
+			<>
+				Compelete the <TabLink tab="main-ee">Main EE</TabLink>
+			</>
+		),
+	},
+	{
+		id: "everybody-freeze",
+		name: "Everybody Freeze!",
+		description: "In Tag der Toten, freeze 10 zombies at once in a single match",
+		goal: (
+			<>
+				Using the{" "}
+				<TabLink tab="wonder-weapon" target="tundragun">
+					Tundragun
+				</TabLink>
+				, train zombies together then shoot to freeze them all with a single shot.
+			</>
+		),
+	},
+	{
+		id: "fetch",
+		name: "Fetch",
+		description: "In Tag der Toten, kill 5 Hellhounds with snowballs in a single match",
+		goal: "Throw snowballs at Hellhounds during a max ammo round",
+	},
+	{
+		id: "lifeline",
+		name: "Lifeline",
+		description: (
+			<>
+				In Tag der Toten, use all{" "}
+				<TabLink tab="extras" target="ziplines">
+					ziplines
+				</TabLink>{" "}
+				without killing an enemy or going in to last stand in a single match
+			</>
+		),
+		goal: (
+			<>
+				Use all 9{" "}
+				<TabLink tab="extras" target="ziplines">
+					ziplines
+				</TabLink>{" "}
+				without going down or killing anything.
+			</>
+		),
+	},
+	{
+		id: "going-green",
+		name: "Going Green",
+		description: "In Tag der Toten, open all paths without turning on the power",
+		goal: (
+			<>
+				Buy all doors (24 doors),{" "}
+				<TabLink tab="buildables" target="dynamite">
+					explode the 3 shortcuts
+				</TabLink>
+				, and enable all{" "}
+				<TabLink tab="extras" target="ziplines">
+					ziplines
+				</TabLink>{" "}
+				without turning on a single{" "}
+				<TabLink tab="side-ee" target="power">
+					power switch
+				</TabLink>
+			</>
+		),
+	},
+	{
+		id: "mile-high-jug",
+		name: "Mile High Jug",
+		description: "In Tag der Toten, break the jar on top of the lighthouse with the Strife",
+		goal: (
+			<>
+				<ImageContainer>
+					<img src="\images\guides\bo4\tag-der-toten\tag-der-toten-jar.jpg" alt="Jar to Shoot With Strife" />
+				</ImageContainer>
+			</>
+		),
+	},
+	{
+		id: "abnormal-energy-bill",
+		name: "Abnormal Energy Bill",
+		description: (
+			<>
+				In Tag der Toten, light up all the{" "}
+				<TabLink tab="extras" target="totems">
+					totems
+				</TabLink>{" "}
+				in a single match
+			</>
+		),
+		goal: "",
+	},
+	{
+		id: "pack-your-bags",
+		name: "Pack Your Bags",
+		description: "In Tag der Toten, pack a weapon in all Pack-a-Punch locations in a single match",
+		goal: (
+			<>
+				You must PaP a gun at all 5 locations (lighthouse points to active location, Double PaP or changing AAT Counts)
+				<ul>
+					<li>Beach</li>
+					<li>Lagoon</li>
+					<li>Artifact Storage / Sunken Path (must extinguish fire by going through Artifact Storage and shooting pipe above the machine)</li>
+					<li>Boathouse</li>
+					<li>
+						Iceberg (
+						<TabLink tab="side-ee" target="goldenpap">
+							Golden PaP
+						</TabLink>
+						)
+					</li>
+				</ul>
+			</>
+		),
+	},
+	{
+		id: "bell-of-the-snowball",
+		name: "Bell of the Snowball",
+		description: "In Tag der Toten, ring all four bells with thrown snowballs in under 12 seconds",
+		goal: (
+			<>
+				<ol>
+					<li>Bell Near Power Switch</li>
+					<li>Bell Behind You</li>
+					<li>Bell to the right of you (left from last bell)</li>
+					<li>run to hit Bell beside the building</li>
+				</ol>
+			</>
+		),
+	},
+	{
+		id: "secret",
+		name: "Secret",
+		description: "In Tag der Toten, find the secret",
+		goal: (
+			<>
+				Find{" "}
+				<TabLink tab="extras" target="mars">
+					Mars
+				</TabLink>
+			</>
+		),
+	},
+];
+
+// ============================================================
+// MAP TABS
+// ============================================================
 
 const tabs = [mapModules.overview, mapModules.mainEE, mapModules.sideEE, mapModules.musicEE, mapModules.wonderWeapon, mapModules.buildables, mapModules.weapons, mapModules.gauntlet, mapModules.perks, mapModules.extras, mapModules.credits];
 
@@ -1603,137 +1755,7 @@ function Extras() {
 					Video
 				</a>
 			</h2>
-			<table>
-				<thead>
-					<tr>
-						<th scope="col">Name</th>
-						<th scope="col">Description</th>
-						<th scope="col">Goal</th>
-					</tr>
-				</thead>
-				<tbody>
-					<tr>
-						<td>Salvation Lies Above</td>
-						<td>In Tag der Toten, Ascend from Darkness</td>
-						<td>
-							Compelete the <TabLink tab="main-ee">Main EE</TabLink>
-						</td>
-					</tr>
-					<tr>
-						<td>Everybody Freeze!</td>
-						<td>In Tag der Toten, freeze 10 zombies at once in a single match</td>
-						<td>
-							Using the{" "}
-							<TabLink tab="wonder-weapon" target="tundragun">
-								Tundragun
-							</TabLink>
-							, train zombies together then shoot to freeze them all with a single shot.
-						</td>
-					</tr>
-					<tr>
-						<td>Fetch</td>
-						<td>In Tag der Toten, kill 5 Hellhounds with snowballs in a single match</td>
-						<td>Throw snowballs at Hellhounds during a max ammo round</td>
-					</tr>
-					<tr>
-						<td>Lifeline</td>
-						<td>
-							In Tag der Toten, use all{" "}
-							<TabLink tab="extras" target="ziplines">
-								ziplines
-							</TabLink>{" "}
-							without killing an enemy or going in to last stand in a single match
-						</td>
-						<td>
-							Use all 9{" "}
-							<TabLink tab="extras" target="ziplines">
-								ziplines
-							</TabLink>{" "}
-							without going down or killing anything.
-						</td>
-					</tr>
-					<tr>
-						<td>Going Green</td>
-						<td>In Tag der Toten, open all paths without turning on the power</td>
-						<td>
-							Buy all doors (24 doors),{" "}
-							<TabLink tab="buildables" target="dynamite">
-								explode the 3 shortcuts
-							</TabLink>
-							, and enable all{" "}
-							<TabLink tab="extras" target="ziplines">
-								ziplines
-							</TabLink>{" "}
-							without turning on a single{" "}
-							<TabLink tab="side-ee" target="power">
-								power switch
-							</TabLink>
-						</td>
-					</tr>
-					<tr>
-						<td>Mile High Jug</td>
-						<td>In Tag der Toten, break the jar on top of the lighthouse with the Strife</td>
-						<td>
-							<ImageContainer>
-								<img src="\images\guides\bo4\tag-der-toten\tag-der-toten-jar.jpg" alt="Jar to Shoot With Strife" />
-							</ImageContainer>
-						</td>
-					</tr>
-					<tr>
-						<td>Abnormal Energy Bill</td>
-						<td>
-							In Tag der Toten, light up all the{" "}
-							<TabLink tab="extras" target="totems">
-								totems
-							</TabLink>{" "}
-							in a single match
-						</td>
-						<td></td>
-					</tr>
-					<tr>
-						<td>Pack Your Bags</td>
-						<td>In Tag der Toten, pack a weapon in all Pack-a-Punch locations in a single match</td>
-						<td>
-							You must PaP a gun at all 5 locations (lighthouse points to active location, Double PaP or changing AAT Counts)
-							<ul>
-								<li>Beach</li>
-								<li>Lagoon</li>
-								<li>Artifact Storage / Sunken Path (must extinguish fire by going through Artifact Storage and shooting pipe above the machine)</li>
-								<li>Boathouse</li>
-								<li>
-									Iceberg (
-									<TabLink tab="side-ee" target="goldenpap">
-										Golden PaP
-									</TabLink>
-									)
-								</li>
-							</ul>
-						</td>
-					</tr>
-					<tr>
-						<td>Bell of the Snowball</td>
-						<td>In Tag der Toten, ring all four bells with thrown snowballs in under 12 seconds</td>
-						<td>
-							<ol>
-								<li>Bell Near Power Switch</li>
-								<li>Bell Behind You</li>
-								<li>Bell to the right of you (left from last bell)</li>
-								<li>run to hit Bell beside the building</li>
-							</ol>
-						</td>
-					</tr>
-					<tr>
-						<td>Secret</td>
-						<td>In Tag der Toten, find the secret</td>
-						<td>
-							Find{" "}
-							<TabLink tab="extras" target="mars">
-								Mars
-							</TabLink>
-						</td>
-					</tr>
-				</tbody>
-			</table>
+			<AchievementTable mapId="bo4/tag-der-toten" headers={["Achievement", "Requirement"]} rows={achievementRows} />
 		</section>
 	);
 }

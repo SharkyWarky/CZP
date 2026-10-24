@@ -1,7 +1,7 @@
 import { useEffect } from "react";
 import { useAtom } from "jotai";
-import { settingsOpenAtom } from "../atoms";
-import { baseColorAtom } from "../atoms";
+import { settingsOpenAtom } from "../atoms/atoms";
+import { baseColorAtom } from "../atoms/atoms";
 import { generatePalette, DEFAULT_COLOR } from "../utils/palette";
 
 export default function SettingsModal() {

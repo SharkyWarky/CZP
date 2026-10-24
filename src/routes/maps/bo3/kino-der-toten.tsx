@@ -5,6 +5,27 @@ import MapTabs from "../../../components/MapTabs";
 import Source from "../../../components/Source";
 import { MapNavigationProvider, useMapNavigation } from "../../../context/MapNavigationContext";
 import { mapModules } from "../../../data/mapModules";
+import AchievementTable from "../../../components/AchievementTable";
+
+const achievementRows = [
+	{
+		id: "ive-seen-some-things",
+		name: "I've seen some things...",
+		description: "Visit every location the teleporter can take you to",
+		goal: (
+			<>
+				Use the PaP teleporter several times until you have seen every room
+				<p>Requires the following rooms:</p>
+				<ul>
+					<li>Samantha's Room</li>
+					<li>Samantha's Corrupted Room</li>
+					<li>The Surgery Room</li>
+					<li>"Five" Pentagon Office</li>
+				</ul>
+			</>
+		),
+	},
+];
 
 const tabs = [mapModules.overview, mapModules.sideEE, mapModules.musicEE, mapModules.wonderWeapon, mapModules.weapons, mapModules.perks, mapModules.extras, mapModules.credits];
 
@@ -326,32 +347,9 @@ function Extras() {
 				<li>Use the Teleporter to enter the pentagon's office</li>
 				<li>Interact with the rocket figurine to launch it</li>
 			</ol>
+
 			<h2>Achievments</h2>
-			<table>
-				<thead>
-					<tr>
-						<th>Name</th>
-						<th>Description</th>
-						<th>Goal</th>
-					</tr>
-				</thead>
-				<tbody>
-					<tr>
-						<td>I've seen some things...</td>
-						<td>Visit every location the teleporter can take you to</td>
-						<td>
-							Use the PaP teleporter several times until you have seen every room
-							<p>Requires the following rooms:</p>
-							<ul>
-								<li>Samantha's Room</li>
-								<li>Samantha's Corrupted Room</li>
-								<li>The Surgery Room</li>
-								<li>"Five" Pentagon Office</li>
-							</ul>
-						</td>
-					</tr>
-				</tbody>
-			</table>
+			<AchievementTable mapId="bo3/kino-der-toten" headers={["Achievement", "Requirement"]} rows={achievementRows} />
 		</section>
 	);
 }

@@ -1,4 +1,5 @@
 /* ---- v2.1.0 ---- */
+import { createFileRoute } from "@tanstack/react-router";
 import { MapNavigationProvider, useMapNavigation } from "../../../context/MapNavigationContext";
 
 import MapTabs from "../../../components/MapTabs";
@@ -9,13 +10,27 @@ import ImageContainer from "../../../components/ImageContainer";
 import VideoPlayer from "../../../components/VideoPlayer";
 
 import { mapModules } from "../../../data/mapModules";
+import AchievementTable from "../../../components/AchievementTable";
+
+const achievementRows = [
+	{
+		id: "achievement-name",
+		name: "Achievment_Name",
+		description: "Description",
+		goal: (
+			<>
+				Words <TabLink tab="tab-name">Link</TabLink>
+			</>
+		),
+	},
+];
 
 // ============================================================
-// 🔴 MAP TABS
+// * MAP TABS
 // ============================================================
 
-// 🔴 REMOVE: Tabs that do not apply to this map.
-// 🔴 ADD: Any applicable tabs not currently included.
+// * REMOVE: Tabs that do not apply to this map.
+// * ADD: Any applicable tabs not currently included.
 
 const tabs = [mapModules.overview, mapModules.mainEE, mapModules.sideEE, mapModules.musicEE, mapModules.wonderWeapon, mapModules.buildables, mapModules.weapons, mapModules.perks, mapModules.extras, mapModules.credits];
 
@@ -26,35 +41,35 @@ const tabs = [mapModules.overview, mapModules.mainEE, mapModules.sideEE, mapModu
 function Overview() {
 	return (
 		<section className="tab-content">
-			{/* 🔴 CHANGE: Map name */}
+			{/* * CHANGE: Map name */}
 			<h2>MAP NAME</h2>
 
-			{/* 🔴 ADD: Basic map description */}
+			{/* * ADD: Basic map description */}
 			<p>MAP DESCRIPTION.</p>
 
-			{/* 🔴 ADD: Additional map information */}
+			{/* * ADD: Additional map information */}
 			<p>ADDITIONAL INFORMATION.</p>
 
-			{/* 🔴 ADD/REMOVE: Overview subsections */}
+			{/* * ADD/REMOVE: Overview subsections */}
 			<h2>Overview</h2>
 
 			<p>MAP OVERVIEW, STORY, SETTING, AND OTHER IMPORTANT INFORMATION.</p>
 
-			{/* 🔴 ADD: More overview information as necessary */}
+			{/* * ADD: More overview information as necessary */}
 
-			{/* 🔴 OPTIONAL: Link to another tab */}
+			{/* * OPTIONAL: Link to another tab */}
 			<TabLink tab="main-ee">Go to Main Easter Egg</TabLink>
 
-			{/* 🔴 OPTIONAL: Add/remove images as necessary */}
+			{/* * OPTIONAL: Add/remove images as necessary */}
 			<ImageContainer>
 				<img src="/images/map-cards/advanced-warfare/carrier-aw.webp" alt="IMAGE DESCRIPTION" />
 				<img src="/images/map-cards/bo3/ascension-bo3.webp" alt="IMAGE DESCRIPTION" />
 			</ImageContainer>
 
-			{/* 🔴 OPTIONAL: Add videos as necessary */}
+			{/* * OPTIONAL: Add videos as necessary */}
 			<VideoPlayer url="VIDEOCODE" />
 
-			{/* 🔴 OPTIONAL: Link directly to a section */}
+			{/* * OPTIONAL: Link directly to a section */}
 			<p>
 				<TabLink tab="side-ee" target="power">
 					Power
@@ -71,32 +86,32 @@ function Overview() {
 function MainEE() {
 	return (
 		<section className="tab-content">
-			{/* 🔴 CHANGE: Main Easter Egg name */}
+			{/* * CHANGE: Main Easter Egg name */}
 			<h2>MAIN EASTER EGG NAME</h2>
 
-			{/* 🔴 ADD: Prerequisites */}
+			{/* * ADD: Prerequisites */}
 			<h3>Prerequisites</h3>
 			<ul>
 				<li>PREREQUISITE</li>
 			</ul>
 
-			{/* 🔴 ADD: Recommended setup */}
+			{/* * ADD: Recommended setup */}
 			<h3>Recommended Setup</h3>
 			<ul>
 				<li>RECOMMENDATION</li>
 			</ul>
 
-			{/* 🔴 ADD: Rewards */}
+			{/* * ADD: Rewards */}
 			<p>Rewards: REWARD</p>
 
-			{/* 🔴 ADD: Main EE instructions */}
+			{/* * ADD: Main EE instructions */}
 			<ol>
 				<li>STEP 1</li>
 				<li>STEP 2</li>
 				<li>STEP 3</li>
 			</ol>
 
-			{/* 🔴 OPTIONAL: Main EE video */}
+			{/* * OPTIONAL: Main EE video */}
 			<VideoPlayer url="VIDEOCODE" />
 		</section>
 	);
@@ -109,7 +124,7 @@ function MainEE() {
 function SideEE() {
 	return (
 		<section className="tab-content">
-			{/* 🔴 ADD: Each side Easter Egg */}
+			{/* * ADD: Each side Easter Egg */}
 
 			<h2 id="power">Power</h2>
 			<p>DESCRIPTION.</p>
@@ -120,17 +135,17 @@ function SideEE() {
 				<li>STEP 3</li>
 			</ol>
 
-			{/* 🔴 OPTIONAL: Power video */}
+			{/* * OPTIONAL: Power video */}
 			<VideoPlayer url="VIDEOCODE" />
 
-			{/* 🔴 ADD: Pack-a-Punch */}
+			{/* * ADD: Pack-a-Punch */}
 			<h2 id="pap">Pack-a-Punch</h2>
 			<p>DESCRIPTION.</p>
 
-			{/* 🔴 OPTIONAL: Pack-a-Punch video */}
+			{/* * OPTIONAL: Pack-a-Punch video */}
 			<VideoPlayer url="VIDEOCODE" />
 
-			{/* 🔴 ADD: Another side Easter Egg */}
+			{/* * ADD: Another side Easter Egg */}
 			<h2>ANOTHER SIDE EASTER EGG</h2>
 			<p>DESCRIPTION.</p>
 
@@ -149,7 +164,7 @@ function SideEE() {
 function MusicEE() {
 	return (
 		<section className="tab-content">
-			{/* 🔴 ADD: Music Easter Egg */}
+			{/* * ADD: Music Easter Egg */}
 
 			<h2>SONG NAME</h2>
 			<p>Rewards: REWARD</p>
@@ -160,7 +175,7 @@ function MusicEE() {
 				<li>STEP 3</li>
 			</ol>
 
-			{/* 🔴 ADD: Additional songs / music Easter Eggs */}
+			{/* * ADD: Additional songs / music Easter Eggs */}
 
 			<h2>SECOND SONG NAME</h2>
 			<p>DESCRIPTION.</p>
@@ -170,7 +185,7 @@ function MusicEE() {
 				<li>STEP 2</li>
 			</ol>
 
-			{/* 🔴 OPTIONAL: Music Easter Egg video */}
+			{/* * OPTIONAL: Music Easter Egg video */}
 			<VideoPlayer url="VIDEOCODE" />
 		</section>
 	);
@@ -183,17 +198,17 @@ function MusicEE() {
 function WonderWeapons() {
 	return (
 		<section className="tab-content">
-			{/* 🔴 ADD: Every Wonder Weapon available on this map */}
+			{/* * ADD: Every Wonder Weapon available on this map */}
 
 			<h3>WONDER WEAPON NAME</h3>
 			<p>HOW TO OBTAIN / WHERE FOUND.</p>
 
-			{/* 🔴 ADD: Description, upgrades, ammo, etc. */}
+			{/* * ADD: Description, upgrades, ammo, etc. */}
 
 			<h3>SECOND WONDER WEAPON</h3>
 			<p>HOW TO OBTAIN / WHERE FOUND.</p>
 
-			{/* 🔴 ADD: Additional Wonder Weapons */}
+			{/* * ADD: Additional Wonder Weapons */}
 		</section>
 	);
 }
@@ -205,7 +220,7 @@ function WonderWeapons() {
 function Buildables() {
 	return (
 		<section className="tab-content">
-			{/* 🔴 ADD: Every buildable on the map */}
+			{/* * ADD: Every buildable on the map */}
 
 			<h3>BUILDABLE NAME</h3>
 			<p>DESCRIPTION.</p>
@@ -224,7 +239,7 @@ function Buildables() {
 				<li>STEP 3</li>
 			</ol>
 
-			{/* 🔴 ADD: Additional buildables */}
+			{/* * ADD: Additional buildables */}
 		</section>
 	);
 }
@@ -236,21 +251,21 @@ function Buildables() {
 function Weapons() {
 	return (
 		<section className="tab-content">
-			{/* 🔴 ADD: Starting weapons if applicable */}
+			{/* * ADD: Starting weapons if applicable */}
 
 			<h3>Starting Weapons</h3>
 			<ul>
 				<li>NAME - Player Choice</li>
 			</ul>
 
-			{/* 🔴 ADD: Specialists if applicable */}
+			{/* * ADD: Specialists if applicable */}
 
 			<h3>Specialists</h3>
 			<ul>
 				<li>NAME - Player Choice</li>
 			</ul>
 
-			{/* 🔴 ADD: Wall weapons */}
+			{/* * ADD: Wall weapons */}
 
 			<h3>Wall Weapons</h3>
 			<ul>
@@ -262,7 +277,7 @@ function Weapons() {
 				</li>
 			</ul>
 
-			{/* 🔴 ADD/REMOVE: Mystery Box if applicable */}
+			{/* * ADD/REMOVE: Mystery Box if applicable */}
 
 			<h3>Mystery Box</h3>
 
@@ -278,7 +293,7 @@ function Weapons() {
 				<li>WEAPON NAME</li>
 			</ul>
 
-			{/* 🔴 ADD: Special weapons / equipment */}
+			{/* * ADD: Special weapons / equipment */}
 		</section>
 	);
 }
@@ -290,7 +305,7 @@ function Weapons() {
 function Perks() {
 	return (
 		<section className="tab-content">
-			{/* 🔴 ADD/REMOVE: Include every perk available on this map */}
+			{/* * ADD/REMOVE: Include every perk available on this map */}
 
 			<h3>PERK NAME (PRICE)</h3>
 			<p>LOCATION / REQUIREMENTS.</p>
@@ -298,7 +313,7 @@ function Perks() {
 			<h3>PERK NAME (PRICE)</h3>
 			<p>LOCATION / REQUIREMENTS.</p>
 
-			{/* 🔴 ADD: Additional perks */}
+			{/* * ADD: Additional perks */}
 		</section>
 	);
 }
@@ -310,28 +325,28 @@ function Perks() {
 function Extras() {
 	return (
 		<section className="tab-content">
-			{/* 🔴 ADD: Map-specific secrets, interactions, etc. */}
+			{/* * ADD: Map-specific secrets, interactions, etc. */}
 
 			<h2>EXTRA NAME</h2>
 			<p>DESCRIPTION.</p>
 
-			{/* 🔴 ADD: Steps if applicable */}
+			{/* * ADD: Steps if applicable */}
 
 			<ol>
 				<li>STEP 1</li>
 				<li>STEP 2</li>
 			</ol>
 
-			{/* 🔴 ADD/REMOVE: Traps if applicable */}
+			{/* * ADD/REMOVE: Traps if applicable */}
 
 			<h2>Traps</h2>
 			<table>
 				<thead>
 					<tr>
-						<th>Type</th>
-						<th>Ability</th>
-						<th>Location</th>
-						<th>Cost</th>
+						<th scope="col">Type</th>
+						<th scope="col">Ability</th>
+						<th scope="col">Location</th>
+						<th scope="col">Cost</th>
 					</tr>
 				</thead>
 				<tbody>
@@ -344,15 +359,15 @@ function Extras() {
 				</tbody>
 			</table>
 
-			{/* 🔴 ADD/REMOVE: Fast Travel if applicable */}
+			{/* * ADD/REMOVE: Fast Travel if applicable */}
 
 			<h2>Fast Travel</h2>
 			<table>
 				<thead>
 					<tr>
-						<th>Location</th>
-						<th>Ending Location</th>
-						<th>Cost</th>
+						<th scope="col">Location</th>
+						<th scope="col">Ending Location</th>
+						<th scope="col">Cost</th>
 					</tr>
 				</thead>
 				<tbody>
@@ -364,15 +379,15 @@ function Extras() {
 				</tbody>
 			</table>
 
-			{/* 🔴 ADD/REMOVE: Special enemies if applicable */}
+			{/* * ADD/REMOVE: Special enemies if applicable */}
 
 			<h2>Special Enemies</h2>
 			<table>
 				<thead>
 					<tr>
-						<th>Enemy Name</th>
-						<th>Special Abilities</th>
-						<th>Picture</th>
+						<th scope="col">Enemy Name</th>
+						<th scope="col">Special Abilities</th>
+						<th scope="col">Picture</th>
 					</tr>
 				</thead>
 				<tbody>
@@ -384,30 +399,11 @@ function Extras() {
 				</tbody>
 			</table>
 
-			{/* 🔴 ADD/REMOVE: Achievements if applicable */}
+			{/* * ADD/REMOVE: Achievements if applicable */}
 
 			<h2>Achievements</h2>
-			<table>
-				<thead>
-					<tr>
-						<th>Name</th>
-						<th>Description</th>
-						<th>Goal</th>
-					</tr>
-				</thead>
-
-				<tbody>
-					<tr>
-						<td>ACHIEVEMENT NAME</td>
-						<td>DESCRIPTION</td>
-						<td>HOW TO UNLOCK</td>
-					</tr>
-
-					{/* 🔴 ADD: Additional achievements */}
-				</tbody>
-			</table>
-
-			{/* 🔴 ADD: Other extra information */}
+            {/* * CHANGE: game/map */}
+			<AchievementTable mapId="game/map" headers={["Achievement", "Requirement"]} rows={achievementRows} />
 		</section>
 	);
 }
@@ -421,11 +417,11 @@ function Credits() {
 		<section className="tab-content">
 			<h2>Credits</h2>
 
-			{/* 🔴 ADD: Every source used for this map */}
+			{/* * ADD: Every source used for this map */}
 
 			<Source href="SOURCE URL" name="SOURCE TITLE" author="SOURCE AUTHOR" source="SOURCE WEBSITE" />
 
-			{/* 🔴 ADD: Additional sources */}
+			{/* * ADD: Additional sources */}
 		</section>
 	);
 }
@@ -465,6 +461,7 @@ function MAP_NAME_Content() {
 	);
 }
 
+// * CHANGE Game, Map_name, and core map_function
 export const Route = createFileRoute("/maps/GAME/MAP_NAME")({
 	staticData: { title: "MAP_NAME" },
 	component: MAP_NAME_FUNCTION,

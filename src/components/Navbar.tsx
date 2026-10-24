@@ -1,7 +1,7 @@
 import { Link, useLocation } from "@tanstack/react-router";
 import usePageTitle from "../hooks/usePageTitle";
 import SettingsModal from "./SettingsModal";
-import { settingsOpenAtom } from "../atoms";
+import { settingsOpenAtom } from "../atoms/atoms";
 import { useAtom } from "jotai";
 
 const games: [string, string][] = [

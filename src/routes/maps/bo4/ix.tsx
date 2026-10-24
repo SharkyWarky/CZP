@@ -11,12 +11,139 @@ import VideoPlayer from "../../../components/VideoPlayer";
 
 import { mapModules } from "../../../data/mapModules";
 
-// ============================================================
-// 🔴 MAP TABS
-// ============================================================
+import AchievementTable from "../../../components/AchievementTable";
 
-// 🔴 REMOVE: Tabs that do not apply to this map.
-// 🔴 ADD: Any applicable tabs not currently included.
+const achievementRows = [
+	{
+		id: "my-home-is-the-arena",
+		name: "My Home is the Arena",
+		description: "Survive to Round 20 without opening a gate",
+		goal: (
+			<>
+				<span>Spawn with Mog 12 with Long Barrel, Fast Mags, rapid Fire and Dragon Breath (one hit kill headhshots till round 15)</span>
+				<span>
+					Wallpower elixir + Strife for remaining rounds (or{" "}
+					<TabLink tab="extras" target="freestrife">
+						free PaP strife from challenges
+					</TabLink>
+					)
+				</span>
+			</>
+		),
+	},
+	{
+		id: "venerated-warrior",
+		name: "Venerated Warrior",
+		description: "Defeat the most venerated opponent",
+		goal: (
+			<>
+				Complete the <TabLink tab="main-ee">main EE</TabLink>
+			</>
+		),
+	},
+	{
+		id: "skilled-adversary",
+		name: "Skilled Adversary",
+		description: "Have a challenge banner with all 9 medallions",
+		goal: (
+			<>
+				Complete 9{" "}
+				<TabLink tab="extras" target="challenges">
+					challenges
+				</TabLink>
+			</>
+		),
+	},
+	{
+		id: "the-slaughterhouse",
+		name: "The Slaughterhouse",
+		description: "Dismember 13 limbs in a single game while in the pit",
+		goal: "shoot zombies with body shots for them to lose their arms",
+	},
+	{
+		id: "gong-like-the-wind",
+		name: "Gong like the Wind",
+		description: (
+			<>
+				defeat all 8 challengers summoned by a{" "}
+				<TabLink tab="side-ee" target="gong">
+					gong
+				</TabLink>{" "}
+				within 5 mins
+			</>
+		),
+		goal: "5 minutes starts upon loading in",
+	},
+	{
+		id: "gift-of-serket",
+		name: "Gift of Serket",
+		description: "Aquire the Serket's Kiss",
+		goal: (
+			<>
+				<TabLink tab="side-ee" target="pap">
+					PaP
+				</TabLink>{" "}
+				the{" "}
+				<TabLink tab="wonder-weapon" target="deathoforion">
+					Death of Orion
+				</TabLink>{" "}
+				(aquired via mystery box or side EE)
+			</>
+		),
+	},
+	{
+		id: "here-kitty-kitty",
+		name: "Here Kitty, Kitty",
+		description: "Kill a Zombie Tiger with a Brain Rotted Tiger",
+		goal: "",
+	},
+	{
+		id: "acidic-alchemy",
+		name: "Acidic Alchemy",
+		description: (
+			<>
+				get a kill with the{" "}
+				<TabLink tab="side-ee" target="acidtrap">
+					acid trap
+				</TabLink>{" "}
+				in each of its [4] craftable locations
+			</>
+		),
+		goal: (
+			<>
+				<span>Aquire all of the parts then build in each of the following locations:</span>
+				<ul>
+					<li>Entrance to Ra Tower</li>
+					<li>Entrance to Danu Tower</li>
+					<li>Stairs leading up into Odin Altar Room</li>
+					<li>Stairs leading up into Zeus Altar Room</li>
+				</ul>
+			</>
+		),
+	},
+	{
+		id: "constellation-prize",
+		name: "Constellation Prize",
+		description: (
+			<>
+				Kill 9 zombies with a single uncharged shot from the{" "}
+				<TabLink tab="wonder-weapon" target="deathoforion">
+					Death of Orion
+				</TabLink>
+			</>
+		),
+		goal: (
+			<>
+				<span>CANNOT be done with the upgraded Serkets Kiss</span>
+				<span>hoard up a bunch of zombies and fire an uncharged shot at their heads</span>
+			</>
+		),
+	},
+];
+
+// ============================================================
+// MAP TABS
+// ============================================================
 
 const tabs = [mapModules.overview, mapModules.mainEE, mapModules.sideEE, mapModules.musicEE, mapModules.wonderWeapon, mapModules.buildables, mapModules.weapons, mapModules.gauntlet, mapModules.perks, mapModules.extras, mapModules.credits];
 
@@ -1338,114 +1465,7 @@ function Extras() {
 			</table>
 
 			<h2>Achievements</h2>
-			<table>
-				<thead>
-					<tr>
-						<th scope="col">Name</th>
-						<th scope="col">Description</th>
-						<th scope="col">Goal</th>
-					</tr>
-				</thead>
-				<tbody>
-					<tr>
-						<td>My Home is the Arena</td>
-						<td>Survive to Round 20 without opening a gate</td>
-						<td>
-							<span>Spawn with Mog 12 with Long Barrel, Fast Mags, rapid Fire and Dragon Breath (one hit kill headhshots till round 15)</span>
-							<span>
-								Wallpower elixir + Strife for remaining rounds (or{" "}
-								<TabLink tab="extras" target="freestrife">
-									free PaP strife from challenges)
-								</TabLink>
-							</span>
-						</td>
-					</tr>
-					<tr>
-						<td>Venerated Warrior</td>
-						<td>Defeat the most venerated opponent</td>
-						<td>
-							Complete the <TabLink tab="main-ee">main EE</TabLink>
-						</td>
-					</tr>
-					<tr>
-						<td>Skilled Adversary</td>
-						<td>Have a challenge banner with all 9 medallions</td>
-						<td>
-							Complete 9{" "}
-							<TabLink tab="extras" target="challenges">
-								challenges
-							</TabLink>
-						</td>
-					</tr>
-					<tr>
-						<td>The Slaughterhouse</td>
-						<td>Dismember 13 limbs in a single game while in the pit</td>
-						<td>shoot zombies with body shots for them to lose their arms</td>
-					</tr>
-					<tr>
-						<td>Gong like the Wind</td>
-						<td>
-							defeat all 8 challengers summoned by a{" "}
-							<TabLink tab="side-ee" target="gong">
-								gong
-							</TabLink>{" "}
-							within 5 mins
-						</td>
-						<td>5 minutes starts upon loading in</td>
-					</tr>
-					<tr>
-						<td>Gift of Serket</td>
-						<td>Aquire the Serket's Kiss</td>
-						<td>
-							<TabLink tab="side-ee" target="pap">
-								PaP
-							</TabLink>{" "}
-							the{" "}
-							<TabLink tab="wonder-weapon" target="deathoforion">
-								Death of Orion
-							</TabLink>{" "}
-							(aquired via mystery box or side EE)
-						</td>
-					</tr>
-					<tr>
-						<td>Here Kitty, Kitty</td>
-						<td>Kill a Zombie Tiger with a Brain Rotted Tiger</td>
-						<td></td>
-					</tr>
-					<tr>
-						<td>Acidic Alchemy</td>
-						<td>
-							get a kill with the{" "}
-							<TabLink tab="side-ee" target="acidtrap">
-								acid trap
-							</TabLink>{" "}
-							in each of its [4] craftable locations
-						</td>
-						<td>
-							<span>Aquire all of the parts then build in each of the following locations:</span>
-							<ul>
-								<li>Entrance to Ra Tower</li>
-								<li>Entrance to Danu Tower</li>
-								<li>Stairs leading up into Odin Altar Room</li>
-								<li>Stairs leading up into Zeus Altar Room</li>
-							</ul>
-						</td>
-					</tr>
-					<tr>
-						<td>Constellation Prize</td>
-						<td>
-							Kill 9 zombies with a single uncharged shot from the{" "}
-							<TabLink tab="wonder-weapon" target="deathoforion">
-								Death of Orion
-							</TabLink>
-						</td>
-						<td>
-							<span>CANNOT be done with the upgraded Serkets Kiss</span>
-							<span>hoard up a bunch of zombies and fire an uncharged shot at their heads</span>
-						</td>
-					</tr>
-				</tbody>
-			</table>
+			<AchievementTable mapId="bo4/ix" headers={["Achievement", "Requirement"]} rows={achievementRows} />
 
 			<h2>Dark Ops Challenges</h2>
 			<table>

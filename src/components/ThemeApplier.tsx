@@ -1,6 +1,6 @@
 import { useEffect } from "react";
 import { useAtom } from "jotai";
-import { baseColorAtom } from "../atoms";
+import { baseColorAtom } from "../atoms/atoms";
 import { generatePalette } from "../utils/palette";
 
 export default function ThemeApplier() {

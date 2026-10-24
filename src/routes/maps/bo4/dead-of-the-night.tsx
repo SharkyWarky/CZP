@@ -11,12 +11,74 @@ import VideoPlayer from "../../../components/VideoPlayer";
 
 import { mapModules } from "../../../data/mapModules";
 
-// ============================================================
-// 🔴 MAP TABS
-// ============================================================
+import AchievementTable from "../../../components/AchievementTable";
 
-// 🔴 REMOVE: Tabs that do not apply to this map.
-// 🔴 ADD: Any applicable tabs not currently included.
+const achievementRows = [
+	{
+		id: "alchemical-opus",
+		name: "Alchemical Opus",
+		description: "In Dead of the Night, create Prima Materia 3 times.",
+		goal: "Fully upgrade Alistair's Folly",
+	},
+	{
+		id: "board-gamer",
+		name: "Board Gamer",
+		description: "In Dead of the Night, kill a Werewolf in the Library with a revolver.",
+		goal: "Kill a werewolf in the Library with Alistair's Folly, Welling, or Mozu",
+	},
+	{
+		id: "master-your-craft",
+		name: "Master Your Craft",
+		description: "In Dead of the Night, use every crafting table.",
+		goal: "Fully upgrade Alistair's Folly, build silver bullets and build the Stake knife",
+	},
+	{
+		id: "mega-bite",
+		name: "Mega Bite",
+		description: "In Dead of the Night, get bitten by a Crimson Nosferatu.",
+		goal: "During the process of upgrading the Chaos Theory to Alistair's Annihilator, Crimson Vampires will begin to spawn in to the map. Allow one to pounce onto you.",
+	},
+	{
+		id: "on-the-clock",
+		name: "On the Clock",
+		description: "In Dead of the Night, stay within the clock circle until the time runs out.",
+		goal: "During the Pack a Punch steps, you will have to tune a clock by standing in a circle for 30-60 seconds. Complete this step without leaving the circle.",
+	},
+	{
+		id: "quick-thinking",
+		name: "Quick Thinking",
+		description: "In Dead of the Night, unlock the Forest by round 7.",
+		goal: "Open Pack a Punch (see above) by round 7",
+	},
+	{
+		id: "shockingly-good-time",
+		name: "Shockingly Good Time",
+		description: "In Dead of the Night, electrocute a Werewolf.",
+		goal: "Kill a werewolf with the trap located in the Greenhouse",
+	},
+	{
+		id: "shrinking-feeling",
+		name: "Shrinking Feeling",
+		description: "In Dead of the Night, shrink 15 zombies with a single shot from Alistair’s Annihilator.",
+		goal: "One of the charge effects of the Alistair's Annihilator shrinks zombies. As these effects are random, train up a horde of zombies and kill them with a charged shot until you get the desired effect.",
+	},
+	{
+		id: "trial-by-ordeal",
+		name: "Trial by Ordeal",
+		description: "In Dead of the Night, defeat the evil within.",
+		goal: "Complete the Main Quest",
+	},
+	{
+		id: "well-done",
+		name: "Well Done",
+		description: "In Dead of the Night, stake a Nosferatu in the Dining Room.",
+		goal: "Obtain the Stake Knife, and then melee a Vampire in the Dining Room",
+	},
+];
+
+// ============================================================
+// MAP TABS
+// ============================================================
 
 const tabs = [mapModules.overview, mapModules.mainEE, mapModules.sideEE, mapModules.musicEE, mapModules.wonderWeapon, mapModules.buildables, mapModules.weapons, mapModules.gauntlet, mapModules.perks, mapModules.extras, mapModules.credits];
 
@@ -1595,67 +1657,7 @@ function Extras() {
 			</table>
 
 			<h2>Achievements</h2>
-			<table>
-				<thead>
-					<tr>
-						<th scope="col">Name</th>
-						<th scope="col">Description</th>
-						<th scope="col">Goal</th>
-					</tr>
-				</thead>
-				<tbody>
-					<tr>
-						<td>Alchemical Opus</td>
-						<td>In Dead of the Night, create Prima Materia 3 times.</td>
-						<td>Fully upgrade Alistair's Folly</td>
-					</tr>
-					<tr>
-						<td>Board Gamer</td>
-						<td>In Dead of the Night, kill a Werewolf in the Library with a revolver.</td>
-						<td>Kill a werewolf in the Library with Alistair's Folly, Welling, or Mozu</td>
-					</tr>
-					<tr>
-						<td>Master Your Craft</td>
-						<td>In Dead of the Night, use every crafting table.</td>
-						<td>Fully upgrade Alistair's Folly, build silver bullets and build the Stake knife</td>
-					</tr>
-					<tr>
-						<td>Mega Bite</td>
-						<td>In Dead of the Night, get bitten by a Crimson Nosferatu.</td>
-						<td>During the process of upgrading the Chaos Theory to Alistair's Annihilator, Crimson Vampires will begin to spawn in to the map. Allow one to pounce onto you.</td>
-					</tr>
-					<tr>
-						<td>On the Clock</td>
-						<td>In Dead of the Night, stay within the clock circle until the time runs out.</td>
-						<td>During the Pack a Punch steps, you will have to tune a clock by standing in a circle for 30-60 seconds. Complete this step without leaving the circle.</td>
-					</tr>
-					<tr>
-						<td>Quick Thinking</td>
-						<td>In Dead of the Night, unlock the Forest by round 7.</td>
-						<td>Open Pack a Punch (see above) by round 7</td>
-					</tr>
-					<tr>
-						<td>Shockingly Good Time</td>
-						<td>In Dead of the Night, electrocute a Werewolf.</td>
-						<td>Kill a werewolf with the trap located in the Greenhouse</td>
-					</tr>
-					<tr>
-						<td>Shrinking Feeling</td>
-						<td>In Dead of the Night, shrink 15 zombies with a single shot from Alistair’s Annihilator.</td>
-						<td>One of the charge effects of the Alistair's Annihilator shrinks zombies. As these effects are random, train up a horde of zombies and kill them with a charged shot until you get the desired effect.</td>
-					</tr>
-					<tr>
-						<td>Trial by Ordeal</td>
-						<td>In Dead of the Night, defeat the evil within.</td>
-						<td>Complete the Main Quest</td>
-					</tr>
-					<tr>
-						<td>Well Done</td>
-						<td>In Dead of the Night, stake a Nosferatu in the Dining Room.</td>
-						<td>Obtain the Stake Knife, and then melee a Vampire in the Dining Room</td>
-					</tr>
-				</tbody>
-			</table>
+			<AchievementTable mapId="bo4/dead-of-the-night" headers={["Achievement", "Requirement"]} rows={achievementRows} />
 		</section>
 	);
 }

@@ -11,12 +11,131 @@ import VideoPlayer from "../../../components/VideoPlayer";
 
 import { mapModules } from "../../../data/mapModules";
 
-// ============================================================
-// 🔴 MAP TABS
-// ============================================================
+import AchievementTable from "../../../components/AchievementTable";
 
-// 🔴 REMOVE: Tabs that do not apply to this map.
-// 🔴 ADD: Any applicable tabs not currently included.
+const achievementRows = [
+	{
+		id: "cold-war-remedy",
+		name: (
+			<>
+				<TabLink tab="wonder-weapon" target="coldwarremedy">
+					Cold War Remedy
+				</TabLink>
+			</>
+		),
+		description: "In Classified, retrieve and equip the Project Skadi prototype",
+		goal: (
+			<>
+				Complete the{" "}
+				<TabLink tab="wonder-weapon" target="coldwarremedy">
+					Free Winter's Howl EE
+				</TabLink>
+			</>
+		),
+	},
+	{
+		id: "breaking-the-ice",
+		name: "Breaking the Ice",
+		description: "In Classified, shatter 115 zombies in a single game",
+		goal: "Easiest with the upgraded Winter's Howl (Freeze with Winter's Howl then shoot with gun)",
+	},
+	{
+		id: "shock-value",
+		name: "Shock Value",
+		description: "In Classified, kill 115 zombies with electric traps in a single game",
+		goal: (
+			<>
+				Build the{" "}
+				<TabLink tab="buildables" target="electrotrap">
+					Shock Trap
+				</TabLink>{" "}
+				and alternating which trap you kill with
+			</>
+		),
+	},
+	{
+		id: "power-struggle",
+		name: "Power Struggle",
+		description: "In Classified, reach round 20 without turning on the power",
+		goal: (
+			<>
+				<span>
+					Complete at the same time as{" "}
+					<TabLink tab="extras" target="thehighestoffice">
+						The Highest Office
+					</TabLink>
+				</span>
+				<span>Restart game until mystery box spawns in the mail office (can be completed on casual and with bots (not recommended))</span>
+			</>
+		),
+	},
+	{
+		id: "preemptive-strike",
+		name: "Preemptive Strike",
+		description: "In Classified, kill 50 Nova 6 Crawlers without letting them explode in a single game",
+		goal: (
+			<>
+				Get ~30 via the{" "}
+				<TabLink tab="extras" target="knockknock">
+					Knock Knock EE
+				</TabLink>{" "}
+				and kill the rest over time
+			</>
+		),
+	},
+	{
+		id: "the-highest-office",
+		name: "The Highest Office",
+		description: "In Classified, reach round 20 without using an elevator",
+		goal: (
+			<>
+				<span>
+					Complete at the same time as{" "}
+					<TabLink tab="extras" target="powerstruggle">
+						Power Struggle
+					</TabLink>
+				</span>
+				<span>Restart game until mystery box spawns in the mail office (can be completed on casual and with bots (not recommended))</span>
+			</>
+		),
+	},
+	{
+		id: "crawl-for-help",
+		name: "Crawl for Help",
+		description: "In Classified, while in last stand use a teleporter and then get revived in a single game",
+		goal: "Can be done solo with a revive token",
+	},
+	{
+		id: "step-on-the-gas",
+		name: "Step on the Gas",
+		description: "In Classified, kill 50 zombies while affected by Nova 6 Crawler gas in a single game",
+		goal: "shoot a nova crawler to make it explode and get zombies to walk through it before killing them",
+	},
+	{
+		id: "pent-up-agon",
+		name: "Pent-up-agon",
+		description: "In Classified, complete 5 consecutive rounds without leaving the war room elevator in a single game",
+		goal: (
+			<>
+				Get as many points as possible (
+				<TabLink tab="extras" target="knockknock">
+					knock knock EE
+				</TabLink>
+				) to get set-up. End a round while in the elevator then don't leave until the achievement pops
+			</>
+		),
+	},
+	{
+		id: "going-everywhere-fast",
+		name: "Going Everywhere Fast",
+		description: "In Classified, use a teleporter 7 times in less than a minute in a single game",
+		goal: "Open most of the map then run through every possible teleporter until the trophy pops",
+	},
+];
+
+// ============================================================
+// MAP TABS
+// ============================================================
 
 const tabs = [mapModules.overview, mapModules.mainEE, mapModules.sideEE, mapModules.musicEE, mapModules.wonderWeapon, mapModules.buildables, mapModules.weapons, mapModules.gauntlet, mapModules.perks, mapModules.extras, mapModules.credits];
 
@@ -1145,110 +1264,7 @@ function Extras() {
 			</table>
 
 			<h2>Achievements</h2>
-			<table>
-				<thead>
-					<tr>
-						<th scope="col">Name</th>
-						<th scope="col">Description</th>
-						<th scope="col">Goal</th>
-					</tr>
-				</thead>
-				<tbody>
-					<tr>
-						<td>
-							<TabLink tab="wonder-weapon" target="coldwarremedy">
-								Cold War Remedy
-							</TabLink>
-						</td>
-						<td>In Classified, retrieve and equip the Project Skadi prototype</td>
-						<td>
-							Complete the{" "}
-							<TabLink tab="wonder-weapon" target="coldwarremedy">
-								Free Winter's Howl EE
-							</TabLink>
-						</td>
-					</tr>
-					<tr>
-						<td>Breaking the Ice</td>
-						<td>In Classified, shatter 115 zombies in a single game</td>
-						<td>Easiest with the upgraded Winter's Howl (Freeze with Winter's Howl then shoot with gun)</td>
-					</tr>
-					<tr>
-						<td>Shock Value</td>
-						<td>In Classified, kill 115 zombies with electric traps in a single game</td>
-						<td>
-							Build the{" "}
-							<TabLink tab="buildables" target="electrotrap">
-								Shock Trap
-							</TabLink>{" "}
-							and alternating which trap you kill with
-						</td>
-					</tr>
-					<tr>
-						<td id="powerstruggle">Power Struggle</td>
-						<td>In Classified, reach round 20 without turning on the power</td>
-						<td>
-							<span>
-								Complete at the same time as{" "}
-								<TabLink tab="extras" target="thehighestoffice">
-									The Highest Office
-								</TabLink>
-							</span>
-							<span>Restart game until mystery box spawns in the mail office (can be completed on casual and with bots (not recommended))</span>
-						</td>
-					</tr>
-					<tr>
-						<td>Preemptive Strike</td>
-						<td>In Classified, kill 50 Nova 6 Crawlers without letting them explode in a single game</td>
-						<td>
-							Get ~30 via the{" "}
-							<TabLink tab="extras" target="knockknock">
-								Knock Knock EE
-							</TabLink>{" "}
-							and kill the rest over time
-						</td>
-					</tr>
-					<tr>
-						<td id="thehighestoffice">The Highest Office</td>
-						<td>In Classified, reach round 20 without using an elevator</td>
-						<td>
-							<span>
-								Complete at the same time as{" "}
-								<TabLink tab="extras" target="powerstruggle">
-									Power Struggle
-								</TabLink>
-							</span>
-							<span>Restart game until mystery box spawns in the mail office (can be completed on casual and with bots (not recommended))</span>
-						</td>
-					</tr>
-					<tr>
-						<td>Crawl for Help</td>
-						<td>In Classified, while in last stand use a teleporter and then get revived in a single game</td>
-						<td>Can be done solo with a revive token</td>
-					</tr>
-					<tr>
-						<td>Step on the Gas</td>
-						<td>In Classified, kill 50 zombies while affected by Nova 6 Crawler gas in a single game</td>
-						<td>shoot a nova crawler to make it explode and get zombies to walk through it before killing them</td>
-					</tr>
-					<tr>
-						<td>Pent-up-agon</td>
-						<td>In Classified, complete 5 consecutive rounds without leaving the war room elevator in a single game</td>
-						<td>
-							Get as many points as possible (
-							<TabLink tab="extras" target="knockknock">
-								knock knock EE
-							</TabLink>
-							) to get set-up. End a round while in the elevator then don't leave until the achievement pops
-						</td>
-					</tr>
-					<tr>
-						<td>Going Everywhere Fast</td>
-						<td>In Classified, use a teleporter 7 times in less than a minute in a single game</td>
-						<td>Open most of the map then run through every possible teleporter until the trophy pops</td>
-					</tr>
-				</tbody>
-			</table>
+			<AchievementTable mapId="bo4/classified" headers={["Achievement", "Requirement"]} rows={achievementRows} />
 		</section>
 	);
 }

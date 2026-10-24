@@ -11,12 +11,95 @@ import VideoPlayer from "../../../components/VideoPlayer";
 
 import { mapModules } from "../../../data/mapModules";
 
-// ============================================================
-// 🔴 MAP TABS
-// ============================================================
+import AchievementTable from "../../../components/AchievementTable";
 
-// 🔴 REMOVE: Tabs that do not apply to this map.
-// 🔴 ADD: Any applicable tabs not currently included.
+const achievementRows = [
+	{
+		id: "west-side-for-life",
+		name: "West Side for Life",
+		description: "In Blood of the Dead, reach Round 20 without leaving the West Side of the island.",
+		goal: "Start a game on Casual difficulty and get round 20 without opening the Catwalk. You should also spin the box and obtain good weaponry to make it easy to survive. If you can't get good weapons then reset.",
+	},
+	{
+		id: "gat-trick",
+		name: "Gat Trick",
+		description: "In Blood of the Dead, kill the Warden with the Blundergat, Acidgat and Magmagat",
+		goal: (
+			<>
+				Get a Blundergat from the box or through the{" "}
+				<TabLink tab="wonder-weapon" target="blundergat">
+					quest
+				</TabLink>
+				. Kill the Warden with it once and then upgrade it into either the Acidgat or Magmagat. Once you have killed the Warden once with one upgrade switch it into the other upgrade and kill the Warden with that one
+			</>
+		),
+	},
+	{
+		id: "historical-reenactment",
+		name: "Historical Reenactment",
+		description: "In Blood of the Dead, equip Hell’s Retriever, Spoon, Blundergat and Tommy Gun",
+		goal: "Hold the Blundergat, Retriever, Spoon, and M1927 without any of them being upgraded",
+	},
+	{
+		id: "hot-stuff-coming-through",
+		name: "Hot Stuff Coming Through",
+		description: "In Blood of the Dead, forge a Magmagat",
+		goal: (
+			<>
+				Upgrade the Blundergat into the Magmagat through the{" "}
+				<TabLink tab="wonder-weapon" target="magmagat">
+					quest
+				</TabLink>
+			</>
+		),
+	},
+	{
+		id: "a-match-made-in-hell",
+		name: "A Match Made in Hell",
+		description: "In Blood of the Dead, complete a Gondola ride with the Warden",
+		goal: "Go onto the Gondola with the Warden chasing you, once the Warden has stepped into the Gondola purchase it so that the Warden rides it down with you. You can go down while you ride with the Warden or use the Ragnarok DG-5's to stun him so you don't go down",
+	},
+	{
+		id: "most-escape-alive",
+		name: "Most Escape Alive",
+		description: "In Blood of the Dead, escape",
+		goal: (
+			<>
+				Complete the <TabLink tab="main-ee">Main Quest</TabLink>
+			</>
+		),
+	},
+	{
+		id: "paranormal-patch-up",
+		name: "Paranormal Patch Up",
+		description: "In Blood of the Dead, revive another Player with a shield",
+		goal: "Get a Spirit Blast charge with the shield and when another player in your game goes down you must Spirit Blast them to instantly revive them",
+	},
+	{
+		id: "senseless-axe-of-violence",
+		name: "Senseless Axe of Violence",
+		description: "In Blood of the Dead, kill 5 zombies with the Hell's Redeemer before it starts its return",
+		goal: (
+			<>
+				Obtain the{" "}
+				<TabLink tab="wonder-weapon" target="hellsredeemer">
+					Hell's Redeemer
+				</TabLink>{" "}
+				and group up a horde of zombies. When the zombies are grouped closely together, hold out the Redeemer, fully charge it up, and throw it directly at the horde. If you get lucky you should have killed 5 zombies before it comes flying back to you
+			</>
+		),
+	},
+	{
+		id: "throw-a-dog-a-bone",
+		name: "Throw a Dog a Bone",
+		description: "In Blood of the Dead, feed a wolf head from Gondola, Citadel, and Model Industries in a single game",
+		goal: "Obtain Monkey Bombs, have a teammate hold zombies next to a hellhound near a location you must run to. Throw a Monkey Bomb near your friend and run to one of the 3 areas. If done correctly the Bomb should kill the zombies and feed the hound while you're in the required area. Repeat this for the other 2 areas you need to be in",
+	},
+];
+
+// ============================================================
+// MAP TABS
+// ============================================================
 
 const tabs = [mapModules.overview, mapModules.mainEE, mapModules.sideEE, mapModules.musicEE, mapModules.wonderWeapon, mapModules.buildables, mapModules.weapons, mapModules.gauntlet, mapModules.perks, mapModules.extras, mapModules.credits];
 
@@ -1236,81 +1319,7 @@ function Extras() {
 			</table>
 
 			<h2>Achievements</h2>
-			<table>
-				<thead>
-					<tr>
-						<th scope="col">Name</th>
-						<th scope="col">Description</th>
-						<th scope="col">Goal</th>
-					</tr>
-				</thead>
-				<tbody>
-					<tr>
-						<td>West Side for Life</td>
-						<td>In Blood of the Dead, reach Round 20 without leaving the West Side of the island.</td>
-						<td>Start a game on Casual difficulty and get round 20 without opening the Catwalk. You should also spin the box and obtain good weaponry to make it easy to survive. If you can't get good weapons then reset.</td>
-					</tr>
-					<tr>
-						<td>Gat Trick</td>
-						<td>In Blood of the Dead, kill the Warden with the Blundergat, Acidgat and Magmagat</td>
-						<td>
-							Get a Blundergat from the box or through the{" "}
-							<TabLink tab="wonder-weapon" target="blundergat">
-								quest
-							</TabLink>
-							. Kill the Warden with it once and then upgrade it into either the Acidgat or Magmagat. Once you have killed the Warden once with one upgrade switch it into the other upgrade and kill the Warden with that one
-						</td>
-					</tr>
-					<tr>
-						<td>Historical Reenactment</td>
-						<td>In Blood of the Dead, equip Hell’s Retriever, Spoon, Blundergat and Tommy Gun</td>
-						<td>Hold the Blundergat, Retriever, Spoon, and M1927 without any of them being upgraded</td>
-					</tr>
-					<tr>
-						<td>Hot Stuff Coming Through</td>
-						<td>In Blood of the Dead, forge a Magmagat</td>
-						<td>
-							Upgrade the Blundergat into the Magmagat through the{" "}
-							<TabLink tab="wonder-weapon" target="magmagat">
-								quest
-							</TabLink>
-						</td>
-					</tr>
-					<tr>
-						<td>A Match Made in Hell</td>
-						<td>In Blood of the Dead, complete a Gondola ride with the Warden</td>
-						<td>Go onto the Gondola with the Warden chasing you, once the Warden has stepped into the Gondola purchase it so that the Warden rides it down with you. You can go down while you ride with the Warden or use the Ragnarok DG-5's to stun him so you don't go down</td>
-					</tr>
-					<tr>
-						<td>Most Escape Alive</td>
-						<td>In Blood of the Dead, escape</td>
-						<td>
-							Complete the <TabLink tab="main-ee">Main Quest</TabLink>
-						</td>
-					</tr>
-					<tr>
-						<td>Paranormal Patch Up</td>
-						<td>In Blood of the Dead, revive another Player with a shield</td>
-						<td>Get a Spirit Blast charge with the shield and when another player in your game goes down you must Spirit Blast them to instantly revive them</td>
-					</tr>
-					<tr>
-						<td>Senseless Axe of Violence</td>
-						<td>In Blood of the Dead, kill 5 zombies with the Hell's Redeemer before it starts its return</td>
-						<td>
-							Obtain the{" "}
-							<TabLink tab="wonder-weapon" target="hellsredeemer">
-								Hell's Redeemer
-							</TabLink>{" "}
-							and group up a horde of zombies. When the zombies are grouped closely together, hold out the Redeemer, fully charge it up, and throw it directly at the horde. If you get lucky you should have killed 5 zombies before it comes flying back to you
-						</td>
-					</tr>
-					<tr>
-						<td>Throw a Dog a Bone</td>
-						<td>In Blood of the Dead, feed a wolf head from Gondola, Citadel, and Model Industries in a single game</td>
-						<td>Obtain Monkey Bombs, have a teammate hold zombies next to a hellhound near a location you must run to. Throw a Monkey Bomb near your friend and run to one of the 3 areas. If done correctly the Bomb should kill the zombies and feed the hound while you're in the required area. Repeat this for the other 2 areas you need to be in</td>
-					</tr>
-				</tbody>
-			</table>
+			<AchievementTable mapId="bo4/blood-of-the-dead" headers={["Achievement", "Requirement"]} rows={achievementRows} />
 
 			<h2>Dark Ops Challenges</h2>
 			<table>
