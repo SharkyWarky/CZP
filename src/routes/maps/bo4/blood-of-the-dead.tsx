@@ -1286,7 +1286,6 @@ function Extras() {
 					</tr>
 				</tbody>
 			</table>
-
 			<h2>Special Enemies</h2>
 			<table>
 				<thead>
@@ -1319,7 +1318,7 @@ function Extras() {
 			</table>
 
 			<h2>Achievements</h2>
-			<AchievementTable mapId="bo4/blood-of-the-dead" headers={["Achievement", "Requirement"]} rows={achievementRows} />
+			<AchievementTable mapId="bo4/blood-of-the-dead" rows={achievementRows} />
 
 			<h2>Dark Ops Challenges</h2>
 			<table>

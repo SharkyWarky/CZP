@@ -7,19 +7,30 @@ type AchievementRow = {
 	id: string;
 	name: ReactNode;
 	description: ReactNode;
-	goal: ReactNode;
+	goal?: ReactNode;
 };
 
 type AchievementTableProps = {
 	mapId: string;
-	headers?: string[];
+	headers?: string[]; // Optional now since columns auto-adapt
 	rows: AchievementRow[];
 };
 
-export default function AchievementTable({ mapId, headers = ["Name", "Description", "Goal"], rows }: AchievementTableProps) {
-	const [progress, setProgress] = useAtom(achievementProgressAtom);
+// Helper to check if a ReactNode (string, JSX, etc.) actually has content
+function hasContent(node: ReactNode): boolean {
+	if (node == null) return false;
+	if (typeof node === "string") return node.trim() !== "";
+	if (typeof node === "number") return true;
+	if (Array.isArray(node)) return node.some(hasContent);
+	return true; // React element / fragment exists
+}
 
+export default function AchievementTable({ mapId, rows }: AchievementTableProps) {
+	const [progress, setProgress] = useAtom(achievementProgressAtom);
 	const completed = progress[mapId] ?? [];
+
+	// Auto-detect if at least one row has a goal
+	const showGoalColumn = rows.some((row) => hasContent(row.goal));
 
 	function toggleAchievement(id: string) {
 		setProgress((previous) => {
@@ -40,9 +51,9 @@ export default function AchievementTable({ mapId, headers = ["Name", "Descriptio
 					<th className="achievement-checkbox-cell">
 						<span className="sr-only">Completed</span>
 					</th>
-					{headers.map((header, index) => (
-						<th key={index}>{header}</th>
-					))}
+					<th>Name</th>
+					<th>Description</th>
+					{showGoalColumn && <th>Goal</th>}
 				</tr>
 			</thead>
 
@@ -68,7 +79,7 @@ export default function AchievementTable({ mapId, headers = ["Name", "Descriptio
 							</td>
 							<td>{row.name}</td>
 							<td>{row.description}</td>
-							<td>{row.goal}</td>
+							{showGoalColumn && <td>{row.goal}</td>}
 						</tr>
 					);
 				})}

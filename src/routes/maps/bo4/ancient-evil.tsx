@@ -1107,7 +1107,6 @@ function Extras() {
 				<li>Large golden arrow in Python Pass</li>
 				<li>Tiny scales when leaving Python Pass on the snake on the right nessled between red crystal and rock</li>
 			</ul>
-
 			<h2>
 				Scrolls -{" "}
 				<a href="https://youtu.be/sziIzXQjEJE?si=7u8lJDCPcrFWmaeF&t=2654" target="_blank" rel="noopener noreferrer">
@@ -1131,7 +1130,6 @@ function Extras() {
 				<li>on the ground on the bridge path before PaP on the right side.</li>
 				<li>In Python Pass on floor when entering from the back entrance accross from glowign mushrooms</li>
 			</ul>
-
 			<h2 id="tributes">Tributes</h2>
 			<p>Inside Apollo's Temple and the Cliff Side: Forge there are bowls that can be interacted with to give points and start a Tribute Challenge. Doing these challenges will build up a reward you can pick up, rewards can rank from Common to Epic rarity. By doing more and more challenges you can build your way up to an Epic Reward. List of possible Tribute Challenges:</p>
 			<ul>
@@ -1172,7 +1170,6 @@ function Extras() {
 					</tr>
 				</tbody>
 			</table>
-
 			<h2 id="eternalflame">Eternal Flame</h2>
 			<p>The Eternal Flame can be fully lit and turned blue at the reward redemption area in Apollo's Temple by obtaining 9 Tribute Points per player in your match:</p>
 			<ul>
@@ -1216,7 +1213,6 @@ function Extras() {
 					</tr>
 				</tbody>
 			</table>
-
 			<h2>Traps (2)</h2>
 			<table>
 				<thead>
@@ -1242,7 +1238,6 @@ function Extras() {
 					</tr>
 				</tbody>
 			</table>
-
 			<h2>Special Enemies</h2>
 			<table>
 				<thead>
@@ -1298,7 +1293,6 @@ function Extras() {
 					</tr>
 				</tbody>
 			</table>
-
 			<h2>Fast Travel</h2>
 			<p>
 				Fast Travel opens AFTER{" "}
@@ -1343,9 +1337,8 @@ function Extras() {
 					</tr>
 				</tbody>
 			</table>
-
 			<h2>Achievements</h2>
-			<AchievementTable mapId="bo4/ancient-evil" headers={["Achievement", "Requirement"]} rows={achievementRows} />
+			<AchievementTable mapId="bo4/ancient-evil" rows={achievementRows} />{" "}
 		</section>
 	);
 }

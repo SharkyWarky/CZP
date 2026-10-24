@@ -960,7 +960,6 @@ function Extras() {
 				</a>
 			</h2>
 			<p>Aquire a sniper and head to the Green House Backyard balcony. While aiming out into the dessert, look for an idle zombie. When aimed at, it will trigger the jumpscare.</p>
-
 			<h2>
 				Mannquin Jumpscare -{" "}
 				<a href="https://youtu.be/k423piuqfIk?t=1362" target="_blank" rel="noopener noreferrer">
@@ -968,7 +967,6 @@ function Extras() {
 				</a>
 			</h2>
 			<p>Aquire the Galvaknuckles and knife off all 30 mannequin heads (if any heads have been shot off or meleed, you cannot complete this.) Once complete, head down to PaP and you'll find a new female mannequin with its head on backwards. Stare at it for a few seconds to trigger the jumpscare.</p>
-
 			<h2>
 				Round 200 (Insanity Mode) -{" "}
 				<a href="https://youtu.be/k423piuqfIk?t=2203" target="_blank" rel="noopener noreferrer">
@@ -992,7 +990,6 @@ function Extras() {
 				<li>Head to the shed behind Yellow House and there should be a purple orb inside. Open the door ind interact with the orb. Escort it (follow) until it reaches APD Interogation (if you stay away for too long, you will need to restart compeltely)</li>
 				<li>When the orb enters the monitor, knife it using the bowie knife to break it. Use the code that is within the monitor in Rushmore to trigger the EE.</li>
 			</ol>
-
 			<h2>
 				T.E.D.D. Electrifying Room -{" "}
 				<a href="https://youtu.be/k423piuqfIk?t=3201" target="_blank" rel="noopener noreferrer">
@@ -1000,7 +997,6 @@ function Extras() {
 				</a>
 			</h2>
 			<p>After activating T.E.D.D THrough Rushmore code 8333, you can find him in the Bunkers where you can melee him several times with the galvaknuckles enough times that he will get mad and make the floor electric. (remains this way for 2 minutes after activation)</p>
-
 			<h2>
 				Avagadro Quotes -{" "}
 				<a href="https://youtu.be/k423piuqfIk?t=2396" target="_blank" rel="noopener noreferrer">
@@ -1008,7 +1004,6 @@ function Extras() {
 				</a>
 			</h2>
 			<p>Every round, you can interact with the tv inside Yellow House to get quotes from Avogadro</p>
-
 			<h2>
 				Maxis Radios -{" "}
 				<a target="_blank" href="https://youtu.be/k423piuqfIk?t=3717" rel="noopener noreferrer">
@@ -1023,7 +1018,6 @@ function Extras() {
 				<li>In the Lounge on the right when entering fro mthe stairs on table with a lamp</li>
 				<li>In the Diner on the counter when entering from PaP on the right</li>
 			</ul>
-
 			<h2>
 				Audio Reels -{" "}
 				<a href="https://youtu.be/k423piuqfIk?t=4102" target="_blank" rel="noopener noreferrer">
@@ -1036,7 +1030,6 @@ function Extras() {
 				<li>Through the door of the bus on the left of Cul-de-sac</li>
 				<li>In Storage through caged door to the left of radioactive symbol</li>
 			</ul>
-
 			<h2>
 				Film Reels -{" "}
 				<a href="https://youtu.be/k423piuqfIk?t=4455" target="_blank" rel="noopener noreferrer">
@@ -1051,7 +1044,6 @@ function Extras() {
 				<li>Green House Backyard on the corner of the pool thing in the middle</li>
 				<li>On the box to the left of the desk in Solitary</li>
 			</ul>
-
 			<h2>
 				Punchcard Logs -{" "}
 				<a href="https://youtu.be/k423piuqfIk?t=5038" target="_blank" rel="noopener noreferrer">
@@ -1066,7 +1058,6 @@ function Extras() {
 				<li>In APD Control to the left when entering from solitary just before entering the smaller side area</li>
 				<li>On the Diner outer counter when entering straight from the stairs. leaning on a stack of plates.</li>
 			</ul>
-
 			<h2>
 				Audio Players (Russman) -{" "}
 				<a href="https://youtu.be/k423piuqfIk?t=5558" target="_blank" rel="noopener noreferrer">
@@ -1079,7 +1070,6 @@ function Extras() {
 				<li>On the couch to the left when entering from Lounge in Bunker Beds</li>
 				<li>In Generators on the back right side of the room on a pipe leading form a generator on the left side.</li>
 			</ul>
-
 			<h2>
 				Rushmore Codes -{" "}
 				<a href="https://youtu.be/k423piuqfIk?t=2452" target="_blank" rel="noopener noreferrer">
@@ -1293,7 +1283,6 @@ function Extras() {
 					</tr>
 				</tbody>
 			</table>
-
 			<h2>
 				Traps -{" "}
 				<a href="https://youtu.be/k423piuqfIk?t=128" target="_blank" rel="noopener noreferrer">
@@ -1357,7 +1346,6 @@ function Extras() {
 					Complete up to step 3 of the <TabLink tab="main-ee">Main EE</TabLink> then the traps should open in the houses. In operation you can grab the PaP'd raygun Mark II from the case and in Prisoner Holding you can get a free random PaP'd weapon from the locker.
 				</span>
 			</p>
-
 			<h2>Fast Travel</h2>
 			<p>
 				Fast travelling requires the{" "}
@@ -1378,7 +1366,6 @@ function Extras() {
 				<li>Near Tonic Perk Machine</li>
 				<li>Exit of APD Control Room</li>
 			</ul>
-
 			<h2>Special Enemies</h2>
 			<table>
 				<thead>
@@ -1418,14 +1405,13 @@ function Extras() {
 					</tr>
 				</tbody>
 			</table>
-
 			<h2>
 				Achievements -{" "}
 				<a href="https://www.youtube.com/watch?v=EDXOagmcUIA" target="_blank" rel="noopener noreferrer">
 					Video
 				</a>
 			</h2>
-			<AchievementTable mapId="bo4/alpha-omega" headers={["Achievement", "Requirement"]} rows={achievementRows} />
+			<AchievementTable mapId="bo4/alpha-omega" rows={achievementRows} />{" "}
 		</section>
 	);
 }

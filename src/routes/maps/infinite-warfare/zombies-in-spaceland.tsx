@@ -1174,7 +1174,6 @@ function Extras() {
 		<section className="tab-content">
 			<h2 id="hasselhoff">Hasselhoff Character Unlock</h2>
 			<p>After completing the EE input (left, right, left, up, down) in the pre-game lobby screen</p>
-
 			<h2>Ghost 'N Skulls</h2>
 			<p>Rewards: 1000xp, and perma perkaholic (except Up 'N Atoms when in Solo)</p>
 			<p>
@@ -1241,14 +1240,12 @@ function Extras() {
 				<span>Shoot the ghosts at the skulls to remove them. They turn red when they start moving, target these first.</span>
 				<span>If you let 3 skulls espace, you lose and must re-obtain skull 6.</span>
 			</p>
-
 			<h2>Cut Space Helmet EE</h2>
 			<p>
 				<span>Reaching Round 6000 causes the zombies to have a space helmet</span>
 				<span>The helmet increases their health to a near unkillable extent</span>
 				<span>The helmet is a cut EE which was put at round 6000 instead of unused</span>
 			</p>
-
 			<h2>Lobby Music</h2>
 			<p>
 				<span>Unlocks Up N' Atoms, Racing Stripes, and Slappy Taffy Lobby Music</span>
@@ -1260,7 +1257,6 @@ function Extras() {
 				<li>Obtain sunglasses on Scene 1 and make your way to the Rollercoaster</li>
 				<li>Ride the Rollercoaster with the sunglasses on and once you are going down the steep hill section of the Rollercoaster and the next door opens, shoot the yeti animatronic on the right between the eyes. If done correctly you will have shot the white Talisman mask and unlocked the new Lobby Music</li>
 			</ol>
-
 			<h2>Souvenier Stations</h2>
 			<p>There are 5 Souvenir Stations throughout the map that can be used to craft Souvenirs.</p>
 			<ul>
@@ -1270,7 +1266,6 @@ function Extras() {
 				<li>In the gift shop in Polar Peak</li>
 				<li>Near the staircase to Moonlight Cafe in Kepler</li>
 			</ul>
-
 			<h2>Souvenir Machine Combinations</h2>
 			<table>
 				<thead>
@@ -1342,7 +1337,6 @@ function Extras() {
 					</tr>
 				</tbody>
 			</table>
-
 			<h2>Traps</h2>
 			<p>All Traps (except those that are free) award Tickets for Zombie kills.</p>
 			<table>
@@ -1423,9 +1417,8 @@ function Extras() {
 					</tr>
 				</tbody>
 			</table>
-
 			<h2>Achievements</h2>
-			<AchievementTable mapId="infinite-warfare/zombies-in-spaceland" headers={["Achievement", "Requirement"]} rows={achievementRows} />
+			<AchievementTable mapId="infinite-warfare/zombies-in-spaceland" rows={achievementRows} />{" "}
 		</section>
 	);
 }

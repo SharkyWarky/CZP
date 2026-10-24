@@ -1242,7 +1242,6 @@ function Extras() {
 				</a>
 			</h2>
 			<p>At the Forecastle fire, aim directly at the piece of paper on the wall to the left of it</p>
-
 			<h2>
 				Pablo Jumpscare -{" "}
 				<a href="https://www.youtube.com/watch?v=k9Mjls0ieHc" target="_blank" rel="noopener noreferrer">
@@ -1250,7 +1249,6 @@ function Extras() {
 				</a>
 			</h2>
 			<p>Aim a sniper rifle up at the top of the lighthouse from the Facility</p>
-
 			<h2 id="mars">
 				Mars Shangri-La EE -{" "}
 				<a href="https://youtu.be/J-Nk1sAMvEY?si=ks-Sr3riQwDsafSc&t=2006" target="_blank" rel="noopener noreferrer">
@@ -1278,7 +1276,6 @@ function Extras() {
 				<li>You then need to swim through the tunnel to the other end. take out your specialist if you start taking damage. Dying wish is also helpful.</li>
 				<li>You can interact with the boat infront of you to return to the map again.</li>
 			</ol>
-
 			<h2>
 				Don't Freeze! (Round 200) -{" "}
 				<a href="https://youtu.be/J-Nk1sAMvEY?si=bdgswB8w_04goBBr&t=2571" target="_blank" rel="noopener noreferrer">
@@ -1304,7 +1301,6 @@ function Extras() {
 				</li>
 				<li>Return to the Docks and there should be a button where you spawned in. Once you flip the round, you will be on round 200.</li>
 			</ol>
-
 			<h2>
 				Richtofen Film Reels -{" "}
 				<a href="https://youtu.be/J-Nk1sAMvEY?si=4S6bVfgHbV_y2A6b&t=2729" target="_blank" rel="noopener noreferrer">
@@ -1320,7 +1316,6 @@ function Extras() {
 				<li>Upstairs Lighthosue Station on the small desk with a clock to the right of the larger desk opposite buildable table</li>
 				<li>On a crate on the beach across from the ICR wallbuy</li>
 			</ul>
-
 			<h2>
 				Pablo Audio Reels -{" "}
 				<a href="https://youtu.be/J-Nk1sAMvEY?si=f1Ltt7S7thj5F6Ar&t=3563" target="_blank" rel="noopener noreferrer">
@@ -1335,7 +1330,6 @@ function Extras() {
 				<li>On the beach across from the M1927 wallbuy</li>
 				<li>On the outer walkway on the left side before the flinger</li>
 			</ul>
-
 			<h2>
 				Ascension Group Radios -{" "}
 				<a href="https://youtu.be/J-Nk1sAMvEY?si=ajBgzE60DreSZQcl&t=4109" target="_blank" rel="noopener noreferrer">
@@ -1350,7 +1344,6 @@ function Extras() {
 				<li>Artifact Storage/Cargo Hold inside a grey crate on the right after coming up the stairs</li>
 				<li>In Sunken Path behind the wallbuy</li>
 			</ul>
-
 			<h2>
 				Samantha's Wisps -{" "}
 				<a href="https://youtu.be/J-Nk1sAMvEY?si=mLhwzqMM8mDgSABP&t=4799" target="_blank" rel="noopener noreferrer">
@@ -1364,7 +1357,6 @@ function Extras() {
 				<li>Artifact Storage zombie spawn looking from far right to the left</li>
 				<li>Behind the metal panel hiding behind the red plus sign on the metal wall in Outer Walkway (Visible form just past the flinger)</li>
 			</ul>
-
 			<h2>
 				Jebediah Brown Records -{" "}
 				<a href="https://youtu.be/J-Nk1sAMvEY?si=E8NiosGNmqWqwPE1&t=5155" target="_blank" rel="noopener noreferrer">
@@ -1379,7 +1371,6 @@ function Extras() {
 				<li>Between a large drum and the wall in Geological processing in the right</li>
 				<li>In Human Infusion on the left under the table ot the right of the sink.</li>
 			</ul>
-
 			<h2>
 				Campfire Quotes -{" "}
 				<a href="https://youtu.be/J-Nk1sAMvEY?si=oloB9jKY-TtFrwn0&t=5829" target="_blank" rel="noopener noreferrer">
@@ -1390,7 +1381,6 @@ function Extras() {
 				<span>While playing through the EE, you can interact with the Sunken Path campfire to get extra dialogue. After getting the first quote, you can interact 2 more times each time you have to go to it.</span>
 				<span>In total there are 9 quotes and a song if you interact a third time the after the final quote.</span>
 			</p>
-
 			<h2 id="challenges">Hermit Challenge Totems</h2>
 			<p>
 				You must activate{" "}
@@ -1561,7 +1551,6 @@ function Extras() {
 					</tr>
 				</tbody>
 			</table>
-
 			<h2>Traps</h2>
 			<table>
 				<thead>
@@ -1599,7 +1588,6 @@ function Extras() {
 					</tr>
 				</tbody>
 			</table>
-
 			<h2 id="ziplines">
 				Ziplines -{" "}
 				<a href="https://www.youtube.com/watch?v=FCtsxexjHyA" target="_blank" rel="noopener noreferrer">
@@ -1674,7 +1662,6 @@ function Extras() {
 					</tr>
 				</tbody>
 			</table>
-
 			<h2 id="flinger">
 				Flingers -{" "}
 				<a href="https://www.youtube.com/watch?v=EWWHBqpfGkY" target="_blank" rel="noopener noreferrer">
@@ -1717,7 +1704,6 @@ function Extras() {
 					</tr>
 				</tbody>
 			</table>
-
 			<h2>Special Enemies</h2>
 			<table>
 				<thead>
@@ -1748,14 +1734,13 @@ function Extras() {
 					</tr>
 				</tbody>
 			</table>
-
 			<h2>
 				Achievements -{" "}
 				<a href="https://www.youtube.com/watch?v=KRbKPX4gFCQ" target="_blank" rel="noopener noreferrer">
 					Video
 				</a>
 			</h2>
-			<AchievementTable mapId="bo4/tag-der-toten" headers={["Achievement", "Requirement"]} rows={achievementRows} />
+			<AchievementTable mapId="bo4/tag-der-toten" rows={achievementRows} />{" "}
 		</section>
 	);
 }

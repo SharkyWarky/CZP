@@ -942,7 +942,6 @@ function Extras() {
 					</ImageContainer>
 				</li>
 			</ul>
-
 			<h2 id="knockknock">
 				Knock Knock EE -{" "}
 				<a href="https://youtu.be/31E8kCaeohU?si=LvhwuowyQV8GXOLF&t=151" target="_blank" rel="noopener noreferrer">
@@ -957,7 +956,6 @@ function Extras() {
 					</ImageContainer>
 				</li>
 			</ol>
-
 			<h2>
 				Hidden Portrait EE -{" "}
 				<a href="https://youtu.be/31E8kCaeohU?si=RhoK735PHOsXGnls&t=293" target="_blank" rel="noopener noreferrer">
@@ -988,7 +986,6 @@ function Extras() {
 				</li>
 				<li>Activate Defcon 5, in the panic room interact with the blank portrait</li>
 			</ol>
-
 			<h2>
 				Samantha Nursery Rhyme -{" "}
 				<a href="https://youtu.be/31E8kCaeohU?si=M1AwVkRH78ur6g7Z&t=369" target="_blank" rel="noopener noreferrer">
@@ -999,7 +996,6 @@ function Extras() {
 			<ImageContainer>
 				<img src="\images\guides\bo4\classified\classified-corner.png" alt="Samantha Nursery Rhyme Corner" />
 			</ImageContainer>
-
 			<h2>
 				Samanthas Wisps -{" "}
 				<a href="https://youtu.be/31E8kCaeohU?si=NmbuiXlZvPOUf8zY&t=1578" target="_blank" rel="noopener noreferrer">
@@ -1033,7 +1029,6 @@ function Extras() {
 					</ImageContainer>
 				</li>
 			</ul>
-
 			<h2>
 				Red Phones -{" "}
 				<a href="https://youtu.be/31E8kCaeohU?si=DS6gkv2GxKUSqjvL&t=3084" target="_blank" rel="noopener noreferrer">
@@ -1063,7 +1058,6 @@ function Extras() {
 					</ImageContainer>
 				</li>
 			</ul>
-
 			<h2>
 				Film Reels -{" "}
 				<a href="https://youtu.be/31E8kCaeohU?si=LQ40kfb7KEXs44eE&t=1988" target="_blank" rel="noopener noreferrer">
@@ -1103,7 +1097,6 @@ function Extras() {
 					</ImageContainer>
 				</li>
 			</ul>
-
 			<h2>
 				Punch Cards Audio -{" "}
 				<a href="https://youtu.be/31E8kCaeohU?si=4NzqW-2zs_iFL8KP&t=564" target="_blank" rel="noopener noreferrer">
@@ -1168,7 +1161,6 @@ function Extras() {
 					</ImageContainer>
 				</li>
 			</ul>
-
 			<h2>
 				Audio Reel -{" "}
 				<a href="https://youtu.be/31E8kCaeohU?si=YHZx1Gqafkwc8Z7l&t=2582" target="_blank" rel="noopener noreferrer">
@@ -1210,9 +1202,7 @@ function Extras() {
 					</ImageContainer>
 				</li>
 			</ul>
-
 			<h2>Traps</h2>
-
 			<table>
 				<thead>
 					<tr>
@@ -1231,7 +1221,6 @@ function Extras() {
 					</tr>
 				</tbody>
 			</table>
-
 			<h2>Special Enemies</h2>
 			<table>
 				<thead>
@@ -1262,9 +1251,8 @@ function Extras() {
 					</tr>
 				</tbody>
 			</table>
-
 			<h2>Achievements</h2>
-			<AchievementTable mapId="bo4/classified" headers={["Achievement", "Requirement"]} rows={achievementRows} />
+			<AchievementTable mapId="bo4/classified" rows={achievementRows} />{" "}
 		</section>
 	);
 }

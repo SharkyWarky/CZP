@@ -347,9 +347,8 @@ function Extras() {
 				<li>Use the Teleporter to enter the pentagon's office</li>
 				<li>Interact with the rocket figurine to launch it</li>
 			</ol>
-
 			<h2>Achievments</h2>
-			<AchievementTable mapId="bo3/kino-der-toten" headers={["Achievement", "Requirement"]} rows={achievementRows} />
+			<AchievementTable mapId="bo3/kino-der-toten" rows={achievementRows} />{" "}
 		</section>
 	);
 }

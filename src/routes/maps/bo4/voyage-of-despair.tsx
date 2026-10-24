@@ -1582,8 +1582,7 @@ function Extras() {
 			</table>
 
 			<h2>Achievements</h2>
-			<AchievementTable mapId="bo4/voyage-of-despair" headers={["Achievement", "Requirement"]} rows={achievementRows} />
-
+			<AchievementTable mapId="bo4/voyage-of-despair" rows={achievementRows} />
 			<h2>Dark Ops Challenges</h2>
 			<table>
 				<thead>

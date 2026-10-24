@@ -1217,7 +1217,6 @@ function Extras() {
 					</tr>
 				</tbody>
 			</table>
-
 			<h2>
 				Homunculus Crowd Wave -{" "}
 				<a href="https://youtu.be/E_rjvY3MbQE?si=ddnH8PNC9IHEp5jf&t=1063" target="_blank" rel="noopener noreferrer">
@@ -1225,7 +1224,6 @@ function Extras() {
 				</a>
 			</h2>
 			<p>Throwing a Homunculus (from the box) into the crowd outside the arena makes them do the wave</p>
-
 			<h2>
 				Blood Bath House -{" "}
 				<a href="https://youtu.be/E_rjvY3MbQE?si=quiCDe7kNzQrAGHT&t=1601" target="_blank" rel="noopener noreferrer">
@@ -1236,7 +1234,6 @@ function Extras() {
 				<span>Killing 830 zombies in the zeus tower bath house makes the name change to "Blood Bath House"</span>
 				<span>Supposedly to reference a Dev's son's birthday (August 30th)</span>
 			</p>
-
 			<h2>
 				Oracle Scrolls -{" "}
 				<a href="https://youtu.be/E_rjvY3MbQE?si=McQ4xGNNdINbGC4Y&t=1917" target="_blank" rel="noopener noreferrer">
@@ -1271,7 +1268,6 @@ function Extras() {
 					</ImageContainer>
 				</li>
 			</ul>
-
 			<h2>
 				Barton Scrolls -{" "}
 				<a href="https://youtu.be/E_rjvY3MbQE?si=KtuPU0mEWtyG_vF4&t=2266" target="_blank" rel="noopener noreferrer">
@@ -1309,7 +1305,6 @@ function Extras() {
 					</ImageContainer>
 				</li>
 			</ul>
-
 			<h2>
 				Prisoner's Quest -{" "}
 				<a href="https://youtu.be/E_rjvY3MbQE?si=-2f9GBiPAIxwOPJz&t=1634" target="_blank" rel="noopener noreferrer">
@@ -1368,7 +1363,6 @@ function Extras() {
 				</li>
 				<li>The wall will burst open revealing the cipher</li>
 			</ol>
-
 			<h2>Traps</h2>
 			<table>
 				<thead>
@@ -1394,7 +1388,6 @@ function Extras() {
 					</tr>
 				</tbody>
 			</table>
-
 			<h2>Special Enemies</h2>
 			<table>
 				<thead>
@@ -1463,11 +1456,8 @@ function Extras() {
 					</tr>
 				</tbody>
 			</table>
-
 			<h2>Achievements</h2>
-			<AchievementTable mapId="bo4/ix" headers={["Achievement", "Requirement"]} rows={achievementRows} />
-
-			<h2>Dark Ops Challenges</h2>
+			<AchievementTable mapId="bo4/ix" rows={achievementRows} /> <h2>Dark Ops Challenges</h2>
 			<table>
 				<thead>
 					<tr>

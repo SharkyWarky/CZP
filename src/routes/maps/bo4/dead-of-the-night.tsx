@@ -1551,13 +1551,10 @@ function Extras() {
 					Workbench
 				</li>
 			</ul>
-
 			<h2>Stone Jumpscare</h2>
 			<p>During the Main EE step when you find the stones and can look inside them, doing this repeatedly on the same stone will yield a jumpscare.</p>
-
 			<h2>Painting Jumpscare</h2>
 			<p>Stare down your sights at the painting of the girl in the West Gallery for a few seconds.</p>
-
 			<h2>Traps</h2>
 			<table>
 				<thead>
@@ -1587,7 +1584,6 @@ function Extras() {
 					</tr>
 				</tbody>
 			</table>
-
 			<h2>Fast Travel</h2>
 			<table>
 				<thead>
@@ -1615,7 +1611,6 @@ function Extras() {
 					</tr>
 				</tbody>
 			</table>
-
 			<h2>Special Enemies</h2>
 			<table>
 				<thead>
@@ -1655,9 +1650,8 @@ function Extras() {
 					</tr>
 				</tbody>
 			</table>
-
 			<h2>Achievements</h2>
-			<AchievementTable mapId="bo4/dead-of-the-night" headers={["Achievement", "Requirement"]} rows={achievementRows} />
+			<AchievementTable mapId="bo4/dead-of-the-night" rows={achievementRows} />{" "}
 		</section>
 	);
 }
